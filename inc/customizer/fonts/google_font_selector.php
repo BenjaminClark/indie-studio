@@ -64,9 +64,10 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
         //Set content to empty
         $content = false;
         
-        if(file_exists($fontFile) && $cachetime < filemtime($fontFile))
-        {
+        if(file_exists($fontFile) && $cachetime < filemtime($fontFile)){
+            
             $content = json_decode(file_get_contents($fontFile));
+            
         } else {
 
             $googleApi = 'https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key=AIzaSyDrh3G5OKARgE8W5SKll4lv8RCQVrF6swM';
@@ -78,10 +79,12 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
             fclose($fp);
 
             $content = json_decode($fontContent['body']);
+            
         }
         
         if ( isset ( $content->error ) ) {
-        //First, catch any errors
+            
+            //First, catch any errors
             $error = $content->error->errors;
             
             if ( $error[0]->message ){
