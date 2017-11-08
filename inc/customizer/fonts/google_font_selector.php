@@ -27,10 +27,13 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
      *
      * @return HTML
      */
-    public function render_content()
-    {
-        if(!empty($this->fonts))
-        {
+    public function render_content(){
+        
+        /**
+         * @TODO check the API key is correct, at the moment we only check if it exists
+         */
+        
+        if(!empty($this->fonts)){
             ?>
                 <label>
                     <span class="customize-category-select-control"><?php echo esc_html( $this->label ); ?></span>
@@ -45,6 +48,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
                 </label>
             <?php
         }
+                
     }
 
     /**
@@ -70,7 +74,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
             
         } else {
 
-            $googleApi = 'https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key=AIzaSyDrh3G5OKARgE8W5SKll4lv8RCQVrF6swM';
+            $googleApi = 'https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key=';
 
             $fontContent = wp_remote_get( $googleApi, array('sslverify'   => false) );
 
@@ -92,6 +96,9 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
                 write_log('Font API needs enabling');
                 
             }
+            
+            //We had an error, return no list
+            return '';
             
         } else {
         

@@ -301,10 +301,21 @@ function indie_studio_enqueue_admin_css_styles(){
     wp_enqueue_style(
         'indie_studio_admin', 
         $CSS_theme_dir . '/theme/admin.css', 
-        false , 
+        false, 
         '1', 
         false
     );   
+    
+    /**
+    * Load Animate
+    */ 
+    wp_enqueue_style(
+        'animate', 
+        'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css',
+        false,
+        '3.5.2',
+        false
+    );
 
 }
 add_action( 'admin_enqueue_scripts', 'indie_studio_enqueue_admin_css_styles' );
@@ -319,7 +330,8 @@ add_action( 'admin_enqueue_scripts', 'indie_studio_enqueue_admin_css_styles' );
 function indie_studio_enqueue_admin_js_scripts(){
     
     //Set the theme directory
-    $JS_theme_dir = get_stylesheet_directory_uri() . '/js/theme/';
+    $JS_theme_dir   = get_stylesheet_directory_uri() . '/js/theme/';
+    $JS_direct_path = get_stylesheet_directory() . '/js/theme/';
     
     $localize_this = array (
         //General Data
@@ -335,5 +347,48 @@ function indie_studio_enqueue_admin_js_scripts(){
     );
     wp_localize_script( 'indie_studio_admin', 'indie_studio_ajax', $localize_this );
     
+
+    
 }
 add_action( 'admin_enqueue_scripts', 'indie_studio_enqueue_admin_js_scripts' );
+
+
+/**
+ * Add Customizer control code
+ **/
+
+function indie_studio_enqueue_customizer_control(){
+    
+    $JS_theme_dir   = get_stylesheet_directory_uri() . '/js/theme/';
+    $JS_direct_path = get_stylesheet_directory() . '/js/theme/';
+
+    wp_enqueue_script(
+        'indie_studio_customizer', 
+        $JS_theme_dir . 'customizer-control.js', 
+        array('jquery'), 
+        indie_studio_get_file_version_number( 'indie_studio_customizer', $JS_direct_path . 'customizer-control.js' ), 
+        true
+    );
+    
+}
+add_action( 'customize_controls_enqueue_scripts', 'indie_studio_enqueue_customizer_control' );
+
+/**
+ * Add Customizer Preview code
+ **/
+
+function indie_studio_enqueue_customizer_preview(){
+    
+    $JS_theme_dir   = get_stylesheet_directory_uri() . '/js/theme/';
+    $JS_direct_path = get_stylesheet_directory() . '/js/theme/';
+
+    wp_enqueue_script(
+        'indie_studio_customizer', 
+        $JS_theme_dir . 'customizer-preview.js', 
+        array('jquery'), 
+        indie_studio_get_file_version_number( 'indie_studio_customizer', $JS_direct_path . 'customizer-preview.js' ), 
+        true
+    );
+    
+}
+add_action( 'customize_preview_init', 'indie_studio_enqueue_customizer_preview' );

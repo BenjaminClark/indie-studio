@@ -52,7 +52,7 @@
                     <?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
                     
                 </div>
-                
+                <a class="customizer-edit" title="Add the Google API key" data-control="indie_studio_google_api">Add key here</a>
             </div>
             
         </header>

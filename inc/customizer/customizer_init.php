@@ -11,6 +11,8 @@
 
 include ( 'fonts/google_font_selector.php' );
 
+include ( 'fonts/google_font_api_checker.php' );
+
 
 /**
  * Add our Customizer content
