@@ -1,0 +1,308 @@
+/* Clear Fix */
+.group:before, .group:after { content:""; display:table; } .group:after { clear:both; } .group { zoom:1; } /* ie6/7 (trigger hasLayout) */
+
+body { 
+    font-family: 'Poppins',Verdana,Geneva,sans-serif; 
+    font-size: 16px; 
+    box-sizing: border-box;
+}
+
+h3.small,
+p,
+li {  
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.4375em;
+    color: #002026;
+}
+
+h3.small {
+    font-weight: 600;
+}
+
+p.large_intro {
+    font-weight: 500;
+    font-size: 1.25em;
+    line-height: 1.5625em;
+}
+
+p.intro {
+    font-weight: 500;
+    font-size: 1.125em;
+    line-height: 1.5625em;
+}
+
+p.small{
+    font-size: 0.875em;
+    line-height: 1.3125em;
+}
+
+em, i { 
+    font-style: italic; 
+}
+
+ul, ol { 
+    margin: 0; 
+}
+
+ol { 
+    list-style-type: decimal; 
+}
+
+ol li,
+ul li { 
+    list-style: none;
+    padding-left: 1.25em;
+    position: relative;
+    font-weight: 500;
+}
+
+ol {
+    counter-reset: customCount;
+}
+
+ol > li {
+	counter-increment: customCount;
+}
+
+ol li {
+    margin-bottom: 2rem;
+    padding-left: 3.75rem;
+    font-weight: 1.125rem;
+}
+
+ol li:before {
+    position: absolute;
+    content: counter(customCount); 
+    color: #00b6ba;
+    font-size: 1.75em;
+    font-weight: 600;
+    line-height: 1.125em;
+    left: 0;
+    top: 0;
+    text-align: center;
+    width: 0.9375em;
+    border-bottom: 0.125em solid #00b6ba;
+}
+
+ul li:before {
+    position: absolute;
+    line-height: inherit;
+    top: 0;
+    left: 0;
+    font-size: inherit;
+    font-family: FontAwesome;
+    content: "\f068";
+}
+
+ul li.tick {
+    padding-left: 2.5em;
+    margin-bottom: 1.25em;
+}
+
+ul li.tick:before {
+    font-family: fontawesome;
+    content: "\f00c";
+    color: #00b6ba;
+    width: 1em;
+}
+
+ol li.bigger {
+    font-size: 1.125em;
+}
+
+blockquote {
+    margin: 0 0 2rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+blockquote:before {
+    content: '';
+    display: block;
+    width: 3.125rem;
+    padding-top: 0.3125rem;
+    margin: 2rem 0;
+    background-color: #02a6ae;
+}
+
+/** Buttons - Primary **/
+button,
+.btn {
+    position: relative;
+    font-weight: 500;
+    display: block;
+    margin: 0 0 0.625rem 0;
+    min-width: 49%;
+    color: #fff;
+    background: #02a6ae;
+    border: 0.1875rem solid #02a6ae;
+    outline: none;
+    padding: 0.6875em 0;
+    text-align: center;
+    font-size: 1em;
+    cursor: pointer;
+    float: left;
+    text-decoration: none;
+    vertical-align: middle;
+    font-family: inherit; 
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+button:before,
+.btn:before,
+.cta-link:before {
+    position: relative;
+    font-size: 0.8em;
+    font-family: FontAwesome;
+    content: "\f054";
+    margin-right: 0.5em;
+}
+
+button:nth-child(odd),
+.btn:nth-child(odd) {
+    margin: 0 2% 0.625rem 0; 
+}
+
+button:hover,
+.btn:hover,
+button:focus,
+.btn:focus {
+    background: #00b6ba;
+    border: 0.1875rem solid #00b6ba;
+}
+
+button:active,
+.btn:active {
+    color: #00b6ba;
+    background: #fff;
+}
+
+/** Button Styles - Primary **/
+button.dark,
+.btn.dark {
+    background: #00313c; 
+    border: 0.1875rem solid #00313c;
+}
+
+button.dark:hover,
+.btn.dark:hover,
+button.dark:focus,
+.btn.dark:focus {
+    background: #002026;
+    border: 0.1875rem solid #002026;
+}
+
+button.dark:active,
+.btn.dark:active {
+    color: #002026;
+    background: #fff;
+}
+
+button.light,
+.btn.light {
+    color: #a4c3b5;
+    background: #fff; 
+    border: 0.1875rem solid #fff;
+}
+
+button.light:hover,
+.btn.light:hover,
+button.light:focus,
+.btn.light:focus {
+    color: #fff;
+    background: #a4c3b5;
+    border: 0.1875rem solid #a4c3b5;
+}
+
+button.light:active,
+.btn.light:active {
+    color: #a4c3b5;
+    background: #fff;
+    border: 0.1875rem solid #a4c3b5;
+}
+
+.cta-link {
+    cursor: pointer;
+    font-size: 1em;
+    color: #00b6ba;
+    text-decoration: none;
+}
+
+
+/**
+ * Styled Dashes
+ **/
+
+.dash-break {
+    width: 100%;
+    text-align: left;
+    float: left;
+}
+
+.dash-break.pad-top {
+    padding-top: 3.125em;
+}
+
+.dash-break.pad-bottom {
+    padding-bottom: 3.125em;
+}
+
+.dash-break span {
+    float: left;
+    width: 3.125em;
+    padding-top: 0.3125em;
+    background-color: #02a6ae;
+}
+
+.dash-break.set span {
+    background-color: #02a6ae;
+}
+
+.dark-theme .dash-break span {
+    background-color: #fff;
+}
+
+/** Flag Content Holder **/
+.flag-content-item {
+    width: 100%;
+    background-color: #00313c;
+    padding: 1.875em;  
+    margin-top: 1rem;
+}
+
+.flag-content-item .tn_bookmark {
+    margin-right: 1.875em;
+    width: 3.125rem;
+    height: 5em;
+    fill: #0ab1b9;
+    float: left;
+}
+
+.flag-content-item p {
+    float: left;
+    width: calc(100% - (3.125rem + 1.875em));
+    font-size: 1.25em;
+    color: #0ab1b9;
+    font-weight: 600;
+}
+
+@media only screen and (min-width: 53.125em) {  
+    
+    /** Buttons - Primary **/    
+    button,
+    .btn {
+        margin: 0 0.625rem 0.625rem 0;
+        min-width: 9.875rem;
+    }
+
+    button:nth-child(odd),
+    .btn:nth-child(odd) {
+        margin: 0 0.625rem 0.625rem 0; 
+    }
+    
+}

@@ -68,6 +68,40 @@ add_action('admin_init', 'disable_admin_bar');
 
 
 /**
+ * Check to see if the user is logged in
+ * 
+ * If so, add the role name to the body class 
+ * 
+ * @since IndieStudio 1.0.0
+ */
+
+function add_user_type_to_body_class( $classes ){
+    
+    $current_user = wp_get_current_user();
+    
+    if( $current_user->ID != 0 ){
+        
+        /**
+         * No need to add "logged-in". Wordpress already
+         * adds this in the get_body_class filter
+         **/
+        
+        $user = new WP_User( get_current_user_id() ); 
+                
+        //Add user roles to the class list
+        foreach ( $user->roles as $role ){
+            $classes[] = $role;
+        }
+        
+    }
+    
+    return $classes;
+    
+}
+add_filter( 'body_class', 'add_user_type_to_body_class' );
+
+
+/**
  * Add custom css to the login page
  * 
  * Nothing super fancy, but it makes it less WordPress
