@@ -1,4 +1,8 @@
 <?php
+
+if ( ! class_exists( 'WP_Customize_Control' ) )
+    return NULL;
+
 class Google_Font_API_Checker_Section extends WP_Customize_Control {
     public function render_content() { ?>
     

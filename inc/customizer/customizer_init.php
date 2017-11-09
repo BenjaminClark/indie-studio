@@ -9,6 +9,8 @@
  * Here we include custom Customizer classes
  */ 
 
+include ( 'fonts/google_font_functions.php' );
+
 include ( 'fonts/google_font_selector.php' );
 
 include ( 'fonts/google_font_api_checker.php' );
