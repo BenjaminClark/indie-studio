@@ -7,23 +7,34 @@
 function indie_studio_create_dynamic_css(){ ?>
 /** Add dynamic CSS below this line
 /** -------------------------------
-  
 <?php
-//Add fonts from Customizer
-    
-    print_error ( get_google_font_details() );
     
     /**
+     * Get fonts details from Customizer
+     */ 
     
-    $query_args = array(
-        'family' => urlencode( implode( '|', array_unique($font_families) ) ),
-    );
-
-    $fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
-        
-        */
+    $fonts          = get_google_font_details();
+    $heading_font   = $fonts['heading']['name'];
+    $paragraph_font = $fonts['paragraph']['name'];  
     
+    ?>
+    
+html { 
+    font-family: '<?php echo $paragraph_font;?>', Verdana, Geneva, sans-serif;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: '<?php echo $heading_font;?>', Verdana, Geneva, sans-serif;
+} 
+
+<?php    
+}
+
+
 
 /**
  * This function takes PHP generated CSS and 

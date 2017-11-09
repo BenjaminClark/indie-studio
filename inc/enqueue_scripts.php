@@ -79,6 +79,13 @@ function indie_studio_enqueue_scripts(){
     );
     wp_script_add_data( 'html5_shiv', 'conditional', 'lt IE 9' ); //Add the condition to show if below IE9
     
+    
+    /**
+     * Add Google Fonts
+     */
+    
+    wp_enqueue_style( 'google_fonts', get_google_fonts_enqueue_url() );
+    
         
     /**
      * We can only compile JS files that are to be enqueued in the footer

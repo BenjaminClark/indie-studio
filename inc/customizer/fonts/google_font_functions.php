@@ -207,3 +207,35 @@ function get_google_font_details(){
     return $default_fonts;
     
 }
+
+
+/**
+ * Get all font details and turn into Google API URL
+ * to be used with the WordPress enqueuing function
+ */
+
+function get_google_fonts_enqueue_url(){
+   
+    $fonts          = get_google_font_details();    
+    $font_output = array();
+    
+    foreach ( $fonts as $font ){
+        
+        $new_font = $font['name'] . ':';
+        
+        foreach ( $font['variants'] as $variant ){
+            
+            $new_font .= $variant . ',';
+            
+        }
+        
+        $font_output[] = $new_font;
+        
+    }
+    
+    return add_query_arg(
+        array(
+            "family"=>urlencode(implode("|", $font_output)),
+        ),'https://fonts.googleapis.com/css');
+
+}
