@@ -5,8 +5,6 @@
  **/
 
 function indie_studio_create_dynamic_css(){ ?>
-/** Add dynamic CSS below this line
-/** -------------------------------
 <?php
     
     /**
@@ -18,7 +16,6 @@ function indie_studio_create_dynamic_css(){ ?>
     $paragraph_font = $fonts['paragraph']['name'];  
     
     ?>
-    
 html { 
     font-family: '<?php echo $paragraph_font;?>', Verdana, Geneva, sans-serif;
 }
@@ -29,7 +26,16 @@ h3,
 h4,
 h5 {
     font-family: '<?php echo $heading_font;?>', Verdana, Geneva, sans-serif;
+    color: <?php get_theme_mod('indie_studio_heading_text_colour', '#484848'); ?>;
 } 
+
+p, li, a {
+    color: <?php echo get_theme_mod('indie_studio_paragraph_text_colour', '#484848');?>;
+}
+
+body {
+    background-color: <?php echo get_theme_mod('indie_studio_background_colour', '#ffffff');?>;
+}
 
 <?php    
 }

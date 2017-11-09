@@ -2,6 +2,11 @@
 
 /**
  * Get the location of the Google Fonts cache
+ * 
+ * @return string Returns the url for the Google Fonts cache file
+ *    
+ * @TODO This "could" be turned into a WordPress option, however this may
+ * be very heavy. Seems more sensible to keep as a txt.
  */ 
 
 function get_google_fonts_cache_file(){
@@ -19,6 +24,9 @@ function get_google_fonts_cache_file(){
 
 /**
  * Return the selected font
+ * 
+ * @param  array $font Google font array from JSON
+ * @return array Returns the font array from the cached file
  */
 
 function get_font_from_cache( $font ){
@@ -59,6 +67,12 @@ function get_font_from_cache( $font ){
 }
 
 
+/**
+ * Returns a properly formatted Google font family name
+ * 
+ * @param  array $font Google font array from JSON
+ * @return mixed Return the font family name, or false
+ */
 
 function get_font_family_name( $font ){
     
@@ -129,6 +143,11 @@ function get_font_variations( $required, $font ){
     
 }
 
+
+/**
+ * Sets up font defaults, as well as gets any user selected fonts
+ */
+
 function get_google_font_details(){
     
     /**
@@ -187,8 +206,6 @@ function get_google_font_details(){
             $font_array = get_font_from_cache( $font['font'] );
             
             if ( $font_array ){
-                
-                
                 
                 //Overwrite default font family name
                 $default_fonts[ $font['type'] ]['name'] = get_font_family_name( $font_array );

@@ -23,7 +23,7 @@ function hex2rgb($hex) {
 /**
  * Get RGBA colour from HEX
  * @param  string $hex   Hex colour to be converted
- * @param  int $alpha Value between 0 - 1 for opacity
+ * @param  string $alpha Value between 0 - 1 for opacity
  * @return string  RGBA string
  */
 

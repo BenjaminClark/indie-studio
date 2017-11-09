@@ -1,0 +1,25 @@
+/** Fonts **/
+/* At this point we set all fonts at PX size, then in the rest of the doc use Em, and Rem */
+
+html { 
+    font-size: 16px; 
+    box-sizing: border-box; 
+}
+
+body { 
+    font-size: 1em; 
+    font-weight: 400; 
+}
+
+
+/** Links **/
+
+h1 a, 
+h2 a, 
+h3 a, 
+h4 a, 
+h5 a,
+p a:hover,
+p a:focus {
+    opacity: 0.65;
+}
