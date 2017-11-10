@@ -4,10 +4,12 @@
  * these PHP values.
  **/
 
-var ajaxUrl             = indie_studio_ajax.ajax_url,
-    security            = indie_studio_ajax.security,
-    baseURL             = indie_studio_ajax.base_url,
-    imgURL              = indie_studio_ajax.img_url;
+//FYI these are the localized values
+
+//indie_studio_ajax.ajax_url;
+//indie_studio_ajax.security;
+//indie_studio_ajax.base_url;
+//indie_studio_ajax.img_url;
 
     
 var allowDebug          = true;

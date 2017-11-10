@@ -68,7 +68,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
         //Set content to empty
         $content = false;
         
-        if(file_exists($fontFile) && $cachetime < filemtime($fontFile)){
+        if( $fontFile && $cachetime < filemtime($fontFile)){
             
             $content = json_decode(file_get_contents($fontFile));
             

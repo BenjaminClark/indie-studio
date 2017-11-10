@@ -53,6 +53,7 @@ $wp_customize->add_control(
     
 $wp_customize->add_setting('indie_studio_heading_font_selector', array(
     'default'	 => '0',
+    'transport'  => 'postMessage',
 ) );
 
 
@@ -68,7 +69,10 @@ $wp_customize->add_control(
     )
 );
 
-$wp_customize->add_setting('indie_studio_paragraph_font_selector');
+$wp_customize->add_setting('indie_studio_paragraph_font_selector', array(
+    'default'	 => '0',
+    'transport'  => 'postMessage',
+) );
 
 $wp_customize->add_control(
     new Google_Font_Dropdown_Custom_Control (

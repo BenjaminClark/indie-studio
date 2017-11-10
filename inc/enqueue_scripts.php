@@ -24,6 +24,8 @@
  */
 function indie_studio_enqueue_scripts(){    
     
+    global $wp_query;
+    
     /**
      * Set up any localisation values
      * 
@@ -175,9 +177,9 @@ function indie_studio_enqueue_scripts(){
     );
         
     $js_to_compile[] = array(
-        'indie_studio_archive', 
-        $JS_theme_dir . 'archive.js', 
-        indie_studio_get_file_version_number( 'indie_studio_archive', $JS_direct_path . 'archive.js' ), 
+        'indie_studio_load_more_posts', 
+        $JS_theme_dir . 'load-more-posts.js', 
+        indie_studio_get_file_version_number( 'indie_studio_load_more_posts', $JS_direct_path . 'load-more-posts.js' ), 
     );
 
     
@@ -396,6 +398,12 @@ function indie_studio_enqueue_customizer_preview(){
         indie_studio_get_file_version_number( 'indie_studio_customizer', $JS_direct_path . 'customizer-preview.js' ), 
         true
     );
+        
+    $localized_value = array (
+        'ajax_url'  => admin_url('admin-ajax.php'), //Standard ajax init
+    );
+    
+    wp_localize_script( 'indie_studio_customizer', 'ajax_customizer', $localized_value );
     
 }
 add_action( 'customize_preview_init', 'indie_studio_enqueue_customizer_preview' );

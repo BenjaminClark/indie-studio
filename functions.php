@@ -47,6 +47,7 @@ include ( 'inc/versioning/version.php' );
 include ( 'inc/versioning/compile.php' );
 
 //Ajax
+include ( 'inc/load_more_posts.php' );
 include ( 'inc/ajax/load_any_post.php' );
 include ( 'inc/ajax/create_post_layout.php' );
 

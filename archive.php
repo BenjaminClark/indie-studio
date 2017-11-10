@@ -12,7 +12,7 @@
  */
 
 get_header(); ?>
-
+   
     <section id="primary">
         <main id="content" role="main">
 
@@ -26,24 +26,27 @@ get_header(); ?>
                 </header><!-- .page-header -->
             
                 <?php rewind_posts(); ?>
-
-                <?php indie_studio_content_nav( 'nav-above' ); ?>
                
-                <?php /* Start the Loop */ ?>
-                <?php while ( have_posts() ) : the_post(); ?>
+                <div id="ajax-post-wrap">
+               
+                    <?php /* Start the Loop */ ?>
+                    <?php while ( have_posts() ) : the_post(); ?>
 
-                    <?php
-                        /* Include the Post-Format-specific template for the content.
-                         * If you want to overload this in a child theme then include a file
-                         * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                         */
-                        get_template_part( 'template-parts/content', get_post_format() );
-                    ?>
+                        <?php
+                            /* Include the Post-Format-specific template for the content.
+                             * If you want to overload this in a child theme then include a file
+                             * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                             */
+                            get_template_part( 'template-parts/content', get_post_format() );
+                        ?>
 
-                <?php endwhile;
+                    <?php endwhile; ?>
 
-                indie_studio_content_nav( 'nav-below' );
-        
+                </div>
+               
+                <?php 
+                indie_studio_content_nav( 'nav-below', 'load-more' );
+            
             } else {
             
 				get_template_part( 'template-parts/post/content', 'none' );
@@ -52,7 +55,6 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	<?php get_sidebar(); ?>
 </div><!-- .wrap -->
 
 <?php get_footer();

@@ -20,6 +20,71 @@
 	} );
     
     
+    //Update Google Fonts
+	customize( 'indie_studio_heading_font_selector', function( value ) {
+        value.bind( function( newval ) {    
+            $.ajax({
+                type       : "POST",
+                url        : ajax_customizer.ajax_url,
+                dataType   : "json",
+                data       : ({ 
+                    action: 'google_fonts_customizer_preview', 
+                    font: newval, 
+                    location: 'heading',
+                }),
+                success: (function(response) {                       
+                    addGoogleFont(response.url, response.location);
+                    updateCssFontFamilies(response.family, response.location);
+                }),
+                fail: (function( jqXHR ) {
+                    console.log(jqXHR);
+                }),
+            });
+        } );
+	} );
+    
+	customize( 'indie_studio_paragraph_font_selector', function( value ) {  
+        value.bind( function( newval ) {            
+            $.ajax({
+                type       : "POST",
+                url        : ajax_customizer.ajax_url,
+                dataType   : "json",
+                data       : ({ 
+                    action: 'google_fonts_customizer_preview', 
+                    font: newval, 
+                    location: 'paragraph',
+                }),
+                success: (function(response) {                      
+                    addGoogleFont(response.url, response.location);
+                    updateCssFontFamilies(response.family, response.location);
+                }),
+                fail: (function( jqXHR ) {
+                    console.log(jqXHR);
+                })
+            });            
+        } );
+	} );
+    
+    
+    function addGoogleFont(url, location) {
+        $('#dynamic-google-font-' + location).remove();
+
+        $("head").append("<link id='dynamic-google-font-" + location + "' href='" + url + "' rel='stylesheet' type='text/css'>");
+    }
+    
+    function updateCssFontFamilies(family, location) {
+        $('#dynamic-google-font-style-' + location).remove();
+        
+        if( location == 'heading' ){
+            $("head").append("<style id='dynamic-google-font-style-" + location + "'>h1,h2,h3,h4,h5 { font-family: '" + family + "', Verdana, Geneva, sans-serif; } </style>");
+        }
+        
+        if( location == 'paragraph' ){
+            $("head").append("<style id='dynamic-google-font-style-" + location + "'>p, li, a { font-family: '" + family + "', Verdana, Geneva, sans-serif; } </style>");
+        }
+    }
+            
+    
 	//Update the headings in real time...
 	customize( 'indie_studio_heading_text_colour', function( value ) {
 		value.bind( function( newval ) {            
@@ -34,5 +99,6 @@
 			$( 'p, a, li' ).css( 'color', newval );
 		} );
 	} );
-        
+    
+    
 } )( jQuery );

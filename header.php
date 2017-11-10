@@ -32,9 +32,10 @@
         
     /**
      * Custom Header Scripts
-     * @todo Add Customiser Header Scripts
      */
 
+    echo get_theme_mod('indie_studio_scripts_header', '');
+    
     ?>
     
 </head>

@@ -32,7 +32,7 @@
         
     <?php wp_footer();?>
     
-    <?php echo get_field('footer_scripts', 'option'); ?>
+    <?php echo get_theme_mod('indie_studio_scripts_footer', ''); ?>
  
 </body>
 </html>

@@ -29,12 +29,12 @@ function get_google_fonts_cache_file(){
  * @return array Returns the font array from the cached file
  */
 
-function get_font_from_cache( $font ){
+function get_font_from_cache( $font = null ){
     
     $fontFile = get_google_fonts_cache_file();
     
-    if ( $fontFile ){
-    
+    if ( $fontFile && $font ){
+            
         $content = json_decode( file_get_contents( $fontFile ) );
 
         if ( isset ( $content->error ) ) {
@@ -68,7 +68,7 @@ function get_font_from_cache( $font ){
 
 
 /**
- * Returns a properly formatted Google font family name
+ * Returns font family name
  * 
  * @param  array $font Google font array from JSON
  * @return mixed Return the font family name, or false
@@ -77,10 +77,8 @@ function get_font_from_cache( $font ){
 function get_font_family_name( $font ){
     
     if ( isset ( $font->family ) ) {
-                
-        $family_name = str_replace( ' ', '+', $font->family );
-        
-        return $family_name;
+                        
+        return $font->family;
         
     }
     
@@ -256,3 +254,42 @@ function get_google_fonts_enqueue_url(){
         ),'https://fonts.googleapis.com/css');
 
 }
+
+
+/**
+ * Get the font details to preview in the customizer
+ * 
+ * @TODO First font in list doesnt get previewed. Not super important. Put on backburner
+ */
+
+function google_fonts_customizer_preview(){
+    
+    $font       = ( isset($_POST['font']) ) ? $_POST['font'] : false;
+    $location   = ( isset($_POST['location']) ) ? $_POST['location'] : false;
+                
+    if ( $location ){
+        
+        $retrieved_font = get_font_from_cache( $font );
+                
+        //Does font exist?
+        if ( $retrieved_font ){                    
+                                
+            $font_array = array(
+                'location'  => $location,
+                'url'       => add_query_arg( array(
+                                    "family"=>urlencode( get_font_family_name( $retrieved_font ) ),
+                            ),'https://fonts.googleapis.com/css'),
+                'family'    => get_font_family_name( $retrieved_font ),
+            );
+            
+            die ( json_encode ( $font_array ) );
+            
+        }
+        
+    }
+    
+    die( false );
+    
+}
+add_action('wp_ajax_google_fonts_customizer_preview', 'google_fonts_customizer_preview');
+add_action('google_fonts_customizer_preview', 'google_fonts_customizer_preview');

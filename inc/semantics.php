@@ -272,7 +272,7 @@ if ( ! function_exists( 'indie_studio_content_nav' ) ) {
 	 * @since IndieStudio 1.0.0
 	 */
     
-	function indie_studio_content_nav( $nav_id ) {
+	function indie_studio_content_nav( $nav_id, $load_more = null ) {
 		global $wp_query;
 
 		?>
@@ -289,23 +289,42 @@ if ( ! function_exists( 'indie_studio_content_nav' ) ) {
 
 			} elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) { // navigation links for home, archive, and search pages
 
-                if ( get_next_posts_link() ) { ?>
+                if ( get_previous_posts_link() ) { ?>
                 
-                    <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav"><i class="fa fa-angle-left" aria-hidden="true"></i></span> Older posts', indie_studio_text_domain() ) ); ?></div>
+                    <div class="nav-previous"><?php previous_posts_link( __( '<span class="meta-nav"><i class="fa fa-angle-left" aria-hidden="true"></i></span> Older posts', indie_studio_text_domain() ) ); ?></div>
                 
                 <?php } ?>
 
-                <?php if ( get_previous_posts_link() ) { ?>
+                <?php if ( get_next_posts_link() ) { ?>
                 
-                    <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav"><i class="fa fa-angle-right" aria-hidden="true"></i></span>', indie_studio_text_domain() ) ); ?></div>
+                    <div class="nav-next"><?php next_posts_link( __( 'Newer posts <span class="meta-nav"><i class="fa fa-angle-right" aria-hidden="true"></i></span>', indie_studio_text_domain() ) ); ?></div>
                 
                 <?php } ?>
 
 		    <?php } ?>
 
 		</nav>
+		
 		<?php
-	
+	    /** 
+         * If the load more button is required
+         * 
+         * Only include the button holder, the button will be added with
+         * JS and the above navigation removed. This allows elegant fallback
+         * if a user does not have javascript enabled
+         **/
+        
+        if ( $load_more && $wp_query->max_num_pages > 1 && get_next_posts_link() ) { ?>
+            
+            <div id="load-more-wrap">
+            
+                <input id='query' type='hidden' value='<?php echo json_encode( array( 'query' => $wp_query->query ) ) ;?>'>
+               
+                <?php indie_studio_load_more_button( $button_text = 'Load More' );?>
+                
+            </div>
+            
+        <?php }
         
     } // indie_studio_content_nav
     
