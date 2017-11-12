@@ -37,14 +37,14 @@ get_header(); ?>
 
                     endwhile; // end of the loop. 
 
-                    indie_studio_content_nav( 'nav-below', 'load-more' );
-
                     ?>
 
                 </div>
                    
                 <?php
-                    
+                                       
+                indie_studio_content_nav( 'nav-below', 'load-more' );
+                                       
             } else {
                 
                 get_template_part( 'template-parts/post/content', get_post_format() );

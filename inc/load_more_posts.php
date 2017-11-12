@@ -59,13 +59,13 @@ function indie_studio_load_more_posts() {
         
         //Are there more posts to load?
         $total_posts_per_page =  get_option( 'posts_per_page' );
-        $num_of_posts = $posts->post_count;
-        $num_of_pages = $num_of_posts / $total_posts_per_page;
+        $num_of_posts = $query->found_posts;
+        $num_of_pages = round( $num_of_posts / $total_posts_per_page );
         
-        
+
         //If the total number of pages, is greater than the current page
         //show the load more button
-        if ( $num_of_pages > $_POST['paged'] ){
+        if ( $num_of_pages > $args['paged'] ){
             $return['load_more'] = true;
         }
 
@@ -96,9 +96,9 @@ function indie_studio_load_more_posts() {
             wp_reset_postdata();
         }
         
-        $erturn['html'] = ob_get_clean();
+        $return['html'] = trim( preg_replace('/\s+/', ' ', ob_get_clean() ) );
         
-        die ( json_encode ( trim( preg_replace('/\s+/', ' ', $html ) ) ) );
+        die ( json_encode ($return ) );
         
     }
 
@@ -108,5 +108,3 @@ function indie_studio_load_more_posts() {
 
 add_action('wp_ajax_indie_studio_load_more_posts', 'indie_studio_load_more_posts');
 add_action('wp_ajax_nopriv_indie_studio_load_more_posts', 'indie_studio_load_more_posts');
-
-        <button id="load-more-posts" class="load-more-posts-button" data-paged="<?php echo esc_attr__( $paged, indie_studio_text_domain() );?>" data-="<?php echo $wp_query->max_num_pages;?>" data-total-posts="<?php echo $wp_query->found_posts;?>" data-query="<?php echo json_encode ( array ( 'query' => $wp_query->query ) ) ;?>" style="opacity:0;"><?php echo esc_html__( $button_text, indie_studio_text_domain() );?></button>

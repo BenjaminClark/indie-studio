@@ -68,8 +68,8 @@ function postsLoadFunction(response){
             //Loop through children in fake div
             //Display as none, add to postreturned div, fade in
             
-            for( i=0; i< articles.html.length; i++ ){
-                var post = articles.html[i];
+            for( i=0; i< articles.length; i++ ){
+                var post = articles[i];
                 post.style.display = 'none';
                 ajaxPostWrap.appendChild(post);
                 fade({el:post,type:'in',duration: 500});
@@ -81,6 +81,8 @@ function postsLoadFunction(response){
         } else {
             load_more_error('in');
         }
+        
+        fade({el:loadMorePosts,type:'in',duration: 500}); 
 
         if( response.load_more ){
             
