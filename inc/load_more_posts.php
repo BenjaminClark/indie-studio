@@ -16,9 +16,8 @@ function indie_studio_load_more_button( $button_text = '' ){
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
         ?>
-        <input id='query' type='hidden' value='<?php echo json_encode ( array ( 'query' => $wp_query->query ) ) ;?>'>
-        <div id="load-more-posts-error" class="load-more-posts-error error" style="opacity:0;"><?php echo esc_html__( 'Something has gone wrong. Please try again.', indie_studio_text_domain() );?></div>
-        <button id="load-more-posts" class="load-more-posts-button" data-paged="<?php echo esc_attr__( $paged, indie_studio_text_domain() );?>" data-max-pages="<?php echo $wp_query->max_num_pages;?>" data-total-pages="<?php echo $wp_query->found_posts;?>" style="opacity:0;"><?php echo esc_html__( $button_text, indie_studio_text_domain() );?></button>
+        <div id="load-more-posts-error" class="load-more-posts-error error smooth"><?php echo esc_html__( 'Something has gone wrong. Please try again.', indie_studio_text_domain() );?></div>
+        <button id="load-more-posts" class="load-more-posts-button" data-paged="<?php echo esc_attr__( $paged, indie_studio_text_domain() );?>" data-query="<?php echo json_encode ( array ( 'query' => $wp_query->query ) ) ;?>" style="opacity:0;"><?php echo esc_html__( $button_text, indie_studio_text_domain() );?></button>
     <?php
     }
 }
@@ -26,8 +25,6 @@ function indie_studio_load_more_button( $button_text = '' ){
 
 /**
  * Ajax handler for load more posts
- * 
- * @TODO sanitise POST values before use
  */
 
 function indie_studio_load_more_posts() {
@@ -43,7 +40,15 @@ function indie_studio_load_more_posts() {
 
         global $post;
         
-        $args = (array) json_decode(stripslashes( $_POST['query'] ), true );
+        
+        $return = array(
+            'html'      => '',
+            'load_more' => false
+        );
+        
+        
+        // Get query from JS, turn back into array, sanitize
+        $args = (array) clean_all( json_decode( stripslashes( $_POST['query'] ), true ) );
         
         $args['paged'] = sanitize_text_field( $_POST['paged'] );
         
@@ -51,23 +56,49 @@ function indie_studio_load_more_posts() {
         
         $posts = $query->get_posts();
         
-        die( json_encode($posts) );
+        
+        //Are there more posts to load?
+        $total_posts_per_page =  get_option( 'posts_per_page' );
+        $num_of_posts = $posts->post_count;
+        $num_of_pages = $num_of_posts / $total_posts_per_page;
+        
+        
+        //If the total number of pages, is greater than the current page
+        //show the load more button
+        if ( $num_of_pages > $_POST['paged'] ){
+            $return['load_more'] = true;
+        }
+
+        
+        /**
+         * Capture all that post template goodness
+         **/ 
         
         ob_start();
         
         foreach( $posts as $post ) {
             setup_postdata( $post );
             
-            get_template_part( 'template-parts/content', get_post_format( $post->ID ) );
+            /**
+             * Here we use the get_template_part to repeatedly create each post we need.
+             * 
+             * This does not feel 100% right, but it eliminates the need repeating the template code.
+             *
+             * A soloution to come back to, might be to make a module like function
+             * to pass template_parts, and ajax requests to. However, this seems like just 
+             * rewriting the template_part functionality.
+             * 
+             * @TODO Revisit
+             **/ 
+            
+            get_template_part( 'template-parts/post/content', get_post_format( $post->ID ) );
             
             wp_reset_postdata();
         }
         
-        $html = ob_get_clean();
+        $erturn['html'] = ob_get_clean();
         
-        write_log($html);
-        
-        die ( json_encode ( trim(preg_replace('/\s+/', ' ', $html ) ) ) );
+        die ( json_encode ( trim( preg_replace('/\s+/', ' ', $html ) ) ) );
         
     }
 
@@ -77,3 +108,5 @@ function indie_studio_load_more_posts() {
 
 add_action('wp_ajax_indie_studio_load_more_posts', 'indie_studio_load_more_posts');
 add_action('wp_ajax_nopriv_indie_studio_load_more_posts', 'indie_studio_load_more_posts');
+
+        <button id="load-more-posts" class="load-more-posts-button" data-paged="<?php echo esc_attr__( $paged, indie_studio_text_domain() );?>" data-="<?php echo $wp_query->max_num_pages;?>" data-total-posts="<?php echo $wp_query->found_posts;?>" data-query="<?php echo json_encode ( array ( 'query' => $wp_query->query ) ) ;?>" style="opacity:0;"><?php echo esc_html__( $button_text, indie_studio_text_domain() );?></button>

@@ -5,13 +5,11 @@ if ( ajaxPostWrap && loadMorePosts ){
     
     var basicNavAbove   = document.getElementById("nav-above"), 
         basicNavBelow   = document.getElementById("nav-below"), 
-        query           = document.getElementById("query"),
         buttonWrap      = document.getElementById("load-more-wrap"),
+        query           = loadMorePosts.getAttribute('data-query'),
         paged           = loadMorePosts.getAttribute('data-paged'),
-        postPerPage     = loadMorePosts.getAttribute('data-max-pages'),
-        maxPostsNum     = loadMorePosts.getAttribute('data-total-pages'),
-        totalNumPages   = Math.ceil( maxPostsNum / postPerPage );
-
+        morePosts       = loadMorePosts.getAttribute('data-load-more');
+    
     //Hide standard buttons
     if( basicNavAbove ){
         fade({el:basicNavAbove,type:'out',duration: 500});
@@ -28,9 +26,12 @@ if ( ajaxPostWrap && loadMorePosts ){
      **/
     
     //Run on load more click
-    if(loadMorePosts){
+    if( loadMorePosts ){
         
         loadMorePosts.addEventListener("click",function(){
+            
+            //Remove any errors
+            load_more_error('out');
             
             //Fade out load more button  -  Then add loading spinner
             fade({el:loadMorePosts,type:'out',duration: 500,},function(){
@@ -51,58 +52,60 @@ if ( ajaxPostWrap && loadMorePosts ){
 
 function postsLoadFunction(response){
     
-    console.log(response);
-    
-    /**
-    
-    if(response){
-
+    if( response ){
+        
         //Update page counter
-        paged = paged + 1;
+        paged++;
 
         //Check there is result
         if( response.html.length > 0 ){
                                     
-            for (var i=0; i<=response.html.length; i++) {
-                                               
-                if(response.html[i] != undefined){
-                    
-                    //Create a fake div to hold posts - add new html to div
-                    var el = document.createElement( 'div' );
-                    el.innerHTML = response.html[i];
-                    
-                    //Loop through children in fake div
-                    //Display as none, add to postreturned div, fade in
-                    while(el.firstChild) {
-                        var post = el.firstChild;
-                        post.style.display = 'none';
-                        ajaxPostWrap.appendChild(post);
-                        fade({el:post,type:'in',duration: 500});
-                    }
-                    
-                    //Remove fake div
-                    el.remove(); 
-
-                }     
+            //Create a fake div to hold posts - add new html to div
+            var el = document.createElement( 'div' );
+            el.innerHTML = response.html;
+            var articles = el.getElementsByTagName('article');
+            
+            //Loop through children in fake div
+            //Display as none, add to postreturned div, fade in
+            
+            for( i=0; i< articles.html.length; i++ ){
+                var post = articles.html[i];
+                post.style.display = 'none';
+                ajaxPostWrap.appendChild(post);
+                fade({el:post,type:'in',duration: 500});
             }
 
-            //Add load more button
+            //Remove fake div
+            el.remove();            
+            
+        } else {
+            load_more_error('in');
+        }
+
+        if( response.load_more ){
+            
+            //Show the load more button if we have posts to see
             fade({el:loadMorePosts,type:'in',duration: 500});   
             
         }
-
-        //If ajax says we are complete, or all items have been returned, remove all loading spinners/load more buttons
-        if( paged >= totalNumPages ){
-            
-            //Remove load more button, all stockists have loaded
-            fade({el:loadMorePosts,type:'out',duration: 500});   
-            
-        }
         
+    } else {
+        load_more_error('in');
     }
     
-    //No Content
-    ajaxLoadingAnimation(document.getElementById("load-more-wrap"), 'remove');
-**/
-    
+}
+
+
+/**
+ * Show or hide the error message for loading more posts
+ * @param string type "in" / "out"
+ */
+
+function load_more_error( type ){
+    if( type == 'in' || type == 'out' ){
+        var error = document.getElementById("load-more-posts-error");
+        if( type == 'in' && !error.classList.contains("show") || type == 'out' && error.classList.contains("show") ){
+            error.classList.toggle("show");
+        } 
+    }
 }

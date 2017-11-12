@@ -142,7 +142,7 @@ function fade(options,callback){
 		duration:400,
 		display:'block'
 	}, options)
-
+    
 	var isIn = options.type === 'in',
 		opacity = isIn ? 0 : 1,
 		interval = 50,
@@ -152,7 +152,7 @@ function fade(options,callback){
 		options.el.style.display = options.display
 		options.el.style.opacity = opacity
 	}
-
+    
 	var fading = window.setInterval(function() {
 		opacity = isIn ? opacity + gap : opacity - gap
 		options.el.style.opacity = opacity

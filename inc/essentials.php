@@ -183,6 +183,22 @@ function article_social_sharing($title,$page_url){
 }
 
 
+/**
+ * Loop through a multidimentional array and clean each value
+ */
+
+function clean_all($arr){
+    foreach($arr as $key=>$value){
+        if(is_array($value)){
+            $arr[$key] = clean_all($value);
+        } else {
+            $arr[$key] = strip_tags($value);
+        }
+    }
+    return $arr;
+}
+
+
 /** 
  * This function helps display where abouts in an archive/post list the user is.
  * 
