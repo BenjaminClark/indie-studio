@@ -317,8 +317,6 @@ if ( ! function_exists( 'indie_studio_content_nav' ) ) {
         if ( $load_more && $wp_query->max_num_pages > 1 && get_next_posts_link() ) { ?>
             
             <div id="load-more-wrap">
-            
-                <input id='query' type='hidden' value='<?php echo json_encode( array( 'query' => $wp_query->query ) ) ;?>'>
                
                 <?php indie_studio_load_more_button( $button_text = 'Load More' );?>
                 

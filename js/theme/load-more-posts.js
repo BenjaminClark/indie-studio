@@ -37,11 +37,9 @@ if ( ajaxPostWrap && loadMorePosts ){
                 ajaxLoadingAnimation( document.getElementById("load-more-wrap"), 'prepend' );
             });
             
-            console.log(JSON.stringify(query));
-            
             var data = {
                 action      : 'indie_studio_load_more_posts',
-                query       : JSON.stringify(query),
+                query       : query.value,
                 paged       : paged,
             };
                                     
@@ -54,6 +52,8 @@ if ( ajaxPostWrap && loadMorePosts ){
 function postsLoadFunction(response){
     
     console.log(response);
+    
+    /**
     
     if(response){
 
@@ -103,7 +103,6 @@ function postsLoadFunction(response){
     
     //No Content
     ajaxLoadingAnimation(document.getElementById("load-more-wrap"), 'remove');
-
+**/
     
 }
-

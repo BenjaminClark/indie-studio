@@ -16,6 +16,7 @@ function indie_studio_load_more_button( $button_text = '' ){
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
         ?>
+        <input id='query' type='hidden' value='<?php echo json_encode ( array ( 'query' => $wp_query->query ) ) ;?>'>
         <div id="load-more-posts-error" class="load-more-posts-error error" style="opacity:0;"><?php echo esc_html__( 'Something has gone wrong. Please try again.', indie_studio_text_domain() );?></div>
         <button id="load-more-posts" class="load-more-posts-button" data-paged="<?php echo esc_attr__( $paged, indie_studio_text_domain() );?>" data-max-pages="<?php echo $wp_query->max_num_pages;?>" data-total-pages="<?php echo $wp_query->found_posts;?>" style="opacity:0;"><?php echo esc_html__( $button_text, indie_studio_text_domain() );?></button>
     <?php
@@ -25,6 +26,8 @@ function indie_studio_load_more_button( $button_text = '' ){
 
 /**
  * Ajax handler for load more posts
+ * 
+ * @TODO sanitise POST values before use
  */
 
 function indie_studio_load_more_posts() {
@@ -40,13 +43,15 @@ function indie_studio_load_more_posts() {
 
         global $post;
         
-        $args = (array) $_POST['query'];
+        $args = (array) json_decode(stripslashes( $_POST['query'] ), true );
         
         $args['paged'] = sanitize_text_field( $_POST['paged'] );
         
         $query = new WP_Query( $args );
         
         $posts = $query->get_posts();
+        
+        die( json_encode($posts) );
         
         ob_start();
         
