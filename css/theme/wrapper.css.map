@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,+BAA+B;AAC/B,uFAAuF;AACvF,oDAAoD;AAEpD;IACK;EACD,MAAM,EAAE,IAAI;;AAGhB,IAAK;EACD,QAAQ,EAAE,QAAQ",
-"sources": ["wrapper.scss"],
-"names": [],
-"file": "wrapper.css"
-}

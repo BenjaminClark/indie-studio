@@ -1,0 +1,122 @@
+/** General Wrappers & Grid **/
+/* Here we set the page contraints and grid framework to fit all the elements inside */
+/* This includes header, footer, page-wrapper ect */
+
+html, 
+body {
+    height: 100%;    
+}
+
+body {
+    position: relative;
+}
+
+
+/** Keep footer at bottom **/
+
+#footer-pusher {
+    position: relative;
+    min-height: 100%;
+}
+
+#page-wrapper {
+
+}
+
+footer {
+    position: relative;
+    width: 100%;
+}
+
+
+/** This pushes all content to the same center position **/
+
+.page-inner-wrap {
+    width: 100%;
+    padding: 0 1.125em;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 30em) {  /** 480px **/
+    
+    
+}
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 47.875em) {  /** 766px **/
+        
+    .logged-in header {
+        top: 32px;
+    }
+    
+}
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 62em) {  /** 992px **/
+              
+            
+}
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 75em) {  /** 1200px **/
+      
+    .page-inner-wrap {
+        width: 73em;
+    }
+         
+}
+
+
+/** IMac **/
+@media only screen and (min-width: 79.375em) {  /** 1270px **/
+    
+    .page-inner-wrap {
+        width: 76em;
+    }
+         
+}
+
+
+@media only screen and (min-width: 90em) {
+    
+    .page-inner-wrap {
+        width: 86em;
+    }
+     
+}
+
+
+/** Pauls Screen - No bigger than this! **/
+@media only screen and (min-width: 100em) {  /** 1600px **/
+        
+    .page-inner-wrap {
+        width: 98em;
+    }
+    
+}
+
+
+/** Round up wrappers **/
+@media only screen and (min-width: 102em) {
+    
+    .page-inner-wrap {
+        width: 100em;
+    }
+    
+}
+
+
+/** Round up wrappers **/
+@media only screen and (min-width: 140em) {
+    
+    .page-inner-wrap {
+        width: 137.5em;
+    }
+    
+}

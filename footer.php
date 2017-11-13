@@ -18,9 +18,9 @@
     <footer id="colophon" role="contentinfo">
 
         <div id="site-publisher" class="page-inner-wrap" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-        
-			<meta itemprop="name" content="<?php echo get_bloginfo( 'name', 'display' ); ?>" />
-			<meta itemprop="url" content="<?php echo home_url( '/' ); ?>" />
+
+            <meta itemprop="name" content="<?php echo get_bloginfo( 'name', 'display' ); ?>" />
+            <meta itemprop="url" content="<?php echo home_url( '/' ); ?>" />
 
             <p class="copyright">Website &copy; <?php echo indie_studio_name() . ' ' . date('Y'); ?></p>
 

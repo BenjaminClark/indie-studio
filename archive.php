@@ -13,22 +13,24 @@
 
 get_header(); ?>
    
-    <section id="primary">
-        <main id="content" role="main">
+<section id="primary">
+    <main id="content" role="main">
+
+        <div class="page-inner-wrap">
 
             <?php if ( have_posts() ) { ?>
-               
+
                 <header class="page-header">
                     <?php
                         the_archive_title( '<h1 class="page-title">', '</h1>' );
                         the_archive_description( '<div class="taxonomy-description">', '</div>' );
                     ?>
                 </header><!-- .page-header -->
-            
+
                 <?php rewind_posts(); ?>
-               
+
                 <div id="ajax-post-wrap">
-               
+
                     <?php /* Start the Loop */ ?>
                     <?php while ( have_posts() ) : the_post(); ?>
 
@@ -37,24 +39,26 @@ get_header(); ?>
                              * If you want to overload this in a child theme then include a file
                              * called content-___.php (where ___ is the Post Format name) and that will be used instead.
                              */
-                            get_template_part( 'template-parts/content', get_post_format() );
+                            get_template_part( 'template-parts/post/content', get_post_format() );
                         ?>
 
                     <?php endwhile; ?>
 
                 </div>
-               
+
                 <?php 
                 indie_studio_content_nav( 'nav-below', 'load-more' );
-            
+
             } else {
-            
-				get_template_part( 'template-parts/post/content', 'none' );
+
+                get_template_part( 'template-parts/post/content', 'none' );
 
             } ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
-</div><!-- .wrap -->
+        </div>
+
+    </main><!-- #main -->
+</section><!-- #primary -->
+
 
 <?php get_footer();

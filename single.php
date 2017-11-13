@@ -16,22 +16,26 @@ get_header(); ?>
     <section id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
 
-            <?php 
-            while ( have_posts() ) : the_post();
+           <div class="page-inner-wrap">
+           
+                <?php 
+                while ( have_posts() ) : the_post();
 
-                get_template_part( 'template-parts/post/content', get_post_format() );
+                    get_template_part( 'template-parts/post/content', get_post_format() );
 
-                // If comments are open or we have at least one comment, show the comment template
-                if ( comments_open() || get_comments_number() != 0 ){
-                    comments_template( '', true );
-                }
+                    // If comments are open or we have at least one comment, show the comment template
+                    if ( comments_open() || get_comments_number() != 0 ){
+                        comments_template( '', true );
+                    }
 
-                /**
-                 * @TODO Add attractive post navigation.
-                 **/ 
+                    /**
+                     * @TODO Add attractive post navigation.
+                     **/ 
 
-            endwhile; // end of the loop. 
-            ?>
+                endwhile; // end of the loop. 
+                ?>
+                
+            </div>
 
         </main><!-- #content -->
     </section><!-- #primary -->

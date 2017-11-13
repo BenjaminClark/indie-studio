@@ -1,0 +1,327 @@
+/** Fonts **/
+/* At this point we set all fonts at PX size, then in the rest of the doc use Em, and Rem */
+
+html { 
+    font-size: 16px; 
+    box-sizing: border-box; 
+}
+
+body { 
+    font-size: 1em; 
+    font-weight: 400; 
+}
+
+
+/** Links **/
+
+h1 a, 
+h2 a, 
+h3 a, 
+h4 a, 
+h5 a,
+p a:hover,
+p a:focus {
+    opacity: 0.65;
+}
+
+
+/* These font sizes are dictated by the title size used */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: #000;   
+    margin-bottom: 0.875rem;
+}
+
+p, 
+li {
+    color: #363535;   
+    margin-bottom: 0.875rem;
+}
+
+.title-1,
+.title-2,
+.title-3,
+.title-4,
+.title-5 {
+    color: #000;
+    text-transform: uppercase;
+    margin-bottom: 0.4em;
+}
+
+blockquote p {
+    font-size: 2em;
+    line-height: 1em; 
+    font-weight: 800; 
+    margin-bottom: 0;
+}
+
+p.author {
+    color: #000;
+    font-weight: 800;
+    font-size: 1.25em;
+    text-transform: uppercase;
+}
+
+h1,
+p.title-1,
+h1.title-1,
+h2.title-1,
+h3.title-1,
+h4.title-1,
+h5.title-1 {
+    font-size: 2em;
+    line-height: 1em; 
+    font-weight: 800;
+}
+
+h2,
+p.title-2,
+h1.title-2,
+h2.title-2,
+h3.title-2,
+h4.title-2,
+h5.title-2 {
+    font-size: 1.5em;
+    line-height: 1em; 
+    font-weight: 800;
+}
+
+h3,
+p.title-3,
+h1.title-3,
+h2.title-3,
+h3.title-3,
+h4.title-3,
+h5.title-3 {
+    font-size: 1.25em;
+    line-height: 1em;  
+    font-weight: 800;
+}
+
+h4,
+p.title-4,
+h1.title-4,
+h2.title-4,
+h3.title-4,
+h4.title-4,
+h5.title-4 {
+    font-size: 1.25em;
+    line-height: 1em;  
+    font-weight: 800;
+}
+
+h5
+p.title-5,
+h1.title-5,
+h2.title-5,
+h3.title-5,
+h4.title-5,
+h5.title-5 {
+    font-size: 1.125em;
+    line-height: 1em; 
+    font-weight: 800;   
+}
+
+p.intro {
+    font-size: 1.25em;
+    line-height: 1.125em;
+    margin-bottom: 1.5em;  
+}
+
+strong, bold { 
+    font-weight: 700;
+}
+
+em, i { 
+    font-style: italic; 
+}
+
+ul, ol { 
+    margin: 0; 
+}
+
+ol { 
+    list-style-type: decimal; 
+}
+
+.wysiwyg ul {
+    margin-bottom: 0.625em;
+}
+
+.wysiwyg ol li,
+.wysiwyg ul li { 
+    list-style: none;
+    font-size: 1.125em;
+    padding-left: 1.25em;
+    position: relative;
+    margin-bottom: 0.25em;
+}
+
+.wysiwyg ul li:before {
+    position: absolute;
+    font-family: fontawesome;
+    content: "\f111";
+    color: #363535;
+    font-size: 0.5em;
+    margin-left: -2em;
+    margin-bottom: 0.5em;
+}
+
+.wysiwyg ol li {
+    margin-bottom: 2rem;
+    padding-left: 2.5rem;
+} 
+
+.wysiwyg ol {
+    counter-reset: customCount;
+}
+
+.wysiwyg ol > li {
+	counter-increment: customCount;
+}
+
+.wysiwyg ol li:before {
+    position: absolute;
+    content: counter(customCount); 
+    left: 0;
+    top: 0;
+    text-align: center;
+    width: 0.9375em;
+    color: #363535;
+}
+
+.wysiwyg .alignleft, img.alignleft {
+	margin-right: 1.5em;
+	display: inline;
+	float: left;
+}
+
+.wysiwyg .alignright, img.alignright {
+	margin-left: 1.5em;
+	display: inline;
+    float: right;
+}
+
+.wysiwyg .aligncenter, img.aligncenter {
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	clear: both;
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 30em) {  /** 480px **/
+    
+    h1,
+    p.title-1,
+    h1.title-1,
+    h2.title-1,
+    h3.title-1,
+    h4.title-1,
+    h5.title-1 {
+        font-size: 2em;
+        line-height: 1em; 
+        font-weight: 700;
+    }
+
+    h2,
+    p.title-2,
+    h1.title-2,
+    h2.title-2,
+    h3.title-2,
+    h4.title-2,
+    h5.title-2 {
+        font-size: 1.875em;
+        line-height: 1em; 
+        font-weight: 700;
+    }
+        
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 50em) {  /** 800px **/
+
+    h1,
+    p.title-1,
+    h1.title-1,
+    h2.title-1,
+    h3.title-1,
+    h4.title-1,
+    h5.title-1 {
+        font-size: 2.25em;
+    }
+            
+    p.intro {
+        font-size: 1.5625em;
+    }
+    
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 64em) {  /** 992px **/
+
+    h1,
+    p.title-1,
+    h1.title-1,
+    h2.title-1,
+    h3.title-1,
+    h4.title-1,
+    h5.title-1 {
+        font-size: 2.325em;
+    }
+                    
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 75em) {  /** 1200px **/
+        
+    h1,
+    p.title-1,
+    h1.title-1,
+    h2.title-1,
+    h3.title-1,
+    h4.title-1,
+    h5.title-1 {
+        font-size: 2.5em;
+    }
+            
+    .blockquote,
+    blockquote p {
+        margin: 1.5em 0;
+    }
+    
+    .wysiwyg p,
+    .wysiwyg ul {
+        margin-bottom: 1.25em;
+    }
+
+    
+}
+
+@media only screen and (min-width: 87.5em) {  /** 1400px **/
+    
+    blockquote p {
+        font-size: 3.5em;
+    }
+        
+    h1,
+    p.title-1,
+    h1.title-1,
+    h2.title-1,
+    h3.title-1,
+    h4.title-1,
+    h5.title-1 {
+        font-size: 2.75em;
+    }
+
+    p,
+    .wysiwyg ol li,
+    .wysiwyg ul li { 
+        font-size: 1.25em;
+    }
+        
+}

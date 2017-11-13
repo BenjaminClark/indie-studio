@@ -30,28 +30,32 @@
        
         <div class="entry-content e-content" itemprop="description articleBody">
            
-            <?php
-            if ( ! is_single() ) {
+           <div class="wysiwyg">
 
-                // If not a single post, highlight the gallery.
-                if ( get_post_gallery() ) {
-                    echo '<div class="entry-gallery">';
-                        echo get_post_gallery();
-                    echo '</div>';
+                <?php
+                if ( ! is_single() ) {
+
+                    // If not a single post, highlight the gallery.
+                    if ( get_post_gallery() ) {
+                        echo '<div class="entry-gallery">';
+                            echo get_post_gallery();
+                        echo '</div>';
+                    };
+
                 };
 
-            };
-           
-            if ( is_single() || ! get_post_gallery()) ) {
-                
-                the_content( __( 'Continue reading', indie_studio_text_domain() ) );
-                wp_link_pages( array( 
-                    'before' => '<div class="page-link">' . __( 'Pages:', indie_studio_text_domain() ), 
-                    'after' => '</div>' 
-                ) ); 
-                
-            }
-            ?>
+                if ( is_single() || ! get_post_gallery()) ) {
+
+                    the_content( __( 'Continue reading', indie_studio_text_domain() ) );
+                    wp_link_pages( array( 
+                        'before' => '<div class="page-link">' . __( 'Pages:', indie_studio_text_domain() ), 
+                        'after' => '</div>' 
+                    ) ); 
+
+                }
+                ?>
+            
+            </div>
             
         </div>
 

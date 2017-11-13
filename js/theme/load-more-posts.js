@@ -95,6 +95,9 @@ function postsLoadFunction(response){
         load_more_error('in');
     }
     
+    //No Content
+    ajaxLoadingAnimation(document.getElementById("load-more-wrap"), 'remove');
+    
 }
 
 

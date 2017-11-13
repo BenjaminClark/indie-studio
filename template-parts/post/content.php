@@ -26,13 +26,17 @@
 	
         <div class="entry-content e-content" itemprop="description articleBody">
            
-            <?php 
-            the_content( __( 'Continue reading', indie_studio_text_domain() ) );
-            wp_link_pages( array( 
-                'before' => '<div class="page-link">' . __( 'Pages:', indie_studio_text_domain() ), 
-                'after' => '</div>' 
-            ) ); 
-            ?>
+           <div class="wysiwyg">
+           
+                <?php 
+                the_content( __( 'Continue reading', indie_studio_text_domain() ) );
+                wp_link_pages( array( 
+                    'before' => '<div class="page-link">' . __( 'Pages:', indie_studio_text_domain() ), 
+                    'after' => '</div>' 
+                ) ); 
+                ?>
+                
+            </div>
             
         </div>
 

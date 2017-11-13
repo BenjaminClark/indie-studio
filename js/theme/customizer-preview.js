@@ -96,7 +96,7 @@
     //Update the paragraph in real time
 	customize( 'indie_studio_paragraph_text_colour', function( value ) {
 		value.bind( function( newval ) {            
-			$( 'p, a, li' ).css( 'color', newval );
+			$( 'p, a, li, label' ).css( 'color', newval );
 		} );
 	} );
     

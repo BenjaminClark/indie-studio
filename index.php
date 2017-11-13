@@ -17,40 +17,44 @@ get_header(); ?>
     
     <section id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
-
-            <?php if ( have_posts() ) { ?>
-                
-                <div id="ajax-post-wrap">
             
-                    <?php while ( have_posts() ) : the_post();
+            <div class="page-inner-wrap">
 
-                        get_template_part( 'template-parts/post/content', get_post_format() );
+                <?php if ( have_posts() ) { ?>
 
-                        // If comments are open or we have at least one comment, show the comment template
-                        if ( comments_open() || get_comments_number() != 0 ){
-                            comments_template( '', true );
-                        }
+                    <div id="ajax-post-wrap">
 
-                        /**
-                         * @TODO Add attractive post navigation.
-                         **/ 
+                        <?php while ( have_posts() ) : the_post();
 
-                    endwhile; // end of the loop. 
+                            get_template_part( 'template-parts/post/content', get_post_format() );
 
-                    ?>
+                            // If comments are open or we have at least one comment, show the comment template
+                            if ( comments_open() || get_comments_number() != 0 ){
+                                comments_template( '', true );
+                            }
 
-                </div>
-                   
-                <?php
-                                       
-                indie_studio_content_nav( 'nav-below', 'load-more' );
-                                       
-            } else {
+                            /**
+                             * @TODO Add attractive post navigation.
+                             **/ 
+
+                        endwhile; // end of the loop. 
+
+                        ?>
+
+                    </div>
+
+                    <?php
+
+                    indie_studio_content_nav( 'nav-below', 'load-more' );
+
+                } else {
+
+                    get_template_part( 'template-parts/post/content', get_post_format() );
+
+                }
+                ?>
                 
-                get_template_part( 'template-parts/post/content', get_post_format() );
-                
-            }
-            ?>
+            </div>
 
         </main><!-- #content -->
     </section><!-- #primary -->

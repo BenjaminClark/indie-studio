@@ -269,16 +269,6 @@ function indie_studio_enqueue_styles(){
         'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css',
         '3.5.2',
     );
-
-    
-    /**
-     * Dynamic CSS
-     */
-    $css_to_compile[] = array(
-        'indie_studio_dynamic', 
-        admin_url('admin-ajax.php').'?action=indie_studio_dynamic_css',
-        1,
-    );
     
     /**
      * Now include all theme components
@@ -289,6 +279,15 @@ function indie_studio_enqueue_styles(){
         'indie_studio_base', 
         $CSS_theme_dir . 'base.css',
         indie_studio_get_file_version_number( 'indie_studio_base', $CSS_direct_path . 'base.css' ),
+    );
+    
+    /**
+     * Dynamic CSS - Add last to overwrite any preset options
+     */
+    $css_to_compile[] = array(
+        'indie_studio_dynamic', 
+        admin_url('admin-ajax.php').'?action=indie_studio_dynamic_css',
+        1,
     );
         
     indie_studio_create_theme_css_js( $css_to_compile, 'css' );

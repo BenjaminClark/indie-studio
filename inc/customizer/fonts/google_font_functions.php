@@ -248,10 +248,7 @@ function get_google_fonts_enqueue_url(){
         
     }
     
-    return add_query_arg(
-        array(
-            "family"=>urlencode(implode("|", $font_output)),
-        ),'https://fonts.googleapis.com/css');
+    return 'https://fonts.googleapis.com/css?family=' . implode("|", $font_output);
 
 }
 

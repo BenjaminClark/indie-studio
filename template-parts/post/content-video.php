@@ -38,30 +38,34 @@
        
         <div class="entry-content e-content" itemprop="description articleBody">
            
-            <?php
-            if ( ! is_single() ) {
+            <div class="wysiwyg">
 
-                // If not a single post, highlight the video file.
-                if ( ! empty( $video ) ) {
-                    foreach ( $video as $video_html ) {
-                        echo '<div class="entry-video">';
-                            echo $video_html;
-                        echo '</div>';
-                    }
+                <?php
+                if ( ! is_single() ) {
+
+                    // If not a single post, highlight the video file.
+                    if ( ! empty( $video ) ) {
+                        foreach ( $video as $video_html ) {
+                            echo '<div class="entry-video">';
+                                echo $video_html;
+                            echo '</div>';
+                        }
+                    };
+
                 };
 
-            };
-           
-            if ( is_single() || empty( $video ) ) {
-                
-                the_content( __( 'Continue reading', indie_studio_text_domain() ) );
-                wp_link_pages( array( 
-                    'before' => '<div class="page-link">' . __( 'Pages:', indie_studio_text_domain() ), 
-                    'after' => '</div>' 
-                ) ); 
-                
-            }
-            ?>
+                if ( is_single() || empty( $video ) ) {
+
+                    the_content( __( 'Continue reading', indie_studio_text_domain() ) );
+                    wp_link_pages( array( 
+                        'before' => '<div class="page-link">' . __( 'Pages:', indie_studio_text_domain() ), 
+                        'after' => '</div>' 
+                    ) ); 
+
+                }
+                ?>
+            
+            </div>
             
         </div>
 

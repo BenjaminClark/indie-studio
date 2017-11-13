@@ -16,7 +16,7 @@ function indie_studio_load_more_button( $button_text = '' ){
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
         ?>
-        <div id="load-more-posts-error" class="load-more-posts-error error smooth"><?php echo esc_html__( 'Something has gone wrong. Please try again.', indie_studio_text_domain() );?></div>
+        <div id="load-more-posts-error" class="load-more-posts-error error smooth"><p><?php echo esc_html__( 'Something has gone wrong. Please try again.', indie_studio_text_domain() );?></p></div>
         <button id="load-more-posts" class="load-more-posts-button" data-paged="<?php echo esc_attr__( $paged, indie_studio_text_domain() );?>" data-query="<?php echo json_encode ( array ( 'query' => $wp_query->query ) ) ;?>" style="opacity:0;"><?php echo esc_html__( $button_text, indie_studio_text_domain() );?></button>
     <?php
     }

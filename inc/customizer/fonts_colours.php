@@ -101,7 +101,7 @@ $wp_customize->add_control(
     new WP_Customize_Color_Control( 
         $wp_customize,  'indie_studio_heading_text_colour', array(
             'settings'  => 'indie_studio_heading_text_colour',
-            'label'	    => __('Heading Text Color', indie_studio_text_domain()),
+            'label'	    => __('Heading Text Colour', indie_studio_text_domain()),
 		    'section'	=> 'indie_studio_fonts_colours_section',
 	   ) 
     ) 
@@ -117,7 +117,40 @@ $wp_customize->add_control(
     new WP_Customize_Color_Control( 
         $wp_customize,  'indie_studio_paragraph_text_colour', array(
             'settings'  => 'indie_studio_paragraph_text_colour',
-            'label'	    => __('Paragraph Text Color', indie_studio_text_domain()),
+            'label'	    => __('Paragraph Text Colour', indie_studio_text_domain()),
+		    'section'	=> 'indie_studio_fonts_colours_section',
+	   ) 
+    ) 
+);
+
+
+$wp_customize->add_setting('indie_studio_to_top_colour', array(
+    'default'	        => '#868686',
+    'transport'         => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
+) );
+
+$wp_customize->add_control( 
+    new WP_Customize_Color_Control( 
+        $wp_customize,  'indie_studio_to_top_colour', array(
+            'settings'  => 'indie_studio_to_top_colour',
+            'label'	    => __('Back to Top Button Colour', indie_studio_text_domain()),
+		    'section'	=> 'indie_studio_fonts_colours_section',
+	   ) 
+    ) 
+);
+
+$wp_customize->add_setting('indie_studio_to_top_colour_hover', array(
+    'default'	        => '#5d5d5d',
+    'transport'         => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
+) );
+
+$wp_customize->add_control( 
+    new WP_Customize_Color_Control( 
+        $wp_customize,  'indie_studio_to_top_colour_hover', array(
+            'settings'  => 'indie_studio_to_top_colour_hover',
+            'label'	    => __('Back to Top Button Hover Colour', indie_studio_text_domain()),
 		    'section'	=> 'indie_studio_fonts_colours_section',
 	   ) 
     ) 
