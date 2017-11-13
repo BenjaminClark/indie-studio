@@ -1,0 +1,17 @@
+button.search-submit {
+    padding:0;
+    margin: 0;
+    position: relative;
+    width: 2em;
+    height: 2em;
+    font-size: 1em;
+    line-height: 1.5em;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 15;
+}
+
+button.search-submit:after {
+    content: none;
+}

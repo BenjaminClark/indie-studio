@@ -31,7 +31,7 @@ $wp_customize->add_setting('indie_studio_scripts_footer');
 
 $wp_customize->add_control('indie_studio_scripts_footer', array(
     'settings' => 'indie_studio_scripts_footer',
-    'label'    => __('Custom Header Scripts'),
+    'label'    => __('Custom Footer Scripts'),
     'section'  => 'indie_studio_scripts_section',
     'type'     => 'textarea',
 ));

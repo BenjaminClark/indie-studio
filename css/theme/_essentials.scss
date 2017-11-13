@@ -2,6 +2,31 @@
 /* This file holds essential css that is too short to go anywhere else **/
 /* You know, misc type stuff... just look! */
 
+/** Screen Reader Text **/
+/** For more info: https://make.wordpress.org/accessibility/2015/02/09/hiding-text-for-screen-readers-with-wordpress-core/ **/
+
+.screen-reader-text {
+    position: absolute !important;
+    left: -999em;
+}
+
+.screen-reader-text:focus {
+    background-color: #eee;
+    clip: auto !important;
+    clip-path: none;
+    color: #444;
+    display: block;
+    font-size: 1em;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000; /* Above WP toolbar. */
+}
+
 
 /**  Go to top button  **/ 
 .toTop {
@@ -89,6 +114,7 @@ a {
 /** Buttons **/
 button,
 .btn {
+    font-size: 1.125em;
     display: block;
     color: #fff;
     line-height: 3em;
@@ -182,7 +208,7 @@ button.fancybox-close-small:hover {
     border-radius: 50%;
     width: 3em;
     height: 3em;
-    border: 0.5rem solid rgba(255, 255, 255, 0.7);
+    border: 0.5rem solid rgba(72, 72, 72, 0.2);
     border-top-color: #868686;
     -webkit-animation: spin 1s infinite linear;
           animation: spin 1s infinite linear;

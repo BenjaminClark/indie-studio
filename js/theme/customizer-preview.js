@@ -12,6 +12,18 @@
     });
     
     
+    //Show Header Search
+	customize( 'indie_studio_header_search', function( value ) {
+		value.bind( function( newval ) {                
+            if ( newval ){
+                $( 'header #searchform' ).fadeIn();
+            } else {
+                $( 'header #searchform' ).fadeOut();
+            }
+		} );
+	} );
+    
+    
     //Update theme background colour
 	customize( 'indie_studio_background_colour', function( value ) {
 		value.bind( function( newval ) {            

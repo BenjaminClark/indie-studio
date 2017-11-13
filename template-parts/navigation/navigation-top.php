@@ -13,20 +13,24 @@
 
 <div class="logo">
     <a href="<?php echo site_url();?>">
-    
 
-			<?php
-			if ( has_custom_logo() ) {
-				$image = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ) );
-			?>
-				<div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-					<meta itemprop="url" content="<?php echo current( $image ); ?>" />
-					<meta itemprop="width" content="<?php echo next( $image ); ?>" />
-					<meta itemprop="height" content="<?php echo next( $image ); ?>" />
-				</div>
-			<?php } ?>
-    
-
+        <?php
+        if ( has_custom_logo() ) {
+            $image = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ) );
+        ?>
+           
+            <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                <meta itemprop="url" content="<?php echo current( $image ); ?>" />
+                <meta itemprop="width" content="<?php echo next( $image ); ?>" />
+                <meta itemprop="height" content="<?php echo next( $image ); ?>" />
+            </div>
+            
+        <?php } else {
+            
+            echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
+            
+        } ?>
+            
     </a>
 </div>
 
@@ -63,7 +67,7 @@
          * to pick if they want to show a search box in the header
          */
         
-        if ( get_theme_mod('indie_studio_header[show_search]', true) ) {
+        if ( get_theme_mod('indie_studio_header_search', true) ) {
         
             get_search_form();
         

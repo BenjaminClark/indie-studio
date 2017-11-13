@@ -14,13 +14,22 @@ body {
 
 /** Links **/
 
-h1 a, 
-h2 a, 
-h3 a, 
-h4 a, 
-h5 a,
+a:hover,
+a:focus,
+a h1:hover, 
+a h1:focus, 
+a h2:hover, 
+a h2:focus, 
+a h3:hover, 
+a h3:focus, 
+a h4:hover, 
+a h4:focus, 
+a h5:hover,
+a h5:focus,
 p a:hover,
-p a:focus {
+p a:focus,
+a p:hover,
+a p:focus {
     opacity: 0.65;
 }
 
