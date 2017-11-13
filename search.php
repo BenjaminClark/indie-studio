@@ -17,8 +17,6 @@ get_header(); ?>
             <h1 class="page-title"><?php printf( __( 'Search Results for: %s', indie_studio_text_domain() ), '<span>' . get_search_query() . '</span>' ); ?></h1>
         </header>
 
-        <?php indie_studio_content_nav( 'nav-above' ); ?>
-
         <?php /* Start the Loop */ ?>
         <?php while ( have_posts() ) : the_post(); ?>
 
@@ -26,7 +24,7 @@ get_header(); ?>
 
         <?php endwhile; ?>
 
-        <?php indie_studio_content_nav( 'nav-below' ); ?>
+        <?php indie_studio_content_nav( 'nav-below', 'Load More' ); ?>
 
     <?php else : ?>
 

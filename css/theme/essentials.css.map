@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,sBAAuB;EACnB,OAAO,EAAE,IAAI;;AAGjB,2BAA4B;EACxB,OAAO,EAAE,KAAK",
+"sources": ["essentials.scss"],
+"names": [],
+"file": "essentials.css"
+}

@@ -1,5 +1,9 @@
 <footer class="entry-meta">
 
+    <meta itemprop="wordCount" content="<?php echo word_count($post->ID);?>">
+    <meta itemprop="inLanguage" content="<?php echo get_locale();?>">
+    <meta itemprop="isFamilyFriendly" content="true">
+
 	<?php
 	if ( in_array( get_post_format(), array( 'aside', 'link', 'status', 'quote' ) ) ) {
 		indie_studio_posted_on();

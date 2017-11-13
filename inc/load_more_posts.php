@@ -40,12 +40,10 @@ function indie_studio_load_more_posts() {
 
         global $post;
         
-        
         $return = array(
             'html'      => '',
             'load_more' => false
         );
-        
         
         // Get query from JS, turn back into array, sanitize
         $args = (array) clean_all( json_decode( stripslashes( $_POST['query'] ), true ) );
@@ -55,7 +53,6 @@ function indie_studio_load_more_posts() {
         $query = new WP_Query( $args );
         
         $posts = $query->get_posts();
-        
         
         //Are there more posts to load?
         $total_posts_per_page =  get_option( 'posts_per_page' );
