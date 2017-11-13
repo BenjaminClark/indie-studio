@@ -46,7 +46,7 @@
     
         <header id="header"> 
                        
-            <div class="page-inner-wrap">
+            <div class="page-inner-wrap group">
 
                 <?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
 

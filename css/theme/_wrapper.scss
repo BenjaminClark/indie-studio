@@ -7,6 +7,10 @@ body {
     height: 100%;    
 }
 
+.navigation-open {
+    overflow-y: hidden;
+}
+
 /** Keep footer at bottom **/
 
 #footer-pusher {
@@ -60,7 +64,7 @@ footer {
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width: 75em) {  /** 1200px **/
-      
+
     .page-inner-wrap {
         width: 73em;
     }
@@ -70,7 +74,7 @@ footer {
 
 /** IMac **/
 @media only screen and (min-width: 79.375em) {  /** 1270px **/
-    
+        
     .page-inner-wrap {
         width: 76em;
     }

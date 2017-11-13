@@ -19,13 +19,8 @@ jQuery(document).ready(function($) {
         
         mainSearchInput         = $( "#main-search-input" ), 
         
-        mainNavigation          = $( "#main-navigation" ), 
-        burger                  = $( "#burger" ),
-        burgerSpan              = $( "#burger span" ),
-        
-        subMenuCont             = $( ".sub-menu-container" ),
-        
-        menuOpen                = false; 
+        mainNavigation          = $( "#site-navigation" ), 
+        burger                  = $( "#burger .trig" );
     
     
     
@@ -44,7 +39,6 @@ jQuery(document).ready(function($) {
             if( headerSearchWrap.hasClass('active') ){
                 //Check if search bar has text
                 var headerSearchText = $(headerSearchInput).val();
-                console.log(headerSearchText);
                 if ( headerSearchText.length > 0 ){
                     $( headerSearchForm ).submit();
                 } else {
@@ -80,10 +74,6 @@ jQuery(document).ready(function($) {
     /** 
      * Menu 
      **/ 
-    burgerSpan.on("click tap" , function(e){
-        toggle_menu();
-    });
-    
     burger.on("click tap" , function(e){
         toggle_menu();
     });
@@ -91,23 +81,17 @@ jQuery(document).ready(function($) {
     //Reset menu on click outside of menu
     $(document).mouseup(function(e) {
         // if the target of the click isn't the container. burger icon nor a descendant of the container
-        if (!mainNavigation.is(e.target) && mainNavigation.has(e.target).length === 0 && !burgerSpan.is(e.target) && !burger.is(e.target) && !subMenuCont.is(e.target) ){
+        if (!mainNavigation.is(e.target) && mainNavigation.has(e.target).length === 0 && !burger.is(e.target) ){
             deactivate_menu();
         }
     });
     
     function toggle_menu(){
-        burger.toggleClass('open');
-        mainNavigation.toggleClass('open');
         body.toggleClass('navigation-open');
-        $( "header nav li" ).removeClass('open');
     }
     
     function deactivate_menu(){
-        burger.removeClass('open');
-        mainNavigation.removeClass('open');
         body.removeClass('navigation-open');
-        $( "header nav li" ).removeClass('open');
     }
     
     /** Sub menu **/

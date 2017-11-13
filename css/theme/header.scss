@@ -1,21 +1,27 @@
-.logo a {
+header .logo {
+    float: left;
+    height: 3em;
+}
+
+header .logo a {
     text-decoration: none;
 }
 
-.logo h1 {
-    font-size: 2em;    
+header .logo h1 {
+    font-size: 1.625em;    
+    margin: 0.25em 0 0 0;
 }
 
 
 /** Burger **/
 
 .burger-wrapper {
-    margin: 1.375em 0;
+    margin-top: 0.25em;
     float: right;
 }
 
 #burger {
-    margin: 0.25em 0;
+    margin: 0.5em 0;
     display: block;
     float: left;
     width: 1.5em;
@@ -61,28 +67,82 @@
     top: calc(100% - 0.125em);
 }
 
-#burger.open span:nth-child(1) {
+body.navigation-open #burger span:nth-child(1) {
     top: calc(50% - 0.125em);
     width: 0%;
     left: 50%;
 }
 
-#burger.open span:nth-child(2) {
+body.navigation-open #burger span:nth-child(2) {
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -o-transform: rotate(45deg);
     transform: rotate(45deg);
 }
 
-#burger.open span:nth-child(3) {
+body.navigation-open #burger span:nth-child(3) {
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
     transform: rotate(-45deg);
 }
 
-#burger.open span:nth-child(4) {
+body.navigation-open #burger span:nth-child(4) {
     top: calc(50% - 0.125em);
     width: 0%;
     left: 50%;
+}
+
+/** Search **/
+header form {
+    float: left;
+}
+
+
+/**  Menu **/
+
+header nav {
+    background-color: #fff;
+    display: block;
+    position: fixed;
+    top: 5.5em;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    overflow-y: auto;
+    -webkit-transition: bottom 0.5s;
+    -moz-transition: bottom 0.5s;
+    -ms-transition: bottom 0.5s;
+    -o-transition: bottom 0.5s;
+    transition: bottom 0.5s;
+    z-index: 5000;
+    padding: 0 1.125em;
+}
+
+body.navigation-open header nav {
+    bottom:0;
+    padding-bottom: 3.75em;
+}
+
+
+/* Large Devices, Wide Screens */
+/* This is delayed due to menu being too long and stacking incorrectly */ 
+@media only screen and (min-width: 79.375em) {  /** 1270px **/
+         
+    header .logo {
+        height: auto;
+    }
+
+    header .logo h1 {
+        font-size: 2em;    
+        margin: 0.25em 0;
+    }
+    
+    
+    /** Burger **/
+    
+    #burger {
+        display: none;
+    }
+    
 }

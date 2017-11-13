@@ -38,17 +38,15 @@
 
     <!-- Main Menu -->
     <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', indie_studio_text_domain() ); ?>">
-        <div class="page-inner-wrap full group">
-            <?php
-            if ( has_nav_menu( 'primary' ) ) {
-                $args = array(
-                    'menu_class'		=> '',
-                    'theme_location'    => 'primary',
-                );
-                wp_nav_menu($args); 
-            }
-            ?>
-        </div>
+        <?php
+        if ( has_nav_menu( 'primary' ) ) {
+            $args = array(
+                'menu_class'		=> '',
+                'theme_location'    => 'primary',
+            );
+            wp_nav_menu($args); 
+        }
+        ?>
     </nav>
 
     <div class="burger-wrapper">
@@ -58,6 +56,7 @@
             <span></span>
             <span></span>
             <span></span>
+            <div class="trig"></div>
         </div>
 
         <?php
