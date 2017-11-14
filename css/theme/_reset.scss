@@ -44,6 +44,11 @@ img {
     border: 0;
 }
 
+img[src*='.svg']{
+    width: 100%;
+    height: auto;
+}
+
 button {
     padding: 0;
     border: none;
