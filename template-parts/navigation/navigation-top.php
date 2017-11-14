@@ -12,21 +12,37 @@
 ?>
 
 <div class="logo">
-    <a href="<?php echo site_url();?>">
+    <a class="smooth" href="<?php echo site_url();?>">
 
         <?php
-        if ( has_custom_logo() ) {
-            $image = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ) );
-        ?>
-           
-            <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-                <meta itemprop="url" content="<?php echo current( $image ); ?>" />
-                <meta itemprop="width" content="<?php echo next( $image ); ?>" />
-                <meta itemprop="height" content="<?php echo next( $image ); ?>" />
-            </div>
+        
+        //Get logo filepath
+        $custom_logo =  get_theme_mod( 'indie_studio_site_logo' );
+        
+        if ( $custom_logo ){
+        
+            if ( isSvg( $custom_logo ) ){ ?>
+
+                <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                    <img itemprop="url" src="<?php echo $custom_logo; ?>" />
+                </div>
+                
+            <?php } else { 
+            
+                $logo_dimensions = getimagesize( $custom_logo );
+                
+                ?>
+                
+                <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                    <img itemprop="url" src="<?php echo $custom_logo; ?>" alt="<?php get_bloginfo( 'name' );?> logo"/>
+                    <meta itemprop="width" content="<?php echo $logo_dimensions[0]; ?>" />
+                    <meta itemprop="height" content="<?php echo $logo_dimensions[1]; ?>" />
+                </div>
+            
+            <?php } //end is svg ?>
             
         <?php } else {
-            
+
             echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
             
         } ?>

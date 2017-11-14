@@ -1,6 +1,9 @@
+header {
+    margin: 1em 0;
+}
+
 header .logo {
     float: left;
-    height: 3em;
 }
 
 header .logo a {
@@ -9,7 +12,12 @@ header .logo a {
 
 header .logo h1 {
     font-size: 1.625em;    
-    margin: 0.25em 0 0 0;
+    margin: 0;
+}
+
+header .logo img {
+    height: 2em;
+    max-width: 100%;
 }
 
 
@@ -133,12 +141,19 @@ body.navigation-open header nav {
         height: auto;
     }
 
-    header .logo h1 {
-        font-size: 2em;    
-        margin: 0.25em 0;
+    header .logo {
+        float: left;
+        height: 3em;
     }
     
+    header .logo h1 {
+        font-size: 2.5em;
+    }
     
+    header .logo img {
+        height: 3em;
+    }
+        
     /** Burger **/
     
     #burger {

@@ -51,18 +51,7 @@ if ( function_exists( 'add_theme_support' ) ) {
     add_theme_support( 'microformats' );
     add_theme_support( 'microdata' );
     
-    
-    /**
-     * Support custom logos
-     * 
-     * @link https://developer.wordpress.org/themes/functionality/custom-logo/
-     */
-    
-    add_theme_support( 'custom-logo', array(
-        'height'      => 50,
-        'width'       => 50,
-    ) );
-    
+        
     /**
      * Remove all default WordPress widgets for the time being
      * 

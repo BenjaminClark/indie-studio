@@ -36,6 +36,9 @@ include ( 'fonts/google_font_api_checker.php' );
 
 function indie_studio_customize_register( $wp_customize ) {
     
+    //Add Site Identity Settings
+    include ( 'identity.php' );
+    
     //Add any general settings
     include ( 'general.php' );
     

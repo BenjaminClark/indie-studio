@@ -630,16 +630,22 @@ footer {
 @media only screen and (min-width: 140em) {
   .page-inner-wrap {
     width: 137.5em; } }
+header {
+  margin: 1em 0; }
+
 header .logo {
-  float: left;
-  height: 3em; }
+  float: left; }
 
 header .logo a {
   text-decoration: none; }
 
 header .logo h1 {
   font-size: 1.625em;
-  margin: 0.25em 0 0 0; }
+  margin: 0; }
+
+header .logo img {
+  height: 2em;
+  max-width: 100%; }
 
 /** Burger **/
 .burger-wrapper {
@@ -742,9 +748,15 @@ body.navigation-open header nav {
   header .logo {
     height: auto; }
 
+  header .logo {
+    float: left;
+    height: 3em; }
+
   header .logo h1 {
-    font-size: 2em;
-    margin: 0.25em 0; }
+    font-size: 2.5em; }
+
+  header .logo img {
+    height: 3em; }
 
   /** Burger **/
   #burger {

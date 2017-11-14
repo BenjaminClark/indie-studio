@@ -274,3 +274,10 @@ function show_where_in_archive_filter(){
 
 add_shortcode('indie_studio_show_filtered','show_where_in_archive_filter');
 add_shortcode('indie_studio_SHOW_FILTERED','show_where_in_archive_filter');
+
+
+function get_extension($file) {
+    $end = explode(".", $file);
+    $extension = end( $end );
+    return $extension ? $extension : false;
+}

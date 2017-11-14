@@ -32,3 +32,19 @@ function get_attachment_url_media_library(){
 
     die();
 }
+
+
+/** 
+ * Check if a file is an SVG 
+ * 
+ * @param  string $filePath Filepath for file to check
+ * @return boolean
+**/
+
+function isSvg( $filePath ){
+    if( get_extension($filePath) == 'svg' ){
+        return true;
+    } else {
+        return false;
+    }
+}
