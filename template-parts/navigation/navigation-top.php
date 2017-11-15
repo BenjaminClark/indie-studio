@@ -57,8 +57,9 @@
         <?php
         if ( has_nav_menu( 'primary' ) ) {
             $args = array(
-                'menu_class'		=> '',
+                'menu_class'		=> 'toggle-list',
                 'theme_location'    => 'primary',
+                'link_after'        => '<a href="#" class="toggle"><i class="fa fa-angle-down" aria-hidden="true"></i></a>',
             );
             wp_nav_menu($args); 
         }

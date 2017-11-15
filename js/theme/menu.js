@@ -93,37 +93,5 @@ jQuery(document).ready(function($) {
     function deactivate_menu(){
         body.removeClass('navigation-open');
     }
-    
-    /** Sub menu **/
-    if( screenWidth < 1200 ){
-        $( "header nav" ).find( ".current-menu-parent, .current-menu-item" ).closest("li").addClass("open").find(".sub-menu").first().slideToggle();
-    } 
-    
-    /** Main Menu Full Screen Click **/
-    $( "header nav li a" ).on("click tap touchstart" , function(e){
-        if( screenWidth > 1200 ){
-            
-            var li = $(this).closest("li");
-            
-            if( li.hasClass("open") ){
-                $('header nav li').removeClass('open');
-            } else {
-                $('header nav li').removeClass('open');
-                li.addClass("open");
-            }
-            
-            body.toggleClass('navigation-open');
-            if( li.hasClass('main-menu-item') && li.hasClass('menu-item-has-children') ){
-                e.preventDefault(); 
-            }
-            
-        }
-    });
-    
-    $("nav .toggle").on("click tap touchstart" , function(e){
-        e.preventDefault();
-        $(this).closest("li").toggleClass("open").find(".sub-menu").first().slideToggle();
-    });
                     
 });
-    

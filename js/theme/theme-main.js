@@ -4,19 +4,7 @@
  * This script holds all general code for the theme
  **/
 
-var fitImages,
-    menuToggle          = false, 
-    sfInfLoadTog        = false,
-    downloadId,          
-    
-    animSpeed           = 500,
-    
-    mobWidth            = 850,
-    mobMenu             = 1183,
-    
-    imagePutRight       = false, //used to track where flaoted images are
-    
-    textFadeComplete    = false;
+var animSpeed = 500;
 
 
 jQuery(document).ready(function($) {

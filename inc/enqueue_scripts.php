@@ -177,6 +177,12 @@ function indie_studio_enqueue_scripts(){
     );
         
     $js_to_compile[] = array(
+        'indie_studio_toggle_list', 
+        $JS_theme_dir . 'toggle-list.js', 
+        indie_studio_get_file_version_number( 'indie_studio_toggle_list', $JS_direct_path . 'toggle-list.js' ), 
+    );
+    
+    $js_to_compile[] = array(
         'indie_studio_load_more_posts', 
         $JS_theme_dir . 'load-more-posts.js', 
         indie_studio_get_file_version_number( 'indie_studio_load_more_posts', $JS_direct_path . 'load-more-posts.js' ), 

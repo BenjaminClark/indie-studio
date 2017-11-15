@@ -70,7 +70,6 @@ function postsLoadFunction(response){
                 
             }
           
-            
         } else {
             load_more_error('in');
         }

@@ -1,0 +1,53 @@
+.toggle-list ul {
+    display: none;
+}
+
+.toggle-list li {
+    position: relative;
+}
+
+.toggle-list > li,
+.toggle-list ul > li {
+    margin-bottom: 0;
+}
+
+.toggle-list > li {
+    margin: 0 2em 0 0;
+}
+
+.toggle-list li > ul {
+    margin: 0 0 0 0.5em;
+}
+
+#site-navigation ul li a.toggle,
+.toggle-list .toggle {
+    position: absolute;
+    top: 0;
+    right: -2em;
+    cursor: pointer;
+    padding: 0.5em;    
+}
+
+
+/** 
+ * Only add animation to top level toggles, 
+ * or toggles that have a parent open.
+ * Otherwise the menu opening breaks
+**/
+
+.toggle-list .toggle i {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+    
+.toggle-list .open > .toggle i {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+

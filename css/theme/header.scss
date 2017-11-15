@@ -29,7 +29,7 @@ header .logo img {
 }
 
 #burger {
-    margin: 0.5em 0;
+    margin: 0 0.5em 0 0;
     display: block;
     float: left;
     width: 1.5em;
@@ -109,11 +109,11 @@ header form {
 
 /**  Menu **/
 
-header nav {
+#site-navigation {
     background-color: #fff;
     display: block;
     position: fixed;
-    top: 5.5em;
+    top: 4em;
     left: 0;
     right: 0;
     bottom: 100%;
@@ -127,9 +127,25 @@ header nav {
     padding: 0 1.125em;
 }
 
-body.navigation-open header nav {
+body.navigation-open #site-navigation {
     bottom:0;
     padding-bottom: 3.75em;
+}
+
+#site-navigation ul li a {
+    padding: 0.5em 0;
+}
+
+#site-navigation a {
+    text-decoration: none;
+}
+
+#site-navigation .toggle {
+    display: none;
+}
+
+#site-navigation .menu-item-has-children  > .toggle {
+    display: block;
 }
 
 
@@ -159,5 +175,51 @@ body.navigation-open header nav {
     #burger {
         display: none;
     }
+    
+    /** Menu **/
+    
+    #site-navigation {
+        overflow: visible;
+        position: relative;
+        margin-top: 0.5em;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        padding: 0;
+        float: right;
+    }
+        
+    #site-navigation li {
+        display: inline-block;
+    }
+    
+    #site-navigation > div > ul > li {
+        padding: 0.5em;
+    }
+    
+    #site-navigation .menu-item-has-children  > .toggle {
+        display: none;
+    }
+    
+    #site-navigation li.menu-item-has-children > .sub-menu {
+        position: absolute;
+        min-width: 160px;
+        z-index: 1;
+        margin: 0.5em 0 0 0;
+        padding: 1em;
+        background-color: #f2f2f2;
+    }
+    
+    #site-navigation li.menu-item-has-children:hover > .sub-menu {
+        display: block;
+    }
+    
+    #site-navigation ul li a {
+        padding: 0;
+    }
+    
+    
+    
     
 }
