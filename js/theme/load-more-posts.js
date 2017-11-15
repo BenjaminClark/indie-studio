@@ -9,7 +9,7 @@ if ( ajaxPostWrap && loadMorePosts ){
         query           = loadMorePosts.getAttribute('data-query'),
         paged           = loadMorePosts.getAttribute('data-paged'),
         morePosts       = loadMorePosts.getAttribute('data-load-more');
-    
+        
     //Hide standard buttons
     if( basicNavAbove ){
         fade({el:basicNavAbove,type:'out',duration: 500});
@@ -40,10 +40,10 @@ if ( ajaxPostWrap && loadMorePosts ){
             
             var data = {
                 action      : 'indie_studio_load_more_posts',
-                query       : query.value,
+                query       : query,
                 paged       : paged,
             };
-                                    
+            
             postPhpAjax(data, 'json', '', postsLoadFunction);
 
         });
@@ -53,42 +53,38 @@ if ( ajaxPostWrap && loadMorePosts ){
 function postsLoadFunction(response){
     
     if( response ){
-        
-        //Update page counter
-        paged++;
-
+                        
         //Check there is result
         if( response.html.length > 0 ){
                                     
-            //Create a fake div to hold posts - add new html to div
-            var el = document.createElement( 'div' );
-            el.innerHTML = response.html;
-            var articles = el.getElementsByTagName('article');
-            
-            //Loop through children in fake div
-            //Display as none, add to postreturned div, fade in
-            
-            for( i=0; i< articles.length; i++ ){
-                var post = articles[i];
-                post.style.display = 'none';
-                ajaxPostWrap.appendChild(post);
+            //Loop through posts
+            for( i=0; i < response.html.length; i++ ){
+                                
+                //We have to recreate this as otherwise it gets forgotten immediately
+                var el = document.createElement( 'div' );
+                el.innerHTML = response.html[i];
+                
+                el.style.display = 'none';
+                ajaxPostWrap.appendChild(el);
                 fade({el:post,type:'in',duration: 500});
+                
             }
-
-            //Remove fake div
-            el.remove();            
+          
             
         } else {
             load_more_error('in');
         }
         
-        fade({el:loadMorePosts,type:'in',duration: 500}); 
-
         if( response.load_more ){
-            
+                        
             //Show the load more button if we have posts to see
             fade({el:loadMorePosts,type:'in',duration: 500});   
             
+        }
+        
+        //Update paged
+        if( response.paged ){
+            paged = response.paged;
         }
         
     } else {

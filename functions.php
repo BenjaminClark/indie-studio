@@ -23,6 +23,8 @@ include ( 'inc/search.php' );
 
 include ( 'inc/customizer/customizer_init.php' );
 
+include ( 'inc/preset_cats.php' );
+
 include ( 'inc/menu.php' );    
 
 include ( 'inc/comments.php' );

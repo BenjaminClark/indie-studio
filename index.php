@@ -42,7 +42,7 @@ get_header(); ?>
                         ?>
 
                     </div>
-
+                   
                     <?php
 
                     indie_studio_content_nav( 'nav-below', 'load-more' );
