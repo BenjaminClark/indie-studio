@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts
+ * Template part for displaying posts in module blocks
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -10,40 +10,22 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?><?php schema_semantics_tags( 'post' );?> itemref="site-publisher">
+<article id="post-<?php the_ID(); ?>" <?php post_class('module col-4'); ?><?php schema_semantics_tags( 'post' );?> itemref="site-publisher">
 
-	<?php get_template_part( 'template-parts/entry/entry', 'header' ); ?>
+    <a href="<?php the_permalink(); ?>" class="u-url url" title="<?php printf( esc_attr__( 'Permalink to %s', indie_studio_text_domain() ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" itemprop="url">
 
-	<?php if ( is_search() ) { // Only display Excerpts for Search ?>
+        <h2 class="entry-title p-name" itemprop="name headline"><?php the_title(); ?></h2>
 
-        <div class="entry-summary p-summary" itemprop="description">
-            <?php the_excerpt(); ?>
-        </div>
-	
-	<?php } ?>
-	
-	<?php indie_studio_the_post_thumbnail( '<div class="entry-media">', '</div>' ); ?>
-	
-        <div class="entry-content e-content" itemprop="description articleBody">
-           
-           <div class="wysiwyg">
-           
-                <?php 
-                the_content( __( 'Continue reading', indie_studio_text_domain() ) );
-                wp_link_pages( array( 
-                    'before' => '<div class="page-link">' . __( 'Pages:', indie_studio_text_domain() ), 
-                    'after' => '</div>' 
-                ) ); 
-                ?>
-                
+        <?php if ( is_search() ) { // Only display Excerpts for Search ?>
+
+            <div class="entry-summary p-summary" itemprop="description">
+                <?php the_excerpt(); ?>
             </div>
-            
-        </div>
 
-	<?php
-	if ( is_single() ) {
-        get_template_part( 'template-parts/entry/entry', 'footer' );
-	}
-	?>
+        <?php } ?>
+
+        <?php indie_studio_the_post_thumbnail( '<div class="entry-media">', '</div>' ); ?>
+	
+	</a>
 	
 </article>

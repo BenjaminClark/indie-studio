@@ -2,6 +2,7 @@
 var externalElem = document.querySelectorAll("a.external, .external a");
 for (var i=0; i < externalElem.length; i++) {
     externalElem[i].setAttribute("target", "_blank");
+    externalElem[i].setAttribute("rel", "noopener noreferrer");
 }
 
 /** This section allows multiple events to be added in vanilla JS **/
@@ -13,6 +14,7 @@ function addEvents(el, s, fn) {
         el.on(e[i], fn, false);
     }
 }
+
 
 /**
  * This function allows query strings to be 
@@ -262,8 +264,8 @@ function isEven(value){
 }
 
 
-function isset ()
-{
+function isset (){
+    
     // http://kevin.vanzonneveld.net
     // +   original by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
     // +   improved by: FremyCompany

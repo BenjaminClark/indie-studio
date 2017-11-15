@@ -66,7 +66,7 @@ function postsLoadFunction(response){
                 
                 el.style.display = 'none';
                 ajaxPostWrap.appendChild(el);
-                fade({el:post,type:'in',duration: 500});
+                fade({el:el,type:'in',duration: 500});
                 
             }
           

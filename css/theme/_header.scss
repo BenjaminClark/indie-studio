@@ -194,6 +194,11 @@ body.navigation-open #site-navigation {
         display: inline-block;
     }
     
+    #site-navigation li li {
+        display: block;
+        padding: 1em;
+    }
+            
     #site-navigation > div > ul > li {
         padding: 0.5em;
     }
@@ -202,16 +207,21 @@ body.navigation-open #site-navigation {
         display: none;
     }
     
-    #site-navigation li.menu-item-has-children > .sub-menu {
+    #site-navigation li.menu-item-has-children > ul {
         position: absolute;
         min-width: 160px;
         z-index: 1;
         margin: 0.5em 0 0 0;
-        padding: 1em;
         background-color: #f2f2f2;
     }
     
-    #site-navigation li.menu-item-has-children:hover > .sub-menu {
+    #site-navigation ul ul li.menu-item-has-children > ul {
+        left: 100%;
+        top: 0;
+        margin: 0;
+    }
+    
+    #site-navigation li.menu-item-has-children:hover > ul {
         display: block;
     }
     

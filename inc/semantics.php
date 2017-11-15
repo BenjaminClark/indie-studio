@@ -275,37 +275,42 @@ if ( ! function_exists( 'indie_studio_content_nav' ) ) {
 	function indie_studio_content_nav( $nav_id, $load_more = null ) {
 		global $wp_query;
 
+        if ( $wp_query->max_num_pages > 1 ){
+        
 		?>
-		<nav id="<?php echo esc_attr( $nav_id ); ?>">
-			<h1 class="assistive-text section-heading"><?php _e( 'Post navigation', indie_studio_text_domain() ); ?></h1>
+            <nav id="<?php echo esc_attr( $nav_id ); ?>">
+                <h1 class="assistive-text section-heading"><?php _e( 'Post navigation', indie_studio_text_domain() ); ?></h1>
 
-			<?php if ( is_single() ) { // navigation links for single posts
+                <?php if ( is_single() ) { // navigation links for single posts
 
-                the_posts_pagination( array(
-                    'prev_text' => '<span class="screen-reader-text"><i class="fa fa-angle-left" aria-hidden="true"></i> ' . __( 'Previous post', indie_studio_text_domain() ) . '</span>',
-                    'next_text' => '<span class="screen-reader-text">' . __( 'Next post', indie_studio_text_domain() ) . '</span> <i class="fa fa-angle-right" aria-hidden="true"></i>',
-                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Post', indie_studio_text_domain() ) . ' </span>',
-                ) );
+                    the_posts_pagination( array(
+                        'prev_text' => '<span class="screen-reader-text"><i class="fa fa-angle-left" aria-hidden="true"></i> ' . __( 'Previous post', indie_studio_text_domain() ) . '</span>',
+                        'next_text' => '<span class="screen-reader-text">' . __( 'Next post', indie_studio_text_domain() ) . '</span> <i class="fa fa-angle-right" aria-hidden="true"></i>',
+                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Post', indie_studio_text_domain() ) . ' </span>',
+                    ) );
 
-			} elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) { // navigation links for home, archive, and search pages
+                } elseif ( ( is_home() || is_archive() || is_search() ) ) { // navigation links for home, archive, and search pages
 
-                if ( get_previous_posts_link() ) { ?>
-                
-                    <div class="nav-previous"><?php previous_posts_link( __( '<span class="meta-nav"><i class="fa fa-angle-left" aria-hidden="true"></i></span> Older posts', indie_studio_text_domain() ) ); ?></div>
-                
+                    if ( get_previous_posts_link() ) { ?>
+
+                        <div class="nav-previous"><?php previous_posts_link( __( '<span class="meta-nav"><i class="fa fa-angle-left" aria-hidden="true"></i></span> Older posts', indie_studio_text_domain() ) ); ?></div>
+
+                    <?php } ?>
+
+                    <?php if ( get_next_posts_link() ) { ?>
+
+                        <div class="nav-next"><?php next_posts_link( __( 'Newer posts <span class="meta-nav"><i class="fa fa-angle-right" aria-hidden="true"></i></span>', indie_studio_text_domain() ) ); ?></div>
+
+                    <?php } ?>
+
                 <?php } ?>
 
-                <?php if ( get_next_posts_link() ) { ?>
-                
-                    <div class="nav-next"><?php next_posts_link( __( 'Newer posts <span class="meta-nav"><i class="fa fa-angle-right" aria-hidden="true"></i></span>', indie_studio_text_domain() ) ); ?></div>
-                
-                <?php } ?>
-
-		    <?php } ?>
-
-		</nav>
+            </nav>
 		
 		<?php
+            
+        }
+            
 	    /** 
          * If the load more button is required
          * 
