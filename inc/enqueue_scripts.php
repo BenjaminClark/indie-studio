@@ -131,22 +131,20 @@ function indie_studio_enqueue_scripts(){
     
     
     /**
+     * Colcade
+     * https://github.com/desandro/colcade
+     */ 
+    $js_to_compile[] = array(
+        'bricklayer', 
+        'https://cdnjs.cloudflare.com/ajax/libs/bricklayer/0.4.2/bricklayer.min.js', 
+        '0.4.2', 
+    );
+    
+    
+    /**
      * Now all the custom theme scripts
      **/
-            
-    $js_to_compile[] = array(
-        'indie_studio_localisation', 
-        $JS_theme_dir . 'localisation.js', 
-        indie_studio_get_file_version_number( 'indie_studio_localisation', $JS_direct_path . 'localisation.js' ), 
-    );
-    
-    $js_to_compile[] = array(
-        'indie_studio_ajax', 
-        $JS_theme_dir . 'ajax.js', 
-        indie_studio_get_file_version_number( 'indie_studio_ajax', $JS_direct_path . 'ajax.js' ), 
-    );
-        
-    
+                
     //Only load logging if debug is turned on
     if (defined('WP_DEBUG') && true === WP_DEBUG) {
     
@@ -157,7 +155,13 @@ function indie_studio_enqueue_scripts(){
         );
     
     }
-        
+    
+    $js_to_compile[] = array(
+        'indie_studio_ajax', 
+        $JS_theme_dir . 'ajax.js', 
+        indie_studio_get_file_version_number( 'indie_studio_ajax', $JS_direct_path . 'ajax.js' ), 
+    );
+                
     $js_to_compile[] = array(
         'indie_studio_essentials', 
         $JS_theme_dir . 'essentials.js', 
@@ -183,11 +187,16 @@ function indie_studio_enqueue_scripts(){
     );
     
     $js_to_compile[] = array(
+        'indie_studio_bricklayer', 
+        $JS_theme_dir . 'bricklayer.js', 
+        indie_studio_get_file_version_number( 'indie_studio_bricklayer', $JS_direct_path . 'bricklayer.js' ), 
+    );
+        
+    $js_to_compile[] = array(
         'indie_studio_load_more_posts', 
         $JS_theme_dir . 'load-more-posts.js', 
         indie_studio_get_file_version_number( 'indie_studio_load_more_posts', $JS_direct_path . 'load-more-posts.js' ), 
     );
-
     
     /**
     * Load the main JS file for the theme
@@ -275,6 +284,18 @@ function indie_studio_enqueue_styles(){
         'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css',
         '3.5.2',
     );
+    
+    
+    /**
+    * Load Animate
+    * @link https://github.com/ademilter/bricklayer/wiki/Quick-Start
+    */ 
+    $css_to_compile[] = array(
+        'bricklayer', 
+        'https://cdnjs.cloudflare.com/ajax/libs/bricklayer/0.4.2/bricklayer.min.css',
+        '0.4.2',
+    );
+    
     
     /**
      * Now include all theme components

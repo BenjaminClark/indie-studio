@@ -6,12 +6,16 @@
  * this file.
  **/ 
 
+var allowDebug          = true;
+
+
 /** Google Analytics Checker **/
 function creatGaEvent(title, action, name){
     if (typeof ga == 'function') {
         ga( "send", "event", title, action, name, 0 );
     } 
 }
+
 
 /** Error Logging **/ 
 function p_c(message, type){

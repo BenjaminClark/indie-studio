@@ -29,7 +29,7 @@ get_header(); ?>
 
                 <?php rewind_posts(); ?>
 
-                    <div id="ajax-post-wrap" class="grid-container">
+                    <div id="ajax-post-wrap" class="grid-container bricklayer basic">
 
                         <?php /* Start the Loop */ ?>
                         <?php while ( have_posts() ) : the_post(); ?>

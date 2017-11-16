@@ -863,78 +863,52 @@ body.navigation-open #site-navigation {
   width: 100%;
   position: relative; }
 
-.grid-container [class^="col"] {
+.grid-container.basic [class^="col"] {
   float: left; }
 
-.grid-container .col-1,
-.grid-container .col-2,
-.grid-container .col-3,
-.grid-container .col-4 {
+.grid-container.basic .col-1,
+.grid-container.basic .col-2,
+.grid-container.basic .col-3,
+.grid-container.basic .col-4 {
   width: 100%; }
 
-.grid-container::after {
+.grid-container.basic::after {
   content: "";
   display: table;
   clear: both; }
 
-.grid-container .mob-no-show {
+.grid-container.basic .mob-no-show {
   display: none; }
 
-.grid-container .col-2:last-of-type {
+.grid-container.basic .col-2:last-of-type {
   margin-top: 1em; }
+
+.bricklayer-column-sizer {
+  width: 100%; }
 
 @media only screen and (min-width: 40em) {
   /** 640px **/
-  .grid-container .col-4 {
+  .grid-container.basic .col-4,
+  .bricklayer-column-sizer {
     width: 50%; } }
 @media only screen and (min-width: 47.875em) {
   /** 766px **/
-  .grid-container .col-4.right-pad {
-    padding-right: 1.125em; }
-
-  .grid-container .col-4.bottom-pad {
-    padding-bottom: 1.125em; }
-
-  .grid-container .mob-no-show {
+  .grid-container.basic .mob-no-show {
     display: block; } }
 @media only screen and (min-width: 60em) {
   /* 960px */
-  .grid-container .col-4 {
+  .grid-container.basic .col-4 {
     width: 33%; }
 
-  /** May need to add an "early" class to **/
-  /** change the 4 column to 3 in some cases **/
-  .grid-container .col-2 {
-    width: 50%; }
-
-  .grid-container .col-2:last-of-type {
-    margin-top: 0; }
-
-  .grid-container .col-2.left-pad {
-    padding-left: 1.875em; }
-
-  .grid-container .col-2.right-pad,
-  .grid-container .col-4.right-pad {
-    padding-right: 2em; } }
+  .bricklayer-column-sizer {
+    width: 33%; } }
 @media only screen and (min-width: 65em) {
   /* 1040px */
-  .grid-container .col-4 {
+  .grid-container.basic .col-4 {
     width: 25%; }
 
-  .grid-container .col-4.right-pad {
-    padding-right: 3em; }
-
-  .grid-container .col-2.right-pad {
-    padding-right: 5em; }
-
-  .grid-container .col-4.bottom-pad {
-    padding-bottom: 3em; }
-
-  .grid-container .col-3 {
-    width: 70%; } }
-@media only screen and (min-width: 75em) {
-  .grid-container .col-2.right-pad {
-    padding-right: 7em; } }
+  .bricklayer-column-sizer {
+    width: 25%; } }
 .module {
   position: relative;
   background-color: #fff;

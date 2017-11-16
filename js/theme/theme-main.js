@@ -6,7 +6,6 @@
 
 var animSpeed = 500;
 
-
 jQuery(document).ready(function($) {
 
     //Back to top script
@@ -27,7 +26,6 @@ jQuery(document).ready(function($) {
         
 	};
     toTop();
- 
         
     /**
      * Initalize Scroll Reveal
@@ -68,10 +66,8 @@ jQuery(document).ready(function($) {
                 }
             }
         });
-    });
-    
-    
-            
+    });    
+
     $(".fancybox").fancybox({
         fullScreen : false,
         iframe : {
