@@ -24,13 +24,12 @@ get_header(); ?>
 
                 <div id="ajax-post-wrap" class="grid-container bricklayer basic">
 
-                    <?php while ( have_posts() ) : the_post();
+                    <?php 
+                    while ( have_posts() ) : the_post();
 
                         get_template_part( 'template-parts/post/module', get_post_format() );
 
-
                     endwhile; // end of the loop. 
-
                     ?>
 
                 </div>

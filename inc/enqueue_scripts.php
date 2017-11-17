@@ -131,8 +131,8 @@ function indie_studio_enqueue_scripts(){
     
     
     /**
-     * Colcade
-     * https://github.com/desandro/colcade
+     * Bricklayer
+     * https://github.com/desandro/bricklayer
      */ 
     $js_to_compile[] = array(
         'bricklayer', 
@@ -140,6 +140,11 @@ function indie_studio_enqueue_scripts(){
         '0.4.2', 
     );
     
+    $js_to_compile[] = array(
+        'bricklayerLazyload', 
+        'https://cdnjs.cloudflare.com/ajax/libs/bricklayer/<version>/plugins/lazyElement/bricklayer.lazyElement.min.js', 
+        '0.4.2', 
+    );
     
     /**
      * Now all the custom theme scripts

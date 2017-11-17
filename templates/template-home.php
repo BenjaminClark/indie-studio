@@ -55,7 +55,7 @@ get_header(); ?>
             if ( have_posts()  ) { 
                 ?>
                
-                <div id="ajax-post-wrap" class="grid-container bricklayer basic">
+                <div id="ajax-post-wrap" class="grid-container basic">
                                                           
                     <!-- modules -->
                     <?php

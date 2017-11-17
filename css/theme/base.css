@@ -884,6 +884,7 @@ body.navigation-open #site-navigation {
   margin-top: 1em; }
 
 .bricklayer-column-sizer {
+  display: none;
   width: 100%; }
 
 @media only screen and (min-width: 40em) {
@@ -912,11 +913,18 @@ body.navigation-open #site-navigation {
 .module {
   position: relative;
   background-color: #fff;
-  float: left;
   overflow: hidden;
   width: 100%;
   font-size: 1rem;
-  /** Reset module top level div **/ }
+  /** Reset module top level div **/
+  float: left;
+  height: 400px; }
+
+.basic .module {
+  float: left; }
+
+.module .entry-media {
+  height: 300px; }
 
 button.search-submit {
   padding: 0;

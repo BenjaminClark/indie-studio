@@ -14,3 +14,9 @@ if( bricklayerDom ){
         bricklayerDom.classList.remove('basic');        
     }
 }
+
+bricklayer.appendLazyElement(function (done) {
+  setTimeout(function () {
+    done(element)
+  }, 1000)
+})

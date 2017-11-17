@@ -1,8 +1,17 @@
 .module {
     position: relative;
     background-color: #fff;
-    float: left;
     overflow: hidden;
     width: 100%;
     font-size: 1rem; /** Reset module top level div **/
+    float: left;
+    height: 400px;
+}
+
+.basic .module {
+    float: left;
+}
+
+.module .entry-media {
+    height: 300px;
 }
