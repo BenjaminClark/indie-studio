@@ -14,41 +14,41 @@
  */
 
 get_header(); ?>
-    
-    <section id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
-            
-            <div class="page-inner-wrap">
 
-                <?php if ( have_posts() ) { ?>
+<section id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
 
-                    <div id="ajax-post-wrap" class="grid-container bricklayer basic">
+        <div class="page-inner-wrap">
 
-                        <?php while ( have_posts() ) : the_post();
+            <?php if ( have_posts() ) { ?>
 
-                            get_template_part( 'template-parts/post/module', get_post_format() );
+                <div id="ajax-post-wrap" class="grid-container bricklayer basic">
+
+                    <?php while ( have_posts() ) : the_post();
+
+                        get_template_part( 'template-parts/post/module', get_post_format() );
 
 
-                        endwhile; // end of the loop. 
+                    endwhile; // end of the loop. 
 
-                        ?>
+                    ?>
 
-                    </div>
-                   
-                    <?php
+                </div>
 
-                    indie_studio_content_nav( 'nav-below', 'load-more' );
+                <?php
 
-                } else {
+                indie_studio_content_nav( 'nav-below', 'load-more' );
 
-                    get_template_part( 'template-parts/post/content', get_post_format() );
+            } else {
 
-                }
-                ?>
-                
-            </div>
+                get_template_part( 'template-parts/post/content', get_post_format() );
 
-        </main><!-- #content -->
-    </section><!-- #primary -->
+            }
+            ?>
+
+        </div>
+
+    </main><!-- #content -->
+</section><!-- #primary -->
 
 <?php get_footer(); ?>

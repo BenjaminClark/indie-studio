@@ -13,31 +13,31 @@
 
 get_header(); ?>
 
-    <section id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
+<section id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
 
-           <div class="page-inner-wrap">
-           
-                <?php 
-                while ( have_posts() ) : the_post();
+       <div class="page-inner-wrap">
 
-                    get_template_part( 'template-parts/post/content', get_post_format() );
+            <?php 
+            while ( have_posts() ) : the_post();
 
-                    // If comments are open or we have at least one comment, show the comment template
-                    if ( comments_open() || get_comments_number() != 0 ){
-                        comments_template( '', true );
-                    }
+                get_template_part( 'template-parts/post/content', get_post_format() );
 
-                    /**
-                     * @TODO Add attractive post navigation.
-                     **/ 
+                // If comments are open or we have at least one comment, show the comment template
+                if ( comments_open() || get_comments_number() != 0 ){
+                    comments_template( '', true );
+                }
 
-                endwhile; // end of the loop. 
-                ?>
-                
-            </div>
+                /**
+                 * @TODO Add attractive post navigation.
+                 **/ 
 
-        </main><!-- #content -->
-    </section><!-- #primary -->
+            endwhile; // end of the loop. 
+            ?>
+
+        </div>
+
+    </main><!-- #content -->
+</section><!-- #primary -->
 
 <?php get_footer();

@@ -8,26 +8,30 @@
 
 get_header(); ?>
 
-	<section id="primary" class="full-width">
-		<main id="content" role="main">
+<section id="primary" class="full-width">
+    <main id="content" role="main">
 
-			<article id="post-0" class="post error404 not-found">
-				<header class="entry-header">
-					<h1 class="entry-title p-entry-title"><?php _e( 'It looks like we got you lost. Sorry!', indie_studio_text_domain() ); ?></h1>
-				</header>
+        <div class="page-inner-wrap">
 
-				<div class="entry-content e-entry-content">
-				
-					<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help. If not, try the menu above.', indie_studio_text_domain() ); ?></p>
+            <article id="post-0" class="post error404 not-found">
+                <header class="entry-header">
+                    <h1 class="entry-title p-entry-title"><?php _e( 'It looks like we got you lost. Sorry!', indie_studio_text_domain() ); ?></h1>
+                </header>
 
-					<?php get_search_form(); ?>
+                <div class="entry-content e-entry-content">
 
-					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
-					
-				</div>
-			</article>
+                    <p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help. If not, try the menu above.', indie_studio_text_domain() ); ?></p>
 
-		</main>
-	</section>
+                    <?php get_search_form(); ?>
+
+                    <?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
+
+                </div>
+            </article>
+
+        </div>
+
+    </main>
+</section>
 
 <?php get_footer(); ?>
