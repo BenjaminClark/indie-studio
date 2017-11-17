@@ -15,9 +15,20 @@ function indie_studio_load_more_button( $button_text = '' ){
        
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
+        
+        /**
+         * Decide is a custom template is required for AJAX
+         */ 
+        
+        $template = '';
+        
+        if( is_search() || is_author() ){
+            $template = 'search';
+        } 
+        
         ?>
         <div id="load-more-posts-error" class="load-more-posts-error error smooth"><p><?php echo esc_html__( 'Something has gone wrong. Please try again.', indie_studio_text_domain() );?></p></div>
-        <button id="load-more-posts" class="load-more-posts-button" data-paged="<?php echo esc_attr__( $paged, indie_studio_text_domain() );?>" data-query='<?php echo json_encode ( $wp_query->query ) ;?>' style="opacity:0;"><?php echo esc_html__( $button_text, indie_studio_text_domain() );?></button>
+        <button id="load-more-posts" class="load-more-posts-button" data-paged="<?php echo esc_attr__( $paged, indie_studio_text_domain() );?>" data-query='<?php echo json_encode ( $wp_query->query ) ;?>' data-custom-template="<?php echo $template;?>" style="opacity:0;"><?php echo esc_html__( $button_text, indie_studio_text_domain() );?></button>
     <?php
     }
 }
@@ -49,11 +60,10 @@ function indie_studio_load_more_posts() {
                 
         // Get query from JS, turn back into array, sanitize
         $args = (array) clean_all( json_decode( stripslashes( $_POST['query'] ), true ) );
-               
-        $is_search = false;
-        if( array_key_exists( 's', $args ) ){
-            $is_search = true;
-        }
+           
+        //If we require a custom template, get that here
+        $custom_template = sanitize_text_field ( $_POST['template'] );
+        
             
         //Updated paged
         $args['paged'] = $return['paged'];
@@ -103,9 +113,9 @@ function indie_studio_load_more_posts() {
              * If the query is for search, show search templates
              */ 
             
-            if ( $is_search ){
+            if ( $custom_template ){
             
-                get_template_part( 'template-parts/post/content', 'search' );
+                get_template_part( 'template-parts/post/content', $custom_template );
                 
             } else {
                 

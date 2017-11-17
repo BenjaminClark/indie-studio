@@ -144,6 +144,18 @@ function indie_studio_enqueue_scripts(){
     /**
      * Now all the custom theme scripts
      **/
+    
+    
+    /**
+     * This is required to pass the localisation variables to. Might need rethinking.
+     */
+    
+    $js_to_compile[] = array(
+        'indie_studio_localisation', 
+        $JS_theme_dir . 'localised.js', 
+        indie_studio_get_file_version_number( 'indie_studio_localisation', $JS_direct_path . 'localised.js' ), 
+    );
+    
                 
     //Only load logging if debug is turned on
     if (defined('WP_DEBUG') && true === WP_DEBUG) {

@@ -8,8 +8,8 @@ if ( ajaxPostWrap && loadMorePosts ){
         buttonWrap      = document.getElementById("load-more-wrap"),
         query           = loadMorePosts.getAttribute('data-query'),
         paged           = loadMorePosts.getAttribute('data-paged'),
-        morePosts       = loadMorePosts.getAttribute('data-load-more');
-        
+        template        = loadMorePosts.getAttribute('data-custom-template');
+            
     //Hide standard buttons
     if( basicNavAbove ){
         fade({el:basicNavAbove,type:'out',duration: 500});
@@ -41,6 +41,7 @@ if ( ajaxPostWrap && loadMorePosts ){
             var data = {
                 action      : 'indie_studio_load_more_posts',
                 query       : query,
+                template    : template,
                 paged       : paged,
             };
             
@@ -59,14 +60,24 @@ function postsLoadFunction(response){
                                     
             //Loop through posts
             for( i=0; i < response.html.length; i++ ){
-                                
-                //We have to recreate this as otherwise it gets forgotten immediately
+                              
+                //Create a fake div to hold html
                 var el = document.createElement( 'div' );
                 el.innerHTML = response.html[i];
                 
-                el.style.display = 'none';
-                ajaxPostWrap.appendChild(el);
-                fade({el:el,type:'in',duration: 500});
+                if( bricklayerLive ){
+                
+                    //Append posts using Bricklayer
+                    bricklayer.append(el);
+                    
+                } else {
+                    
+                    //Add posts not in Bricklayer
+                    el.style.display = 'none';
+                    ajaxPostWrap.appendChild(el);
+                    fade({el:el,type:'in',duration: 500});
+                    
+                } 
                 
             }
           

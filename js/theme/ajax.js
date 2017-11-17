@@ -163,7 +163,7 @@ function getPhpAjax(data, dateType, firstFunc, passer) {
 
     ajax({
         type       : "GET",
-        url        : indie_studio_ajax.ajaxUrl,
+        url        : indie_studio_ajax.ajax_url,
         dataType   : dateType,
         data       : data,
         beforeSend : function () {
