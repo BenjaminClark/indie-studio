@@ -3,10 +3,6 @@
     position: relative;
 }
 
-.grid-container.basic {
-    margin: 0 -1em;
-}
-
 .grid-container.basic [class^="col"] {
     float: left;
 }
@@ -36,8 +32,8 @@
     
 @media only screen and (min-width: 40em) {  /** 640px **/
     
-    .grid-container.basic .col-4 {
-        width: 50%;
+    .grid-container.basic {
+        margin: 0 -0.5em;
     }
     
     .masonry-column-sizer,
@@ -61,10 +57,6 @@
 
 @media only screen and (min-width: 60em) { /* 960px */
     
-    .grid-container.basic .col-4 {
-        width: 33%;
-    }
-    
     .masonry-column-sizer,
     .grid-container .col-4 {
         width: calc( 33% - 1em );
@@ -74,10 +66,6 @@
 }
 
 @media only screen and (min-width: 65em) { /* 1040px */
-        
-    .grid-container.basic .col-4 {
-        width: 25%;
-    }
     
     .masonry-column-sizer,
     .grid-container .col-4 {
