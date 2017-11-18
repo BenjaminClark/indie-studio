@@ -66,17 +66,18 @@ function postsLoadFunction(response){
                     var el = document.createElement( 'div' );
                     el.innerHTML = response.html[i];
 
-                    if( bricklayerLive ){
+                    if( masonryLive ){
 
-                        //Append posts using Bricklayer
-                        bricklayer.append(el);
-
+                        //Append posts using Masonry
+                        ajaxPostWrap.appendChild( el );
+                        masonry.appended( el );
+                        
                     } else {
 
                         //Add posts not in Bricklayer
                         el.style.display = 'none';
                         ajaxPostWrap.appendChild(el);
-                        fade({el:el,type:'in',duration: 500});
+                        fade({el:el,type:'in',duration: 10000});
 
                     } 
 

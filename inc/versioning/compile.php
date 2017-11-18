@@ -6,6 +6,8 @@
  * Takes all CSS/JS and enqueues them. If set, it will pass
  * them through the minifier and output as single file.
  * 
+ * This is instead of GULP. To allow developers to get into development easily.
+ * 
  * @param array     $final_array        Array of files to enqueue
  * @param string    $type               css or js
  * @param array     $localized_values   Array to pass to localise function

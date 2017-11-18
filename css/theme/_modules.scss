@@ -1,15 +1,15 @@
+.basic .module {
+    float: left;
+    margin: 0 0.5em 1em 0.5em;
+}
+
 .module {
     position: relative;
     background-color: #fff;
     overflow: hidden;
-    width: 100%;
     font-size: 1rem; /** Reset module top level div **/
     float: left;
-    height: 400px;
-}
-
-.basic .module {
-    float: left;
+    margin-bottom: 1em;
 }
 
 .module .entry-media {
@@ -17,6 +17,11 @@
 }
 
 
+/** Image **/
+.module .entry-media {
+    width: 100%;
+    
+}
 
 .module img.alignright {
     margin: 0;

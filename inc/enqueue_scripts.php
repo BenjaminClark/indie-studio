@@ -131,13 +131,24 @@ function indie_studio_enqueue_scripts(){
     
     
     /**
-     * Bricklayer
-     * https://github.com/desandro/bricklayer
+     * Masonry
+     * https://masonry.desandro.com/
      */ 
     $js_to_compile[] = array(
-        'bricklayer', 
-        'https://cdnjs.cloudflare.com/ajax/libs/bricklayer/0.4.2/bricklayer.min.js', 
-        '0.4.2', 
+        'masonry', 
+        'https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js', 
+        '4.0.0', 
+    );
+
+    
+    /**
+     * Images Loaded
+     * https://imagesloaded.desandro.com/
+     */ 
+    $js_to_compile[] = array(
+        'imagesLoaded', 
+        'https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js', 
+        '4.1.3', 
     );
 
     
@@ -199,9 +210,9 @@ function indie_studio_enqueue_scripts(){
     );
     
     $js_to_compile[] = array(
-        'indie_studio_bricklayer', 
-        $JS_theme_dir . 'bricklayer.js', 
-        indie_studio_get_file_version_number( 'indie_studio_bricklayer', $JS_direct_path . 'bricklayer.js' ), 
+        'indie_studio_masonry', 
+        $JS_theme_dir . 'masonry.js', 
+        indie_studio_get_file_version_number( 'indie_studio_masonry', $JS_direct_path . 'masonry.js' ), 
     );
         
     $js_to_compile[] = array(
@@ -295,17 +306,6 @@ function indie_studio_enqueue_styles(){
         'animate', 
         'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css',
         '3.5.2',
-    );
-    
-    
-    /**
-    * Load Animate
-    * @link https://github.com/ademilter/bricklayer/wiki/Quick-Start
-    */ 
-    $css_to_compile[] = array(
-        'bricklayer', 
-        'https://cdnjs.cloudflare.com/ajax/libs/bricklayer/0.4.2/bricklayer.min.css',
-        '0.4.2',
     );
     
     
