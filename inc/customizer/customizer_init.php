@@ -33,6 +33,9 @@ include ( 'fonts/google_font_api_checker.php' );
 /**
  * All Customizer content (i.e. Panels, Sections, Settings & Controls) 
  * are registered here
+ * 
+ * @TODO To expand this section, add selective refresh
+ * @link https://developer.wordpress.org/themes/customize-api/tools-for-improved-user-experience/#selective-refresh-fast-accurate-updates
  */
 
 function indie_studio_customize_register( $wp_customize ) {

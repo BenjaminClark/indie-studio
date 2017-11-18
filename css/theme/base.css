@@ -468,15 +468,6 @@ button,
   position: relative;
   text-decoration: none; }
 
-button:after,
-.btn:after {
-  font-family: fontawesome;
-  content: "\f105";
-  position: relative;
-  margin-left: 0.3em;
-  font-size: 0.8em;
-  font-weight: 400; }
-
 button:before,
 .btn:before {
   content: " "; }
@@ -925,6 +916,11 @@ body.navigation-open #site-navigation {
 
 .module .entry-media {
   height: 300px; }
+
+.module img.alignright {
+  margin: 0;
+  display: block;
+  float: none; }
 
 button.search-submit {
   padding: 0;

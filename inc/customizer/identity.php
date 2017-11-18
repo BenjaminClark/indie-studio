@@ -2,6 +2,8 @@
 
 /**
  * This file adds Customizer settings to the Site Identity section
+ * 
+ * @TODO To expand, allow image to be updated dynamically
  **/
 
 $wp_customize->add_setting('indie_studio_site_logo', array(

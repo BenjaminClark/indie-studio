@@ -335,7 +335,10 @@ if ( ! function_exists( 'indie_studio_content_nav' ) ) {
         
 /**
  * Adds post-thumbnail support
- *
+ * 
+ * @param string $before = '' HTML to prepend to the image
+ * @param string $after = ''] HTML to append to the image
+ *                                                  
  * @since IndieStudio 1.0.0
  */
 function indie_studio_the_post_thumbnail( $before = '', $after = '' ) {
@@ -349,6 +352,22 @@ function indie_studio_the_post_thumbnail( $before = '', $after = '' ) {
 
 		echo $before;
 		the_post_thumbnail( 'post-thumbnail', array( 'class' => $class . ' photo u-photo u-featured', 'itemprop' => 'image' ) );
+		echo $after;
+	}
+}
+
+/**
+ * Adds module thumbnail support
+ * 
+ * @param string $before = '' HTML to prepend to the image
+ * @param string $after = ''] HTML to append to the image
+ *                                                  
+ * @since IndieStudio 1.0.0
+ */
+function indie_studio_the_module_image( $before = '', $after = '' ) {
+	if ( '' != get_the_post_thumbnail() ) {
+		echo $before;
+		the_post_thumbnail( 'module', array( 'photo u-photo u-featured', 'itemprop' => 'image' ) );
 		echo $after;
 	}
 }
