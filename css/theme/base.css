@@ -882,24 +882,49 @@ body.navigation-open #site-navigation {
 
   .masonry-column-sizer,
   .grid-container .col-4 {
-    width: calc( 50% - 1em ); }
+    width: calc( 50% - 0.5em ); }
 
   .masonry-gutter-sizer {
     width: 1em; } }
 @media only screen and (min-width: 47.875em) {
   /** 766px **/
   .grid-container.basic .mob-no-show {
-    display: block; } }
-@media only screen and (min-width: 60em) {
-  /* 960px */
+    display: block; }
+
+  .grid-container.basic {
+    margin: 0 -1em; }
+
   .masonry-column-sizer,
   .grid-container .col-4 {
-    width: calc( 33% - 1em ); } }
+    width: calc( 50% - 1em ); }
+
+  .masonry-gutter-sizer {
+    width: 2em; } }
 @media only screen and (min-width: 65em) {
   /* 1040px */
+  .grid-container.basic {
+    margin: 0 -0.5em; }
+
   .masonry-column-sizer,
   .grid-container .col-4 {
-    width: calc( 25% - 1em ); } }
+    width: calc( 33% - 0.5em ); }
+
+  .masonry-gutter-sizer {
+    width: 1em; } }
+@media only screen and (min-width: 75em) {
+  .masonry-column-sizer,
+  .grid-container .col-4 {
+    width: calc( 25% - 0.75em ); } }
+@media only screen and (min-width: 90em) {
+  .grid-container.basic {
+    margin: 0 1em; }
+
+  .masonry-column-sizer,
+  .grid-container .col-4 {
+    width: calc( 25% - 2em ); }
+
+  .masonry-gutter-sizer {
+    width: 2em; } }
 .basic .module {
   float: left;
   margin: 0 0.5em 1em 0.5em; }
