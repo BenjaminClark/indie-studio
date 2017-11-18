@@ -139,12 +139,7 @@ function indie_studio_enqueue_scripts(){
         'https://cdnjs.cloudflare.com/ajax/libs/bricklayer/0.4.2/bricklayer.min.js', 
         '0.4.2', 
     );
-    
-    $js_to_compile[] = array(
-        'bricklayerLazyload', 
-        'https://cdnjs.cloudflare.com/ajax/libs/bricklayer/<version>/plugins/lazyElement/bricklayer.lazyElement.min.js', 
-        '0.4.2', 
-    );
+
     
     /**
      * Now all the custom theme scripts
