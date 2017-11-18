@@ -347,11 +347,11 @@ function indie_studio_the_post_thumbnail( $before = '', $after = '' ) {
 		$class = '';
 
 		if ( $image['1'] < '300' ) {
-			$class = 'alignright';
+			$class = 'alignright ';
 		}
 
 		echo $before;
-		the_post_thumbnail( 'post-thumbnail', array( 'class' => $class . ' photo u-photo u-featured', 'itemprop' => 'image' ) );
+		the_post_thumbnail( 'post-thumbnail', array( 'class' => $class . 'photo u-photo u-featured', 'itemprop' => 'image' ) );
 		echo $after;
 	}
 }
@@ -364,10 +364,10 @@ function indie_studio_the_post_thumbnail( $before = '', $after = '' ) {
  *                                                  
  * @since IndieStudio 1.0.0
  */
-function indie_studio_the_module_image( $before = '', $after = '' ) {
+function indie_studio_the_module_image() {
 	if ( '' != get_the_post_thumbnail() ) {
-		echo $before;
-		the_post_thumbnail( 'module', array( 'photo u-photo u-featured', 'itemprop' => 'image' ) );
-		echo $after;
-	}
+		echo '<div class="entry-media"><div class="media-fit">';;
+		the_post_thumbnail( 'module', array( 'class' => 'photo u-photo u-featured obj-fit cover smooth', 'itemprop' => 'image' ) );
+		echo '</div></div>';
+	};
 }

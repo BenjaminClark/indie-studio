@@ -14,9 +14,9 @@
 
     <a href="<?php the_permalink(); ?>" class="u-url url" title="<?php printf( esc_attr__( 'Permalink to %s', indie_studio_text_domain() ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" itemprop="url">
 
-        <h2 class="entry-title p-name" itemprop="name headline" class="screen-reader-text"><?php the_title(); ?></h2>
+        <h2 class="entry-title p-name screen-reader-text" itemprop="name headline"><?php the_title(); ?></h2>
 
-        <?php indie_studio_the_module_image( '<div class="entry-media">', '</div>' ); ?>
+        <?php indie_studio_the_module_image(); ?>
 	
 	</a>
 	

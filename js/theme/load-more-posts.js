@@ -77,7 +77,7 @@ function postsLoadFunction(response){
                         //Add posts not in Bricklayer
                         el.style.display = 'none';
                         ajaxPostWrap.appendChild(el);
-                        fade({el:el,type:'in',duration: 10000});
+                        fade({el:el,type:'in',duration: 1000});
 
                     } 
 
