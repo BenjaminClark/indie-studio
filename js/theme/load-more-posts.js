@@ -57,30 +57,36 @@ function postsLoadFunction(response){
                         
         //Check there is result
         if( response.html.length > 0 ){
-                                    
+            
             //Loop through posts
-            for( i=0; i < response.html.length; i++ ){
-                              
-                //Create a fake div to hold html
-                var el = document.createElement( 'div' );
-                el.innerHTML = response.html[i];
-                
-                if( bricklayerLive ){
-                
-                    //Append posts using Bricklayer
-                    bricklayer.append(el);
-                    
-                } else {
-                    
-                    //Add posts not in Bricklayer
-                    el.style.display = 'none';
-                    ajaxPostWrap.appendChild(el);
-                    fade({el:el,type:'in',duration: 500});
-                    
-                } 
-                
-            }
-          
+            (function delayModuleLoad(i) {
+                setTimeout(function () {
+
+                    //Create a fake div to hold html
+                    var el = document.createElement( 'div' );
+                    el.innerHTML = response.html[i];
+
+                    if( bricklayerLive ){
+
+                        //Append posts using Bricklayer
+                        bricklayer.append(el);
+
+                    } else {
+
+                        //Add posts not in Bricklayer
+                        el.style.display = 'none';
+                        ajaxPostWrap.appendChild(el);
+                        fade({el:el,type:'in',duration: 500});
+
+                    } 
+
+
+                    if (--i) {          
+                        delayModuleLoad(i);       
+                    }
+                }, 100);
+            })( response.html.length );
+            
         } else {
             load_more_error('in');
         }
