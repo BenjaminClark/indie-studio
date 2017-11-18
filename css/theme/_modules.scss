@@ -24,11 +24,16 @@
 /** Image **/
 .module .entry-media {
     width: 100%;
-    padding-bottom: 67%;
+    padding-bottom: 67.666%;
     position: relative;
 }
 
-.module .entry-media .media-fit {
+.module .entry-media.sqr {
+    padding-bottom: 100%;
+}
+
+.module .entry-media .media-fit,
+.module .entry-media .overlay {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -37,19 +42,59 @@
     overflow: hidden;
 }
 
+.module .entry-media .overlay {
+    opacity: 0;
+    background-color: #fff;
+    z-index: 5;
+}
+
+.module a:hover .entry-media .overlay {
+    opacity: 0.1;
+}
+
 .entry-media .media-fit img {
     width: 100%;
     height: 100%;
+    z-index: 3;
 }
 
 a:hover .entry-media .media-fit img {
-    -ms-transform: scale(1.1, 1.1); /* IE 9 */
-    -webkit-transform: scale(1.1, 1.1); /* Safari */
-    transform: scale(1.1, 1.1);
+    -ms-transform: scale(1.05, 1.05); /* IE 9 */
+    -webkit-transform: scale(1.05, 1.05); /* Safari */
+    transform: scale(1.05, 1.05);
 }
 
 .module img.alignright {
     margin: 0;
     display: block;
     float: none;
+}
+
+
+/** Likes and Comments **/
+.module .user-interaction {
+    width: 100%;
+    padding: 0.75em;
+    font-size: 0.8em;
+    position: absolute;
+    bottom: -4em;
+    left: 0;
+    z-index: 7;
+    transition:all .5s ease-out 1s;
+}
+
+.module.module-image .user-interaction {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.module a:hover .user-interaction {
+    bottom: 0;
+    transition:all 0.3s ease-out 0.1s;
+}
+
+
+
+.module .user-interaction .likes i {
+    color: #ef4545;
+    margin-right: 0.125em;
 }

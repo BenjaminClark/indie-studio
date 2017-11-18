@@ -17,6 +17,8 @@
         <h2 class="entry-title p-name screen-reader-text" itemprop="name headline"><?php the_title(); ?></h2>
 
         <?php indie_studio_the_module_image(); ?>
+        
+        <?php indie_studio_module_footer();?>
 	
 	</a>
 	

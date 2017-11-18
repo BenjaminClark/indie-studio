@@ -27,6 +27,8 @@ include ( 'inc/preset_cats.php' );
 
 include ( 'inc/menu.php' );    
 
+include ( 'inc/likes_comments.php' );
+
 include ( 'inc/comments.php' );
 
 //Cleanup Wordpress frontend scripts

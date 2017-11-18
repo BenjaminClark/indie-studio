@@ -366,8 +366,30 @@ function indie_studio_the_post_thumbnail( $before = '', $after = '' ) {
  */
 function indie_studio_the_module_image() {
 	if ( '' != get_the_post_thumbnail() ) {
-		echo '<div class="entry-media"><div class="media-fit">';;
+		echo '<div class="entry-media"><div class="media-fit">';
+        echo '<div class="overlay smooth"></div>';
 		the_post_thumbnail( 'module', array( 'class' => 'photo u-photo u-featured obj-fit cover smooth', 'itemprop' => 'image' ) );
 		echo '</div></div>';
 	};
+}
+
+
+/**
+ * Builds the footer for modules
+ */
+
+function indie_studio_module_footer(){
+
+    echo '<div class="user-interaction sneak-in">';
+    
+    if ( get_post_like_count() ){
+        echo '<div class="likes"><span aria-label="' . get_post_like_count() . ' likes for this post"><i class="fa fa-heart" aria-hidden="true"></i>' . get_post_like_count() . '</span></div>';
+    }
+    
+    if ( get_comments_number() ){
+        echo '<div class="comments"><span aria-label="' . get_comments_number() . ' comments for this post"><i class="fa fa-comment" aria-hidden="true"></i>' . get_comments_number() . '</span></div>';
+    }
+
+    echo '</div>';
+    
 }
