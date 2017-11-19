@@ -21,28 +21,7 @@ if ( $module_class ) {
 
     <a href="<?php the_permalink(); ?>" class="u-url url" title="<?php printf( esc_attr__( 'Permalink to %s', indie_studio_text_domain() ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" itemprop="url">
 
-        <?php if ( get_post_gallery_images() > 1 && get_post_format() == 'gallery' ) { 
-        
-            indie_studio_the_module_gallery_images();
-        
-        } else {
-        
-            if (!get_the_excerpt()) {
-                indie_studio_the_module_image(true);
-            } else {
-                indie_studio_the_module_image();
-            }
-    
-        } ?>
-        
-        <?php if( get_the_excerpt() ){ ?>
-        
-            <div class="entry-text sneak-in">
-                <h2 class="entry-title p-name" itemprop="name headline"><?php the_title(); ?></h2>
-                <?php the_excerpt(); ?>
-            </div>
-	
-        <?php } ?>
+        <?php indie_studio_the_module_image( true ); ?>
         
         <?php indie_studio_module_footer();?>
         

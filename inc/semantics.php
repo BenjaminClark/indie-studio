@@ -417,10 +417,10 @@ function indie_studio_the_module_gallery_images() {
  * Builds the footer for modules
  */
 
-function indie_studio_module_footer(){
+function indie_studio_module_footer( $panel = null ){
 
     $back_panel = '';
-    if( !get_the_excerpt() ){
+    if( $panel ){
         $back_panel = ' back-panel';
     }
     
