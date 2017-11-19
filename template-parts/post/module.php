@@ -23,15 +23,11 @@ if ( $module_class ) {
 
         <?php if ( get_post_gallery_images() > 1 && get_post_format() == 'gallery' ) { 
         
-            indie_studio_the_module_gallery_images();
+            indie_studio_the_module_gallery_images(true);
         
         } else {
         
-            if (!get_the_excerpt()) {
-                indie_studio_the_module_image(true);
-            } else {
-                indie_studio_the_module_image();
-            }
+            indie_studio_the_module_image();
     
         } ?>
         
@@ -42,9 +38,15 @@ if ( $module_class ) {
                 <?php the_excerpt(); ?>
             </div>
 	
-        <?php } ?>
+        <?php }
         
-        <?php indie_studio_module_footer();?>
+        if ( !get_the_excerpt() ) {
+            indie_studio_module_footer(true);
+        } else {
+            indie_studio_module_footer();
+        }
+        
+        ?>
         
 	</a>
 	

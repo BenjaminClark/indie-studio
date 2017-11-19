@@ -23,7 +23,7 @@ if ( $module_class ) {
         
         <?php indie_studio_the_module_image(); ?>
 
-        <?php indie_studio_module_footer();?>
+        <?php indie_studio_module_footer( true );?>
         
 	</a>
 	
