@@ -44,7 +44,7 @@
 
                 };
 
-                if ( is_single() || ! get_post_gallery()) ) {
+                if ( is_single() || ! get_post_gallery() ) {
 
                     the_content( __( 'Continue reading', indie_studio_text_domain() ) );
                     wp_link_pages( array( 

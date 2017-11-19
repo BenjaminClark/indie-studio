@@ -71,6 +71,7 @@ function postsLoadFunction(response){
                         //Append posts using Masonry
                         ajaxPostWrap.appendChild( el );
                         masonry.appended( el );
+                        buildLoryCarousel( el );
                         
                     } else {
 
@@ -78,6 +79,7 @@ function postsLoadFunction(response){
                         el.style.display = 'none';
                         ajaxPostWrap.appendChild(el);
                         fade({el:el,type:'in',duration: 1000});
+                        buildLoryCarousel( el );
 
                     } 
 

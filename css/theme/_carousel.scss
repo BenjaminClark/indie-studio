@@ -1,0 +1,65 @@
+/**
+ * (optional) define here the style definitions which should be applied on the slider container
+ * e.g. width including further controls like arrows etc.
+ */
+.lory-carousel {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.lory-carousel .frame {
+    width: 100%;
+    position: relative;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.lory-carousel .slides {
+    display: inline-block;
+}
+
+.lory-carousel li {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    height: 100%;
+}
+
+.lory-carousel .prev, .lory-carousel .next {
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    display: block;
+    cursor: pointer;
+}
+
+.lory-carousel .next {
+    right: 0;
+}
+
+.lory-carousel .prev {
+    left: 0;
+}
+
+.lory-carousel .next svg, .lory-carousel .prev svg {
+    width: 25px;
+}
+
+.lory-carousel .js_dots {
+    display: inline-block;
+    text-align: center;
+}
+
+.lory-carousel .js_dots li {
+    display: inline-block;
+    text-align: center;
+    width: 0.825em;
+    height: 0.825em;
+    margin: 0.75em 0.25em;
+    -webkit-border-radius: 50%; 
+    -moz-border-radius: 50%; 
+    border-radius: 50%; 
+}

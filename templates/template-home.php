@@ -61,7 +61,7 @@ get_header(); ?>
                     <?php
                     while ( have_posts() ) : the_post();
 
-                        get_template_part( 'template-parts/post/module', 'image' );
+                        get_template_part( 'template-parts/post/module', 'home' );
 
                     endwhile
                     ?>

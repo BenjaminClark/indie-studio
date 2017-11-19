@@ -150,6 +150,20 @@ function indie_studio_enqueue_scripts(){
         'https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js', 
         '4.1.3', 
     );
+    
+    
+    /**
+     * Lory
+     * http://meandmax.github.io/lory/
+     */ 
+    $js_to_compile[] = array(
+        'lory', 
+        'https://cdnjs.cloudflare.com/ajax/libs/lory.js/2.3.3/lory.min.js', 
+        '2.3.3', 
+    );
+    
+        
+    
 
     
     /**
@@ -210,11 +224,17 @@ function indie_studio_enqueue_scripts(){
     );
     
     $js_to_compile[] = array(
+        'indie_studio_lory_carousel', 
+        $JS_theme_dir . 'lory-carousel.js', 
+        indie_studio_get_file_version_number( 'indie_studio_lory_carousel', $JS_direct_path . 'lory-carousel.js' ), 
+    );
+    
+    $js_to_compile[] = array(
         'indie_studio_masonry', 
         $JS_theme_dir . 'masonry.js', 
         indie_studio_get_file_version_number( 'indie_studio_masonry', $JS_direct_path . 'masonry.js' ), 
     );
-        
+    
     $js_to_compile[] = array(
         'indie_studio_load_more_posts', 
         $JS_theme_dir . 'load-more-posts.js', 
@@ -307,7 +327,7 @@ function indie_studio_enqueue_styles(){
         'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css',
         '3.5.2',
     );
-    
+     
     
     /**
      * Now include all theme components

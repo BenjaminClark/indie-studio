@@ -358,9 +358,6 @@ function indie_studio_the_post_thumbnail( $before = '', $after = '' ) {
 
 /**
  * Adds module thumbnail support
- * 
- * @param string $before = '' HTML to prepend to the image
- * @param string $after = ''] HTML to append to the image
  *                                                  
  * @since IndieStudio 1.0.0
  */
@@ -373,6 +370,48 @@ function indie_studio_the_module_image() {
 	};
 }
 
+
+/**
+ * Adds module gallery support
+ *                               
+ * @since IndieStudio 1.0.0
+ */
+function indie_studio_the_module_gallery_images() {
+    
+    echo '<div class="entry-media"><div class="media-fit">';
+    echo '<div class="lory-carousel js_slider">';
+    echo '<div class="frame js_frame">';
+    echo '<ul class="slides js_slides">';
+    
+    $gallery = get_post_gallery( get_the_ID(), false );
+    $gallery_ids = explode(",", $gallery['ids']);
+
+    ?>
+
+    <?php
+    $gallery_count = 0;
+    foreach ( $gallery_ids as $image_id ){
+        $gallery_count++;
+
+        $image_attributes = wp_get_attachment_image_src( $image_id, 'module' );
+
+        if ( $image_attributes ){ ?>
+            <li class="js_slide">
+                <img class="obj-fit cover" src="<?php echo $image_attributes[0]; ?>" />
+            </li>
+        <?php 
+        }
+
+        if($gallery_count == 3){
+            break;
+        }
+    }
+    
+    echo '</ul></div>';
+    echo '<ul class="js_dots dots sneak-in"></ul>';
+    echo '</div></div></div>';
+
+}
 
 /**
  * Builds the footer for modules

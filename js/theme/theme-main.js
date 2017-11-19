@@ -67,7 +67,7 @@ jQuery(document).ready(function($) {
             }
         });
     });    
-
+    
     $(".fancybox").fancybox({
         fullScreen : false,
         iframe : {
@@ -87,31 +87,4 @@ jQuery(document).ready(function($) {
         },
     });
     
-    /**
-     * Owl Carousel 
-     **/
-    $.fn.andSelf = function() {
-        return this.addBack.apply(this, arguments);
-    }
-    
-    // Get the multiple owl carousels and set IDs
-    var breakdownOwlCount = 0;
-    var breakdownOwlDiv = $(".breakdown-owl");
-    breakdownOwlDiv.each(function () {
-        if ($(this).children().length > 1) {
-            $(this).attr("id", "breakdown-owl-" + breakdownOwlCount);
-            $('#breakdown-owl-' + breakdownOwlCount).owlCarousel({
-                nav: false, // Show next and prev buttons
-                margin: 0,
-                dots: true,
-                items: 1,
-                autoplay: true,
-                autoplayTimeout: 5000,
-                loop: true,
-                animateOut: 'fadeOut',
-            });
-            breakdownOwlCount++;
-        }
-    });  
-     
 });
