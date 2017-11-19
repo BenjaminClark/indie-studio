@@ -419,7 +419,12 @@ function indie_studio_the_module_gallery_images() {
 
 function indie_studio_module_footer(){
 
-    echo '<div class="user-interaction sneak-in">';
+    $back_panel = '';
+    if( !get_the_excerpt() ){
+        $back_panel = ' back-panel';
+    }
+    
+    echo '<div class="user-interaction sneak-in' . $back_panel . '">';
     
     if ( get_post_like_count() ){
         echo '<div class="likes"><span aria-label="' . get_post_like_count() . ' likes for this post"><i class="fa fa-heart" aria-hidden="true"></i>' . get_post_like_count() . '</span></div>';
