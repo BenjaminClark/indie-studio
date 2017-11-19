@@ -19,6 +19,8 @@ include ( 'inc/editor.php' );
 include ( 'inc/essentials.php' );
 include ( 'inc/semantics.php' );
 
+include ( 'inc/video_functions.php' );
+
 include ( 'inc/search.php' );
 
 include ( 'inc/customizer/customizer_init.php' );

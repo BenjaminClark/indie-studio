@@ -372,6 +372,37 @@ function indie_studio_the_module_image() {
 
 
 /**
+ * Adds module gallery thumbnail support
+ *                                                  
+ * @since IndieStudio 1.0.0
+ */
+function indie_studio_the_module_video_image() {
+
+    $placeholder = '';
+
+    //Get the video placeholder
+    if ( get_first_iframe( get_the_ID() ) ){
+        $video_url = get_url_from_iframe( get_first_iframe( get_the_ID() ) );
+        $video_still = get_video_placeholder( $video_url );
+        if($video_still){
+            $placeholder = '<img src="' . $video_still . '" class="photo u-photo u-featured obj-fit cover smooth wp-post-image" alt="" itemprop="image">';
+        }
+    }
+
+    //If the placeholder doesnt exist, get the featured image
+	if ( !$placeholder ) {
+        $placeholder = get_the_post_thumbnail( 'module', array( 'class' => 'photo u-photo u-featured obj-fit cover smooth', 'itemprop' => 'image' ) );
+	};
+    
+    
+    echo '<div class="entry-media"><div class="media-fit">';
+    echo '<div class="overlay smooth"></div>';
+    echo $placeholder;
+    echo '</div></div>';
+    
+}
+
+/**
  * Adds module gallery support
  *                               
  * @since IndieStudio 1.0.0
