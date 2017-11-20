@@ -380,20 +380,31 @@ function indie_studio_the_module_video_image() {
 
     $placeholder = '';
 
+    $first_video = get_first_wordpress_video( get_the_ID() );
+    
     //Get the video placeholder
-    if ( get_first_iframe( get_the_ID() ) ){
-        $video_url = get_url_from_iframe( get_first_iframe( get_the_ID() ) );
-        $video_still = get_video_placeholder( $video_url );
-        if($video_still){
-            $placeholder = '<img src="' . $video_still . '" class="photo u-photo u-featured obj-fit cover smooth wp-post-image" alt="" itemprop="image">';
+    if ( $first_video ){
+        
+        $video_url = get_url_from_iframe( $first_video );
+        
+        if( is_wordpress_hosted_video( $video_url ) ){
+            
+            //No way of getting a thumbnail just yet. Stay tuned!
+            
+        } else {
+        
+            $video_still = get_video_placeholder( $video_url );
+            if( $video_still ){
+                $placeholder = '<img src="' . $video_still . '" class="photo u-photo u-featured obj-fit cover smooth wp-post-image" alt="" itemprop="image">';
+            }
+            
         }
     }
-
-    //If the placeholder doesnt exist, get the featured image
-	if ( !$placeholder ) {
-        $placeholder = get_the_post_thumbnail( 'module', array( 'class' => 'photo u-photo u-featured obj-fit cover smooth', 'itemprop' => 'image' ) );
-	};
     
+    //If the placeholder doesnt exist, get the featured image
+	if ( !$placeholder ) {        
+        $placeholder = get_the_post_thumbnail( get_the_ID(), 'module', array( 'class' => 'photo u-photo u-featured obj-fit cover smooth', 'itemprop' => 'image' ) );    
+	};
     
     echo '<div class="entry-media"><div class="media-fit">';
     echo '<div class="overlay smooth"></div>';

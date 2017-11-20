@@ -1,17 +1,33 @@
 <?php
 
 /**
- * Get the first Iframe for the post
+ * Get the first video for the post
  
  * @param Int $post_id The post ID to get the video from
  */
 
-function get_first_iframe( $post_id ){
+function get_first_wordpress_video( $post_id ){
     //Get the IFrames from the WYSIWYG and return the first one found
     $content = apply_filters('the_content', get_post_field('post_content', $post_id));
-    $iframes = get_media_embedded_in_content( $content, 'iframe' );
-    if(isset($iframes)){
-        return $first_vid = $iframes[0];
+    $videos = get_media_embedded_in_content( $content, array('video', 'iframe' ) );    
+    if( !empty($videos)){
+        return $first_vid = $videos[0];
+    }
+    return false;
+}
+
+
+/**
+ * Is the video hosting on WordPress
+ * 
+ * Checks a URL or Iframe string to see if the URL is from the current site
+ * 
+ * @param string $url The video URL or Iframe string
+ */
+
+function is_wordpress_hosted_video( $url ){    
+    if ( strpos($url, content_url() ) !== false ) {
+        return true;   
     }
     return false;
 }
@@ -26,7 +42,7 @@ function get_first_iframe( $post_id ){
 function get_url_from_iframe( $iframe ){
     preg_match('/src="([^"]*)"/i', $iframe, $matches);
     if( isset($matches[1]) ){
-        return $matches[1];
+        return strtok($matches[1], '?');
     }
     return false;    
 }
@@ -79,12 +95,42 @@ function get_vimeo_video_id( $url ){
 
 
 /**
+ * Get Youtube Video Still from API
+ * 
+ * @param string $id The video ID
+ * @return string Still image URL
+ */
+function get_youtube_video_still( $id = null ){
+    if ( $id ){
+        return 'https://img.youtube.com/vi/' . $id . '/0.jpg';
+    }
+    return false;
+}
+
+
+/**
+ * Get Vimeo Video Still from API
+ * 
+ * @param string $id The video ID
+ * @return string Still image URL
+ */
+function get_vimeo_video_still( $id = null ){
+    if ( $id ){
+        $vimeo_api = unserialize( file_get_contents("http://vimeo.com/api/v2/video/$vimeo_id.php") );#
+        if ( !empty( $vimeo_api[0]['thumbnail_large'] ) ) {
+            return $vimeo_api[0]['thumbnail_large'];
+        } 
+    }
+    return false;
+}
+
+/**
  * Get the video placeholder from video URL
  * 
- * @param string $url Video Url
- *                          
- * @return string
+ * @param string $url Video Url              
+ * @return string placeholder URL
  */
+
 function get_video_placeholder( $url = null ){
 
     if ( $url ){
@@ -92,20 +138,11 @@ function get_video_placeholder( $url = null ){
         $provider = get_video_provider( $url );
 
         if ( $provider == 'youtube' ){
-            $youtube_id = get_youtube_video_id( $url );
-            if ( $youtube_id ){
-                return 'https://img.youtube.com/vi/' . $youtube_id . '/0.jpg';
-            }
+            return get_youtube_video_still( get_youtube_video_id( $url ) );
         }
         
         if ( $provider == 'vimeo' ){
-            $vimeo_id = get_vimeo_video_id( $url );
-            if ( $vimeo_id ){
-                $vimeo_api = unserialize( file_get_contents("http://vimeo.com/api/v2/video/$vimeo_id.php") );#
-                if ( !empty( $vimeo_api[0]['thumbnail_large'] ) ) {
-                    return $vimeo_api[0]['thumbnail_large'];
-                }
-            }
+            return get_vimeo_video_still( get_vimeo_video_id( $url ));
         }
 
     }
