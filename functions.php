@@ -49,8 +49,7 @@ include ( 'inc/enqueue_scripts.php' );
 include ( 'inc/dynamic_css.php' );
 
 //Custom Compiler and versioning
-include ( 'inc/versioning/version.php' );
-include ( 'inc/versioning/compile.php' );
+include ( 'inc/version.php' );
 
 //Ajax
 include ( 'inc/load_more_posts.php' );

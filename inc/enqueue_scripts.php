@@ -33,20 +33,25 @@ function indie_studio_enqueue_scripts(){
      * If the site is being run without minification, the main code must be called theme-script
      **/
     
+    $debug = false;
+    if (defined('WP_DEBUG') && true === WP_DEBUG) {
+        $debug = true;
+    }
+    
     $localize_this = array (
         //General Data
         'ajax_url'                  => admin_url('admin-ajax.php'), //Standard ajax init
         'base_url'                  => site_url(),
         'img_url'                   => get_stylesheet_directory_uri() . '/img/',
         'security'                  => wp_create_nonce('indie_studio_nonce'),
+        'debug'                     => $debug,
     );
     
     
-    //Set the CSS directory for this theme
-    $JS_3rdP_dir    = get_stylesheet_directory_uri() . '/js/third_party/';
-    $JS_theme_dir   = get_stylesheet_directory_uri() . '/js/theme/';
-    $JS_direct_path = get_stylesheet_directory() . '/js/theme/';    
-    
+    //Set the JS directory for this theme
+    $JS_theme_dir           = get_stylesheet_directory_uri() . '/assets/js/';
+    $JS_direct_path         = get_stylesheet_directory() . '/assets/js/';    
+    $JS_conditional_path    = get_stylesheet_directory() . '/assets/js/conditionals/'; 
     
     /**
      * Scripts to be added in the header
@@ -59,7 +64,7 @@ function indie_studio_enqueue_scripts(){
     */
     wp_enqueue_script(
         'respond', 
-        $JS_3rdP_dir . 'respond.min.js', 
+        $JS_conditional_path . 'respond.min.js', 
         false , 
         '1.4.2', 
         false
@@ -74,7 +79,7 @@ function indie_studio_enqueue_scripts(){
     */
     wp_enqueue_script(
         'html5_shiv', 
-        $JS_3rdP_dir . 'html5shiv.js', 
+        $JS_conditional_path . 'html5shiv.js', 
         false , 
         '3.7.3', 
         false
@@ -88,170 +93,24 @@ function indie_studio_enqueue_scripts(){
     
     wp_enqueue_style( 'google_fonts', get_google_fonts_enqueue_url() );
     
-        
-    /**
-     * We can only compile JS files that are to be enqueued in the footer
-     * header files must be enqueued as standard
-     **/ 
-    
-    $js_to_compile = array();  
-    
-        
-    
-    /**
-    * Load SmoothScroll
-    * 
-    * Everyone loves Smoothscroll
-    */
-    $js_to_compile[] = array(
-        'smooth_scroll', 
-        $JS_3rdP_dir . 'smoothscroll.js',
-        '1.4.4', 
+    wp_enqueue_script(
+        'theme_vendor', 
+        $JS_theme_dir . 'vendors.min.js', 
+        array('jquery'), 
+        indie_studio_get_file_version_number( 'theme_vendor', $JS_direct_path . 'vendors.min.js' ), 
+        true
     );
     
-    
-    /**
-     * Load Scroll Reveal
-     **/
-    $js_to_compile[] = array(
-        'smooth_reveal', 
-        $JS_3rdP_dir . 'scrollreveal.min.js',
-        '3.3.4', 
+    wp_enqueue_script(
+        'theme_custom', 
+        $JS_theme_dir . 'custom.min.js', 
+        array('jquery', 'theme_vendor'), 
+        indie_studio_get_file_version_number( 'theme_custom', $JS_direct_path . 'custom.min.js' ), 
+        true
     );
     
-    
-    /**
-    * Load Fancybox 3
-    */
-    $js_to_compile[] = array(
-        'fancy_box_3', 
-        'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.0/jquery.fancybox.min.js', 
-        '3.2.0', 
-    );
-    
-    
-    /**
-     * Masonry
-     * https://masonry.desandro.com/
-     */ 
-    $js_to_compile[] = array(
-        'masonry', 
-        'https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js', 
-        '4.0.0', 
-    );
-
-    
-    /**
-     * Images Loaded
-     * https://imagesloaded.desandro.com/
-     */ 
-    $js_to_compile[] = array(
-        'imagesLoaded', 
-        'https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js', 
-        '4.1.3', 
-    );
-    
-    
-    /**
-     * Lory
-     * http://meandmax.github.io/lory/
-     */ 
-    $js_to_compile[] = array(
-        'lory', 
-        'https://cdnjs.cloudflare.com/ajax/libs/lory.js/2.3.3/lory.min.js', 
-        '2.3.3', 
-    );
-    
-        
-    
-
-    
-    /**
-     * Now all the custom theme scripts
-     **/
-    
-    
-    /**
-     * This is required to pass the localisation variables to. Might need rethinking.
-     */
-    
-    $js_to_compile[] = array(
-        'indie_studio_localisation', 
-        $JS_theme_dir . 'localised.js', 
-        indie_studio_get_file_version_number( 'indie_studio_localisation', $JS_direct_path . 'localised.js' ), 
-    );
-    
-                
-    //Only load logging if debug is turned on
-    if (defined('WP_DEBUG') && true === WP_DEBUG) {
-    
-        $js_to_compile[] = array(
-            'indie_studio_logging', 
-            $JS_theme_dir . 'logging.js', 
-            indie_studio_get_file_version_number( 'indie_studio_logging', $JS_direct_path . 'logging.js' ), 
-        );
-    
-    }
-    
-    $js_to_compile[] = array(
-        'indie_studio_ajax', 
-        $JS_theme_dir . 'ajax.js', 
-        indie_studio_get_file_version_number( 'indie_studio_ajax', $JS_direct_path . 'ajax.js' ), 
-    );
-                
-    $js_to_compile[] = array(
-        'indie_studio_essentials', 
-        $JS_theme_dir . 'essentials.js', 
-        indie_studio_get_file_version_number( 'indie_studio_essentials', $JS_direct_path . 'essentials.js' ), 
-    );
-    
-    $js_to_compile[] = array(
-        'indie_studio_parralax', 
-        $JS_theme_dir . 'parralax.js', 
-        indie_studio_get_file_version_number( 'indie_studio_parralax', $JS_direct_path . 'parralax.js' ), 
-    );
-                
-    $js_to_compile[] = array(
-        'indie_studio_menu', 
-        $JS_theme_dir . 'menu.js', 
-        indie_studio_get_file_version_number( 'indie_studio_menu', $JS_direct_path . 'menu.js' ), 
-    );
-        
-    $js_to_compile[] = array(
-        'indie_studio_toggle_list', 
-        $JS_theme_dir . 'toggle-list.js', 
-        indie_studio_get_file_version_number( 'indie_studio_toggle_list', $JS_direct_path . 'toggle-list.js' ), 
-    );
-    
-    $js_to_compile[] = array(
-        'indie_studio_lory_carousel', 
-        $JS_theme_dir . 'lory-carousel.js', 
-        indie_studio_get_file_version_number( 'indie_studio_lory_carousel', $JS_direct_path . 'lory-carousel.js' ), 
-    );
-    
-    $js_to_compile[] = array(
-        'indie_studio_masonry', 
-        $JS_theme_dir . 'masonry.js', 
-        indie_studio_get_file_version_number( 'indie_studio_masonry', $JS_direct_path . 'masonry.js' ), 
-    );
-    
-    $js_to_compile[] = array(
-        'indie_studio_load_more_posts', 
-        $JS_theme_dir . 'load-more-posts.js', 
-        indie_studio_get_file_version_number( 'indie_studio_load_more_posts', $JS_direct_path . 'load-more-posts.js' ), 
-    );
-    
-    /**
-    * Load the main JS file for the theme
-    */
-    
-    $js_to_compile[] = array(
-        'theme_script', 
-        $JS_theme_dir . 'theme-main.js', 
-        indie_studio_get_file_version_number( 'theme_script', $JS_direct_path . 'theme-main.js' ), 
-    );
-        
-    indie_studio_create_theme_css_js( $js_to_compile, 'js', $localize_this );
+    wp_localize_script( 'theme_custom', 'theme_custom_ajax', $localize_this );
+     
         
 }
 add_action( 'wp_enqueue_scripts', 'indie_studio_enqueue_scripts' );
@@ -280,77 +139,27 @@ add_filter( 'wp_default_scripts', 'indie_studio_remove_jquery_migrate' );
  * minifier/basic enqueuer
  */
 function indie_studio_enqueue_styles(){
-    
-    $css_to_compile = array();
-    
+        
     //Set the CSS directory for this theme
-    $CSS_3rdP_dir       = get_stylesheet_directory_uri() . '/css/third_party/';
-    $CSS_theme_dir      = get_stylesheet_directory_uri() . '/css/theme/';
-    $CSS_direct_path    = get_stylesheet_directory() . '/css/theme/';
+    $CSS_theme_dir           = get_stylesheet_directory_uri() . '/assets/css/';
+    $CSS_direct_path         = get_stylesheet_directory() . '/assets/css/';    
     
+    wp_enqueue_style(
+        'theme_style', 
+        $CSS_theme_dir . 'base.min.css', 
+        false, 
+        indie_studio_get_file_version_number( 'theme_style', $CSS_direct_path . 'base.min.css' ),
+        'all'
+    ); 
     
-    /**
-    * Load Normalize.CSS
-    */
-    $css_to_compile[] = array(
-        'normalize', 
-        'https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css', 
-        '7.0.0',
-    );
+    wp_enqueue_style(
+        'theme_dynamic', 
+        admin_url('admin-ajax.php').'?action=indie_studio_dynamic_css', 
+        false, 
+        null,
+        'all'
+    ); 
         
-    
-    /**
-    * Load Font Awesome
-    */ 
-    $css_to_compile[] = array(
-        'font_awesome', 
-        'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 
-        '4.7.0', 
-    );
-    
-    
-    /**
-    * Load Fancy Box 3
-    */
-    $css_to_compile[] = array(
-        'fancy_box_3', 
-        'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.0/jquery.fancybox.min.css', 
-        '3.2.0', 
-    );
-    
-    
-    /**
-    * Load Animate
-    */ 
-    $css_to_compile[] = array(
-        'animate', 
-        'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css',
-        '3.5.2',
-    );
-     
-    
-    /**
-     * Now include all theme components
-     **/ 
-       
-    //Include SCSS Compiled CSS
-    $css_to_compile[] = array(
-        'indie_studio_base', 
-        $CSS_theme_dir . 'base.css',
-        indie_studio_get_file_version_number( 'indie_studio_base', $CSS_direct_path . 'base.css' ),
-    );
-    
-    /**
-     * Dynamic CSS - Add last to overwrite any preset options
-     */
-    $css_to_compile[] = array(
-        'indie_studio_dynamic', 
-        admin_url('admin-ajax.php').'?action=indie_studio_dynamic_css',
-        1,
-    );
-        
-    indie_studio_create_theme_css_js( $css_to_compile, 'css' );
-    
 }
 add_action( 'wp_enqueue_scripts', 'indie_studio_enqueue_styles' );
 
@@ -397,8 +206,8 @@ add_action( 'admin_enqueue_scripts', 'indie_studio_enqueue_admin_css_styles' );
 function indie_studio_enqueue_admin_js_scripts(){
     
     //Set the theme directory
-    $JS_theme_dir   = get_stylesheet_directory_uri() . '/js/theme/';
-    $JS_direct_path = get_stylesheet_directory() . '/js/theme/';
+    $JS_theme_dir   = get_stylesheet_directory_uri() . '/assets/js/custom/back/';
+    $JS_direct_path = get_stylesheet_directory() . '/assets/js/custom/back/';
     
     $localize_this = array (
         //General Data
@@ -412,7 +221,7 @@ function indie_studio_enqueue_admin_js_scripts(){
         '1', 
         true
     );
-    wp_localize_script( 'indie_studio_media_libary_svg', 'indie_studio_ajax', $localize_this );
+    wp_localize_script( 'indie_studio_media_libary_svg', 'theme_custom_ajax', $localize_this );
     
     wp_enqueue_script(
         'indie_studio_admin', 
@@ -421,7 +230,7 @@ function indie_studio_enqueue_admin_js_scripts(){
         '1', 
         true
     );
-    wp_localize_script( 'indie_studio_admin', 'indie_studio_ajax', $localize_this );
+    wp_localize_script( 'indie_studio_admin', 'theme_custom_ajax', $localize_this );
     
 
     

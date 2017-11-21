@@ -32,7 +32,7 @@ jQuery(document).ready(function($) {
                             var handler = function(element){
 
                                 $.ajax({
-                                    url        : indie_studio_ajax.ajax_url,
+                                    url        : theme_custom_ajax.ajax_url,
                                     data       : {
                                         'action'        : 'get_attachment_url_media_library',
                                         'attachmentID'  : element.attr('data-id')

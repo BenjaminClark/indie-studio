@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
  
-    var ajaxUrl             = indie_studio_ajax.ajax_url,
+    var ajaxUrl             = theme_custom_ajax.ajax_url,
         cookieReset         = false;
     
     /**

@@ -6,8 +6,7 @@
  * this file.
  **/ 
 
-var allowDebug          = true;
-
+var allowDebug          = theme_custom_ajax.ajax_url;
 
 /** Google Analytics Checker **/
 function creatGaEvent(title, action, name){
