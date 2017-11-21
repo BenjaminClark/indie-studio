@@ -26,16 +26,16 @@ h3,
 h4,
 h5 {
     font-family: '<?php echo $heading_font;?>', Verdana, Geneva, sans-serif;
-    color: <?php echo get_theme_mod('indie_studio_heading_text_colour', '#484848'); ?>;
+    color: <?php echo get_theme_mod('indie_studio_heading_text_colour', '#222222'); ?>;
 } 
 
 p, li, a, label {
     font-family: '<?php echo $paragraph_font;?>', Verdana, Geneva, sans-serif;
-    color: <?php echo get_theme_mod('indie_studio_paragraph_text_colour', '#484848');?>;
+    color: <?php echo get_theme_mod('indie_studio_paragraph_text_colour', '#222222');?>;
 }
 
 body {
-    background-color: <?php echo get_theme_mod('indie_studio_background_colour', '#ffffff');?>;
+    background-color: <?php echo get_theme_mod('indie_studio_background_colour', '#f5f4f2');?>;
 }
 
 

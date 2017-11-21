@@ -15,7 +15,7 @@ $wp_customize->add_section('indie_studio_fonts_colours_section', array(
  */ 
 
 $wp_customize->add_setting('indie_studio_background_colour', array(
-    'default'	        => '#ffffff',
+    'default'	        => '#f5f4f2',
     'transport'         => 'postMessage',
     'sanitize_callback' => 'sanitize_hex_color',
 ) );
@@ -92,7 +92,7 @@ $wp_customize->add_control(
  */ 
 
 $wp_customize->add_setting('indie_studio_heading_text_colour', array(
-    'default'	        => '#484848',
+    'default'	        => '#222222',
     'transport'         => 'postMessage',
     'sanitize_callback' => 'sanitize_hex_color',
 ) );
@@ -108,7 +108,7 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting('indie_studio_paragraph_text_colour', array(
-    'default'	        => '#484848',
+    'default'	        => '#222222',
     'transport'         => 'postMessage',
     'sanitize_callback' => 'sanitize_hex_color',
 ) );

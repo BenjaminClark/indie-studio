@@ -773,6 +773,7 @@ body.navigation-open #site-navigation {
 
   /** Menu **/
   #site-navigation {
+    background-color: transparent;
     overflow: visible;
     position: relative;
     margin-top: 0.5em;
@@ -976,18 +977,11 @@ body.navigation-open #site-navigation {
   overflow: hidden;
   font-size: 1rem;
   /** Reset module top level div **/
-  float: left; }
+  float: left;
+  box-shadow: 0 1px 3px rgba(100, 100, 100, 0.15); }
 
 .module .entry-text {
-  padding: 0.875em 0.875em 2em 0.875em;
-  border-bottom-left-radius: 0.75em;
-  border-bottom-right-radius: 0.75em;
-  background-color: rgba(242, 242, 242, 0.25);
-  transition: all .5s ease-out 0.75s; }
-
-.module a:hover .entry-text {
-  background-color: #f2f2f2;
-  transition: all 0.3s ease-out 0.1s; }
+  padding: 1.25em 1.25em 2em 1.25em; }
 
 .module a,
 .module a h2,
@@ -996,23 +990,15 @@ body.navigation-open #site-navigation {
   opacity: 1;
   text-decoration: none; }
 
-.module a h2,
-.module a h1,
-.module a p {
-  opacity: 0.8; }
-
-.module a:hover h2,
-.module a:hover h1,
-.module a:hover p {
-  opacity: 1; }
-
 /** Fonts **/
 .module h1,
 .module h2 {
-  font-size: 1.25em; }
+  font-size: 1.25em;
+  line-height: 1.25em; }
 
 .module p {
-  font-size: 1em; }
+  font-size: 1em;
+  line-height: 1.25em; }
 
 /** Image **/
 .module .entry-media {
@@ -1046,11 +1032,11 @@ body.navigation-open #site-navigation {
   z-index: 3; }
 
 .module:not(.module-gallery) a:hover .entry-media .media-fit img {
-  -ms-transform: scale(1.05, 1.05);
+  -ms-transform: scale(1.025, 1.025);
   /* IE 9 */
-  -webkit-transform: scale(1.05, 1.05);
+  -webkit-transform: scale(1.025, 1.025);
   /* Safari */
-  transform: scale(1.05, 1.05); }
+  transform: scale(1.025, 1.025); }
 
 .module img.alignright {
   margin: 0;
@@ -1074,7 +1060,7 @@ body.navigation-open #site-navigation {
 /** Likes and Comments **/
 .module .user-interaction {
   width: 100%;
-  padding: 0.875em;
+  padding: 1.25em;
   font-size: 0.8em;
   position: absolute;
   bottom: -4em;
@@ -1083,15 +1069,25 @@ body.navigation-open #site-navigation {
   transition: all .5s ease-out 0.3s; }
 
 .module .user-interaction.back-panel {
-  background-color: rgba(255, 255, 255, 0.3); }
+  background-color: #fff; }
 
 .module a:hover .lory-carousel .js_dots,
 .module a:hover .user-interaction {
   bottom: 0;
   transition: all 0.3s ease-out 0.1s; }
 
+.module .user-interaction .likes {
+  float: left; }
+
 .module .user-interaction .likes i {
   color: #ef4545;
+  margin-right: 0.125em; }
+
+.module .user-interaction .comments {
+  float: right; }
+
+.module .user-interaction .comments i {
+  color: #777777;
   margin-right: 0.125em; }
 
 .gallery {
