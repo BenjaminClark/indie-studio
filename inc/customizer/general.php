@@ -24,3 +24,19 @@ $wp_customize->add_control('indie_studio_header_search', array(
     'section'  => 'indie_studio_general_section',
     'type'     => 'checkbox',
 ));
+
+
+/** 
+ * Click to load, or scroll to load
+ */
+
+$wp_customize->add_setting('indie_studio_infinite_scroll', array(
+    'default'	 => true,
+) );
+
+$wp_customize->add_control('indie_studio_infinite_scroll', array(
+    'settings' => 'indie_studio_infinite_scroll',
+    'label'    => __('Infinite Scroll'),
+    'section'  => 'indie_studio_general_section',
+    'type'     => 'checkbox',
+));

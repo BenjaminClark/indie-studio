@@ -26,9 +26,20 @@ function indie_studio_load_more_button( $button_text = '' ){
             $template = 'search';
         } 
         
+        
+        /**
+         * Set loading option
+         */
+        
+        $load_type = 'button';
+        if( get_theme_mod('indie_studio_infinite_scroll') ){
+            $load_type = 'infinite';
+        }
+        
+        
         ?>
         <div id="load-more-posts-error" class="load-more-posts-error error smooth"><p><?php echo esc_html__( 'Something has gone wrong. Please try again.', indie_studio_text_domain() );?></p></div>
-        <button id="load-more-posts" class="load-more-posts-button" data-paged="<?php echo esc_attr__( $paged, indie_studio_text_domain() );?>" data-query='<?php echo json_encode ( $wp_query->query ) ;?>' data-custom-template="<?php echo $template;?>" style="opacity:0;"><?php echo esc_html__( $button_text, indie_studio_text_domain() );?></button>
+        <button id="load-more-posts" class="load-more-posts-button" data-paged="<?php echo esc_attr__( $paged, indie_studio_text_domain() );?>" data-query='<?php echo json_encode ( $wp_query->query ) ;?>' data-custom-template="<?php echo $template;?>" data-loadtype="<?php echo $load_type;?>" style="opacity:0;"><?php echo esc_html__( $button_text, indie_studio_text_domain() );?></button>
     <?php
     }
 }
@@ -63,7 +74,6 @@ function indie_studio_load_more_posts() {
            
         //If we require a custom template, get that here
         $custom_template = sanitize_text_field ( $_POST['template'] );
-        
             
         //Updated paged
         $args['paged'] = $return['paged'];

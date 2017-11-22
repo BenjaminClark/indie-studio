@@ -599,7 +599,8 @@ if ( ajaxPostWrap && loadMorePosts ){
         buttonWrap      = document.getElementById("load-more-wrap"),
         query           = loadMorePosts.getAttribute('data-query'),
         paged           = loadMorePosts.getAttribute('data-paged'),
-        template        = loadMorePosts.getAttribute('data-custom-template');
+        template        = loadMorePosts.getAttribute('data-custom-template'),
+        loadType        = loadMorePosts.getAttribute('data-loadtype');
             
     //Hide standard buttons
     if( basicNavAbove ){
@@ -610,37 +611,56 @@ if ( ajaxPostWrap && loadMorePosts ){
     }
     
     //Show Load More button
-    fade({el:loadMorePosts,type:'in',duration: 500});
+    if( loadType == 'button' ){
+        fade({el:loadMorePosts,type:'in',duration: 500});
+    }
+    
     
     /**
      * Post Ajax
      **/
     
+    var data = {
+        action      : 'indie_studio_load_more_posts',
+        query       : query,
+        template    : template,
+        paged       : paged,
+    };
+    
+    
+    //Run on scroll to bottom of page
+    if( loadType == 'infinite' ){
+        window.onscroll = function(ev) {
+            if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
+                getNewPostsAjax(data);
+            }
+        };
+    }
+    
     //Run on load more click
-    if( loadMorePosts ){
-        
+    if( loadMorePosts && loadType == 'button' ){
         loadMorePosts.addEventListener("click",function(){
-            
-            //Remove any errors
-            load_more_error('out');
-            
-            //Fade out load more button  -  Then add loading spinner
-            fade({el:loadMorePosts,type:'out',duration: 500,},function(){
-                ajaxLoadingAnimation( document.getElementById("load-more-wrap"), 'prepend' );
-            });
-            
-            var data = {
-                action      : 'indie_studio_load_more_posts',
-                query       : query,
-                template    : template,
-                paged       : paged,
-            };
-            
-            postPhpAjax(data, 'json', '', postsLoadFunction);
-
+            getNewPostsAjax(data);
         });
     }
+    
 }
+
+
+function getNewPostsAjax(data){
+    
+    //Remove any errors
+    load_more_error('out');
+
+    //Fade out load more button  -  Then add loading spinner
+    fade({el:loadMorePosts,type:'out',duration: 500,},function(){
+        ajaxLoadingAnimation( document.getElementById("load-more-wrap"), 'prepend' );
+    });
+
+    postPhpAjax(data, 'json', '', postsLoadFunction);   
+    
+}
+
 
 function postsLoadFunction(response){
     
@@ -702,7 +722,7 @@ function postsLoadFunction(response){
     }
     
     //No Content
-    ajaxLoadingAnimation(document.getElementById("load-more-wrap"), 'remove');
+    ajaxLoadingAnimation( document.getElementById("load-more-wrap"), 'remove' );
     
 }
 

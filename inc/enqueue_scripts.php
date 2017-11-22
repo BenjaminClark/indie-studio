@@ -184,11 +184,11 @@ add_action( 'wp_enqueue_scripts', 'indie_studio_enqueue_styles' );
 function indie_studio_enqueue_admin_css_styles(){
     
     //Set the theme directory
-    $CSS_theme_dir      = get_stylesheet_directory_uri() . '/css/';
+    $CSS_theme_dir      = get_stylesheet_directory_uri() . '/assets/css/custom/back/';
     
     wp_enqueue_style(
         'indie_studio_admin', 
-        $CSS_theme_dir . '/theme/admin-css.css', 
+        $CSS_theme_dir . 'admin-css.css', 
         false, 
         '1', 
         false
@@ -256,8 +256,8 @@ add_action( 'admin_enqueue_scripts', 'indie_studio_enqueue_admin_js_scripts' );
 
 function indie_studio_enqueue_customizer_control(){
     
-    $JS_theme_dir   = get_stylesheet_directory_uri() . '/js/theme/';
-    $JS_direct_path = get_stylesheet_directory() . '/js/theme/';
+    $JS_theme_dir   = get_stylesheet_directory_uri() . '/assets/js/custom/back/';
+    $JS_direct_path = get_stylesheet_directory() . '/assets/js/custom/back/';
 
     wp_enqueue_script(
         'indie_studio_customizer', 
@@ -276,8 +276,8 @@ add_action( 'customize_controls_enqueue_scripts', 'indie_studio_enqueue_customiz
 
 function indie_studio_enqueue_customizer_preview(){
     
-    $JS_theme_dir   = get_stylesheet_directory_uri() . '/js/theme/';
-    $JS_direct_path = get_stylesheet_directory() . '/js/theme/';
+    $JS_theme_dir   = get_stylesheet_directory_uri() . '/assets/js/custom/back/';
+    $JS_direct_path = get_stylesheet_directory() . '/assets/js/custom/back/';
 
     wp_enqueue_script(
         'indie_studio_customizer', 
