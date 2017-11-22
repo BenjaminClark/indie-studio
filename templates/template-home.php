@@ -70,8 +70,6 @@ get_header(); ?>
 
                 <?php
 
-                indie_studio_content_nav( 'nav-below', 'load-more' );
-
             }
 
             //Clean up post

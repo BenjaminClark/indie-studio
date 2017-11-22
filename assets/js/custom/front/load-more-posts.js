@@ -65,10 +65,14 @@ function getNewPostsAjax(data){
     //Remove any errors
     load_more_error('out');
 
-    //Fade out load more button  -  Then add loading spinner
-    fade({el:loadMorePosts,type:'out',duration: 500,},function(){
+    if ( loadType === 'button' ){
+        //Fade out load more button  -  Then add loading spinner
+        fade({el:loadMorePosts,type:'out',duration: 500,},function(){
+            ajaxLoadingAnimation( document.getElementById("load-more-wrap"), 'prepend' );
+        });
+    } else {
         ajaxLoadingAnimation( document.getElementById("load-more-wrap"), 'prepend' );
-    });
+    }
 
     postPhpAjax(data, 'json', '', postsLoadFunction);   
     

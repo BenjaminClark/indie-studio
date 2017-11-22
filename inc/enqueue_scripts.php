@@ -228,7 +228,7 @@ function indie_studio_enqueue_admin_js_scripts(){
     
     wp_enqueue_script(
         'indie_studio_media_libary_svg', 
-        $JS_theme_dir . '/media-libary-svg.js', 
+        $JS_theme_dir . 'media-libary-svg.js', 
         false, 
         '1', 
         true
@@ -237,7 +237,7 @@ function indie_studio_enqueue_admin_js_scripts(){
     
     wp_enqueue_script(
         'indie_studio_admin', 
-        $JS_theme_dir . '/admin.js', 
+        $JS_theme_dir . 'admin.js', 
         false, 
         '1', 
         true
