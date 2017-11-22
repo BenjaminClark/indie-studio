@@ -75,12 +75,6 @@ function indie_studio_register_required_plugins() {
 		// Include plugins from the WordPress Plugin Repository.
         
 		array(
-			'name'      => 'Kirki',
-			'slug'      => 'kirki',
-			'required'  => true,
-		),
-        
-		array(
 			'name'      => 'WordPress SEO by Yoast',
 			'slug'      => 'wordpress-seo',
 			'required'  => false,
@@ -105,7 +99,7 @@ function indie_studio_register_required_plugins() {
 	 * Only uncomment the strings in the config array if you want to customize the strings.
 	 */
 	$config = array(
-		'id'           => 'indie_studio',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+		'id'           => 'indie-studio',                 // Unique ID for hashing notices for multiple instances of TGMPA.
 		'default_path' => '',                      // Default absolute path to bundled plugins.
 		'menu'         => 'tgmpa-install-plugins', // Menu slug.
 		'parent_slug'  => 'themes.php',            // Parent menu slug.
