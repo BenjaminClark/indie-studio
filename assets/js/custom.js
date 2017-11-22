@@ -411,6 +411,13 @@ function debounce(func, wait, immediate) {
 };
 
 
+/** Is element on a screen **/
+function checkVisible(elm) {
+    var rect = elm.getBoundingClientRect();
+    var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+    return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+}
+
 /**
  * Fade in/out an element
  * Note: I am not using requestAnimationFrame as it does not play well in mobile browsers
@@ -590,7 +597,8 @@ var config = {
 h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
 })(document);
 var ajaxPostWrap       = document.getElementById("ajax-post-wrap"),
-    loadMorePosts      = document.getElementById("load-more-posts");
+    loadMorePosts      = document.getElementById("load-more-posts"),
+    footerDiv          = document.querySelector('footer');
     
 if ( ajaxPostWrap && loadMorePosts ){
     
@@ -600,8 +608,9 @@ if ( ajaxPostWrap && loadMorePosts ){
         query           = loadMorePosts.getAttribute('data-query'),
         paged           = loadMorePosts.getAttribute('data-paged'),
         template        = loadMorePosts.getAttribute('data-custom-template'),
-        loadType        = loadMorePosts.getAttribute('data-loadtype');
-            
+        loadType        = loadMorePosts.getAttribute('data-loadtype'),
+        loading         = false;
+    
     //Hide standard buttons
     if( basicNavAbove ){
         fade({el:basicNavAbove,type:'out',duration: 500});
@@ -611,7 +620,7 @@ if ( ajaxPostWrap && loadMorePosts ){
     }
     
     //Show Load More button
-    if( loadType == 'button' ){
+    if( loadType === 'button' ){
         fade({el:loadMorePosts,type:'in',duration: 500});
     }
     
@@ -631,7 +640,7 @@ if ( ajaxPostWrap && loadMorePosts ){
     //Run on scroll to bottom of page
     if( loadType == 'infinite' ){
         window.onscroll = function(ev) {
-            if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
+            if ( almostAtBottom() && !loading ) {
                 getNewPostsAjax(data);
             }
         };
@@ -648,6 +657,8 @@ if ( ajaxPostWrap && loadMorePosts ){
 
 
 function getNewPostsAjax(data){
+    
+    loading = true;
     
     //Remove any errors
     load_more_error('out');
@@ -705,7 +716,7 @@ function postsLoadFunction(response){
             load_more_error('in');
         }
         
-        if( response.load_more ){
+        if( response.load_more && loadType === 'button' ){
                         
             //Show the load more button if we have posts to see
             fade({el:loadMorePosts,type:'in',duration: 500});   
@@ -721,9 +732,25 @@ function postsLoadFunction(response){
         load_more_error('in');
     }
     
+    loading = false;
+    
     //No Content
     ajaxLoadingAnimation( document.getElementById("load-more-wrap"), 'remove' );
     
+}
+
+
+/**
+ * Check if footer is almost on the screen. 
+ * 
+ * Pre-empt this, and load more before the user reaches the bottom
+ **/
+
+function almostAtBottom() {
+    var rect = footerDiv.getBoundingClientRect();
+    var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+    
+    return !(rect.bottom < 0 || rect.top - viewHeight - 500 >= 0);
 }
 
 

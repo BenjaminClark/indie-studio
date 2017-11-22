@@ -10,8 +10,9 @@ if ( ajaxPostWrap && loadMorePosts ){
         query           = loadMorePosts.getAttribute('data-query'),
         paged           = loadMorePosts.getAttribute('data-paged'),
         template        = loadMorePosts.getAttribute('data-custom-template'),
-        loadType        = loadMorePosts.getAttribute('data-loadtype');
-            
+        loadType        = loadMorePosts.getAttribute('data-loadtype'),
+        loading         = false;
+    
     //Hide standard buttons
     if( basicNavAbove ){
         fade({el:basicNavAbove,type:'out',duration: 500});
@@ -21,7 +22,7 @@ if ( ajaxPostWrap && loadMorePosts ){
     }
     
     //Show Load More button
-    if( loadType == 'button' ){
+    if( loadType === 'button' ){
         fade({el:loadMorePosts,type:'in',duration: 500});
     }
     
@@ -41,8 +42,7 @@ if ( ajaxPostWrap && loadMorePosts ){
     //Run on scroll to bottom of page
     if( loadType == 'infinite' ){
         window.onscroll = function(ev) {
-            if ( checkVisible(footerDiv) &&  ) {
-                
+            if ( almostAtBottom() && !loading ) {
                 getNewPostsAjax(data);
             }
         };
@@ -59,6 +59,8 @@ if ( ajaxPostWrap && loadMorePosts ){
 
 
 function getNewPostsAjax(data){
+    
+    loading = true;
     
     //Remove any errors
     load_more_error('out');
@@ -116,7 +118,7 @@ function postsLoadFunction(response){
             load_more_error('in');
         }
         
-        if( response.load_more ){
+        if( response.load_more && loadType === 'button' ){
                         
             //Show the load more button if we have posts to see
             fade({el:loadMorePosts,type:'in',duration: 500});   
@@ -132,9 +134,25 @@ function postsLoadFunction(response){
         load_more_error('in');
     }
     
+    loading = false;
+    
     //No Content
     ajaxLoadingAnimation( document.getElementById("load-more-wrap"), 'remove' );
     
+}
+
+
+/**
+ * Check if footer is almost on the screen. 
+ * 
+ * Pre-empt this, and load more before the user reaches the bottom
+ **/
+
+function almostAtBottom() {
+    var rect = footerDiv.getBoundingClientRect();
+    var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+    
+    return !(rect.bottom < 0 || rect.top - viewHeight - 500 >= 0);
 }
 
 
