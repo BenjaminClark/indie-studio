@@ -47,7 +47,8 @@
 }
 
 .module .entry-media .media-fit,
-.module .entry-media .overlay {
+.module .entry-media .overlay,
+.module .entry-media .play {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -84,6 +85,21 @@
     float: none;
 }
 
+
+/** Video **/
+.module .entry-media .play {
+    z-index: 4;    
+}
+
+.module .entry-media .play i {
+    font-size: 4em;
+    color: #fff;
+    position: relative;
+    float: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 /** Gallery **/
 

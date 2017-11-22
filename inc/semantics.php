@@ -407,6 +407,7 @@ function indie_studio_the_module_video_image() {
 	};
     
     echo '<div class="entry-media"><div class="media-fit">';
+    echo '<div class="play"><i class="fa fa-play-circle" aria-hidden="true"></i></div>';
     echo '<div class="overlay smooth"></div>';
     echo $placeholder;
     echo '</div></div>';
