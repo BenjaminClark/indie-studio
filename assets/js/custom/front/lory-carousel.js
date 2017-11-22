@@ -1,6 +1,4 @@
 function buildLoryCarousel(el){
-
-    console.log(el);
     
     var simple_dots       = el.querySelector('.lory-carousel');
     

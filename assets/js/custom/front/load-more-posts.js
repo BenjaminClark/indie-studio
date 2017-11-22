@@ -54,7 +54,7 @@ if ( ajaxPostWrap && loadMorePosts ){
 function postsLoadFunction(response){
     
     if( response ){
-                        
+                
         //Check there is result
         if( response.html.length > 0 ){
             

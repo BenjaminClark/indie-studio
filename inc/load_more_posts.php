@@ -44,9 +44,9 @@ function indie_studio_load_more_posts() {
     if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
         die();
     }
-    
-    check_ajax_referer( 'indie_studio_nonce', 'security' );
-    
+        
+    check_ajax_referer( 'custom_theme_nonce', 'security' );
+        
     if ( !empty( $_POST['paged'] ) ) {
 
         global $post;
@@ -57,7 +57,7 @@ function indie_studio_load_more_posts() {
             'load_more' => false,
             'paged'     => ( intval ( sanitize_text_field( $_POST['paged'] ) ) + 1 ),
         );
-                
+                        
         // Get query from JS, turn back into array, sanitize
         $args = (array) clean_all( json_decode( stripslashes( $_POST['query'] ), true ) );
            
@@ -93,6 +93,7 @@ function indie_studio_load_more_posts() {
          **/ 
                 
         foreach( $posts as $post ) {
+            
             setup_postdata( $post );
             
             ob_start();
@@ -123,13 +124,13 @@ function indie_studio_load_more_posts() {
                 
             }
             
-            $return['html'][] = trim( preg_replace('/\s+/', ' ', ob_get_clean() ) );
+            $return['html'][] = utf8_encode(trim( preg_replace('/\s+/', ' ', ob_get_clean() ) ) );
             
             wp_reset_postdata();
             
         }
         
-        die ( json_encode ($return ) );
+        die ( json_encode( $return ) );
         
     }
 

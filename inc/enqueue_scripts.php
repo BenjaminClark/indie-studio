@@ -43,7 +43,7 @@ function indie_studio_enqueue_scripts(){
         'ajax_url'                  => admin_url('admin-ajax.php'), //Standard ajax init
         'base_url'                  => site_url(),
         'img_url'                   => get_stylesheet_directory_uri() . '/img/',
-        'security'                  => wp_create_nonce('indie_studio_nonce'),
+        'security'                  => wp_create_nonce('custom_theme_nonce'),
         'debug'                     => $debug,
     );
     
@@ -101,11 +101,23 @@ function indie_studio_enqueue_scripts(){
         true
     );
     
+    /**
+    
     wp_enqueue_script(
         'theme_custom', 
         $JS_theme_dir . 'custom.min.js', 
         array('jquery', 'theme_vendor'), 
         indie_studio_get_file_version_number( 'theme_custom', $JS_direct_path . 'custom.min.js' ), 
+        true
+    );
+    
+    **/
+    
+    wp_enqueue_script(
+        'theme_custom', 
+        $JS_theme_dir . 'custom.js', 
+        array('jquery', 'theme_vendor'), 
+        indie_studio_get_file_version_number( 'theme_custom', $JS_direct_path . 'custom.js' ), 
         true
     );
     

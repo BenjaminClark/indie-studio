@@ -645,7 +645,7 @@ if ( ajaxPostWrap && loadMorePosts ){
 function postsLoadFunction(response){
     
     if( response ){
-                        
+                
         //Check there is result
         if( response.html.length > 0 ){
             
@@ -766,8 +766,6 @@ function p_c(message, type){
 p_c('------ Debugging Enabled ------');
 p_c('-- Custom scripts start here --');
 function buildLoryCarousel(el){
-
-    console.log(el);
     
     var simple_dots       = el.querySelector('.lory-carousel');
     
