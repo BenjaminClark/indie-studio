@@ -10,7 +10,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?><?php schema_semantics_tags( 'post' );?> itemref="site-publisher">
+<article id="post-<?php the_ID(); ?>" <?php post_class('single'); ?><?php schema_semantics_tags( 'post' );?> itemref="site-publisher">
 
 	<?php get_template_part( 'template-parts/entry/entry', 'header' ); ?>
 

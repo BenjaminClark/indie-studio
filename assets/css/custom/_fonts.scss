@@ -30,7 +30,7 @@ p a:hover,
 p a:focus,
 a p:hover,
 a p:focus {
-    opacity: 0.65;
+    opacity: 0.7;
 }
 
 
@@ -47,8 +47,12 @@ h5 {
 
 p, 
 li {
-    color: #363535;   
+    color: #000;   
     margin-bottom: 0.875rem;
+}
+
+p {
+    line-height: 1.5em;
 }
 
 .title-1,
@@ -155,6 +159,14 @@ ul, ol {
 
 ol { 
     list-style-type: decimal; 
+}
+
+.single .entry-title a {
+    text-decoration: none;
+}
+
+.wysiwyg a {
+    display: inline;
 }
 
 .wysiwyg ul {

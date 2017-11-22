@@ -22,6 +22,13 @@ body {
 
 }
 
+article.single {
+    margin: 0 auto;
+    max-width: 62.5em;
+    padding: 5em;
+    background-color: #fff;
+}
+
 footer {
     position: relative;
     width: 100%;
@@ -48,7 +55,7 @@ footer {
 /* Small Devices, Tablets */
 @media only screen and (min-width: 47.875em) {  /** 766px **/
         
-    .logged-in header {
+    .logged-in #header {
         top: 32px;
     }
     
