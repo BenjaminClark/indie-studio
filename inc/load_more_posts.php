@@ -64,7 +64,7 @@ function indie_studio_load_more_posts() {
         
         //Increase the page by 1, as we have been given the "CURRENT" page. Not the next page
         $return = array(
-            'html'      => '',
+            'html'      => array(),
             'load_more' => false,
             'paged'     => ( intval ( sanitize_text_field( $_POST['paged'] ) ) + 1 ),
         );
