@@ -1,0 +1,76 @@
+/* 
+ * This file is very specific to the WYSIWYG editor 
+ *
+ * HOWEVER - Make sure you put the right CSS here. Try not to
+ * confused font.css with going in this file. Make everything
+ * as slim as possible.
+*/
+
+.wysiwyg a {
+    display: inline;
+}
+
+.wysiwyg ul {
+    margin-bottom: 0.625em;
+}
+
+.wysiwyg ol li,
+.wysiwyg ul li { 
+    list-style: none;
+    font-size: 1.125em;
+    padding-left: 1.25em;
+    position: relative;
+    margin-bottom: 0.25em;
+}
+
+.wysiwyg ul li:before {
+    position: absolute;
+    font-family: fontawesome;
+    content: "\f111";
+    color: #363535;
+    font-size: 0.5em;
+    margin-left: -2em;
+    margin-bottom: 0.5em;
+}
+
+.wysiwyg ol li {
+    margin-bottom: 2rem;
+    padding-left: 2.5rem;
+} 
+
+.wysiwyg ol {
+    counter-reset: customCount;
+}
+
+.wysiwyg ol > li {
+	counter-increment: customCount;
+}
+
+.wysiwyg ol li:before {
+    position: absolute;
+    content: counter(customCount); 
+    left: 0;
+    top: 0;
+    text-align: center;
+    width: 0.9375em;
+    color: #363535;
+}
+
+.wysiwyg .alignleft, img.alignleft {
+	margin-right: 1.5em;
+	display: inline;
+	float: left;
+}
+
+.wysiwyg .alignright, img.alignright {
+	margin-left: 1.5em;
+	display: inline;
+    float: right;
+}
+
+.wysiwyg .aligncenter, img.aligncenter {
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	clear: both;
+}

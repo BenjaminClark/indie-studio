@@ -102,7 +102,8 @@ function indie_studio_enqueue_scripts(){
             indie_studio_get_file_version_number( 'theme_script_debug', $JS_direct_path . 'theme-script.js' ), 
             true
         );
-
+        wp_localize_script( 'theme_script_debug', 'theme_script_ajax', $localize_this );
+        
     } else {
         
         wp_enqueue_script(
@@ -112,11 +113,9 @@ function indie_studio_enqueue_scripts(){
             indie_studio_get_file_version_number( 'theme_script', $JS_direct_path . 'theme-script.min.js' ), 
             true
         );   
+        wp_localize_script( 'theme_script', 'theme_script_ajax', $localize_this );
         
-    }
-
-    wp_localize_script( 'theme_script', 'theme_script_ajax', $localize_this );
-     
+    }     
         
 }
 add_action( 'wp_enqueue_scripts', 'indie_studio_enqueue_scripts' );

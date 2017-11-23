@@ -69,7 +69,8 @@ var imagesDestination       = './assets/img/'; // Destination folder of optimize
 // Watch files paths.
 var styleWatchFiles         = './assets/css/**/*.scss'; // Path to all *.scss files inside css folder and inside them.
 
-var JSWatchFiles            = './assets/js/*.js'; // Path to all vendor JS files.
+var vendorJSWatchFiles      = './assets/js/vendor/*.js'; // Path to all vendor JS files.
+var customJSWatchFiles      = './assets/js/custom/front/*.js'; // Path to all custom JS files.
 
 var projectPHPWatchFiles    = './**/*.php'; // Path to all PHP files.
 
@@ -135,29 +136,29 @@ var sort         = require('gulp-sort'); // Recommended to prevent unnecessary c
  *    4. You may want to stop the browser from openning automatically
  */
 gulp.task( 'browser-sync', function() {
-  browserSync.init( {
+    browserSync.init( {
 
-    // For more options
-    // @link http://www.browsersync.io/docs/options/
+        // For more options
+        // @link http://www.browsersync.io/docs/options/
 
-    // Project URL.
-    proxy: projectURL,
-    open: "external",
+        // Project URL.
+        proxy: projectURL,
+        open: "external",
 
-    // Might need to alter this if site doesnt load
-    // use dev-ip to get list of IPs
-    host: "192.168.2.29",
-      
-    // `true` Automatically open the browser with BrowserSync live server.
-    // `false` Stop the browser from automatically opening.
-    open: true,
+        // Might need to alter this if site doesnt load
+        // use dev-ip to get list of IPs
+        host: "192.168.2.34",
 
-    // Inject CSS changes.
-    // Commnet it to reload browser for every CSS change.
-    injectChanges: true,
+        // `true` Automatically open the browser with BrowserSync live server.
+        // `false` Stop the browser from automatically opening.
+        open: true,
 
-    // Use a specific port (instead of the one auto-detected by Browsersync).
-    // port: 7000,
+        // Inject CSS changes.
+        // Commnet it to reload browser for every CSS change.
+        injectChanges: true,
+
+        // Use a specific port (instead of the one auto-detected by Browsersync).
+        // port: 7000,
 
     });
      
@@ -240,7 +241,7 @@ gulp.task( 'browser-sync', function() {
     .pipe( uglify() )
     .pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
     .pipe( gulp.dest( jsDestination ) )
-    .pipe( notify( { message: 'TASK: "vendorsJs" Completed! 💯', onLast: true } ) );
+    .pipe( notify( { message: 'TASK: "frontJs" Completed! 💯', onLast: true } ) );
  });
 
 
@@ -302,7 +303,8 @@ gulp.task( 'browser-sync', function() {
   * Watches for file changes and runs specific tasks.
   */
  gulp.task( 'default', ['styles', 'frontJs', 'images', 'browser-sync'], function () {
-  gulp.watch( projectPHPWatchFiles, reload ); // Reload on PHP file changes.
-  gulp.watch( styleWatchFiles, [ 'styles' ] ); // Reload on SCSS file changes.
-  gulp.watch( JSWatchFiles, [ 'frontJs', reload ] ); // Reload on customJS file changes.
+     gulp.watch( projectPHPWatchFiles, reload ); // Reload on PHP file changes.
+     gulp.watch( styleWatchFiles, [ 'styles' ] ); // Reload on SCSS file changes.
+     gulp.watch( vendorJSWatchFiles, [ 'frontJs', reload ] ); // Reload on vendor JS file changes.
+     gulp.watch( customJSWatchFiles, [ 'frontJs', reload ] ); // Reload on custom JS file changes.
  });
