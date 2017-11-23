@@ -957,22 +957,21 @@ html{font-size:16px;box-sizing:border-box}
 body{font-size:1em;font-weight:400}
 a:hover,a:focus,a h1:hover,a h1:focus,a h2:hover,a h2:focus,a h3:hover,a h3:focus,a h4:hover,a h4:focus,a h5:hover,a h5:focus,p a:hover,p a:focus,a p:hover,a p:focus{opacity:.7}
 h1,h2,h3,h4,h5{color:#000;margin-bottom:.875rem}
-p,li{color:#000;margin-bottom:.875rem}
-p{line-height:1.5em}
+p,li,.entry-meta{color:#000;margin-bottom:.875rem;font-size:1.125em}
+p{line-height:1.425em}
 .title-1,.title-2,.title-3,.title-4,.title-5{color:#000;text-transform:uppercase;margin-bottom:.4em}
-blockquote p{font-size:2em;line-height:1em;font-weight:800;margin-bottom:0}
-p.author{color:#000;font-weight:800;font-size:1.25em;text-transform:uppercase}
+blockquote p{font-size:1.5em;line-height:1em;font-weight:800;margin-bottom:0}
+p.author{color:#000;font-weight:800;text-transform:uppercase}
 h1,p.title-1,h1.title-1,h2.title-1,h3.title-1,h4.title-1,h5.title-1{font-size:2em;line-height:1.25em;font-weight:800}
 h2,p.title-2,h1.title-2,h2.title-2,h3.title-2,h4.title-2,h5.title-2{font-size:1.5em;line-height:1.25em;font-weight:800}
 h3,p.title-3,h1.title-3,h2.title-3,h3.title-3,h4.title-3,h5.title-3{font-size:1.25em;line-height:1.25em;font-weight:800}
 h4,p.title-4,h1.title-4,h2.title-4,h3.title-4,h4.title-4,h5.title-4{font-size:1.25em;line-height:1.25em;font-weight:800}
 h5 p.title-5,h1.title-5,h2.title-5,h3.title-5,h4.title-5,h5.title-5{font-size:1.125em;line-height:1.125em;font-weight:800}
-p.intro{font-size:1.25em;line-height:1.125em;margin-bottom:1.5em}
+p.intro{font-size:1.5em;line-height:1.125em;margin-bottom:1.5em}
 strong,bold{font-weight:700}
 em,i{font-style:italic}
 ul,ol{margin:0}
 ol{list-style-type:decimal}
-.single .entry-title a{text-decoration:none}
 .screen-reader-text{position:absolute !important;left:-999em}
 .screen-reader-text:focus{background-color:#eee;clip:auto !important;-webkit-clip-path:none;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}
 .toTop{position:fixed !important;right:.5em;bottom:-5.625em;display:block;font-size:1.375em;line-height:2.1875em;text-align:center;width:2.5em;height:2.5em;visibility:hidden;-ms-filter:"alpha(opacity=0)";filter:alpha(opacity=0);opacity:0;z-index:9999;cursor:pointer;border-radius:50%}
@@ -1001,7 +1000,7 @@ button.fancybox-close-small:hover{background-color:transparent}
 html,body{height:100%}
 .navigation-open{overflow-y:hidden}
 #footer-pusher{position:relative;min-height:100%}
-article.single{margin:0 auto;max-width:62.5em;padding:5em;background-color:#fff}
+.thin-inner{margin:0 auto;max-width:62.5em;padding:1.25em;background-color:#fff}
 footer{position:relative;width:100%}
 .page-inner-wrap{width:100%;padding:0 1.125em;margin:0 auto;position:relative}
 #header{margin:1em 0}
@@ -1027,6 +1026,12 @@ body.navigation-open #site-navigation{bottom:0;padding-bottom:3.75em}
 #site-navigation a{text-decoration:none}
 #site-navigation .toggle{display:none}
 #site-navigation .menu-item-has-children>.toggle{display:block}
+.single .entry-title a{text-decoration:none}
+.entry-meta{position:relative}
+.entry-meta a{text-decoration:none;font-size:1em}
+.entry-meta .author{margin:1em 0;float:left;position:relative;width:100%}
+.entry-meta .author img{width:3em;height:3em;border-radius:50%}
+.entry-meta .author a{left:3.5em;float:left}
 .toggle-list ul{display:none}
 .toggle-list li{position:relative}
 .toggle-list>li,.toggle-list ul>li{margin-bottom:0}
@@ -1047,7 +1052,7 @@ body.navigation-open #site-navigation{bottom:0;padding-bottom:3.75em}
 .module .entry-text{padding:1.25em 1.25em 2em 1.25em}
 .module a,.module a h2,.module a h1,.module a p{opacity:1;text-decoration:none}
 .module h1,.module h2{font-size:1.5em;line-height:1.25em}
-.module p{font-size:1em}
+.module p{font-size:1.125em}
 .module .entry-media{width:100%;padding-bottom:67.666%;position:relative}
 .module .entry-media.sqr{padding-bottom:100%}
 .module .entry-media .media-fit,.module .entry-media .overlay,.module .entry-media .play{position:absolute;top:0;bottom:0;left:0;right:0;overflow:hidden}
@@ -1091,8 +1096,21 @@ body.navigation-open #site-navigation{bottom:0;padding-bottom:3.75em}
 .lory-carousel .js_dots li{display:inline-block;text-align:center;width:.825em;height:.825em;margin:.75em .25em;border-radius:50%}
 button.search-submit{padding:0;margin:0;position:relative;width:2em;height:2em;font-size:1em;line-height:1.5em;text-align:center;cursor:pointer;border-radius:50%;z-index:15}
 button.search-submit:after{content:none}
+.wysiwyg{font-size:1rem}
+.wysiwyg a{display:inline}
+.wysiwyg ul{margin-bottom:.625em}
+.wysiwyg ol li,.wysiwyg ul li{list-style:none;font-size:1.125em;padding-left:1.25em;position:relative;margin-bottom:.25em}
+.wysiwyg ul li:before{position:absolute;font-family:fontawesome;content:"\f111";color:#363535;font-size:.5em;margin-left:-2em;margin-bottom:.5em}
+.wysiwyg ol li{margin-bottom:2rem;padding-left:2.5rem}
+.wysiwyg ol{counter-reset:customCount}
+.wysiwyg ol>li{counter-increment:customCount}
+.wysiwyg ol li:before{position:absolute;content:counter(customCount);left:0;top:0;text-align:center;width:.9375em;color:#363535}
+.wysiwyg .alignleft,img.alignleft{margin-right:1.5em;display:inline;float:left}
+.wysiwyg .alignright,img.alignright{margin-left:1.5em;display:inline;float:right}
+.wysiwyg .aligncenter,img.aligncenter{margin-right:auto;margin-left:auto;display:block;clear:both}
 @media only screen and (min-width:30em){h1,p.title-1,h1.title-1,h2.title-1,h3.title-1,h4.title-1,h5.title-1{font-size:2em;line-height:1em;font-weight:700}
 h2,p.title-2,h1.title-2,h2.title-2,h3.title-2,h4.title-2,h5.title-2{font-size:1.875em;line-height:1em;font-weight:700}
+.wysiwyg{font-size:1.125rem}
 }@media only screen and (min-width:40em){.grid-container.basic .col-4{margin:0 1em 1em 0}
 .grid-container.basic .col-4:nth-child(even){margin-right:0}
 .masonry-column-sizer,.grid-container .col-4{width:calc(50% - 0.5em)}
@@ -1116,6 +1134,7 @@ p.intro{font-size:1.5625em}
 .blockquote,blockquote p{margin:1.5em 0}
 .wysiwyg p,.wysiwyg ul{margin-bottom:1.25em}
 .page-inner-wrap{width:73em}
+.thin-inner{padding:5em}
 }@media only screen and (min-width:79.375em){.page-inner-wrap{width:76em}
 #header .logo{height:auto}
 #header .logo{float:left;height:3em}

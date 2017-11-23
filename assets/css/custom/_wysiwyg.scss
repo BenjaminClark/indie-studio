@@ -6,6 +6,10 @@
  * as slim as possible.
 */
 
+.wysiwyg {
+    font-size: 1rem;
+}
+
 .wysiwyg a {
     display: inline;
 }
@@ -73,4 +77,12 @@
 	margin-left: auto;
 	display: block;
 	clear: both;
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 30em) {  /** 480px **/
+ 
+    .wysiwyg {
+        font-size: 1.125rem;
+    }
 }

@@ -22,10 +22,10 @@ body {
 
 }
 
-article.single {
+.thin-inner {
     margin: 0 auto;
     max-width: 62.5em;
-    padding: 5em;
+    padding: 1.25em;
     background-color: #fff;
 }
 
@@ -74,6 +74,10 @@ footer {
 
     .page-inner-wrap {
         width: 73em;
+    }
+    
+    .thin-inner {
+        padding: 5em;
     }
          
 }

@@ -1,0 +1,41 @@
+/** 
+ * This file contains CSS for items shown in a single 
+ *
+ * For example: Author styling, or comment styling
+ */
+
+.single .entry-title a {
+    text-decoration: none;
+}
+
+.entry-meta {
+
+    position: relative;
+    
+    a {
+        text-decoration: none;
+        font-size: 1em;
+    }
+    
+    .author {
+        
+        margin: 1em 0;
+        float: left;
+        position: relative;
+        width: 100%;
+    
+        img {
+            width: 3em;
+            height: 3em;
+            border-radius: 50%;
+        }
+        
+        a {
+            
+            left: 3.5em;
+            float: left;
+        }
+        
+    }
+          
+}

@@ -46,13 +46,15 @@ h5 {
 }
 
 p, 
-li {
+li,
+.entry-meta {
     color: #000;   
     margin-bottom: 0.875rem;
+    font-size: 1.125em;
 }
 
 p {
-    line-height: 1.5em;
+    line-height: 1.425em;
 }
 
 .title-1,
@@ -66,7 +68,7 @@ p {
 }
 
 blockquote p {
-    font-size: 2em;
+    font-size: 1.5em;
     line-height: 1em; 
     font-weight: 800; 
     margin-bottom: 0;
@@ -75,7 +77,6 @@ blockquote p {
 p.author {
     color: #000;
     font-weight: 800;
-    font-size: 1.25em;
     text-transform: uppercase;
 }
 
@@ -140,7 +141,7 @@ h5.title-5 {
 }
 
 p.intro {
-    font-size: 1.25em;
+    font-size: 1.5em;
     line-height: 1.125em;
     margin-bottom: 1.5em;  
 }
@@ -159,10 +160,6 @@ ul, ol {
 
 ol { 
     list-style-type: decimal; 
-}
-
-.single .entry-title a {
-    text-decoration: none;
 }
 
 /* Extra Small Devices, Phones */
