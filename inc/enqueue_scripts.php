@@ -93,35 +93,29 @@ function indie_studio_enqueue_scripts(){
     
     wp_enqueue_style( 'google_fonts', get_google_fonts_enqueue_url() );
     
-    wp_enqueue_script(
-        'theme_vendor', 
-        $JS_theme_dir . 'vendors.min.js', 
-        array('jquery'), 
-        indie_studio_get_file_version_number( 'theme_vendor', $JS_direct_path . 'vendors.min.js' ), 
-        true
-    );
+    if ( $debug ){
     
-    /**
-    
-    wp_enqueue_script(
-        'theme_custom', 
-        $JS_theme_dir . 'custom.min.js', 
-        array('jquery', 'theme_vendor'), 
-        indie_studio_get_file_version_number( 'theme_custom', $JS_direct_path . 'custom.min.js' ), 
-        true
-    );
-    
-    **/
-    
-    wp_enqueue_script(
-        'theme_custom', 
-        $JS_theme_dir . 'custom.js', 
-        array('jquery', 'theme_vendor'), 
-        indie_studio_get_file_version_number( 'theme_custom', $JS_direct_path . 'custom.js' ), 
-        true
-    );
-    
-    wp_localize_script( 'theme_custom', 'theme_custom_ajax', $localize_this );
+        wp_enqueue_script(
+            'theme_script_debug', 
+            $JS_theme_dir . 'theme-script.js', 
+            array('jquery'), 
+            indie_studio_get_file_version_number( 'theme_script_debug', $JS_direct_path . 'theme-script.js' ), 
+            true
+        );
+
+    } else {
+        
+        wp_enqueue_script(
+            'theme_script', 
+            $JS_theme_dir . 'theme-script.min.js', 
+            array('jquery'), 
+            indie_studio_get_file_version_number( 'theme_script', $JS_direct_path . 'theme-script.min.js' ), 
+            true
+        );   
+        
+    }
+
+    wp_localize_script( 'theme_script', 'theme_script_ajax', $localize_this );
      
         
 }
@@ -233,7 +227,7 @@ function indie_studio_enqueue_admin_js_scripts(){
         '1', 
         true
     );
-    wp_localize_script( 'indie_studio_media_libary_svg', 'theme_custom_ajax', $localize_this );
+    wp_localize_script( 'indie_studio_media_libary_svg', 'theme_script_ajax', $localize_this );
     
     wp_enqueue_script(
         'indie_studio_admin', 
@@ -242,7 +236,7 @@ function indie_studio_enqueue_admin_js_scripts(){
         '1', 
         true
     );
-    wp_localize_script( 'indie_studio_admin', 'theme_custom_ajax', $localize_this );
+    wp_localize_script( 'indie_studio_admin', 'theme_script_ajax', $localize_this );
     
 
     

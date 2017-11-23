@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
  
-    var ajaxUrl             = theme_custom_ajax.ajax_url,
+    var ajaxUrl             = theme_script_ajax.ajax_url,
         cookieReset         = false;
     
     /**

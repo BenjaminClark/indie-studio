@@ -27,7 +27,7 @@ function ajax( dataObject ) {
     }
     
     //Add nonce to data
-    dataObject.data.security = theme_custom_ajax.security;
+    dataObject.data.security = theme_script_ajax.security;
     
     var proceed = true,
         params = '';
@@ -163,7 +163,7 @@ function getPhpAjax(data, dateType, firstFunc, passer) {
 
     ajax({
         type       : "GET",
-        url        : theme_custom_ajax.ajax_url,
+        url        : theme_script_ajax.ajax_url,
         dataType   : dateType,
         data       : data,
         beforeSend : function () {
@@ -195,7 +195,7 @@ function postPhpAjax(data, dateType, firstFunc, passer) {
 
     ajax({
         type       : "POST",
-        url        : theme_custom_ajax.ajax_url,
+        url        : theme_script_ajax.ajax_url,
         dataType   : dateType,
         data       : data,
         beforeSend : function () {

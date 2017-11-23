@@ -21,7 +21,7 @@ include ( 'fonts/google_font_api_checker.php' );
  * Add our Customizer content
  * 
  * @link https://maddisondesigns.com/2017/05/the-wordpress-customizer-a-developers-guide-part-1/
- * @link https://codex.wordpress.org/Theme_Customization_API
+ * @link https://codex.wordpress.org/theme_scriptization_API
  *
  * Examples
  * @link https://gist.github.com/Abban/2968549

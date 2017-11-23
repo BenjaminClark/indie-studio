@@ -47,17 +47,20 @@ var styleSRC                = './assets/css/custom/base.scss'; // Path to main .
 var styleDestination        = './assets/css'; // Path to place the compiled CSS file.
 // Default set to root folder.
 
+
 // JS Vendor related.
 var jsVendorSRC             = './assets/js/vendor/*.js'; // Path to JS vendor folder.
-var jsVendorDestination     = './assets/js/'; // Path to place the compiled JS vendors file.
-var jsVendorFile            = 'vendors'; // Compiled JS vendors file name.
-// Default set to vendors i.e. vendors.js.
 
 // JS Custom related.
 var jsCustomSRC             = './assets/js/custom/front/*.js'; // Path to JS custom scripts folder.
-var jsCustomDestination     = './assets/js/'; // Path to place the compiled JS custom scripts file.
-var jsCustomFile            = 'custom'; // Compiled JS custom file name.
-// Default set to custom i.e. custom.js.
+
+// JS Output
+var jsDestination           = './assets/js/'; // Path to place the compiled JS vendors file.
+var jsFile                  = 'theme-script'; // Compiled JS vendors file name.
+// Default set to vendors i.e. vendors.js.
+
+
+
 
 // Images related.
 var imagesSRC               = './assets/img/raw/**/*.{png,jpg,gif,svg}'; // Source folder of images which should be optimized.
@@ -65,8 +68,9 @@ var imagesDestination       = './assets/img/'; // Destination folder of optimize
 
 // Watch files paths.
 var styleWatchFiles         = './assets/css/**/*.scss'; // Path to all *.scss files inside css folder and inside them.
-var vendorJSWatchFiles      = './assets/js/vendor/*.js'; // Path to all vendor JS files.
-var customJSWatchFiles      = './assets/js/custom/*.js'; // Path to all custom JS files.
+
+var JSWatchFiles            = './assets/js/*.js'; // Path to all vendor JS files.
+
 var projectPHPWatchFiles    = './**/*.php'; // Path to all PHP files.
 
 
@@ -138,7 +142,12 @@ gulp.task( 'browser-sync', function() {
 
     // Project URL.
     proxy: projectURL,
+    open: "external",
 
+    // Might need to alter this if site doesnt load
+    // use dev-ip to get list of IPs
+    host: "192.168.2.29",
+      
     // `true` Automatically open the browser with BrowserSync live server.
     // `false` Stop the browser from automatically opening.
     open: true,
@@ -150,7 +159,8 @@ gulp.task( 'browser-sync', function() {
     // Use a specific port (instead of the one auto-detected by Browsersync).
     // port: 7000,
 
-  } );
+    });
+     
 });
 
 
@@ -207,56 +217,30 @@ gulp.task( 'browser-sync', function() {
 
 
  /**
-  * Task: `vendorJS`.
+  * Task: `frontJs`.
   *
-  * Concatenate and uglify vendor JS scripts.
+  * Concatenate and uglify JS scripts.
   *
   * This task does the following:
-  *     1. Gets the source folder for JS vendor files
-  *     2. Concatenates all the files and generates vendors.js
+  *     1. Gets the source folders for JS vendor files
+  *     2. Concatenates all the files and generates theme-script.js
   *     3. Renames the JS file with suffix .min.js
-  *     4. Uglifes/Minifies the JS file and generates vendors.min.js
+  *     4. Uglifes/Minifies the JS file and generates theme-script.min.js
   */
- gulp.task( 'vendorsJs', function() {
-  gulp.src( jsVendorSRC )
-    .pipe( concat( jsVendorFile + '.js' ) )
+
+ gulp.task( 'frontJs', function() {
+  gulp.src([jsVendorSRC, jsCustomSRC])
+    .pipe( concat( jsFile + '.js' ) )
     .pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
-    .pipe( gulp.dest( jsVendorDestination ) )
+    .pipe( gulp.dest( jsDestination ) )
     .pipe( rename( {
-      basename: jsVendorFile,
+      basename: jsFile,
       suffix: '.min'
     }))
     .pipe( uglify() )
     .pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
-    .pipe( gulp.dest( jsVendorDestination ) )
+    .pipe( gulp.dest( jsDestination ) )
     .pipe( notify( { message: 'TASK: "vendorsJs" Completed! 💯', onLast: true } ) );
- });
-
-
- /**
-  * Task: `customJS`.
-  *
-  * Concatenate and uglify custom JS scripts.
-  *
-  * This task does the following:
-  *     1. Gets the source folder for JS custom files
-  *     2. Concatenates all the files and generates custom.js
-  *     3. Renames the JS file with suffix .min.js
-  *     4. Uglifes/Minifies the JS file and generates custom.min.js
-  */
- gulp.task( 'customJS', function() {
-    gulp.src( jsCustomSRC )
-    .pipe( concat( jsCustomFile + '.js' ) )
-    .pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
-    .pipe( gulp.dest( jsCustomDestination ) )
-    .pipe( rename( {
-      basename: jsCustomFile,
-      suffix: '.min'
-    }))
-    .pipe( uglify() )
-    .pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
-    .pipe( gulp.dest( jsCustomDestination ) )
-    .pipe( notify( { message: 'TASK: "customJs" Completed! 💯', onLast: true } ) );
  });
 
 
@@ -317,9 +301,8 @@ gulp.task( 'browser-sync', function() {
   *
   * Watches for file changes and runs specific tasks.
   */
- gulp.task( 'default', ['styles', 'vendorsJs', 'customJS', 'images', 'browser-sync'], function () {
+ gulp.task( 'default', ['styles', 'frontJs', 'images', 'browser-sync'], function () {
   gulp.watch( projectPHPWatchFiles, reload ); // Reload on PHP file changes.
   gulp.watch( styleWatchFiles, [ 'styles' ] ); // Reload on SCSS file changes.
-  gulp.watch( vendorJSWatchFiles, [ 'vendorsJs', reload ] ); // Reload on vendorsJs file changes.
-  gulp.watch( customJSWatchFiles, [ 'customJS', reload ] ); // Reload on customJS file changes.
+  gulp.watch( JSWatchFiles, [ 'frontJs', reload ] ); // Reload on customJS file changes.
  });
