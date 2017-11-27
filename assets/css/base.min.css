@@ -957,7 +957,7 @@ html{font-size:16px;box-sizing:border-box}
 body{font-size:1em;font-weight:400}
 a:hover,a:focus,a h1:hover,a h1:focus,a h2:hover,a h2:focus,a h3:hover,a h3:focus,a h4:hover,a h4:focus,a h5:hover,a h5:focus,p a:hover,p a:focus,a p:hover,a p:focus{opacity:.7}
 h1,h2,h3,h4,h5{color:#000;margin-bottom:.875rem}
-p,li,.entry-meta{color:#000;margin-bottom:.875rem;font-size:1.125em}
+p,li,.entry-meta{color:#000;margin-bottom:.875rem;font-size:1.25em}
 p{line-height:1.425em}
 .title-1,.title-2,.title-3,.title-4,.title-5{color:#000;text-transform:uppercase;margin-bottom:.4em}
 blockquote p{font-size:1.5em;line-height:1em;font-weight:800;margin-bottom:0}
@@ -1000,7 +1000,8 @@ button.fancybox-close-small:hover{background-color:transparent}
 html,body{height:100%}
 .navigation-open{overflow-y:hidden}
 #footer-pusher{position:relative;min-height:100%}
-.thin-inner{margin:0 auto;max-width:62.5em;padding:1.25em;background-color:#fff}
+.thin-inner,#disqus_thread{margin:0 auto;max-width:62.5em;padding:1.25em;background-color:#fff}
+#disqus_thread{padding-top:0}
 footer{position:relative;width:100%}
 .page-inner-wrap{width:100%;padding:0 1.125em;margin:0 auto;position:relative}
 #header{margin:1em 0}
@@ -1027,11 +1028,31 @@ body.navigation-open #site-navigation{bottom:0;padding-bottom:3.75em}
 #site-navigation .toggle{display:none}
 #site-navigation .menu-item-has-children>.toggle{display:block}
 .single .entry-title a{text-decoration:none}
-.entry-meta{position:relative}
-.entry-meta a{text-decoration:none;font-size:1em}
-.entry-meta .author{margin:1em 0;float:left;position:relative;width:100%}
-.entry-meta .author img{width:3em;height:3em;border-radius:50%}
-.entry-meta .author a{left:3.5em;float:left}
+header .entry-meta{position:relative}
+header .entry-meta a{text-decoration:none;font-size:1em}
+header .entry-meta .author{margin:1em 0;float:left;position:relative;width:100%}
+header .entry-meta .author img{width:3em;height:3em;border-radius:50%}
+header .entry-meta .author a{left:3.5em;float:left}
+footer{padding-bottom:2em;border-bottom:.1875em solid #f5f4f2}
+footer.entry-meta{margin-top:2em;margin-bottom:0}
+footer.entry-meta a{display:inline}
+ol.commentlist{list-style:none;margin:0 0 1em;padding:0;text-indent:0}
+ol.commentlist li.comment{border-bottom:1px solid #ddd;padding:1em}
+ol.commentlist li.comment div.vcard{font-weight:14px}
+ol.commentlist li.comment div.vcard img.avatar{border:5px solid #ccc;float:right;margin:0 0 20px 20px}
+ol.commentlist li.comment div.comment-meta{font-size:11px}
+ol.commentlist li.comment div.comment-meta a{color:#ccc}
+ol.commentlist li.comment p{font-size:12px}
+ol.commentlist li.comment ul{font-size:12px;list-style:none;margin:0 0 0 20px}
+ol.commentlist li.comment div.reply{font-size:11px}
+ol.commentlist li.comment div.reply a{font-weight:bold}
+ol.commentlist li.comment ul.children{list-style:none;margin:12px;text-indent:0}
+ol.commentlist li.comment ul.children li.depth-2{border-left:5px solid #ccc;margin:0 0 10px 10px}
+ol.commentlist li.comment ul.children li.depth-3{border-left:5px solid #bbb;margin:0 0 10px 10px}
+ol.commentlist li.comment ul.children li.depth-4{border-left:5px solid #aaa;margin:0 0 10px 10px}
+ol.commentlist li.even{background:#fff}
+ol.commentlist li.odd{background:#f6f6f6}
+ol.commentlist li.parent{border-left:5px solid #ddd}
 .toggle-list ul{display:none}
 .toggle-list li{position:relative}
 .toggle-list>li,.toggle-list ul>li{margin-bottom:0}
@@ -1050,6 +1071,8 @@ body.navigation-open #site-navigation{bottom:0;padding-bottom:3.75em}
 .basic .module{float:left}
 .module{position:relative;background-color:#fff;overflow:hidden;font-size:1rem;float:left;box-shadow:0 1px 3px rgba(100,100,100,0.15)}
 .module .entry-text{padding:1.25em 1.25em 2em 1.25em}
+.module .entry-text{border:1px solid transparent}
+.module a:hover .entry-text{border:1px solid #dedede}
 .module a,.module a h2,.module a h1,.module a p{opacity:1;text-decoration:none}
 .module h1,.module h2{font-size:1.5em;line-height:1.25em}
 .module p{font-size:1.125em}
@@ -1098,9 +1121,9 @@ button.search-submit{padding:0;margin:0;position:relative;width:2em;height:2em;f
 button.search-submit:after{content:none}
 .wysiwyg{font-size:1rem}
 .wysiwyg a{display:inline}
-.wysiwyg ul{margin-bottom:.625em}
-.wysiwyg ol li,.wysiwyg ul li{list-style:none;font-size:1.125em;padding-left:1.25em;position:relative;margin-bottom:.25em}
-.wysiwyg ul li:before{position:absolute;font-family:fontawesome;content:"\f111";color:#363535;font-size:.5em;margin-left:-2em;margin-bottom:.5em}
+.wysiwyg ul{margin-bottom:1em}
+.wysiwyg ol li,.wysiwyg ul li{list-style:none;font-size:1.125em;padding-left:1em;position:relative;margin-bottom:.25em;line-height:1.425em}
+.wysiwyg ul li:before{position:absolute;font-family:fontawesome;content:"\f111";color:#363535;font-size:.35em;margin-left:-2em;margin-bottom:.5em}
 .wysiwyg ol li{margin-bottom:2rem;padding-left:2.5rem}
 .wysiwyg ol{counter-reset:customCount}
 .wysiwyg ol>li{counter-increment:customCount}
@@ -1134,7 +1157,9 @@ p.intro{font-size:1.5625em}
 .blockquote,blockquote p{margin:1.5em 0}
 .wysiwyg p,.wysiwyg ul{margin-bottom:1.25em}
 .page-inner-wrap{width:73em}
-.thin-inner{padding:5em}
+.thin-inner,#disqus_thread{padding:5em}
+#disqus_thread{padding-top:0}
+footer{padding-bottom:5em}
 }@media only screen and (min-width:79.375em){.page-inner-wrap{width:76em}
 #header .logo{height:auto}
 #header .logo{float:left;height:3em}

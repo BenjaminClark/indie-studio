@@ -22,11 +22,16 @@ body {
 
 }
 
-.thin-inner {
+.thin-inner,
+#disqus_thread {
     margin: 0 auto;
     max-width: 62.5em;
     padding: 1.25em;
     background-color: #fff;
+}
+
+#disqus_thread {
+    padding-top: 0;
 }
 
 footer {
@@ -76,8 +81,13 @@ footer {
         width: 73em;
     }
     
-    .thin-inner {
+    .thin-inner,
+    #disqus_thread {
         padding: 5em;
+    }
+    
+    #disqus_thread {
+        padding-top: 0;
     }
          
 }

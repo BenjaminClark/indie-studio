@@ -43,7 +43,7 @@ var lastTranslator          = ''; // Last translator Email ID.
 var team                    = ''; // Team's Email ID.
 
 // Style related.
-var styleSRC                = './assets/css/custom/base.scss'; // Path to main .scss file.
+var styleSRC                = './assets/css/base.scss'; // Path to main .scss file.
 var styleDestination        = './assets/css'; // Path to place the compiled CSS file.
 // Default set to root folder.
 
@@ -58,7 +58,6 @@ var jsCustomSRC             = './assets/js/custom/front/*.js'; // Path to JS cus
 var jsDestination           = './assets/js/'; // Path to place the compiled JS vendors file.
 var jsFile                  = 'theme-script'; // Compiled JS vendors file name.
 // Default set to vendors i.e. vendors.js.
-
 
 
 
