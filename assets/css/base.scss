@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 @import 'vendor/normalize.min';
 @import 'vendor/animate.min';
 @import 'vendor/font-awesome.min';
@@ -14,6 +15,15 @@
 
 /** Import Custom Styles **/
 >>>>>>> bd008b04915549375939f852090aa2323e244ac0
+=======
+/** Import Vendor Styles **/
+@import 'vendor/normalize.min';
+@import 'vendor/animate.min';
+@import 'vendor/font-awesome.min';
+@import 'vendor/jquery.fancybox.min';
+
+/** Import Custom Styles **/
+>>>>>>> afce1bde0526d56d4a755c49e94aeb6777aeb948
 @import 'custom/reset';
 
 @import 'custom/colors';

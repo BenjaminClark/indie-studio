@@ -56,12 +56,16 @@ var jsVendorFile            = 'vendors'; // Compiled JS vendors file name.
 // JS Custom related.
 var jsCustomSRC             = './assets/js/custom/front/*.js'; // Path to JS custom scripts folder.
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> afce1bde0526d56d4a755c49e94aeb6777aeb948
 
 // JS Output
 var jsDestination           = './assets/js/'; // Path to place the compiled JS vendors file.
 var jsFile                  = 'theme-script'; // Compiled JS vendors file name.
 // Default set to vendors i.e. vendors.js.
 
+<<<<<<< HEAD
 
 =======
 var jsCustomDestination     = './assets/js/'; // Path to place the compiled JS custom scripts file.
@@ -69,6 +73,8 @@ var jsCustomFile            = 'custom'; // Compiled JS custom file name.
 // Default set to custom i.e. custom.js.
 >>>>>>> bd008b04915549375939f852090aa2323e244ac0
 
+=======
+>>>>>>> afce1bde0526d56d4a755c49e94aeb6777aeb948
 // Images related.
 var imagesSRC               = './assets/img/raw/**/*.{png,jpg,gif,svg}'; // Source folder of images which should be optimized.
 var imagesDestination       = './assets/img/'; // Destination folder of optimized images. Must be different from the imagesSRC folder.
