@@ -55,9 +55,11 @@ var jsVendorFile            = 'vendors'; // Compiled JS vendors file name.
 
 // JS Custom related.
 var jsCustomSRC             = './assets/js/custom/front/*.js'; // Path to JS custom scripts folder.
-var jsCustomDestination     = './assets/js/'; // Path to place the compiled JS custom scripts file.
-var jsCustomFile            = 'custom'; // Compiled JS custom file name.
-// Default set to custom i.e. custom.js.
+
+// JS Output
+var jsDestination           = './assets/js/'; // Path to place the compiled JS vendors file.
+var jsFile                  = 'theme-script'; // Compiled JS vendors file name.
+// Default set to vendors i.e. vendors.js.
 
 // Images related.
 var imagesSRC               = './assets/img/raw/**/*.{png,jpg,gif,svg}'; // Source folder of images which should be optimized.

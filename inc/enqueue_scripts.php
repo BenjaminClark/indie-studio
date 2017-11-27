@@ -86,13 +86,7 @@ function indie_studio_enqueue_scripts(){
     );
     wp_script_add_data( 'html5_shiv', 'conditional', 'lt IE 9' ); //Add the condition to show if below IE9
     
-    
-    /**
-     * Add Google Fonts
-     */
-    
-    wp_enqueue_style( 'google_fonts', get_google_fonts_enqueue_url() );
-    
+        
     if ( $debug ){
     
         wp_enqueue_script(
@@ -148,6 +142,12 @@ function indie_studio_enqueue_styles(){
     //Set the CSS directory for this theme
     $CSS_theme_dir           = get_stylesheet_directory_uri() . '/assets/css/';
     $CSS_direct_path         = get_stylesheet_directory() . '/assets/css/';    
+    
+    /**
+     * Add Google Fonts
+     */
+    
+    wp_enqueue_style( 'google_fonts', get_google_fonts_enqueue_url() );
     
     wp_enqueue_style(
         'theme_style', 

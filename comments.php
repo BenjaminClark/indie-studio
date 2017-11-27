@@ -20,7 +20,7 @@
 
 ?>
 
-<div id="comments" class="comments-area">
+<div id="comments" class="comments-area thin-inner">
 
 <?php if ( post_password_required() ) { ?>
 	<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', indie_studio_text_domain() ); ?></p>
