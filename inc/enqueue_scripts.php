@@ -14,6 +14,7 @@
  * @link https://developer.wordpress.org/reference/functions/wp_script_add_data/
  */
 
+
 /**
  * Enqueue all JS scripts
  * 
@@ -22,6 +23,7 @@
  * add all scripts into an array and pass to the
  * minifier/basic enqueuer
  */
+
 function indie_studio_enqueue_scripts(){    
     
     global $wp_query;
@@ -86,6 +88,15 @@ function indie_studio_enqueue_scripts(){
     );
     wp_script_add_data( 'html5_shiv', 'conditional', 'lt IE 9' ); //Add the condition to show if below IE9
     
+    
+    /**
+     * Javascript Enqueuing
+     *
+     * If Debug is set, the file that is enqueued is an unminified
+     * 
+     * The file is unminified, but compressed. The version number applied is also specific for a debug file.
+     * This means when it goes live the version is smaller, and related to actual production versions.
+     **/
         
     if ( $debug ){
     
@@ -149,13 +160,37 @@ function indie_studio_enqueue_styles(){
     
     wp_enqueue_style( 'google_fonts', get_google_fonts_enqueue_url() );
     
-    wp_enqueue_style(
-        'theme_style', 
-        $CSS_theme_dir . 'base.min.css', 
-        false, 
-        indie_studio_get_file_version_number( 'theme_style', $CSS_direct_path . 'base.min.css' ),
-        'all'
-    ); 
+    
+    /**
+     * CSS Style Enqueuing
+     *
+     * If Debug is set, the file that is enqueued is an unminified
+     * 
+     * The file is unminified, but compressed. The version number applied is also specific for a debug file.
+     * This means when it goes live the version is smaller, and related to actual production versions.
+     **/
+    
+    if ( $debug ){
+    
+        wp_enqueue_style(
+            'theme_style_debug', 
+            $CSS_theme_dir . 'base.css', 
+            false, 
+            indie_studio_get_file_version_number( 'theme_style_debug', $CSS_direct_path . 'base.css' ),
+            'all'
+        ); 
+        
+    } else {
+        
+        wp_enqueue_style(
+            'theme_style', 
+            $CSS_theme_dir . 'base.min.css', 
+            false, 
+            indie_studio_get_file_version_number( 'theme_style', $CSS_direct_path . 'base.min.css' ),
+            'all'
+        ); 
+        
+    }
     
     wp_enqueue_style(
         'theme_dynamic', 

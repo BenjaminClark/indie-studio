@@ -1,11 +1,11 @@
 {
-  "name": "WPGulp",
-  "author": "ahmadawais",
-  "version": "1.0.3",
-  "license": "GPL-2.0",
+  "name": "IndieStudio",
+  "author": "robertmarshall",
+  "version": "0.0.3",
+  "license": "CC-BY-SA-3.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ahmadawais/WPGulp"
+    "url": "https://github.com/BenjaminClark/indie-studio"
   },
   "dependencies": {},
   "devDependencies": {
@@ -24,6 +24,9 @@
     "gulp-uglify": "^1.5.3",
     "gulp-uglifycss": "^1.0.6",
     "gulp-sort": "^2.0.0",
-    "gulp-wp-pot": "^1.2.2"
+    "gulp-wp-pot": "^1.2.2",
+    "gulp-bump": "latest",
+    "gulp-wpstylecss": "latest",
+    "yargs": "latest"  
   }
 }
