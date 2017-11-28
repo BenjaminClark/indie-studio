@@ -150,6 +150,12 @@ add_filter( 'wp_default_scripts', 'indie_studio_remove_jquery_migrate' );
  */
 function indie_studio_enqueue_styles(){
         
+    $debug = false;
+    if (defined('WP_DEBUG') && true === WP_DEBUG) {
+        $debug = true;
+    }
+    
+    
     //Set the CSS directory for this theme
     $CSS_theme_dir           = get_stylesheet_directory_uri() . '/assets/css/';
     $CSS_direct_path         = get_stylesheet_directory() . '/assets/css/';    

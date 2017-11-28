@@ -85,7 +85,6 @@ const AUTOPREFIXER_BROWSERS = [
     'opera >= 23',
     'ios >= 7',
     'android >= 4',
-    'bb >= 10'
   ];
 
 // STOP Editing Project Variables.
@@ -103,13 +102,12 @@ var minifycss    = require('gulp-uglifycss'); // Minifies CSS files.
 var autoprefixer = require('gulp-autoprefixer'); // Autoprefixing magic.
 var mmq          = require('gulp-merge-media-queries'); // Combine matching media queries into one media query definition.
 
-// WordPress Stylesheet generator
-var wpstylecss   = require("gulp-wpstylecss");
-
 // Increment WordPress Theme Style Version Number
 var bump         = require('gulp-bump');
 var args         = require('yargs').argv;
 
+// File Save 
+var fs           = require('fs');
 
 // JS related plugins.
 var concat       = require('gulp-concat'); // Concatenates JS files
@@ -128,6 +126,20 @@ var browserSync  = require('browser-sync').create(); // Reloads browser and inje
 var reload       = browserSync.reload; // For manual browser reload.
 var wpPot        = require('gulp-wp-pot'); // For generating the .pot file.
 var sort         = require('gulp-sort'); // Recommended to prevent unnecessary changes in pot-file.
+
+
+
+/**
+ * Get values to start
+ */
+
+// Parses the package.json file. We use this because its values
+// change during execution.
+var getPackageJSON = function() {
+  return JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+};
+
+
 
 /**
  * Task: `browser-sync`.
@@ -301,12 +313,13 @@ gulp.task( 'browser-sync', function() {
  });
 
 
+
  /**
   * Watch Tasks.
   *
   * Watches for file changes and runs specific tasks.
   */
- gulp.task( 'default', ['styles', 'frontJs', 'images', 'browser-sync'], function () {
+ gulp.task( 'default', ['styles', 'frontJs', 'images', 'buildStyle', 'browser-sync'], function () {
      gulp.watch( projectPHPWatchFiles, reload ); // Reload on PHP file changes.
      gulp.watch( styleWatchFiles, [ 'styles' ] ); // Reload on SCSS file changes.
      gulp.watch( vendorJSWatchFiles, [ 'frontJs', reload ] ); // Reload on vendor JS file changes.
@@ -314,13 +327,11 @@ gulp.task( 'browser-sync', function() {
  });
 
 
-
 /** 
  * Increment Stylesheet code 
  */
 
-gulp.task('bump', function () {
-
+gulp.task('incrementProject', function () {
     var type = args.type;
     var version = args.version;
     var options = {};
@@ -330,8 +341,43 @@ gulp.task('bump', function () {
         
     return gulp
         .src(['./package.json'])
-        .pipe(bump(options))
-        .pipe( notify( { message: 'Version Updated: ' + options.version, onLast: true } ) )
-        .pipe(gulp.dest(productURL));
-        
+        .pipe( bump(options) )
+        .pipe( gulp.dest(productURL) );
+});
+
+
+/**
+ * Build Stylesheet
+ * 
+ * * This task takes the content from the package.json file and builds the WordPress info stylesheet from it.
+ */ 
+gulp.task( 'buildStyle', function () {
+    
+    var pkg = getPackageJSON();
+    
+    var themeDetails = ['/*',
+        'Theme Name: ' + pkg.name,
+        'Theme URI: '+ pkg.homepage,
+        'Description: '+ pkg.description,
+        'Author: '+ pkg.author,
+        'Author URI: '+ pkg.authorUri,
+        'Version: '+ pkg.version,
+        'Tags: '+ pkg.keywords,
+        'License: '+ pkg.license,
+        'License URI: '+ pkg.licenseUri,
+        'Github Theme URI: '+ pkg.repository.url,
+        '*/',
+        ''].join('\n');
+    
+        fs.writeFile('./style.css', themeDetails, 'utf-8', function (err) {
+            if (!err) {
+                //file written
+            }
+        });         
+    
+});
+
+
+gulp.task('bump', ['incrementProject'], function (){ 
+   gulp.start('buildStyle');
 });
