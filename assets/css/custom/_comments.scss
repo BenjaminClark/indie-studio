@@ -1,0 +1,165 @@
+/** Comments **/
+#comments {
+    padding-bottom: 2em;
+    border-top: 0.5em solid #f5f4f2;
+    
+    .comments_wrapper {
+        font-size: 0.8rem;
+    }
+    
+    .comment-form-comment textarea {
+        width: 100%;
+    }
+    
+}
+
+ol.commentlist {
+
+    list-style:none; 
+    margin: 0; 
+    padding:0; 
+    text-indent:0;
+
+    li.comment {
+        border-bottom: 0.0625em solid #ddd; 
+        padding:1em 0;
+        margin: 0;
+
+        footer {
+            display: block;
+            float: left;
+        }
+        
+        .comment-author {
+            font-size: 1.25em;
+            font-weight: 600;
+            margin-bottom: 0.25em;
+            
+            .p-name a {
+                text-decoration: none;
+                display: inline-block;
+            }
+            
+        } // end .comment-author
+                
+        img.avatar {
+            border:0.125em solid #f5f4f2; 
+            float: left; 
+            margin:0 0.625em 0.625em 0;
+            width: 3em;
+            height: 3em;
+            border-radius: 50%;
+        } // end .avatar
+
+        div.commentmetadata {} // end .commentmetadata
+        div.comment-meta {
+            margin: 0.25em 0 0.5em 0;
+            a {
+                text-decoration: none;
+            } // end a
+
+        } // end div.comment-meta
+        
+        ul {
+            list-style: none;
+        } // end ul
+
+        div.reply {
+            font-size: 0.85em;
+            text-align: right;
+            
+            a { 
+                font-weight: bold; 
+                text-decoration: none;
+            } // end a
+
+        } // end reply
+
+        ul.children {
+            list-style:none; 
+            margin: 0.85em; 
+            text-indent:0;
+            
+            li.depth-2,
+            li.depth-3,
+            li.depth-4,
+            li.depth-5 { 
+                border-left: 5px solid #ccc; 
+                margin:0 0 0.25em 0.25em;
+                padding-left: 1em;
+            }
+
+
+        }  // end ul.children
+
+    }  // end li.comment
+        
+    li.parent {border-left:5px solid #ddd;}
+
+} // end commentlist
+
+.comment-respond {
+    font-size: 1rem;
+    margin-top: 1em;
+    
+    label {
+        display: block;
+    }
+    
+    .form-submit #submit {
+        padding:0.35em 0.8em; 
+        background:#ccc; 
+        border:0 none;
+        cursor:pointer;
+        border-radius: 0.25em;  
+        opacity: 1;
+    }
+    
+    .form-submit #submit:hover {
+        opacity: 0.7;
+    }
+}
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 30em) {  /** 480px **/
+ 
+    /** Comments **/
+    #comments {
+
+        .comment .comment {
+            font-size: 1.1111111111111112rem;
+        }
+        
+    }
+    
+}
+
+
+@media only screen and (min-width: 47.875em) {  /** 766px **/
+
+    /** Comments **/
+    #comments {
+
+        .comments_wrapper {
+            font-size: 1rem;
+        }
+        
+    }
+    
+     ol.commentlist {
+
+        li.comment {
+         
+            .comment-content {
+                margin-left: 4.5em;
+            }
+
+            footer {
+                float: none;
+            }
+            
+        }
+    }
+    
+}

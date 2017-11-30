@@ -329,3 +329,20 @@ function indie_studio_enqueue_customizer_preview(){
     
 }
 add_action( 'customize_preview_init', 'indie_studio_enqueue_customizer_preview' );
+
+
+/**
+ * Add Comments Script 
+ * 
+ * @link https://wordpress.stackexchange.com/questions/16773/comments-reply-script-not-working
+ */
+
+function enqueue_comment_reply() {
+    // on single blog post pages with comments open and threaded comments
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ){ 
+        // enqueue the javascript that performs in-link comment reply fanciness
+        wp_enqueue_script( 'comment-reply' ); 
+    }
+}
+// Hook into wp_enqueue_scripts
+add_action( 'wp_enqueue_scripts', 'enqueue_comment_reply' );

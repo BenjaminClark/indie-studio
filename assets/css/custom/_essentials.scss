@@ -73,6 +73,8 @@ img.obj-fit.contain {
 /** Transitions **/
 .btn,
 button,
+[type=submit],
+#submit,
 .smooth,
 .smooth:after,
 .smooth:before {
@@ -139,7 +141,8 @@ button,
 }
 
 button:before,
-.btn:before {
+.btn:before,
+[type=submit]:before {
     content: " ";
 }
 
@@ -228,6 +231,12 @@ button.fancybox-close-small:hover {
 
 .load-more-posts-error.show {
     display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"]{
+    padding: 0.125em 0.25em;
 }
 
 
