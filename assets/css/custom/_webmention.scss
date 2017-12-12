@@ -1,0 +1,17 @@
+#webmention-source {
+    display: block;
+    width: 100%;
+}
+
+#webmention-submit {
+    padding:0.35em 0.8em; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    border-radius: 0.25em;  
+    opacity: 1;
+}
+
+#webmention-submit:hover {
+    opacity: 0.7;
+}

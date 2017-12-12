@@ -327,6 +327,13 @@ gulp.task( 'browser-sync', function() {
  });
 
 
+ /**
+  * Compile all code, minify all scripts, create new version number
+  */ 
+ gulp.task( 'full', ['styles', 'frontJs', 'images'], function () {
+     gulp.start('bump');
+ });
+
 /** 
  * Increment Stylesheet code 
  */
