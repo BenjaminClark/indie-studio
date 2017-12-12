@@ -30,7 +30,7 @@
 // START Editing Project Variables.
 // Project related.
 var project                 = 'IndieStudio'; // Project Name.
-var projectURL              = 'localhost/fox_agency'; // Local project URL of your already running WordPress site. Could be something like local.dev or localhost:8888.
+var projectURL              = 'localhost/indie-studio'; // Local project URL of your already running WordPress site. Could be something like local.dev or localhost:8888.
 var productURL              = './'; // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 
 // Translation related.

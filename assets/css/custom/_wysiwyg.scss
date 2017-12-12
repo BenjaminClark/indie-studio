@@ -14,70 +14,17 @@
     display: inline;
 }
 
-.wysiwyg ul {
-    margin-bottom: 1em;
+.wysiwyg li {
+    margin-left: 1.25em;
 }
 
-.wysiwyg ol li,
-.wysiwyg ul li { 
-    list-style: none;
-    font-size: 1.125em;
-    padding-left: 1em;
-    position: relative;
-    margin-bottom: 0.25em;
-    line-height: 1.425em;
-}
-
-.wysiwyg ul li:before {
-    position: absolute;
-    font-family: fontawesome;
-    content: "\f111";
-    color: #363535;
-    font-size: 0.35em;
-    margin-left: -2em;
-    margin-bottom: 0.5em;
-}
-
-.wysiwyg ol li {
-    margin-bottom: 2rem;
-    padding-left: 2.5rem;
-} 
-
-.wysiwyg ol {
-    counter-reset: customCount;
-}
-
-.wysiwyg ol > li {
-	counter-increment: customCount;
-}
-
-.wysiwyg ol li:before {
-    position: absolute;
-    content: counter(customCount); 
-    left: 0;
-    top: 0;
-    text-align: center;
-    width: 0.9375em;
-    color: #363535;
-}
-
-.wysiwyg .alignleft, img.alignleft {
-	margin-right: 1.5em;
-	display: inline;
-	float: left;
-}
-
-.wysiwyg .alignright, img.alignright {
-	margin-left: 1.5em;
-	display: inline;
-    float: right;
-}
-
+.wysiwyg .alignleft, img.alignleft,
+.wysiwyg .alignright, img.alignright,
 .wysiwyg .aligncenter, img.aligncenter {
-	margin-right: auto;
-	margin-left: auto;
-	display: block;
-	clear: both;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    clear: both;
 }
 
 /* Extra Small Devices, Phones */
@@ -85,6 +32,25 @@
  
     .wysiwyg {
         font-size: 1.2222222222222223rem;
+    }
+    
+    .wysiwyg .alignleft, img.alignleft {
+        margin-right: 0.875em;
+        display: inline;
+        float: left;
+    }
+
+    .wysiwyg .alignright, img.alignright {
+        margin-left: 0.875em;
+        display: inline;
+        float: right;
+    }
+
+    .wysiwyg .aligncenter, img.aligncenter {
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+        clear: both;
     }
     
 }
