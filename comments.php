@@ -33,7 +33,7 @@
 
         <?php
         // You can start editing here -- including this comment!
-        if ( have_comments() ) : ?>
+        if ( have_comments() ) { ?>
             <h2 class="comments-title">
                 <?php
                 $comments_number = get_comments_number();
@@ -101,15 +101,16 @@
             <?php
             endif;
 
-            /**
-             * Show the comment form
-             * 
-             * @link https://developer.wordpress.org/reference/functions/comment_form/
-             */
-            comment_form( array( 'format' => 'html5' ) ); 
+        } //End comments
+    
+        /**
+         * Show the comment form
+         * 
+         * @link https://developer.wordpress.org/reference/functions/comment_form/
+         */
+        comment_form( array( 'format' => 'html5' ) ); 
 
-        endif; //End comments
-            ?>
+        ?>
     </div>
 </div><!-- #comments -->
 

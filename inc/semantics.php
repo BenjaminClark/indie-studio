@@ -258,7 +258,7 @@ if ( ! function_exists( 'indie_studio_posted_on' ) ) {
             get_avatar( get_the_author_meta( 'ID' ), 60 ),
             esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
             esc_attr( sprintf( __( 'View all posts by %s', indie_studio_text_domain() ), get_the_author() ) ),
-            esc_html( get_the_author() )
+            get_the_author() // Removed "esc_html" due to Microformat plugin adding spans
 		);
 	}
 }
