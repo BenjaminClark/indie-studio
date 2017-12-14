@@ -1131,6 +1131,9 @@ button.search-submit:after{content:none}
 #webmention-source{display:block;width:100%}
 #webmention-submit{padding:.35em .8em;background:#ccc;border:0 none;cursor:pointer;border-radius:.25em;opacity:1}
 #webmention-submit:hover{opacity:.7}
+.mention-list li img.avatar{border-radius:50%;width:3em;height:3em;border:.125em solid #f5f4f2}
+.mention-list li .emoji-overlay{bottom:.1em;right:.1em}
+.comments_wrapper .reactions,.comments_wrapper .likes{margin:0 0 1.5em 0}
 @media only screen and (min-width:30em){h1{font-size:2em}
 h2{font-size:1.875em}
 h1,h2{line-height:1em;font-weight:700}
