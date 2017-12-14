@@ -1626,6 +1626,12 @@ function buildLoryCarousel(el){
                 infinite: 1,
                 enableMouseEvents: true
             });
+
+            //Once a slide is added, reset to clean up image displacement
+            setTimeout(function() { 
+                dot_navigation_slider.reset();
+            }, 1);
+  
         }
     }
 }

@@ -436,11 +436,11 @@ function indie_studio_the_module_gallery_images() {
     foreach ( $gallery_ids as $image_id ){
         $gallery_count++;
 
-        $image_attributes = wp_get_attachment_image_src( $image_id, 'module' );
+        $image = wp_get_attachment_image( $image_id, 'module', array( 'class' => 'photo u-photo', 'itemprop' => 'image' ) ); 
 
-        if ( $image_attributes ){ ?>
+        if ( $image ){ ?>
             <li class="js_slide">
-                <img class="obj-fit cover" src="<?php echo $image_attributes[0]; ?>" />
+                <?php echo $image;?>
             </li>
         <?php 
         }
@@ -469,11 +469,11 @@ function indie_studio_module_footer( $panel = null ){
     
     echo '<div class="user-interaction sneak-in' . $back_panel . '">';
     
-    if ( get_post_like_count() ){
+    if ( get_post_like_count() ){ //Only show if we have likes
         echo '<div class="likes"><span aria-label="' . get_post_like_count() . ' likes for this post"><i class="fa fa-heart" aria-hidden="true"></i>' . get_post_like_count() . '</span></div>';
     }
     
-    if ( get_comments_number() ){
+    if ( get_comments_number() ){ //Only show if we have comments
         echo '<div class="comments"><span aria-label="' . get_comments_number() . ' comments for this post"><i class="fa fa-comment" aria-hidden="true"></i>' . get_comments_number() . '</span></div>';
     }
 

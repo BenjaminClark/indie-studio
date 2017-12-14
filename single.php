@@ -20,8 +20,6 @@ get_header(); ?>
 
             <?php 
             while ( have_posts() ) : the_post();
-
-                print_error( get_approved_comments( get_the_ID() ) );
            
                 get_template_part( 'template-parts/post/content', get_post_format() );
 

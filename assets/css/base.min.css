@@ -1085,7 +1085,7 @@ ol.commentlist li.parent{border-left:5px solid #ddd}
 .module a,.module a h2,.module a h1,.module a p{opacity:1;text-decoration:none}
 .module h1,.module h2{font-size:1.5em;line-height:1.25em}
 .module p{font-size:1.125em}
-.module .entry-media{width:100%;padding-bottom:67.666%;position:relative}
+.module .entry-media{width:100%;padding-bottom:67%;position:relative}
 .module .entry-media.sqr{padding-bottom:100%}
 .module .entry-media .media-fit,.module .entry-media .overlay,.module .entry-media .play{position:absolute;top:0;bottom:0;left:0;right:0;overflow:hidden}
 .module .entry-media .overlay{opacity:0;background-color:#fff;z-index:5}
@@ -1119,7 +1119,7 @@ ol.commentlist li.parent{border-left:5px solid #ddd}
 .lory-carousel{position:relative;height:100%;overflow:hidden}
 .lory-carousel .frame{width:100%;position:relative;font-size:0;line-height:0;overflow:hidden;white-space:nowrap}
 .lory-carousel .slides{display:inline-block}
-.lory-carousel li{position:relative;display:inline-block;margin:0;height:100%}
+.lory-carousel li{position:relative;display:inline-block;margin:0;height:100%;line-height:0}
 .lory-carousel .prev,.lory-carousel .next{position:absolute;top:50%;margin-top:-25px;display:block;cursor:pointer}
 .lory-carousel .next{right:0}
 .lory-carousel .prev{left:0}
