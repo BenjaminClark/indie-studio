@@ -12,11 +12,15 @@
 }
 
 .module .entry-text {
-    padding: 1.25em 1.25em 2em 1.25em;
+    padding: 1.25em 1.25em 2.25em 1.25em;
 }
 
 .module .entry-text {
     border: 1px solid transparent;
+}
+
+.module a {
+    display: block;
 }
 
 .module a:hover .entry-text {

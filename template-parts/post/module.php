@@ -19,7 +19,7 @@ if ( $module_class ) {
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('col-4 module' . $module_class); ?><?php schema_semantics_tags( 'post' );?> itemref="site-publisher">
 
-    <a href="<?php the_permalink(); ?>" class="u-url url" title="<?php printf( esc_attr__( 'Permalink to %s', indie_studio_text_domain() ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" itemprop="url">
+    <a href="<?php the_permalink(); ?>" class="u-url url" title="<?php printf( esc_attr__( 'Link to %s', indie_studio_text_domain() ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" itemprop="url">
 
         <?php if ( get_post_gallery_images() > 1 && get_post_format() == 'gallery' ) { 
         

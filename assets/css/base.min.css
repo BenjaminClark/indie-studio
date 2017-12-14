@@ -1079,8 +1079,9 @@ ol.commentlist li.parent{border-left:5px solid #ddd}
 .grid-container .col-2:last-of-type{margin-top:1em}
 .basic .module{float:left}
 .module{position:relative;background-color:#fff;overflow:hidden;font-size:1rem;float:left;box-shadow:0 1px 3px rgba(100,100,100,0.15)}
-.module .entry-text{padding:1.25em 1.25em 2em 1.25em}
+.module .entry-text{padding:1.25em 1.25em 2.25em 1.25em}
 .module .entry-text{border:1px solid transparent}
+.module a{display:block}
 .module a:hover .entry-text{border:1px solid #dedede}
 .module a,.module a h2,.module a h1,.module a p{opacity:1;text-decoration:none}
 .module h1,.module h2{font-size:1.5em;line-height:1.25em}
@@ -1131,6 +1132,7 @@ button.search-submit:after{content:none}
 #webmention-source{display:block;width:100%}
 #webmention-submit{padding:.35em .8em;background:#ccc;border:0 none;cursor:pointer;border-radius:.25em;opacity:1}
 #webmention-submit:hover{opacity:.7}
+.mention-list li{margin-left:0}
 .mention-list li img.avatar{border-radius:50%;width:3em;height:3em;border:.125em solid #f5f4f2}
 .mention-list li .emoji-overlay{bottom:.1em;right:.1em}
 .comments_wrapper .reactions,.comments_wrapper .likes{margin:0 0 1.5em 0}

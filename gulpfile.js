@@ -161,6 +161,9 @@ gulp.task( 'browser-sync', function() {
         // Project URL.
         proxy: projectURL,
         open: "external",
+        
+        // Open the site in Chrome
+        browser: "chrome",
 
         // Might need to alter this if site doesnt load
         // use dev-ip to get list of IPs

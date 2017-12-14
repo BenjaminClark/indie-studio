@@ -41,6 +41,10 @@
 	
 	<span class="sep"> | </span>
 	<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', indie_studio_text_domain() ), __( '1 Comment', indie_studio_text_domain() ), __( '% Comments', indie_studio_text_domain() ) ); ?></span>
+    
+    <span class="likes-link"></span><?php echo get_permalink() . '#likes_anchor'; ?>
+    
+    
 	
 	<?php } ?>
 

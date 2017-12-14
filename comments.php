@@ -93,7 +93,11 @@
                     'next_text' => '<span class="screen-reader-text">' . __( 'Newer Comments', indie_studio_text_domain() ) . ' <i class="fa fa-angle-right" aria-hidden="true"></i></span>',
                 ) );?>
             </nav>
-            <?php }
+            <?php } ?>
+    
+            <div id="likes_anchor"></div>
+    
+            <?php
 
             // If comments are closed and there are comments, let's leave a little note, shall we?
             if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>

@@ -16,16 +16,22 @@
     opacity: 0.7;
 }
 
-.mention-list li img.avatar  {
-    border-radius: 50%;
-    width: 3em;
-    height: 3em;
-    border: .125em solid #f5f4f2;
-}
+.mention-list li {
+    
+    margin-left: 0;
+    
+    img.avatar  {
+        border-radius: 50%;
+        width: 3em;
+        height: 3em;
+        border: .125em solid #f5f4f2;
+    }
 
-.mention-list li .emoji-overlay {
-    bottom: 0.1em;
-    right: 0.1em;
+    .emoji-overlay {
+        bottom: 0.1em;
+        right: 0.1em;
+    }
+    
 }
 
 .comments_wrapper {
