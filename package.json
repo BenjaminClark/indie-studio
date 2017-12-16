@@ -21,7 +21,9 @@
   },
   "license": "CC-BY-SA-3.0",
   "licenseUri": "https://creativecommons.org/licenses/by-sa/3.0/",
-  "dependencies": {},
+  "dependencies": {
+    "dev-ip": "^1.0.1"
+  },
   "devDependencies": {
     "browser-sync": "^2.11.1",
     "gulp": "^3.9.1",

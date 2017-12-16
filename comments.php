@@ -95,7 +95,7 @@
             </nav>
             <?php } ?>
     
-            <div id="likes_anchor"></div>
+            <div id="likes"></div>
     
             <?php
 

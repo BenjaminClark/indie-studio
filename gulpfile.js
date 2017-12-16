@@ -19,6 +19,14 @@
  * @version 1.0.3
  */
 
+
+
+/**
+ * TODO: Auto-compile editors css
+ **/ 
+
+
+
 /**
  * Configuration.
  *
@@ -167,7 +175,7 @@ gulp.task( 'browser-sync', function() {
 
         // Might need to alter this if site doesnt load
         // use dev-ip to get list of IPs
-        host: "192.168.2.34",
+        host: "192.168.0.62",
 
         // `true` Automatically open the browser with BrowserSync live server.
         // `false` Stop the browser from automatically opening.

@@ -948,6 +948,7 @@ table{border-collapse:collapse;border-spacing:0}
 *,*:before,*:after{box-sizing:inherit}
 *:focus{outline:0;outline:0}
 input{border-radius:0}
+input,textarea{border:1px solid #868686}
 *,*:before,*:after{box-sizing:border-box}
 *:focus{outline:0}
 textarea:focus,input:focus{outline:0}
@@ -957,14 +958,15 @@ html{font-size:16px;box-sizing:border-box}
 body{font-size:1em;font-weight:400}
 a:hover,a:focus,a h1:hover,a h1:focus,a h2:hover,a h2:focus,a h3:hover,a h3:focus,a h4:hover,a h4:focus,a h5:hover,a h5:focus,p a:hover,p a:focus,a p:hover,a p:focus{opacity:.7}
 h1,h2,h3,h4,h5,p,.entry-meta{color:#000;margin-bottom:.875rem}
-blockquote p{font-size:1.5em;line-height:1em;font-weight:800;margin-bottom:0}
+blockquote{margin:1em auto;color:#555;padding:1em;border-left:.25em solid #afafaf;position:relative;background:#ededed}
+blockquote p{font-size:1.125em;font-weight:600;margin-bottom:0;font-style:italic}
 p.author{font-weight:800;text-transform:uppercase}
-h1{font-size:2em;line-height:1.125em;font-weight:800}
-h2{font-size:1.5em;line-height:1.125em;font-weight:800}
-h3{font-size:1.25em;line-height:1.125em;font-weight:800}
-h4{font-size:1.25em;line-height:1.3333em;font-weight:800}
-h5{font-size:1.25em;line-height:1.12em;font-weight:800}
-h6{font-size:1.25em;line-height:1.2em;font-weight:400}
+h1{font-size:2.125em;line-height:1.125em;font-weight:600}
+h2{font-size:1.8125em;line-height:1.125em;font-weight:700}
+h3{font-size:1.5em;line-height:1.125em;font-weight:600}
+h4{font-size:1.3125328133203331em;line-height:1.125em;font-weight:600}
+h5{font-size:1.25em;line-height:1.125em;font-weight:600}
+h6{font-size:1.125em;line-height:1.125em;font-weight:600;font-style:italic}
 p,li,.entry-meta{font-size:1.125em;line-height:1.33333em}
 p li{font-size:100%;line-height:1.33333em}
 strong,bold{font-weight:700}
@@ -1044,6 +1046,7 @@ footer.entry-meta a{display:inline}
 #comments{padding-bottom:2em;border-top:.5em solid #f5f4f2}
 #comments .comments_wrapper{font-size:.8rem}
 #comments .comment-form-comment textarea{width:100%}
+#comments .comment-form input{max-width:100%}
 ol.commentlist{list-style:none;margin:0 0 1em 0;padding:0;text-indent:0}
 ol.commentlist li.comment{border-bottom:.0625em solid #ddd;padding:1em 0;margin:0}
 ol.commentlist li.comment footer{display:block;float:left}
@@ -1136,15 +1139,14 @@ button.search-submit:after{content:none}
 .mention-list li img.avatar{border-radius:50%;width:3em;height:3em;border:.125em solid #f5f4f2}
 .mention-list li .emoji-overlay{bottom:.1em;right:.1em}
 .comments_wrapper .reactions,.comments_wrapper .likes{margin:0 0 1.5em 0}
-@media only screen and (min-width:30em){h1{font-size:2em}
-h2{font-size:1.875em}
-h1,h2{line-height:1em;font-weight:700}
-.wysiwyg{font-size:1.2222222222222223rem}
-.wysiwyg .alignleft,img.alignleft{margin-right:.875em;display:inline;float:left}
+@media only screen and (min-width:30em){.wysiwyg .alignleft,img.alignleft{margin-right:.875em;display:inline;float:left}
 .wysiwyg .alignright,img.alignright{margin-left:.875em;display:inline;float:right}
 .wysiwyg .aligncenter,img.aligncenter{margin-right:auto;margin-left:auto;display:block;clear:both}
 #comments .comment .comment{font-size:1.1111111111111112rem}
-}@media only screen and (min-width:40em){.grid-container.basic .col-4{margin:0 1em 1em 0}
+}@media only screen and (min-width:40em){h1{font-size:2em}
+h2{font-size:1.875em}
+h1,h2{line-height:1em;font-weight:700}
+.grid-container.basic .col-4{margin:0 1em 1em 0}
 .grid-container.basic .col-4:nth-child(even){margin-right:0}
 .masonry-column-sizer,.grid-container .col-4{width:calc(50% - 0.5em)}
 .masonry-gutter-sizer{width:1em}

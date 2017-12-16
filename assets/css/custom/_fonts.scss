@@ -45,11 +45,20 @@ p,
     margin-bottom: 0.875rem;
 }
 
+blockquote {
+  margin: 1em auto;
+  color: #555555;
+  padding:1em;
+  border-left:0.25em solid #afafaf;
+  position: relative;
+  background:#EDEDED; 
+}
+
 blockquote p {
-    font-size: 1.5em;
-    line-height: 1em; 
-    font-weight: 800; 
+    font-size: 1.125em;
+    font-weight: 600; 
     margin-bottom: 0;
+    font-style: italic;
 }
 
 p.author {
@@ -58,39 +67,40 @@ p.author {
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 2.125em;
     line-height: 1.125em; 
-    font-weight: 800;
+    font-weight: 600;
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 1.8125em;
     line-height: 1.125em; 
-    font-weight: 800;
+    font-weight: 700;
 }
 
 h3 {
-    font-size: 1.25em;
+    font-size: 1.5em;
     line-height: 1.125em;  
-    font-weight: 800;
+    font-weight: 600;
 }
 
 h4 {
-    font-size: 1.25em;
-    line-height: 1.3333em;  
-    font-weight: 800;
+    font-size: 1.3125328133203331em;
+    line-height: 1.125em;   
+    font-weight: 600;
 }
 
 h5 {
     font-size: 1.25em;
-    line-height: 1.12em; 
-    font-weight: 800;   
+    line-height: 1.125em;
+    font-weight: 600;
 }
 
 h6 {
-    font-size: 1.25em;
-    line-height: 1.2em; 
-    font-weight: 400;   
+    font-size: 1.125em;
+    line-height: 1.125em; 
+    font-weight: 600;  
+    font-style: italic;
 }
 
 p,
@@ -126,7 +136,7 @@ hr {
 }
 
 /* Extra Small Devices, Phones */
-@media only screen and (min-width: 30em) {  /** 480px **/
+@media only screen and (min-width: 40em) {  /** 640px **/
     
     h1 {
         font-size: 2em;

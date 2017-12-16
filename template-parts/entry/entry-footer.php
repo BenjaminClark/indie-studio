@@ -30,21 +30,35 @@
 	if ( $tags_list ) {
 	?>
 	
-	<span class="sep"> | </span>
-	<span class="tag-links" itemprop="keywords">
-		<?php printf( __( 'Tagged %1$s', indie_studio_text_domain() ), $tags_list ); ?>
-	</span>
+        <span class="sep"> | </span>
+        <span class="tag-links" itemprop="keywords">
+            <?php printf( __( 'Tagged %1$s', indie_studio_text_domain() ), $tags_list ); ?>
+        </span>
 	
 	<?php } // End if $tags_list ?>
 
 	<?php if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) { ?>
 	
-	<span class="sep"> | </span>
-	<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', indie_studio_text_domain() ), __( '1 Comment', indie_studio_text_domain() ), __( '% Comments', indie_studio_text_domain() ) ); ?></span>
+        <span class="sep"> | </span>
+        <span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', indie_studio_text_domain() ), __( '1 Comment', indie_studio_text_domain() ), __( '% Comments', indie_studio_text_domain() ) ); ?></span>
+
+        <?php 
+                  
+        $like_count = get_post_like_count( get_the_ID() );
+                                                                                           
+        if( $like_count > 0){ 
     
-    <span class="likes-link"></span><?php echo get_permalink() . '#likes_anchor'; ?>
+            if( $like_count == 1 ){
+                $likes_comment = '1 like';
+            } else {
+                $likes_comment = $like_count . ' likes';
+            }
+        ?>
     
+            <span class="sep"> | </span>
+            <span class="likes-link"><a href="<?php echo get_permalink() . '#likes'; ?>"><?php echo $likes_comment;?></a></span>
     
+        <?php } ?>
 	
 	<?php } ?>
 
