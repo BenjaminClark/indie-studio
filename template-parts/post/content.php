@@ -12,8 +12,14 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('single'); ?><?php schema_semantics_tags( 'post' );?> itemref="site-publisher">
 
-    <?php indie_studio_the_post_thumbnail( '<div class="entry-media">', '</div>' ); ?>
-
+    <?php
+    if ( is_single() ) {
+        indie_studio_the_article_banner( '<div class="entry-media">', '</div>' );
+    } else {
+        indie_studio_the_post_thumbnail( '<div class="entry-media">', '</div>' );
+    }
+    ?>
+    
     <div class="thin-inner">
 
         <?php get_template_part( 'template-parts/entry/entry', 'header' ); ?>

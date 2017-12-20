@@ -8,31 +8,39 @@
     text-decoration: none;
 }
 
-header .entry-meta {
-
-    position: relative;
+header {
     
-    a {
-        text-decoration: none;
-        font-size: 1em;
+    .entry-title {
+        margin-top: 0;
     }
-    
-    .author {
-        
-        margin: 1em 0;
-        float: left;
+
+    .entry-meta {
+
         position: relative;
-        width: 100%;
-    
-        img {
-            width: 3em;
-            height: 3em;
-            border-radius: 50%;
-        }
-        
+
         a {
-            left: 3.5em;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        .author {
+
+            margin: 1em 0;
             float: left;
+            position: relative;
+            width: 100%;
+
+            img {
+                width: 3em;
+                height: 3em;
+                border-radius: 50%;
+            }
+
+            a {
+                left: 3.5em;
+                float: left;
+            }
+
         }
         
     }

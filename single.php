@@ -16,7 +16,7 @@ get_header(); ?>
 <section id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
 
-       <div class="page-inner-wrap">
+       <div class="article-inner-wrap">
 
             <?php 
             while ( have_posts() ) : the_post();

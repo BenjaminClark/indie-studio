@@ -41,14 +41,16 @@ footer {
 
 
 /** This pushes all content to the same center position **/
-
-.page-inner-wrap {
+.page-inner-wrap,
+.article-inner-wrap {
     width: 100%;
-    padding: 0 1.125em;
     margin: 0 auto;
     position: relative;
 }
 
+.page-inner-wrap {
+    padding: 0 1.125em;
+}
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width: 30em) {  /** 480px **/
@@ -77,8 +79,10 @@ footer {
 /* Large Devices, Wide Screens */
 @media only screen and (min-width: 75em) {  /** 1200px **/
 
+    .article-inner-wrap,
     .page-inner-wrap {
         width: 73em;
+        padding: 0 1.125em;
     }
     
     .thin-inner,
@@ -96,6 +100,7 @@ footer {
 /** IMac **/
 @media only screen and (min-width: 79.375em) {  /** 1270px **/
         
+    .article-inner-wrap,
     .page-inner-wrap {
         width: 76em;
     }
@@ -105,6 +110,7 @@ footer {
 
 @media only screen and (min-width: 90em) {
     
+    .article-inner-wrap,
     .page-inner-wrap {
         width: 86em;
     }
@@ -115,6 +121,8 @@ footer {
 /** Pauls Screen - No bigger than this! **/
 @media only screen and (min-width: 100em) {  /** 1600px **/
         
+
+    .article-inner-wrap,
     .page-inner-wrap {
         width: 98em;
     }
@@ -125,6 +133,7 @@ footer {
 /** Round up wrappers **/
 @media only screen and (min-width: 102em) {
     
+    .article-inner-wrap,
     .page-inner-wrap {
         width: 100em;
     }
@@ -135,6 +144,7 @@ footer {
 /** Round up wrappers **/
 @media only screen and (min-width: 140em) {
     
+    .article-inner-wrap,
     .page-inner-wrap {
         width: 137.5em;
     }

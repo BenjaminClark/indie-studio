@@ -105,6 +105,10 @@ ol.commentlist {
 .comment-respond {
     font-size: 1rem;
     
+    .comment-reply-title {
+        margin-top: 0;
+    }
+    
     label {
         display: block;
     }

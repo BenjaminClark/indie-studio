@@ -33,16 +33,30 @@ a p:focus {
     opacity: 0.7;
 }
 
+h1 {
+    line-height: 1.125em;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li, {  
+    line-height: 125%; 
+}
 
 h1,
 h2,
 h3,
 h4,
 h5,
+h6,
 p, 
 .entry-meta {
     color: #000;   
-    margin-bottom: 0.875rem;
+    margin: 0.875rem 0;
 }
 
 blockquote {
@@ -68,37 +82,31 @@ p.author {
 
 h1 {
     font-size: 2.125em;
-    line-height: 1.125em; 
     font-weight: 600;
 }
 
 h2 {
     font-size: 1.8125em;
-    line-height: 1.125em; 
     font-weight: 700;
 }
 
 h3 {
-    font-size: 1.5em;
-    line-height: 1.125em;  
+    font-size: 1.5em; 
     font-weight: 600;
 }
 
 h4 {
-    font-size: 1.3125328133203331em;
-    line-height: 1.125em;   
+    font-size: 1.3125328133203331em;   
     font-weight: 600;
 }
 
 h5 {
     font-size: 1.25em;
-    line-height: 1.125em;
     font-weight: 600;
 }
 
 h6 {
     font-size: 1.125em;
-    line-height: 1.125em; 
     font-weight: 600;  
     font-style: italic;
 }
@@ -107,12 +115,6 @@ p,
 li,
 .entry-meta {
     font-size: 1.125em;
-    line-height: 1.33333em;
-}
-
-p li {
-    font-size: 100%;
-    line-height: 1.33333em;
 }
 
 strong, bold { 
@@ -124,7 +126,11 @@ em, i {
 }
 
 ul, ol { 
-    margin: 0; 
+    margin: 0 0 0.875rem 0; 
+}
+
+ul {
+    list-style-type: disc;
 }
 
 ol {
@@ -140,15 +146,6 @@ hr {
     
     h1 {
         font-size: 2em;
-    }
-
-    h2 {
-        font-size: 1.875em;
-    }
-    
-    h1,
-    h2, {
-        line-height: 1em; 
         font-weight: 700;
     }
         
@@ -159,10 +156,6 @@ hr {
 
     h1 {
         font-size: 2.25em;
-    }
-            
-    p.intro {
-        font-size: 1.5625em;
     }
     
 }
@@ -182,34 +175,26 @@ hr {
     h1 {
         font-size: 2.5em;
     }
-            
-    .blockquote,
-    blockquote p {
-        margin: 1.5em 0;
-    }
+         
+    .wysiwyg {
     
-    .wysiwyg p,
-    .wysiwyg ul {
-        margin-bottom: 1.25em;
-    }
+        blockquote p {
+            margin: 0;
+        }
 
+        p,
+        ul {
+            margin-bottom: 1.25em;
+        }
+        
+    }
     
 }
 
 @media only screen and (min-width: 87.5em) {  /** 1400px **/
-    
-    blockquote p {
-        font-size: 3.5em;
-    }
         
     h1 {
         font-size: 2.75em;
-    }
-
-    p,
-    .wysiwyg ol li,
-    .wysiwyg ul li { 
-        font-size: 1.25em;
     }
         
 }

@@ -8,9 +8,7 @@
 
 .wysiwyg {
     
-    h1, h2, h3, h4, h5, h6, p {
-        font-size: 1rem;
-    }
+    font-size: 1rem;
     
     a {
         display: inline;
@@ -27,6 +25,10 @@
         margin-left: auto;
         display: block;
         clear: both;
+    }
+    
+    img {
+        margin-bottom: 1.125em;
     }
 }
 
@@ -62,9 +64,7 @@
 @media only screen and (min-width: 40em) {  /** 640px **/
 
     .wysiwyg {
-
-        h1, h2, h3, h4, h5, h6, p {
-            font-size: 1.2222222222222223rem;
-        }
-        
+        font-size: 1.2222222222222223rem;
     }
+    
+}

@@ -356,6 +356,25 @@ function indie_studio_the_post_thumbnail( $before = '', $after = '' ) {
 	}
 }
 
+
+/**
+ * Adds article banner support
+ * 
+ * @param string $before = '' HTML to prepend to the image
+ * @param string $after = ''] HTML to append to the image
+ *                                                  
+ * @since IndieStudio 1.0.0
+ */
+function indie_studio_the_article_banner( $before = '', $after = '' ) {
+	if ( '' != get_the_post_thumbnail() ) {
+		$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'article-banner' );
+
+		echo $before;
+		the_post_thumbnail( 'article-banner', array( 'class' => 'photo u-photo u-featured', 'itemprop' => 'image' ) );
+		echo $after;
+	}
+}
+
 /**
  * Adds module thumbnail support
  *                                                  
