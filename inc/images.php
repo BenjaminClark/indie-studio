@@ -3,7 +3,7 @@
 //Add image functions here
 add_image_size( 'module', 400, 400 );
 
-add_image_size( 'article-banner', 2000, 600, true );
+add_image_size( 'article-banner', 2000, 824, true );
 
 /**
  * Add SVG support

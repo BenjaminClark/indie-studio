@@ -12,13 +12,17 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('single'); ?><?php schema_semantics_tags( 'post' );?> itemref="site-publisher">
 
-    <?php
-    if ( is_single() ) {
-        indie_studio_the_article_banner( '<div class="entry-media">', '</div>' );
-    } else {
-        indie_studio_the_post_thumbnail( '<div class="entry-media">', '</div>' );
-    }
-    ?>
+    <div class="entry-media">
+    
+        <?php
+        if ( is_single() ) {
+            indie_studio_the_article_banner( '<div class="post-banner"><div class="media-fit">', '</div></div>' );
+        } else {
+            indie_studio_the_post_thumbnail( '<div class="entry-media">', '</div>' );
+        }
+        ?>
+        
+    </div>
     
     <div class="thin-inner">
 
@@ -34,7 +38,7 @@
 
         <div class="entry-content e-content" itemprop="description articleBody">
 
-           <div class="wysiwyg">
+           <div class="wysiwyg group">
 
                 <?php 
                 the_content( __( 'Continue reading', indie_studio_text_domain() ) );

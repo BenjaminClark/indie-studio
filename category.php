@@ -15,17 +15,9 @@ get_header(); ?>
 
             <?php if ( have_posts() ) { ?>
 
-                <header class="page-header">
-                   <?php
-                        the_archive_title( '<h1 class="page-title">', '</h1>' );
-                        $category_description = category_description();
-                        if ( ! empty( $category_description ) ) {
-                            echo apply_filters( 'category_archive_meta', '<div class="category-archive-meta">' . $category_description . '</div>' );
-                        }
-                    ?>
-                </header>
 
-                <div id="ajax-post-wrap"  class="grid-container masonry basic">
+
+                <div id="ajax-post-wrap" class="grid-container masonry basic">
                
                     <?php /* Start the Loop */ ?>
                     <?php while ( have_posts() ) : the_post(); ?>

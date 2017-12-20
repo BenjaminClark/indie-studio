@@ -4,56 +4,90 @@
  * For example: Author styling, or comment styling
  */
 
-.single .entry-title a {
-    text-decoration: none;
-}
+.single {
 
-header {
-    
-    .entry-title {
-        margin-top: 0;
-    }
+    header {
 
-    .entry-meta {
-
-        position: relative;
-
-        a {
-            text-decoration: none;
-            font-size: 1em;
-        }
-
-        .author {
-
-            margin: 1em 0;
-            float: left;
-            position: relative;
-            width: 100%;
-
-            img {
-                width: 3em;
-                height: 3em;
-                border-radius: 50%;
-            }
+        .entry-title {
+            margin-top: 0;
 
             a {
-                left: 3.5em;
-                float: left;
+                text-decoration: none;
             }
 
+        }
+
+        .entry-meta {
+
+            position: relative;
+
+            a {
+                text-decoration: none;
+                font-size: 1em;
+            }
+
+            .author {
+
+                margin: 1em 0;
+                float: left;
+                position: relative;
+                width: 100%;
+
+                img {
+                    width: 3em;
+                    height: 3em;
+                    border-radius: 50%;
+                }
+
+                a {
+                    left: 3.5em;
+                    float: left;
+                }
+
+            }
+
+        }
+
+    }
+
+    .post-banner {
+        width: 100%;
+        padding-bottom: 40%;
+        position: relative;
+
+        .media-fit {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+            
+            img {
+                margin-top: -1.5em;
+                height: calc(100% + 1.5em);
+            }
+            
         }
         
     }
-          
-}
 
 
-/** Single Footer **/
-footer.entry-meta {
-    margin-top: 2em;  
-    margin-bottom: 0;
-}
 
-footer.entry-meta a {
-    display: inline;
+
+
+    footer {
+
+        /** Single Footer **/
+        .entry-meta {
+            margin-top: 2em;  
+            margin-bottom: 0;
+        }
+
+        .entry-meta a {
+            display: inline;
+        }
+
+    }
+    
 }

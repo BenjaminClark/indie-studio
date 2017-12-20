@@ -370,7 +370,7 @@ function indie_studio_the_article_banner( $before = '', $after = '' ) {
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'article-banner' );
 
 		echo $before;
-		the_post_thumbnail( 'article-banner', array( 'class' => 'photo u-photo u-featured', 'itemprop' => 'image' ) );
+		the_post_thumbnail( 'article-banner', array( 'class' => 'photo u-photo u-featured obj-fit cover rellax', 'itemprop' => 'image' ) );
 		echo $after;
 	}
 }
@@ -488,13 +488,9 @@ function indie_studio_module_footer( $panel = null ){
     
     echo '<div class="user-interaction sneak-in' . $back_panel . '">';
     
-    if ( get_post_like_count() ){ //Only show if we have likes
-        echo '<div class="likes"><span aria-label="' . get_post_like_count() . ' likes for this post"><i class="fa fa-heart" aria-hidden="true"></i>' . get_post_like_count() . '</span></div>';
-    }
+    echo '<div class="likes"><span aria-label="' . get_post_like_count() . ' likes for this post"><i class="fa fa-heart" aria-hidden="true"></i>' . get_post_like_count() . '</span></div>';
     
-    if ( get_comments_number() ){ //Only show if we have comments
-        echo '<div class="comments"><span aria-label="' . get_comments_number() . ' comments for this post"><i class="fa fa-comment" aria-hidden="true"></i>' . get_comments_number() . '</span></div>';
-    }
+    echo '<div class="comments"><span aria-label="' . get_comments_number() . ' comments for this post"><i class="fa fa-comment" aria-hidden="true"></i>' . get_comments_number() . '</span></div>';
 
     echo '</div>';
     

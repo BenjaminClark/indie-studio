@@ -959,7 +959,8 @@ body{font-size:1em;font-weight:400}
 a:hover,a:focus,a h1:hover,a h1:focus,a h2:hover,a h2:focus,a h3:hover,a h3:focus,a h4:hover,a h4:focus,a h5:hover,a h5:focus,p a:hover,p a:focus,a p:hover,a p:focus{opacity:.7}
 h1{line-height:1.125em}
 h2,h3,h4,h5,h6,p,li{line-height:125%}
-h1,h2,h3,h4,h5,h6,p,.entry-meta{color:#000;margin:.875rem 0}
+h1,h2,h3,h4,h5,h6,p{color:#000;margin:.875rem 0}
+.entry-meta{color:#000}
 blockquote{margin:1em auto;color:#555;padding:1em;border-left:.25em solid #afafaf;position:relative;background:#ededed}
 blockquote p{font-size:1.125em;font-weight:600;margin-bottom:0;font-style:italic}
 p.author{font-weight:800;text-transform:uppercase}
@@ -1034,15 +1035,18 @@ body.navigation-open #site-navigation{bottom:0;padding-bottom:3.75em}
 #site-navigation a{text-decoration:none}
 #site-navigation .toggle{display:none}
 #site-navigation .menu-item-has-children>.toggle{display:block}
-.single .entry-title a{text-decoration:none}
-header .entry-title{margin-top:0}
-header .entry-meta{position:relative}
-header .entry-meta a{text-decoration:none;font-size:1em}
-header .entry-meta .author{margin:1em 0;float:left;position:relative;width:100%}
-header .entry-meta .author img{width:3em;height:3em;border-radius:50%}
-header .entry-meta .author a{left:3.5em;float:left}
-footer.entry-meta{margin-top:2em;margin-bottom:0}
-footer.entry-meta a{display:inline}
+.single header .entry-title{margin-top:0}
+.single header .entry-title a{text-decoration:none}
+.single header .entry-meta{position:relative}
+.single header .entry-meta a{text-decoration:none;font-size:1em}
+.single header .entry-meta .author{margin:1em 0;float:left;position:relative;width:100%}
+.single header .entry-meta .author img{width:3em;height:3em;border-radius:50%}
+.single header .entry-meta .author a{left:3.5em;float:left}
+.single .post-banner{width:100%;padding-bottom:40%;position:relative}
+.single .post-banner .media-fit{position:absolute;top:0;bottom:0;left:0;right:0;overflow:hidden}
+.single .post-banner .media-fit img{margin-top:-1.5em;height:calc(100% + 1.5em)}
+.single footer .entry-meta{margin-top:2em;margin-bottom:0}
+.single footer .entry-meta a{display:inline}
 .wysiwyg{font-size:1rem}
 .wysiwyg a{display:inline}
 .wysiwyg li{margin-left:1.25em}
