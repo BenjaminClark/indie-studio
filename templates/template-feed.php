@@ -58,6 +58,7 @@ get_header(); ?>
 
                 <div id="ajax-post-wrap" class="grid-container masonry basic">
                     <div class="masonry-column-sizer"></div>
+                    <div class="masonry-gutter-sizer"></div>
                     
                     <?php
                     while ( have_posts() ) : the_post();

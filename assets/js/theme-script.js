@@ -1423,7 +1423,7 @@ function getNewPostsAjax(data){
 
     if ( loadType === 'button' ){
         //Fade out load more button  -  Then add loading spinner
-        fade({el:loadMorePosts,type:'out',duration: 500,},function(){
+        fade({el:loadMorePosts,type:'out',duration: 10,},function(){
             ajaxLoadingAnimation( document.getElementById("load-more-wrap"), 'prepend' );
         });
     } else {
@@ -1454,9 +1454,12 @@ function postsLoadFunction(response){
 
                         //Append posts using Masonry
                         ajaxPostWrap.appendChild( el );
-                        masonry.appended( el );
-                        buildLoryCarousel( el );
                         
+                        imagesLoaded( ajaxPostWrap, function(){
+                            masonry.appended( el );
+                            buildLoryCarousel( el );
+                        });
+                            
                     } else {
 
                         //Add posts not in Bricklayer

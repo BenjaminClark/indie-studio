@@ -1052,7 +1052,7 @@ body.navigation-open #site-navigation{bottom:0;padding-bottom:3.75em}
 .wysiwyg li{margin-left:1.25em}
 .wysiwyg .alignleft,.wysiwyg img.alignleft,.wysiwyg .alignright,.wysiwyg img.alignright,.wysiwyg .aligncenter,.wysiwyg img.aligncenter{margin-right:auto;margin-left:auto;display:block;clear:both}
 .wysiwyg img{margin-bottom:1.125em}
-#comments{padding-bottom:2em;border-top:.5em solid #f5f4f2}
+#comments{border-top:.5em solid #f5f4f2}
 #comments .comments_wrapper{font-size:.8rem}
 #comments .comment-form-comment textarea{width:100%}
 #comments .comment-form input{max-width:100%}
