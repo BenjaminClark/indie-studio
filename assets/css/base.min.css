@@ -1033,7 +1033,7 @@ body.navigation-open #burger span:nth-child(2){-webkit-transform:rotate(45deg);-
 body.navigation-open #burger span:nth-child(3){-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg)}
 body.navigation-open #burger span:nth-child(4){top:calc(50% - 0.125em);width:0;left:50%}
 #searchform{float:left;color:red;height:1.75em;margin:0 0 0 .8em;z-index:5500}
-#searchform button.search-submit,#searchform button.search-close{padding:0;margin:0;height:1.375em;position:relative;font-size:1.25em;line-height:1em;text-align:center;cursor:pointer;border-radius:50%;z-index:5500;background-color:transparent;float:left}
+#searchform button.search-submit,#searchform button.search-close{padding:0;margin:0;height:1.375em;position:relative;font-size:1.25em;line-height:1em;text-align:center;cursor:pointer;z-index:5500;background-color:transparent;float:left}
 #searchform button.search-submit:after{content:none}
 #searchform button.search-submit:hover{opacity:.7}
 #searchform button.search-close{opacity:0;margin-left:0;width:0}
@@ -1163,6 +1163,11 @@ ol.commentlist li.parent{border-left:5px solid #ddd}
 .lory-carousel .next svg,.lory-carousel .prev svg{width:25px}
 .lory-carousel .js_dots{display:inline-block;text-align:center}
 .lory-carousel .js_dots li{display:inline-block;text-align:center;width:.825em;height:.825em;margin:.75em .25em;border-radius:50%}
+#main-searchform{width:100%;border:.0625em solid #c7c7c7;background:#fff}
+#main-searchform label{width:calc(100% - 2.5em);float:left}
+#main-searchform input{border:0;outline:0;padding:0;width:100%;font-size:1.25em;padding:.5em}
+#main-searchform button{padding:.5em;margin:0;width:auto;position:relative;font-size:1.25em;line-height:1em;text-align:center;cursor:pointer;z-index:5500;background-color:transparent;float:left}
+#main-searchform button:hover{opacity:.7}
 #search ul{list-style:none;position:relative}
 #search li{position:relative}
 #search li a{text-decoration:none}
@@ -1235,6 +1240,9 @@ ol.commentlist li.comment footer{float:none}
 #searchform .reveal{height:5.5em}
 #searchform .reveal input{width:calc(100% - 1.25em);margin:.5em 0 0 0}
 #searchform #search-button{font-size:1em}
+#main-searchform label{width:calc(100% - 4em)}
+#main-searchform input{padding:1em}
+#main-searchform button{padding:1em}
 }@media only screen and (min-width:87.5em){h1{font-size:2.75em}
 }@media only screen and (min-width:90em){.article-inner-wrap,.page-inner-wrap{width:86em}
 .grid-container .col-4{margin-bottom:1em}
