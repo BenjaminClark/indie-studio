@@ -21,12 +21,14 @@ get_header(); ?>
             
                 <?php main_search_form(); ?>
 
-                <div id="ajax-post-wrap">
+                <div id="ajax-post-wrap" class="grid-container masonry basic">
+                    <div class="masonry-column-sizer"></div>
+                    <div class="masonry-gutter-sizer"></div>
 
                     <?php /* Start the Loop */ ?>
                     <?php while ( have_posts() ) : the_post(); ?>
                        
-                        <?php get_template_part( 'template-parts/post/content', 'search' ); ?>
+                        <?php get_template_part( 'template-parts/post/module', get_post_format() ); ?>
 
                     <?php endwhile; ?>
 
