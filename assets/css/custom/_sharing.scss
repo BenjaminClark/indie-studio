@@ -1,0 +1,68 @@
+.article-share {
+    
+    border-top: 0.5em solid #f5f4f2;
+    
+    .thin-inner {
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+        margin: 0;
+        display: inline-block;
+    }
+    
+    a {
+        font-size: 1.5em;
+        display: inline-block;
+        text-transform: uppercase;
+        color: #0060ac;
+        font-weight: 800;
+        margin: 0 0 0 0.5em; 
+    }
+
+    a:hover,
+    a:focus {
+        color: #000; 
+    }
+    
+    /** icons **/
+    
+    .linkedin-share {
+        color: #127BB6;
+    }
+    
+    .google-share {
+        color: #BD081C;
+    }
+    
+    .facebook-share {
+        color: #3B5998;
+    }
+    
+    .twitter-share {
+        color: #38A0CD;
+    }
+    
+    .print {
+        color: #444;
+    }
+    
+    .email-share {
+        color: #da6a33;
+    }
+    
+}
+
+@media only screen and (min-width: 40em) {
+
+    .article-share {
+
+        a {
+            margin: 0 0 0 0.8em; 
+        }
+
+    }
+    
+}

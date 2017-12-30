@@ -510,3 +510,40 @@ function indie_studio_module_footer( $panel = null ){
     echo '</div>';
     
 }
+
+
+/**
+ * Build social sharing links
+ */
+
+function indie_studio_social_share( $post_id ){
+    
+    $title = get_the_title( $post_id );
+    $current_url = get_the_permalink( $post_id );
+    
+    ?>
+
+    <div class="article-share">
+
+        <div class="thin-inner">
+
+            <h2>Share</h2>
+
+            <a class="linkedin-share smooth external" href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo $current_url;?>&title=<?php echo $title;?>&source=<?php get_home_url(); ?>"><i class="fa fa-linkedin"></i></a>
+
+            <a class="google-share smooth external" href="https://plus.google.com/share?url=<?php echo $current_url;?>"><i class="fa fa-google-plus"></i></a>
+
+            <a class="facebook-share smooth external" href="http://www.facebook.com/sharer/sharer.php?u=<?php echo $current_url;?>&title=<?php echo $title;?>"><i class="fa fa-facebook-f"></i></a>
+
+            <a class="twitter-share smooth external" href="http://twitter.com/intent/tweet?status=<?php echo $title;?>+<?php echo $current_url;?>"><i class="fa fa-twitter"></i></a>
+
+            <a class="print smooth" href="javascript:window.print()"><i class="fa fa-print"></i></a> 
+
+            <a class="email-share smooth" href="mailto:?subject=Check out this article: <?php echo $title; ?>body=<?php echo $current_url;?>"><i class="fa fa-envelope"></i></a> 
+
+        </div>
+            
+    </div>
+
+<?php
+} 
