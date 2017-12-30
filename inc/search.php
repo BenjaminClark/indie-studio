@@ -23,13 +23,15 @@ function customized_search_form( $form ) {
        
             $form .= '<div class="reveal smooth">';
 
-                $form .= '<input id="header-search-input" type="text" id="s" name="s" value="' . esc_attr( the_search_query() ) . '" placeholder="' .  esc_attr_x( 'Search …', 'placeholder' ) . '" title="' . esc_attr_x( 'Search for:', 'label' ) . '" itemprop="query-input" autocomplete="off">';
+                $form .= '<input id="header-search-input" type="text" id="s" name="s" value="' . esc_attr( get_search_query() ) . '" placeholder="' .  esc_attr_x( 'Search …', 'placeholder' ) . '" title="' . esc_attr_x( 'Search for:', 'label' ) . '" itemprop="query-input" autocomplete="off">';
 
             $form .= '</div>';
 
         $form .= '</label>';
     
         $form .= '<button class="search-submit hover smooth"><i class="fa fa-search" aria-hidden="true"></i></button>';
+    
+        $form .= '<button class="search-close" class="hover smooth"><i class="fa fa-times" aria-hidden="true"></i></button>';
         
         $form .= '<meta itemprop="target" content="' . site_url( '/?s={search} ' ) . '"/>';
     

@@ -66,32 +66,28 @@
         ?>
     </nav>
 
-    <div class="burger-wrapper">
-
-        <div id="burger">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <div class="trig"></div>
-        </div>
-
-        <?php
-        
-        /**
-         * @TODO Add checkbox in customizer to allow users
-         * to pick if they want to show a search box in the header
-         */
-        
-        if ( get_theme_mod('indie_studio_header_search', true) ) {
-        
-            get_search_form();
-        
-        }
-        
-        ?>
-
+    <div id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="trig"></div>
     </div>
+    
+    <?php
+
+    /**
+     * @TODO Add checkbox in customizer to allow users
+     * to pick if they want to show a search box in the header
+     */
+
+    if ( get_theme_mod('indie_studio_header_search', true) ) {
+
+        get_search_form();
+
+    }
+
+    ?>
 
 </div>
 

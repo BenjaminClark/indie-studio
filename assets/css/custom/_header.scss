@@ -25,6 +25,12 @@
         font-size: 1em;  
         margin: 0;
         font-weight: 700;
+        float: left;
+        clear: left;
+    }
+    
+    .header-menu-wrap {
+        float: right;
     }
     
 }
@@ -32,14 +38,9 @@
 
 /** Burger **/
 
-.burger-wrapper {
-    margin-top: 0.25em;
-    float: right;
-}
-
 #burger {
     
-    margin: 0;
+    margin: 0.25em 0 0 0;
     display: block;
     float: left;
     width: 1.5em;
@@ -118,11 +119,109 @@ body.navigation-open #burger {
     
 }
 
-/** Search **/
-#header form {
+/** Search Form **/
+
+#searchform {
     float: left;
+    color: red;
+    height: 1.75em;
+    margin: 0 0 0 0.8em;
+    z-index: 5500;
+
+    button.search-submit,
+    button.search-close {
+        padding:0;
+        margin: 0;
+        height: 1.375em;
+        position: relative;
+        font-size: 1.25em;
+        line-height: 1em;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 50%;
+        z-index: 5500;
+        background-color: transparent;
+        float: left;
+    }
+
+    button.search-submit:after {
+        content: none;
+    }
+    
+    button.search-submit:hover {
+        opacity: 0.7;
+    }
+    
+    button.search-close {
+        opacity: 0;
+        margin-left: 0;
+        width: 0;
+    }
+
+    .reveal {
+        position: absolute;
+        width: 0;
+        top: -1em;
+        bottom: 0;
+        right: 0;
+        z-index: 5;
+        background-color: #fff;
+        overflow: hidden;
+        z-index: 5500;
+    }
+    
+    .reveal input {
+        width: 100%;
+        padding: 1.345em 3.5em 1.345em 1.125em;
+        float: right;
+        outline: 0;
+        border: 0;
+        font-size: 1.125em;
+        background-color: #fff;
+        color: #222222;
+    }
+
+    input::placeholder {
+        color: #fff;
+    }
+
+    input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color: #fff;
+    }
+    input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: #fff;
+        opacity:  1;
+    }
+    input::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: #fff;
+        opacity:  1;
+    }
+    input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: #fff;
+    }
+    input::-ms-input-placeholder { /* Microsoft Edge */
+        color: #fff;
+    }
+
+    div {
+        float: left;
+    }
+
 }
 
+#searchform.active {
+    
+    .search-close {
+        margin-left: 0.35em;
+        opacity: 1;
+        width: 1.8125em;
+    }
+
+    .reveal {
+        width: 100%;
+    }
+
+}
 
 /**  Menu **/
 
@@ -218,7 +317,7 @@ body.navigation-open #site-navigation {
         right: auto;
         bottom: auto;
         padding: 0;
-        float: right;
+        float: left;
         
         li {
             display: inline-block;
@@ -265,5 +364,21 @@ body.navigation-open #site-navigation {
     #site-navigation > div > ul > li:last-child {
         margin: 0;
     }
+    
+    
+    /** Search **/
+    
+    #searchform {
+        margin-top: 0.75em;
+    }
+    
+    #searchform .reveal input {
+        width: calc(100% - 1.25em);
+        margin: 0.5em 0 0 0;
+    }
+        
+    #searchform #search-button {
+        font-size: 1em;
+    }  
     
 }

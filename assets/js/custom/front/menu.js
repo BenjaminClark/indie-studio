@@ -12,10 +12,10 @@ jQuery(document).ready(function($) {
     var body                    = $( 'body' ),
                 
         //Header search bar
-        headerSearchWrap        = $( "#header-search" ),
-        headerSearchForm        = $( "#header-search form" ),
+        headerSearchForm        = $( "#searchform" ),
         headerSearchInput       = $( "#header-search-input" ),
-        headerSearchButton      = $( "#search-button" ), 
+        headerSearchButton      = $( "#searchform .search-submit" ), 
+        headerSearchClose       = $( "#searchform .search-close" ), 
         
         mainSearchInput         = $( "#main-search-input" ), 
         
@@ -36,7 +36,8 @@ jQuery(document).ready(function($) {
         }
         
         headerSearchButton.on("click tap" , function(e){
-            if( headerSearchWrap.hasClass('active') ){
+            e.preventDefault();
+            if( headerSearchForm.hasClass('active') ){
                 //Check if search bar has text
                 var headerSearchText = $(headerSearchInput).val();
                 if ( headerSearchText.length > 0 ){
@@ -48,23 +49,28 @@ jQuery(document).ready(function($) {
                 openHeaderSearch();
             }
         });
+        
+        headerSearchClose.on("click tap" , function(e){
+            e.preventDefault();
+            closeHeaderSearch();
+        });
                 
         //Reset menu & search on click outside of menu
         $(document).on("click tap" , function(e){
             // if the target of the click isn't the container nor a descendant of the container
-            if ( !headerSearchWrap.is(e.target) && headerSearchWrap.has(e.target).length === 0 ){
+            if ( headerSearchForm.has(e.target).length === 0 ){
                 closeHeaderSearch();
             }
         });
         
         function openHeaderSearch(){
-            headerSearchWrap.addClass('active');
+            headerSearchForm.addClass('active');
             headerSearchInput.focus();
             mainNavigation.addClass('search');
         }
         
         function closeHeaderSearch(){
-            headerSearchWrap.removeClass('active');
+            headerSearchForm.removeClass('active');
             mainNavigation.removeClass('search');
         }
         

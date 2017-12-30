@@ -29,7 +29,12 @@ h5 {
     color: <?php echo get_theme_mod('indie_studio_heading_text_colour', '#222222'); ?>;
 } 
 
-p, li, a, label {
+p, 
+li, 
+a, 
+label,
+button.search-submit,
+button.search-close {
     font-family: '<?php echo $paragraph_font;?>', Verdana, Geneva, sans-serif;
     color: <?php echo get_theme_mod('indie_studio_paragraph_text_colour', '#222222');?>;
 }

@@ -1,17 +1,26 @@
-button.search-submit {
-    padding:0;
-    margin: 0;
+/** Page **/
+
+#search ul {
+    list-style: none;
     position: relative;
-    width: 2em;
-    height: 2em;
-    font-size: 1em;
-    line-height: 1.5em;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 50%;
-    z-index: 15;
 }
 
-button.search-submit:after {
-    content: none;
+#search li {
+    position: relative;
+}
+
+#search li a {
+    text-decoration: none;
+}
+
+#search a p {
+    padding-left: 0.75em;
+}
+
+#search a:hover p {
+    opacity: 0.6;
+}
+
+#search h2 {
+    position: relative;
 }
