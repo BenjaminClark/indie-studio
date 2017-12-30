@@ -6,12 +6,12 @@ A microformat/schema theme aimed at design professionals. The content comes firs
 ## Image Reveal Built In
 Images can be set to animate into view as the reader scrolls down the page. All that is required is for 2 classes to be set on the image.
 
-'''
+```
 "sr top" - Animates the image from the top
 "sr right" - Animates the image from the right
 "sr bottom" - Animates the image from the bottom
 "sr left" - Animates the image from the left
-'''
+```
 
 Simples!
 
