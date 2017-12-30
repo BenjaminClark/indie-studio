@@ -61,8 +61,11 @@
             wp_nav_menu($args); 
         }
         ?>
+        
+        <?php get_social_media_icons(); ?>
+        
     </nav>
-
+    
     <div id="burger">
         <span></span>
         <span></span>
@@ -78,8 +81,6 @@
         get_search_form();
 
     }
-    
-    get_social_media_icons();
 
     ?>
 
