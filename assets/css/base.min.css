@@ -1116,6 +1116,7 @@ ol.commentlist li.parent{border-left:5px solid #ddd}
 .basic .module{float:left}
 .module{position:relative;background-color:#fff;overflow:hidden;font-size:1rem;float:left;box-shadow:0 1px 3px rgba(100,100,100,0.15)}
 .module .entry-text{padding:1.25em 1.25em 2.25em 1.25em;border:1px solid transparent}
+.module .entry-text .entry-date{font-style:italic}
 .module a{display:block;opacity:1;text-decoration:none}
 .module a h2,.module a h1,.module a p{opacity:1;text-decoration:none}
 .module a:hover .entry-text{border:1px solid #dedede}
@@ -1161,6 +1162,7 @@ ol.commentlist li.parent{border-left:5px solid #ddd}
 .lory-carousel .next svg,.lory-carousel .prev svg{width:25px}
 .lory-carousel .js_dots{display:inline-block;text-align:center}
 .lory-carousel .js_dots li{display:inline-block;text-align:center;width:.825em;height:.825em;margin:.75em .25em;border-radius:50%}
+.search #main-searchform{margin-bottom:1.125em}
 #main-searchform{width:100%;border:.0625em solid #c7c7c7;background:#fff}
 #main-searchform label{width:calc(100% - 2.5em);float:left}
 #main-searchform input{border:0;outline:0;padding:0;width:100%;font-size:1.25em;padding:.5em}
