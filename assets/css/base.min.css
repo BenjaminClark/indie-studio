@@ -1016,6 +1016,9 @@ html,body{height:100%}
 #header .logo img{height:2em;max-width:100%}
 #header #site-description{font-size:1em;margin:0;font-weight:700;float:left;clear:left}
 #header .header-menu-wrap{float:right}
+#header .menu-main-container{float:left}
+#header .social-media-icons{display:block;float:left;width:100%}
+#header .social-media-icons li{padding:.125em;display:inline-block;font-size:1.5em;float:left;margin-right:.5em}
 #burger{margin:.25em 0 0 0;display:block;float:left;width:1.5em;height:1.375em;position:relative;cursor:pointer}
 #burger .trig{position:absolute;width:100%;height:100%}
 #burger span{display:block;position:absolute;height:.125em;width:100%;background:#484848;opacity:1;left:0;-webkit-transform:rotate(0);-ms-transform:rotate(0);transform:rotate(0);-webkit-transition:.25s ease-in-out;transition:.25s ease-in-out}
@@ -1026,12 +1029,12 @@ body.navigation-open #burger span:nth-child(1){top:calc(50% - 0.125em);width:0;l
 body.navigation-open #burger span:nth-child(2){-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}
 body.navigation-open #burger span:nth-child(3){-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg)}
 body.navigation-open #burger span:nth-child(4){top:calc(50% - 0.125em);width:0;left:50%}
-#searchform{float:left;color:red;height:1.75em;margin:0 0 0 .8em;z-index:5500}
-#searchform button.search-submit,#searchform button.search-close{padding:0;margin:0;height:1.375em;position:relative;font-size:1.25em;line-height:1em;text-align:center;cursor:pointer;z-index:5500;background-color:transparent;float:left}
+#searchform{float:left;color:red;height:1.75em;margin:0 0 0 .8em}
+#searchform button.search-submit,#searchform button.search-close{padding:0;margin:0;height:1.375em;position:relative;font-size:1.25em;line-height:1em;text-align:center;cursor:pointer;z-index:500;background-color:transparent;float:left}
 #searchform button.search-submit:after{content:none}
 #searchform button.search-submit:hover{opacity:.7}
 #searchform button.search-close{opacity:0;margin-left:0;width:0}
-#searchform .reveal{position:absolute;width:0;top:-1em;height:4em;right:0;z-index:5;background-color:#fff;overflow:hidden;z-index:5500}
+#searchform .reveal{position:absolute;width:0;top:-1em;height:4em;right:0;z-index:5;background-color:#fff;overflow:hidden}
 #searchform .reveal input{width:100%;padding:1.345em 3.5em 1.345em 1.125em;float:right;outline:0;border:0;font-size:1.125em;background-color:#fff;color:#222}
 #searchform input::-webkit-input-placeholder{color:#fff}
 #searchform input::-moz-placeholder{color:#fff}
@@ -1045,7 +1048,8 @@ body.navigation-open #burger span:nth-child(4){top:calc(50% - 0.125em);width:0;l
 #searchform div{float:left}
 #searchform.active .search-close{margin-left:.35em;opacity:1;width:1.8125em}
 #searchform.active .reveal{width:100%}
-#site-navigation{background-color:#fff;display:block;position:fixed;top:3.8em;left:0;right:0;bottom:100%;overflow-y:auto;-webkit-transition:bottom .5s;transition:bottom .5s;z-index:5000;padding:0 1.125em}
+body.navigation-open #site-navigation{z-index:5000}
+#site-navigation{background-color:#fff;display:block;position:fixed;top:3.8em;left:0;right:0;bottom:100%;overflow-y:auto;-webkit-transition:bottom .5s;transition:bottom .5s;padding:0 1.125em}
 #site-navigation ul li a{padding:.5em 0}
 #site-navigation ul li a:first-child{padding:1.125em 0 0 0}
 #site-navigation a{text-decoration:none}
@@ -1077,17 +1081,27 @@ body.navigation-open #site-navigation{bottom:0;padding-bottom:3.75em}
 .wysiwyg ol{counter-reset:customCount}
 .wysiwyg ol>li{counter-increment:customCount}
 .wysiwyg ol li:before{position:absolute;content:counter(customCount) ". ";left:0;top:0;text-align:center;width:.9375em}
+.social.twitter{color:#38a0cd}
+.social.facebook{color:#3b5998}
+.social.google{color:#bd081c}
+.social.flickr{color:#f20265}
+.social.pinterest{color:#cc2127}
+.social.youtube{color:#fe0000}
+.social.vimeo{color:#1ab7ea}
+.social.tumblr{color:#314358}
+.social.dribbble{color:#e74d89}
+.social.linkedin{color:#127bb6}
+.social.instagram{color:#3f51b5}
+.social.behance{color:#1769ff}
+.social.github{color:#000}
+.social.medium{color:#00ab6c}
+.social.print{color:#444}
+.social.email-share{color:#da6a33}
 .article-share{border-top:.5em solid #f5f4f2}
 .article-share .thin-inner{padding-top:2em;padding-bottom:2em}
 .article-share h2{font-size:1.5em;margin:0;display:inline-block}
 .article-share a{font-size:1.5em;display:inline-block;text-transform:uppercase;color:#0060ac;font-weight:800;margin:0 0 0 .5em}
 .article-share a:hover,.article-share a:focus{color:#000}
-.article-share .linkedin-share{color:#127bb6}
-.article-share .google-share{color:#bd081c}
-.article-share .facebook-share{color:#3b5998}
-.article-share .twitter-share{color:#38a0cd}
-.article-share .print{color:#444}
-.article-share .email-share{color:#da6a33}
 #comments{border-top:.5em solid #f5f4f2}
 #comments .comments_wrapper{font-size:.8rem}
 #comments .comment-form-comment textarea{width:100%}
@@ -1245,6 +1259,8 @@ ol.commentlist li.comment footer{float:none}
 #header .logo h1{font-size:2.5em}
 #header .logo img{height:3em}
 #header #site-description{font-size:1.25em}
+#header .social-media-icons{width:auto;margin-top:.25em}
+#header .social-media-icons li{font-size:1.25em;margin-left:.5em;margin-right:0}
 #burger{display:none}
 #site-navigation{background-color:transparent;overflow:visible;position:relative;margin-top:.5em;top:auto;left:auto;right:auto;bottom:auto;padding:0;float:left}
 #site-navigation li{display:inline-block}
@@ -1256,10 +1272,10 @@ ol.commentlist li.comment footer{float:none}
 #site-navigation ul li a:first-child,#site-navigation ul li a{padding:0}
 #site-navigation>div>ul>li{padding:.5em}
 #site-navigation>div>ul>li:last-child{margin:0}
-#searchform{margin-top:.75em}
+#searchform{margin-top:.8em}
+#searchform button.search-submit{padding:.125em}
 #searchform .reveal{height:5.5em}
 #searchform .reveal input{width:calc(100% - 1.25em);margin:.5em 0 0 0}
-#searchform #search-button{font-size:1em}
 #main-searchform label{width:calc(100% - 4em)}
 #main-searchform input{padding:1em}
 #main-searchform button{padding:1em}
