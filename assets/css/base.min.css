@@ -1205,7 +1205,7 @@ ol.commentlist li.comment footer{float:none}
 #site-navigation li.menu-item-has-children>ul{position:absolute;min-width:160px;z-index:1;margin:.5em 0 0 0;background-color:#f2f2f2}
 #site-navigation ul ul li.menu-item-has-children>ul{left:100%;top:0;margin:0}
 #site-navigation li.menu-item-has-children:hover>ul{display:block}
-#site-navigation ul li a{padding:0}
+#site-navigation ul li a:first-child,#site-navigation ul li a{padding:0}
 }@media only screen and (min-width:87.5em){h1{font-size:2.75em}
 }@media only screen and (min-width:90em){.article-inner-wrap,.page-inner-wrap{width:86em}
 .grid-container .col-4{margin-bottom:1em}
