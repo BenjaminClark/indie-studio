@@ -49,6 +49,8 @@ function indie_studio_customize_register( $wp_customize ) {
     //Add font and theme colour options
     include ( 'fonts_colours.php' );
     
+    include ( 'social_media.php' );
+    
     //Add custom scripts fields
     include ( 'scripts.php' );
     

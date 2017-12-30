@@ -20,4 +20,4 @@ Built with developers in mind. File organsation has been considered to make a mo
 
 To find out more about Gulp check out the [Gulp WordPress Framework](https://github.com/ahmadawais/WPGulp).
 
-The code is documented as per [PHPDocs](https://www.phpdoc.org/) specification. This allows all functions ect to be output into a specification document if required.
+The code is documented as per [PHPDocs](https://www.phpdoc.org/) specification. This allows all functions ect to be outputted into a specification document if required.
