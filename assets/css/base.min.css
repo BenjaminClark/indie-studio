@@ -1057,8 +1057,8 @@ body.navigation-open #site-navigation{bottom:0;padding-bottom:3.75em}
 .single article header .entry-meta{position:relative}
 .single article header .entry-meta a{text-decoration:none;font-size:1em}
 .single article header .entry-meta .author{margin:1em 0;float:left;position:relative;width:100%}
-.single article header .entry-meta .author img{width:3em;height:3em;border-radius:50%}
-.single article header .entry-meta .author a{left:3.5em;float:left}
+.single article header .entry-meta .author img{float:left;width:3em;height:3em;border-radius:50%}
+.single article header .entry-meta .author span{position:absolute;top:calc(50% - 0.5em);margin-left:.5em;float:left}
 .single article .post-banner{width:100%;padding-bottom:40%;position:relative}
 .single article .post-banner .media-fit{position:absolute;top:0;bottom:0;left:0;right:0;overflow:hidden}
 .single article .post-banner .media-fit img{margin-top:-1.5em;height:calc(100% + 1.5em)}
