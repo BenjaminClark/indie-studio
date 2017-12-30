@@ -122,6 +122,7 @@ body.navigation-open #burger {
 /** Search Form **/
 
 #searchform {
+    
     float: left;
     color: red;
     height: 1.75em;
@@ -162,7 +163,7 @@ body.navigation-open #burger {
         position: absolute;
         width: 0;
         top: -1em;
-        bottom: 0;
+        height: 4em;
         right: 0;
         z-index: 5;
         background-color: #fff;
@@ -369,16 +370,23 @@ body.navigation-open #site-navigation {
     /** Search **/
     
     #searchform {
-        margin-top: 0.75em;
-    }
-    
-    #searchform .reveal input {
-        width: calc(100% - 1.25em);
-        margin: 0.5em 0 0 0;
-    }
         
-    #searchform #search-button {
-        font-size: 1em;
-    }  
+        margin-top: 0.75em;
+
+        .reveal { 
+            height: 5.5em;
+
+            input {
+                width: calc(100% - 1.25em);
+                margin: 0.5em 0 0 0;
+            }
+
+        }
+        
+        #search-button {
+            font-size: 1em;
+        }  
+        
+    }
     
 }

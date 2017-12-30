@@ -1037,7 +1037,7 @@ body.navigation-open #burger span:nth-child(4){top:calc(50% - 0.125em);width:0;l
 #searchform button.search-submit:after{content:none}
 #searchform button.search-submit:hover{opacity:.7}
 #searchform button.search-close{opacity:0;margin-left:0;width:0}
-#searchform .reveal{position:absolute;width:0;top:-1em;bottom:0;right:0;z-index:5;background-color:#fff;overflow:hidden;z-index:5500}
+#searchform .reveal{position:absolute;width:0;top:-1em;height:4em;right:0;z-index:5;background-color:#fff;overflow:hidden;z-index:5500}
 #searchform .reveal input{width:100%;padding:1.345em 3.5em 1.345em 1.125em;float:right;outline:0;border:0;font-size:1.125em;background-color:#fff;color:#222}
 #searchform input::-webkit-input-placeholder{color:#fff}
 #searchform input::-moz-placeholder{color:#fff}
@@ -1232,6 +1232,7 @@ ol.commentlist li.comment footer{float:none}
 #site-navigation>div>ul>li{padding:.5em}
 #site-navigation>div>ul>li:last-child{margin:0}
 #searchform{margin-top:.75em}
+#searchform .reveal{height:5.5em}
 #searchform .reveal input{width:calc(100% - 1.25em);margin:.5em 0 0 0}
 #searchform #search-button{font-size:1em}
 }@media only screen and (min-width:87.5em){h1{font-size:2.75em}
