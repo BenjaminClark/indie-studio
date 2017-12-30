@@ -127,48 +127,44 @@ strong, bold {
 em, i { 
     font-style: italic; 
 }
-
-#main {
     
-    li {
-        position: relative;
-    }
-    
-    ul, ol { 
-        margin: 0 0 0.875rem 0; 
-    }
+li {
+    position: relative;
+}
 
-    ul li, ol li {
-        padding-left: 2em;
-    }
+ul, ol { 
+    margin: 0 0 0.875rem 0; 
+}
 
-    ul li:before {
-        position: absolute;
-        line-height: inherit;
-        top: 0;
-        left: 0;
-        font-size: inherit;
-        font-family: FontAwesome;
-        content: "\f068";
-    }
+ul li, ol li {
+    padding-left: 2em;
+}
 
-    ol {
-        counter-reset: customCount;
-    }
+ul li:before {
+    position: absolute;
+    line-height: inherit;
+    top: 0;
+    left: 0;
+    font-size: inherit;
+    font-family: FontAwesome;
+    content: "\f068";
+}
 
-    ol > li {
-        counter-increment: customCount;
-    }
+ol {
+    counter-reset: customCount;
+}
 
-    ol li:before {
-        position: absolute;
-        content: counter(customCount) ". "; 
-        left: 0;
-        top: 0;
-        text-align: center;
-        width: 0.9375em;
-    }
-    
+ol > li {
+    counter-increment: customCount;
+}
+
+ol li:before {
+    position: absolute;
+    content: counter(customCount) ". "; 
+    left: 0;
+    top: 0;
+    text-align: center;
+    width: 0.9375em;
 }
 
 hr {
