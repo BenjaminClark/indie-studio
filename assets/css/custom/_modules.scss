@@ -13,6 +13,12 @@
     .entry-text {
         padding: 1.25em 1.25em 2.25em 1.25em;
         border: 1px solid transparent;
+        
+        .entry-date {
+
+            font-style: italic;
+        }
+        
     }
     
     a {

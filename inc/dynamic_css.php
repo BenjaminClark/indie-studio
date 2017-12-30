@@ -33,6 +33,7 @@ p,
 li, 
 a, 
 label,
+time,
 button.search-submit,
 button.search-close {
     font-family: '<?php echo $paragraph_font;?>', Verdana, Geneva, sans-serif;
