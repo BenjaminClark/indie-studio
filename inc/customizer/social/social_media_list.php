@@ -23,7 +23,6 @@ function indie_studio_social_media_array() {
         'behance',
         'github',
         'medium',
-        'twitch',
     );
     return $social_sites;
 }
