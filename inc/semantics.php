@@ -250,11 +250,9 @@ if ( ! function_exists( 'indie_studio_posted_on' ) ) {
 	 */
     
 	function indie_studio_posted_on() {
-		printf( __( '<a href="%1$s" title="%2$s" rel="bookmark" class="entry-date-link url u-url"><time class="entry-date updated published dt-updated dt-published" datetime="%3$s" itemprop="dateModified datePublished">Published on %4$s</time></a>', indie_studio_text_domain() ),
-			esc_url( get_permalink() ),
-			esc_attr( get_the_time() ),
+		printf( __( '<p><time class="entry-date updated published dt-updated dt-published" datetime="%1$s" itemprop="dateModified datePublished">%2$s</time></p>', indie_studio_text_domain() ),
 			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date() )
+			esc_html( get_time_difference( get_the_date() ) )
 		);
 	}
 }
@@ -271,7 +269,7 @@ if ( ! function_exists( 'indie_studio_posted_details' ) ) {
 			esc_url( get_permalink() ),
 			esc_attr( get_the_time() ),
 			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date() ),
+			esc_html( get_time_difference( get_the_date() ) ),
             get_avatar( get_the_author_meta( 'ID' ), 60 ),
             esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
             esc_attr( sprintf( __( 'View all posts by %s', indie_studio_text_domain() ), get_the_author() ) ),
