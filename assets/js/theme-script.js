@@ -1680,6 +1680,7 @@ jQuery(document).ready(function($) {
         headerSearchButton      = $( "#searchform .search-submit" ), 
         headerSearchClose       = $( "#searchform .search-close" ), 
         
+        mainSearchForm          = $( "#main-searchform" ),
         mainSearchInput         = $( "#main-search-input" ), 
         
         mainNavigation          = $( "#site-navigation" ), 
@@ -1698,18 +1699,27 @@ jQuery(document).ready(function($) {
             syncTextInputElements ( 'main-search-input', 'header-search-input' );
         }
         
-        headerSearchButton.on("click tap" , function(e){
+        headerSearchForm.submit(function( e ) {
+            var form = this;
             e.preventDefault();
             if( headerSearchForm.hasClass('active') ){
                 //Check if search bar has text
-                var headerSearchText = $(headerSearchInput).val();
-                if ( headerSearchText.length > 0 ){
-                    $( headerSearchForm ).submit();
+                if ( headerSearchInput.val().length > 0 ){
+                   form.submit();
                 } else {
                     closeHeaderSearch();
                 }
             } else {
                 openHeaderSearch();
+            }
+            
+        });
+        
+        mainSearchForm.submit(function( e ) {
+            var form = this;
+            e.preventDefault();
+            if ( headerSearchInput.val().length > 0 ){
+               form.submit();
             }
         });
         

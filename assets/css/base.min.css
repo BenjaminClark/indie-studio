@@ -1115,21 +1115,18 @@ ol.commentlist li.parent{border-left:5px solid #ddd}
 .grid-container .col-2:last-of-type{margin-top:1em}
 .basic .module{float:left}
 .module{position:relative;background-color:#fff;overflow:hidden;font-size:1rem;float:left;box-shadow:0 1px 3px rgba(100,100,100,0.15)}
-.module .entry-text{padding:1.25em 1.25em 2.25em 1.25em}
-.module .entry-text{border:1px solid transparent}
-.module a{display:block}
+.module .entry-text{padding:1.25em 1.25em 2.25em 1.25em;border:1px solid transparent}
+.module a{display:block;opacity:1;text-decoration:none}
+.module a h2,.module a h1,.module a p{opacity:1;text-decoration:none}
 .module a:hover .entry-text{border:1px solid #dedede}
-.module a,.module a h2,.module a h1,.module a p{opacity:1;text-decoration:none}
 .module h1,.module h2{font-size:1.5em;line-height:1.25em;margin:0}
 .module p{font-size:1.125em}
 .module .entry-media{width:100%;padding-bottom:67%;position:relative}
-.module .entry-media.sqr{padding-bottom:100%}
 .module .entry-media .media-fit,.module .entry-media .overlay,.module .entry-media .play{position:absolute;top:0;bottom:0;left:0;right:0;overflow:hidden}
 .module .entry-media .overlay{opacity:0;background-color:#fff;z-index:5}
-.module a:hover .entry-media .overlay{opacity:.1}
-.entry-media .media-fit img{width:100%;height:100%;z-index:3}
-.module:not(.module-gallery) a:hover .entry-media .media-fit img{-ms-transform:scale(1.025,1.025);-webkit-transform:scale(1.025,1.025);transform:scale(1.025,1.025)}
-.module img.alignright{margin:0;display:block;float:none}
+.module .entry-media.sqr{padding-bottom:100%}
+.module .a:hover .entry-media .overlay{opacity:.1}
+.module .entry-media .media-fit img{width:100%;height:100%;z-index:3}
 .module .entry-media .play{z-index:4}
 .module .entry-media .play i{font-size:4em;color:#fff;position:relative;float:left;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}
 .module .lory-carousel .js_dots{position:absolute;z-index:8;bottom:-4em;-webkit-transition:all .5s ease-out .3s;transition:all .5s ease-out .3s;width:100%;margin:0}
@@ -1142,6 +1139,7 @@ ol.commentlist li.parent{border-left:5px solid #ddd}
 .module .user-interaction .likes i{color:#ef4545;margin-right:.125em}
 .module .user-interaction .comments{float:right}
 .module .user-interaction .comments i{color:#777;margin-right:.125em}
+.module:not(.module-gallery) a:hover .entry-media .media-fit img{-ms-transform:scale(1.025,1.025);-webkit-transform:scale(1.025,1.025);transform:scale(1.025,1.025)}
 .gallery{margin:0 auto 18px}
 .gallery .gallery-item{float:left;margin-top:0;text-align:center;width:33%}
 .gallery-columns-2 .gallery-item{width:50%}
