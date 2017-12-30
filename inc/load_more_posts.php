@@ -113,7 +113,7 @@ function indie_studio_load_more_posts() {
              * 
              * This does not feel 100% right, but it eliminates the need repeating the template code.
              *
-             * A soloution to come back to, might be to make a module like function
+             * A solution to come back to, might be to make a module like function
              * to pass template_parts, and ajax requests to. However, this seems like just 
              * rewriting the template_part functionality.
              * 

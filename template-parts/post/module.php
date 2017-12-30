@@ -35,7 +35,7 @@ if ( $module_class ) {
         
             <div class="entry-text sneak-in">
                 <h2 class="entry-title p-name" itemprop="name headline"><?php the_title(); ?></h2>
-                <?php the_excerpt(); ?>
+                <p><?php get_the_excerpt(); ?></p>
             </div>
 	
         <?php }
