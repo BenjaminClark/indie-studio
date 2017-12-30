@@ -9,166 +9,158 @@
     font-size: 1rem; /** Reset module top level div **/
     float: left;
     box-shadow: 0 1px 3px rgba(100,100,100,0.15);
-}
+    
+    .entry-text {
+        padding: 1.25em 1.25em 2.25em 1.25em;
+        border: 1px solid transparent;
+    }
+    
+    a {
+        display: block;
+        opacity: 1;
+        text-decoration: none;
 
-.module .entry-text {
-    padding: 1.25em 1.25em 2.25em 1.25em;
-}
+        h2,
+        h1,
+        p {
+            opacity: 1;
+            text-decoration: none;
+        }
 
-.module .entry-text {
-    border: 1px solid transparent;
-}
+    }
 
-.module a {
-    display: block;
-}
+    a:hover .entry-text {
+        border: 1px solid #dedede;
+    }
 
-.module a:hover .entry-text {
-    border: 1px solid #dedede;
-}
+    h1,
+    h2 {
+        font-size: 1.5em;
+        line-height: 1.25em;
+        margin: 0;
+    }
 
-.module a,
-.module a h2,
-.module a h1,
-.module a p {
-    opacity: 1;
-    text-decoration: none;
-}
+    p {
+        font-size: 1.125em;
+    }
 
-/** Fonts **/
-.module h1,
-.module h2 {
-    font-size: 1.5em;
-    line-height: 1.25em;
-    margin: 0;
-}
+    /** Image **/
+    .entry-media {
+        width: 100%;
+        padding-bottom: 67%;
+        position: relative;
 
-.module p {
-    font-size: 1.125em;
-}
+        .media-fit,
+        .overlay,
+        .play {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+        }
 
-/** Image **/
-.module .entry-media {
-    width: 100%;
-    padding-bottom: 67%;
-    position: relative;
-}
+        .overlay {
+            opacity: 0;
+            background-color: #fff;
+            z-index: 5;
+        }
 
-.module .entry-media.sqr {
-    padding-bottom: 100%;
-}
+    }
 
-.module .entry-media .media-fit,
-.module .entry-media .overlay,
-.module .entry-media .play {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    overflow: hidden;
-}
+    .entry-media.sqr {
+        padding-bottom: 100%;
+    }
 
-.module .entry-media .overlay {
-    opacity: 0;
-    background-color: #fff;
-    z-index: 5;
-}
+    .a:hover .entry-media .overlay {
+        opacity: 0.1;
+    }
 
-.module a:hover .entry-media .overlay {
-    opacity: 0.1;
-}
+    .entry-media .media-fit img {
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+    }
 
-.entry-media .media-fit img {
-    width: 100%;
-    height: 100%;
-    z-index: 3;
+    /** Video **/
+    .entry-media .play {
+        z-index: 4;    
+    }
+
+    .entry-media .play i {
+        font-size: 4em;
+        color: #fff;
+        position: relative;
+        float: left;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    /** Gallery **/
+
+    .lory-carousel .js_dots {
+        position: absolute;
+        z-index: 8;
+        bottom: -4em;
+        transition:all .5s ease-out 0.3s;
+        width: 100%;
+        margin: 0;
+    }
+
+    .lory-carousel .js_dots li {
+        background-color: #5d5d5d;
+    }
+
+    .lory-carousel .js_dots li.active {
+        background-color:  #fff;
+    }
+
+    /** Likes and Comments **/
+    .user-interaction {
+        width: 100%;
+        padding: 1.25em;
+        font-size: 0.8em;
+        position: absolute;
+        bottom: -4em;
+        left: 0;
+        z-index: 7;
+        transition:all .5s ease-out 0.3s;
+    }
+
+    .user-interaction.back-panel {
+        background-color: #fff;
+    }
+
+    a:hover .lory-carousel .js_dots,
+    a:hover .user-interaction {
+        bottom: 0;
+        transition:all 0.3s ease-out 0.1s;
+    }
+
+    .user-interaction .likes {
+        float: left;
+    }
+
+    .user-interaction .likes i {
+        color: #ef4545;
+        margin-right: 0.125em;
+    }
+
+    .user-interaction .comments {
+        float: right;
+    }
+
+    .user-interaction .comments i {
+        color: #777777;
+        margin-right: 0.125em;
+    }
+
 }
 
 .module:not(.module-gallery) a:hover .entry-media .media-fit img {
     -ms-transform: scale(1.025, 1.025); /* IE 9 */
     -webkit-transform: scale(1.025, 1.025); /* Safari */
     transform: scale(1.025, 1.025);
-}
-
-.module img.alignright {
-    margin: 0;
-    display: block;
-    float: none;
-}
-
-
-/** Video **/
-.module .entry-media .play {
-    z-index: 4;    
-}
-
-.module .entry-media .play i {
-    font-size: 4em;
-    color: #fff;
-    position: relative;
-    float: left;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/** Gallery **/
-
-.module .lory-carousel .js_dots {
-    position: absolute;
-    z-index: 8;
-    bottom: -4em;
-    transition:all .5s ease-out 0.3s;
-    width: 100%;
-    margin: 0;
-}
-
-.module .lory-carousel .js_dots li {
-    background-color: #5d5d5d;
-}
-
-.module .lory-carousel .js_dots li.active {
-    background-color:  #fff;
-}
-
-
-/** Likes and Comments **/
-.module .user-interaction {
-    width: 100%;
-    padding: 1.25em;
-    font-size: 0.8em;
-    position: absolute;
-    bottom: -4em;
-    left: 0;
-    z-index: 7;
-    transition:all .5s ease-out 0.3s;
-}
-
-.module .user-interaction.back-panel {
-    background-color: #fff;
-}
-
-.module a:hover .lory-carousel .js_dots,
-.module a:hover .user-interaction {
-    bottom: 0;
-    transition:all 0.3s ease-out 0.1s;
-}
-
-.module .user-interaction .likes {
-    float: left;
-}
-
-.module .user-interaction .likes i {
-    color: #ef4545;
-    margin-right: 0.125em;
-}
-
-.module .user-interaction .comments {
-    float: right;
-}
-
-.module .user-interaction .comments i {
-    color: #777777;
-    margin-right: 0.125em;
 }
