@@ -42,6 +42,8 @@ include ( 'inc/login.php' );
 //Image Sizing
 include ( 'inc/images.php' );
 
+include ( 'inc/time_difference.php' );
+
 //Enqueue and register all scripts
 include ( 'inc/enqueue_scripts.php' );              
 
