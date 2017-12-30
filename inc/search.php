@@ -46,7 +46,7 @@ add_filter( 'get_search_form', 'customized_search_form' );#
 
 function main_search_form() {
     
-    $form = '<form role="search" id="searchform" class="main-search" method="get" action="' . esc_url( home_url( '/' ) ) . '" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">';
+    $form = '<form role="search" id="main-searchform" class="main-search" method="get" action="' . esc_url( home_url( '/' ) ) . '" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">';
 
         $form .= '<label>';
     

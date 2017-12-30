@@ -18,6 +18,8 @@ get_header(); ?>
                 <header class="page-header">
                     <h1 class="page-title"><?php printf( __( 'Search Results for: %s', indie_studio_text_domain() ), '<span>' . get_search_query() . '</span>' ); ?></h1>
                 </header>
+            
+                <?php main_search_form(); ?>
 
                 <div id="ajax-post-wrap">
 
@@ -40,9 +42,10 @@ get_header(); ?>
                         <h1 class="entry-title p-entry-title"><?php _e( 'Nothing Found', indie_studio_text_domain() ); ?></h1>
                     </header><!-- .entry-header -->
 
+                    <?php main_search_form(); ?>
+                    
                     <div class="entry-content e-entry-content">
                         <p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', indie_studio_text_domain() ); ?></p>
-                        <?php main_search_form(); ?>
                     </div>
                 </article>
 
