@@ -40,7 +40,24 @@ foreach( $social_sites as $social_site ) {
  */
 
 function indie_studio_social_media_array() {
-    $social_sites = array('twitter', 'facebook', 'google-plus', 'flickr', 'pinterest', 'youtube', 'vimeo', 'tumblr', 'dribbble', 'linkedin', 'instagram');
+    $social_sites = 
+    array(
+        'twitter', 
+        'facebook', 
+        'google-plus', 
+        'flickr', 
+        'pinterest', 
+        'youtube', 
+        'vimeo', 
+        'tumblr', 
+        'dribbble', 
+        'linkedin', 
+        'instagram',
+        'behance',
+        'github',
+        'medium',
+        'twitch',
+    );
     return $social_sites;
 }
 
