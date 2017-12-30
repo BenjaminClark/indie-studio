@@ -13,10 +13,6 @@
     a {
         display: inline;
     }
-    
-    li {
-        margin-left: 1.25em;
-    }
 
     .alignleft, img.alignleft,
     .alignright, img.alignright,
@@ -64,7 +60,7 @@
 @media only screen and (min-width: 40em) {  /** 640px **/
 
     .wysiwyg {
-        font-size: 1.2222222222222223rem;
+        font-size: 1.2222222222222223rem;        
     }
-    
+
 }

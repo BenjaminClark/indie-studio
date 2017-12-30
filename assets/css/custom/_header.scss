@@ -113,7 +113,7 @@ body.navigation-open #burger span:nth-child(4) {
     background-color: #fff;
     display: block;
     position: fixed;
-    top: 4em;
+    top: 3.8em;
     left: 0;
     right: 0;
     bottom: 100%;
@@ -134,6 +134,10 @@ body.navigation-open #site-navigation {
 
 #site-navigation ul li a {
     padding: 0.5em 0;
+}
+
+#site-navigation ul li a:first-child {
+    padding: 1.125em 0 0 0;
 }
 
 #site-navigation a {
@@ -199,9 +203,13 @@ body.navigation-open #site-navigation {
         display: block;
         padding: 1em;
     }
-            
+    
     #site-navigation > div > ul > li {
         padding: 0.5em;
+    }
+    
+    #site-navigation > div > ul > li:last-child {
+        margin: 0;
     }
     
     #site-navigation .menu-item-has-children  > .toggle {

@@ -1,0 +1,27 @@
+footer {
+    position: relative;
+    width: 100%;
+    
+    p, a {
+        font-size: 0.8em;
+        color: #c7c7c7;
+    }
+    
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 40em) {  /** 640px **/
+
+    footer {
+
+        .copyright {
+            float: left;
+        }
+        
+        .designer {
+            float: right;
+        }
+
+    }
+    
+}

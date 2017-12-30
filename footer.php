@@ -23,6 +23,8 @@
             <meta itemprop="url" content="<?php echo home_url( '/' ); ?>" />
 
             <p class="copyright">Website &copy; <?php echo indie_studio_name() . ' ' . date('Y'); ?></p>
+            
+            <p class="designer"><a href="http://www.justlikethis.co.uk">Created by JLT</a></p>
 
         </div>
 

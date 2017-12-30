@@ -128,16 +128,47 @@ em, i {
     font-style: italic; 
 }
 
-ul, ol { 
-    margin: 0 0 0.875rem 0; 
-}
+#main {
+    
+    li {
+        position: relative;
+    }
+    
+    ul, ol { 
+        margin: 0 0 0.875rem 0; 
+    }
 
-ul {
-    list-style-type: disc;
-}
+    ul li, ol li {
+        padding-left: 2em;
+    }
 
-ol {
-    list-style-type: decimal;
+    ul li:before {
+        position: absolute;
+        line-height: inherit;
+        top: 0;
+        left: 0;
+        font-size: inherit;
+        font-family: FontAwesome;
+        content: "\f068";
+    }
+
+    ol {
+        counter-reset: customCount;
+    }
+
+    ol > li {
+        counter-increment: customCount;
+    }
+
+    ol li:before {
+        position: absolute;
+        content: counter(customCount) ". "; 
+        left: 0;
+        top: 0;
+        text-align: center;
+        width: 0.9375em;
+    }
+    
 }
 
 hr {
@@ -150,6 +181,10 @@ hr {
     h1 {
         font-size: 2em;
         font-weight: 700;
+    }
+    
+    ul, ol { 
+        list-style-position: outside;
     }
         
 }
