@@ -29,12 +29,15 @@ if ( $module_class ) {
         
             indie_studio_the_module_image();
     
-        } ?>
+        }
         
-        <?php if( get_the_excerpt() ){ ?>
+        if( get_the_excerpt() ){ ?>
         
             <div class="entry-text sneak-in">
                 <h2 class="entry-title p-name" itemprop="name headline"><?php the_title(); ?></h2>
+                
+                <?php indie_studio_posted_on(); ?>
+                
                 <p><?php echo get_the_excerpt(); ?></p>
             </div>
 	

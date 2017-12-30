@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts in module blocks - fallback block
+ * Template part for displaying posts in module blocks - video block
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  * @link https://codex.wordpress.org/Function_Reference/get_post_gallery_images
