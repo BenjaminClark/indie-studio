@@ -19,6 +19,7 @@
 .mention-list li {
     
     margin-left: 0;
+    padding: 0;
     
     img.avatar  {
         border-radius: 50%;
@@ -32,6 +33,11 @@
         right: 0.1em;
     }
     
+}
+
+.mention-list li:before {
+    content: " ";
+    width: 0;
 }
 
 .comments_wrapper {

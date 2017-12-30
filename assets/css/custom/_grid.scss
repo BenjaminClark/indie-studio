@@ -83,8 +83,8 @@
 @media only screen and (min-width: 65em) { /* 1040px */
     
     .grid-container.basic .col-4 {
-        margin-bottom: 2em;
-        width: calc( 33% - (2em / 3) );
+        margin-bottom: 1em;
+        width: calc( 33% - (1em / 2) );
     }
     
     .grid-container.basic .col-4:nth-child(odd),
@@ -141,7 +141,7 @@
     
     .grid-container.basic .col-4 {
         margin-bottom: 1.5em;
-        width: calc( 25% - (5.5em / 4) );
+        width: calc( 25% - (4.5em / 4) );
     }
     
     .grid-container.basic .col-4:nth-child(odd),
