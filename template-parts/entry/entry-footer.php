@@ -6,7 +6,7 @@
 
 	<?php
 	if ( in_array( get_post_format(), array( 'aside', 'link', 'status', 'quote' ) ) ) {
-		indie_studio_posted_on();
+		indie_studio_posted_details();
 	} else {
 		_e( 'Posted', indie_studio_text_domain() );
 	}

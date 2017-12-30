@@ -250,6 +250,23 @@ if ( ! function_exists( 'indie_studio_posted_on' ) ) {
 	 */
     
 	function indie_studio_posted_on() {
+		printf( __( '<a href="%1$s" title="%2$s" rel="bookmark" class="entry-date-link url u-url"><time class="entry-date updated published dt-updated dt-published" datetime="%3$s" itemprop="dateModified datePublished">Published on %4$s</time></a>', indie_studio_text_domain() ),
+			esc_url( get_permalink() ),
+			esc_attr( get_the_time() ),
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date() )
+		);
+	}
+}
+
+
+if ( ! function_exists( 'indie_studio_posted_details' ) ) {
+    
+	/**
+	 * Prints HTML with meta information for the current post-date/time and author.
+	 */
+    
+	function indie_studio_posted_details() {
 		printf( __( '<a href="%1$s" title="%2$s" rel="bookmark" class="entry-date-link url u-url"><time class="entry-date updated published dt-updated dt-published" datetime="%3$s" itemprop="dateModified datePublished">Published on %4$s</time></a><address class="byline"><span class="author p-author vcard hcard h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">%5$s<a class="url uid u-url u-uid fn p-name vertical-center" href="%6$s" title="%7$s" rel="author" itemprop="url"><span itemprop="name">%8$s</span></a></span></address>', indie_studio_text_domain() ),
 			esc_url( get_permalink() ),
 			esc_attr( get_the_time() ),
