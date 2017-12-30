@@ -33,6 +33,25 @@
         float: right;
     }
     
+    .menu-main-container {
+        float: left;
+    }
+    
+    .social-media-icons {
+        display: block;
+        float: left;
+        width: 100%;
+
+        li {
+            padding: 0.125em;
+            display: inline-block;
+            font-size: 1.5em;
+            float: left;
+            margin-right: 0.5em;
+        }
+
+    }
+    
 }
 
 
@@ -87,8 +106,6 @@
     
 }
 
-
-
 body.navigation-open #burger {
     
     span:nth-child(1) {
@@ -127,7 +144,6 @@ body.navigation-open #burger {
     color: red;
     height: 1.75em;
     margin: 0 0 0 0.8em;
-    z-index: 5500;
 
     button.search-submit,
     button.search-close {
@@ -139,7 +155,7 @@ body.navigation-open #burger {
         line-height: 1em;
         text-align: center;
         cursor: pointer;
-        z-index: 5500;
+        z-index: 500;
         background-color: transparent;
         float: left;
     }
@@ -167,7 +183,6 @@ body.navigation-open #burger {
         z-index: 5;
         background-color: #fff;
         overflow: hidden;
-        z-index: 5500;
     }
     
     .reveal input {
@@ -225,6 +240,10 @@ body.navigation-open #burger {
 
 /**  Menu **/
 
+body.navigation-open #site-navigation {
+    z-index: 5000;
+}
+
 #site-navigation {
     background-color: #fff;
     display: block;
@@ -239,7 +258,6 @@ body.navigation-open #burger {
     -ms-transition: bottom 0.5s;
     -o-transition: bottom 0.5s;
     transition: bottom 0.5s;
-    z-index: 5000;
     padding: 0 1.125em;
     
     ul li a {
@@ -294,6 +312,18 @@ body.navigation-open #site-navigation {
         
         #site-description {
             font-size: 1.25em;  
+        }
+
+        .social-media-icons {
+            width: auto;
+            margin-top: 0.25em;
+
+            li {
+                font-size: 1.25em;
+                margin-left: 0.5em;
+                margin-right: 0;
+            }
+
         }
 
     }
@@ -365,12 +395,15 @@ body.navigation-open #site-navigation {
         margin: 0;
     }
     
-    
     /** Search **/
     
     #searchform {
         
-        margin-top: 0.75em;
+        margin-top: 0.8em;
+
+        button.search-submit {
+            padding: 0.125em;
+        }
 
         .reveal { 
             height: 5.5em;
@@ -380,11 +413,7 @@ body.navigation-open #site-navigation {
                 margin: 0.5em 0 0 0;
             }
 
-        }
-        
-        #search-button {
-            font-size: 1em;
-        }  
+        } 
         
     }
     
