@@ -22,7 +22,7 @@ get_header(); ?>
 
                     <p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help. If not, try the menu above.', indie_studio_text_domain() ); ?></p>
 
-                    <?php get_search_form(); ?>
+                    <?php main_search_form(); ?>
 
                     <?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
