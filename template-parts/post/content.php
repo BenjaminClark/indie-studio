@@ -53,7 +53,7 @@
         </div>
 
         <?php
-        if ( is_single() ) {
+        if ( is_single() ) {            
             get_template_part( 'template-parts/entry/entry', 'footer' );
         }
         ?>
