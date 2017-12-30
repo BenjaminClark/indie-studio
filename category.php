@@ -14,8 +14,6 @@ get_header(); ?>
         <div class="page-inner-wrap">
 
             <?php
-            
-
 
             if ( have_posts()  ) { 
                 ?>
