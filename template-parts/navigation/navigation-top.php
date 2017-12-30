@@ -78,6 +78,8 @@
         get_search_form();
 
     }
+    
+    get_social_media_icons();
 
     ?>
 

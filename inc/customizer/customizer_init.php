@@ -16,6 +16,7 @@ include ( 'fonts/google_font_selector.php' );
 
 include ( 'fonts/google_font_api_checker.php' );
 
+include ( 'social/social_media_list.php' );
 
 /**
  * Add our Customizer content
@@ -49,7 +50,7 @@ function indie_studio_customize_register( $wp_customize ) {
     //Add font and theme colour options
     include ( 'fonts_colours.php' );
     
-    include ( 'social_media.php' );
+    include ( 'social/register_social.php' );
     
     //Add custom scripts fields
     include ( 'scripts.php' );
