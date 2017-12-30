@@ -42,7 +42,6 @@ get_header(); ?>
 
                     <div class="entry-content e-entry-content">
                         <p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', indie_studio_text_domain() ); ?></p>
-                        <?php get_search_form(); ?>
                     </div>
                 </article>
 
