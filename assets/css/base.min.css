@@ -1013,7 +1013,7 @@ article.single,article.child{background-color:#fff}
 #header{margin:1em 0 1.125em 0}
 #header .logo{float:left}
 #header .logo a{text-decoration:none}
-#header .logo h1{font-size:1.625em;margin:0}
+#header .logo h1,#header .logo p{font-size:1.625em;margin:0}
 #header .logo img{height:2em;max-width:100%}
 #header #site-description{font-size:1em;margin:.5em 0 0 0;font-weight:700;float:left;clear:left}
 #header .header-menu-wrap{float:right}
@@ -1071,7 +1071,7 @@ body.navigation-open #site-navigation .push{height:calc(100% + 3.75em);width:100
 .single article header .entry-meta .author span{position:absolute;top:calc(50% - 0.5em);margin-left:.5em;float:left}
 .single article .post-banner{width:100%;padding-bottom:40%;position:relative}
 .single article .post-banner .media-fit{position:absolute;top:0;bottom:0;left:0;right:0;overflow:hidden}
-.single article .post-banner .media-fit img{margin-top:-1.5em;height:calc(100% + 1.5em)}
+.single article .post-banner .media-fit img{margin-top:-1.5em;height:calc(100% + 1.5em);width:100%}
 .single article footer{margin-top:2em;margin-bottom:0}
 .single article footer .entry-meta a{display:inline}
 .wysiwyg{font-size:1rem}
@@ -1223,7 +1223,7 @@ ol.commentlist li.parent{border-left:5px solid #ddd}
 .mention-list li{margin-left:0;padding:0}
 .mention-list li img.avatar{border-radius:50%;width:3em;height:3em;border:.125em solid #f5f4f2}
 .mention-list li .emoji-overlay{bottom:.1em;right:.1em}
-#webmention-form label{margin-bottom:.5em}
+#webmention-form label{display:block;margin-bottom:.5em}
 .mention-list li:before{content:" ";width:0}
 .comments_wrapper .reactions,.comments_wrapper .likes{margin:0 0 1.5em 0}
 @media only screen and (min-width:25.5em){.article-share a{margin:0 .425em}
@@ -1274,7 +1274,7 @@ ol.commentlist li.comment footer{float:none}
 }@media only screen and (min-width:79.375em){.article-inner-wrap,.page-inner-wrap{width:76em}
 #header{margin:1em 0 1.25em 0}
 #header .logo{float:left;height:3em}
-#header .logo h1{font-size:2.5em}
+#header .logo h1,#header .logo p{font-size:2.5em}
 #header .logo img{height:3em}
 #header #site-description{font-size:1.25em}
 #burger{display:none}

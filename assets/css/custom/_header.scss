@@ -9,7 +9,8 @@
             text-decoration: none;
         }
 
-        h1 {
+        h1, 
+        p {
             font-size: 1.625em;    
             margin: 0;
         }
@@ -324,7 +325,8 @@ body.navigation-open #site-navigation {
             float: left;
             height: 3em;
             
-            h1 {
+            h1,
+            p {
                 font-size: 2.5em;
             } 
 

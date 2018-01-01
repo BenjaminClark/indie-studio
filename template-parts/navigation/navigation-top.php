@@ -40,7 +40,16 @@
             
         <?php } else {
 
-            echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
+            if( is_home() ){
+            
+                echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
+                
+            } else {
+                
+                //All other pages will have a proper H1 tag
+                echo '<p>'. get_bloginfo( 'name' ) .'</p>';
+                
+            }
             
         } ?>
         
