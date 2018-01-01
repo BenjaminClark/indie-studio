@@ -9,11 +9,11 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?><?php schema_semantics_tags( 'post' );?>>
 
+	<?php indie_studio_the_article_banner( '<div class="post-banner"><div class="media-fit">', '</div></div>' ); ?>
+    
 	<header class="entry-header">
 		<h1 class="entry-title p-name" itemprop="name headline"><?php the_title(); ?></h1>
 	</header><!-- .entry-header -->
-
-	<?php indie_studio_the_post_thumbnail( '<div class="entry-media">', '</div>' ); ?>
 
 	<div class="entry-content e-content" itemprop="description text">
 	    <div class="wysiwyg">
