@@ -1101,8 +1101,9 @@ body.navigation-open #site-navigation .push{height:calc(100% + 3.75em);width:100
 .social.email-share{color:#da6a33}
 .article-share{border-top:.5em solid #f5f4f2}
 .article-share .thin-inner{padding-top:2em;padding-bottom:2em}
-.article-share h2{font-size:1.5em;margin:0;display:inline-block}
-.article-share a{font-size:1.5em;display:inline-block;text-transform:uppercase;color:#0060ac;font-weight:800;margin:0 0 0 .5em}
+.article-share h2{font-size:1.5em;margin:0 .5em .25em 0;display:inline-block}
+.article-share .services{display:inline-block;margin-top:.125em}
+.article-share a{font-size:1.5em;display:inline-block;text-transform:uppercase;color:#0060ac;font-weight:800;margin:0 .5em 0 0}
 .article-share a:hover,.article-share a:focus{color:#000}
 #comments{border-top:.5em solid #f5f4f2}
 #comments .comments_wrapper{font-size:.8rem}
@@ -1218,14 +1219,18 @@ ol.commentlist li.parent{border-left:5px solid #ddd}
 #webmention-form label{margin-bottom:.5em}
 .mention-list li:before{content:" ";width:0}
 .comments_wrapper .reactions,.comments_wrapper .likes{margin:0 0 1.5em 0}
-@media only screen and (min-width:30em){.wysiwyg .alignleft,.wysiwyg img.alignleft{margin-right:.875em;display:inline;float:left}
+@media only screen and (min-width:25.5em){.article-share a{margin:0 .425em}
+}@media only screen and (min-width:25em){.article-share h2{margin:0}
+.article-share .services{float:right}
+}@media only screen and (min-width:30em){.wysiwyg .alignleft,.wysiwyg img.alignleft{margin-right:.875em;display:inline;float:left}
 .wysiwyg .alignright,.wysiwyg img.alignright{margin-left:.875em;display:inline;float:right}
 .wysiwyg .aligncenter,.wysiwyg img.aligncenter{margin-right:auto;margin-left:auto;display:block;clear:both}
 #comments .comment .comment{font-size:1.1111111111111112rem}
 }@media only screen and (min-width:40em){h1{font-size:2em;font-weight:700}
 ul,ol{list-style-position:outside}
 .wysiwyg{font-size:1.2222222222222223rem}
-.article-share a{margin:0 0 0 .8em}
+.article-share a{margin:0 0 0 1em}
+.article-share .services{float:none}
 .grid-container.basic .col-4{margin:0 1em 1em 0}
 .grid-container.basic .col-4:nth-child(even){margin-right:0}
 .masonry-column-sizer,.grid-container .col-4{width:calc(50% - 0.5em)}
