@@ -1653,25 +1653,13 @@ if( masonryDom ){
         percentPosition: true,
     });
      
-    imagesLoaded( masonryDom, function( instance ) {
+    imagesLoaded( masonryDom ).on( 'progress', function() {
         masonry.layout();
-        //animate in
-        masonryAnimateIn( masonry.items );
     });
     
     masonryDom.classList.remove('basic'); 
     masonryLive = true;     
     
-}
-
-function masonryAnimateIn( masonry ){
-    var el = masonry.splice(Math.floor( Math.random() * masonry.length ), 1);
-    if(el.length){
-        fade({el: el[0].element, type:'in', duration: 100});
-        setTimeout(function () {
-            masonryAnimateIn( masonry )
-        }, 100 + Math.floor(Math.random() * 50))
-    }
 }
 /** JS Code for the Header / Menu **/
 
