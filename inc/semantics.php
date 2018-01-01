@@ -252,7 +252,7 @@ if ( ! function_exists( 'indie_studio_posted_on' ) ) {
 	function indie_studio_posted_on() {
 		printf( __( '<p><time class="entry-date updated published dt-updated dt-published" datetime="%1$s" itemprop="dateModified datePublished">%2$s</time></p>', indie_studio_text_domain() ),
 			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_time_difference( get_the_date() ) )
+			esc_html( get_time_difference( get_the_date('Y-m-d H:i:s') ) )
 		);
 	}
 }

@@ -11,7 +11,7 @@ function get_time_difference( $time ) {
     $previous_time = new DateTime( $time );
     $difference = $current_time->diff( $previous_time );
     $timestamp = '';
- 
+    
     if ( 0 < $difference->y ) {
         /**
          * If we've passed one year, let's show the full
