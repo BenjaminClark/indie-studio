@@ -83,8 +83,13 @@
             margin-top: 2em;  
             margin-bottom: 0;
 
-            .entry-meta a {
-                display: inline;
+            .entry-meta {
+                
+                line-height: 1.25em;
+                
+                a {
+                    display: inline;
+                }
             }
 
         }

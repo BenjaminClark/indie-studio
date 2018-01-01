@@ -1073,6 +1073,7 @@ body.navigation-open #site-navigation .push{height:calc(100% + 3.75em);width:100
 .single article .post-banner .media-fit{position:absolute;top:0;bottom:0;left:0;right:0;overflow:hidden}
 .single article .post-banner .media-fit img{margin-top:-1.5em;height:calc(100% + 1.5em);width:100%}
 .single article footer{margin-top:2em;margin-bottom:0}
+.single article footer .entry-meta{line-height:1.25em}
 .single article footer .entry-meta a{display:inline}
 .wysiwyg{font-size:1rem}
 .wysiwyg a{display:inline}
@@ -1117,7 +1118,7 @@ body.navigation-open #site-navigation .push{height:calc(100% + 3.75em);width:100
 ol.commentlist{list-style:none;margin:0 0 1em 0;padding:0;text-indent:0}
 ol.commentlist li.comment:before{content:"";width:0}
 ol.commentlist li.comment{border-bottom:.0625em solid #ddd;padding:1em 0;margin:0}
-ol.commentlist li.comment footer{display:block;float:left}
+ol.commentlist li.comment footer{display:block}
 ol.commentlist li.comment .comment-author{font-size:1.25em;font-weight:600;margin-bottom:.25em;width:100%}
 ol.commentlist li.comment .comment-author .p-name a{text-decoration:none;display:inline-block}
 ol.commentlist li.comment img.avatar{border:.125em solid #f5f4f2;margin:0 .625em .625em 0;width:3em;height:3em;border-radius:50%}
