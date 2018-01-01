@@ -66,8 +66,12 @@ body {
 
 
 /* Medium Devices, Desktops */
-@media only screen and (min-width: 62em) {  /** 992px **/
-              
+@media only screen and (min-width: 64em) {  /** 992px **/
+            
+    .thin-inner,
+    #disqus_thread {
+        padding: 3em;
+    }
             
 }
 
@@ -120,22 +124,11 @@ body {
 
     .article-inner-wrap,
     .page-inner-wrap {
-        width: 98em;
+        width: calc( 100% - 2.5em );
+        margin: 0 1.125em;
     }
     
 }
-
-
-/** Round up wrappers **/
-@media only screen and (min-width: 102em) {
-    
-    .article-inner-wrap,
-    .page-inner-wrap {
-        width: 100em;
-    }
-    
-}
-
 
 /** Round up wrappers **/
 @media only screen and (min-width: 140em) {
