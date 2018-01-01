@@ -40,7 +40,7 @@
             
         <?php } else {
 
-            if( is_home() ){
+            if( is_home() || is_front_page() ){
             
                 echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
                 
@@ -48,7 +48,7 @@
                 
                 //All other pages will have a proper H1 tag
                 echo '<p>'. get_bloginfo( 'name' ) .'</p>';
-                
+
             }
             
         } ?>

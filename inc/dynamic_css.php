@@ -24,7 +24,8 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+#header .logo p {
     font-family: '<?php echo $heading_font;?>', Verdana, Geneva, sans-serif;
     color: <?php echo get_theme_mod('indie_studio_heading_text_colour', '#222222'); ?>;
 } 

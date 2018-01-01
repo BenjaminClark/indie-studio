@@ -1013,7 +1013,7 @@ article.single,article.child{background-color:#fff}
 #header{margin:1em 0 1.125em 0}
 #header .logo{float:left}
 #header .logo a{text-decoration:none}
-#header .logo h1,#header .logo p{font-size:1.625em;margin:0}
+#header .logo h1,#header .logo p{font-size:1.625em;margin:0;font-weight:600}
 #header .logo img{height:2em;max-width:100%}
 #header #site-description{font-size:1em;margin:.5em 0 0 0;font-weight:700;float:left;clear:left}
 #header .header-menu-wrap{float:right}
