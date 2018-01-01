@@ -1,5 +1,5 @@
 #header {
-    margin: 1em 0;
+    margin: 1em 0 1.125em 0;
     
     .logo {
         
@@ -157,6 +157,7 @@ body.navigation-open #burger {
         z-index: 500;
         background-color: transparent;
         float: left;
+        z-index: 3000;
     }
 
     button.search-submit:after {
@@ -179,10 +180,10 @@ body.navigation-open #burger {
         top: -1em;
         height: 3.5em;
         right: 0;
-        z-index: 5;
         background-color: #fff;
         overflow: hidden;
         box-shadow: 0 1px 3px rgba(100,100,100,0.15);
+        z-index: 3000;
     }
     
     .reveal input {
@@ -240,15 +241,11 @@ body.navigation-open #burger {
 
 /**  Menu **/
 
-body.navigation-open #site-navigation {
-    z-index: 5000;
-}
-
 #site-navigation {
     background-color: #fff;
     display: block;
     position: fixed;
-    top: 3.8em;
+    top: 3.325em;
     left: 0;
     right: 0;
     bottom: 100%;
@@ -259,6 +256,7 @@ body.navigation-open #site-navigation {
     -o-transition: bottom 0.5s;
     transition: bottom 0.5s;
     padding: 0 1.125em;
+    z-index: 2000;
     
     ul li a {
         padding: 0.5em 0;
@@ -280,11 +278,22 @@ body.navigation-open #site-navigation {
         display: block;
     }
     
+    .nav-wrap {
+        padding: 0;
+        height: 100%;
+        width: 100%;
+    }
+    
 }
 
 body.navigation-open #site-navigation {
-    bottom:0;
+    bottom: 0;
     padding-bottom: 3.75em;
+    
+    .nav-wrap {
+        height: calc( 100% + 3.75em );
+    }
+    
 }
 
 
@@ -294,6 +303,8 @@ body.navigation-open #site-navigation {
 @media only screen and (min-width: 79.375em) {  /** 1270px **/
          
     #header {
+        
+        margin: 1em 0 1.25em 0;
         
         .logo {
             
@@ -387,11 +398,11 @@ body.navigation-open #site-navigation {
         
     }
 
-    #site-navigation > div > ul > li {
+    #site-navigation > div > div > ul > li {
         padding: 0.5em;
     }
     
-    #site-navigation > div > ul > li:last-child {
+    #site-navigation > div > div > ul > li:last-child {
         margin: 0;
     }
     
