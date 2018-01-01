@@ -1081,6 +1081,8 @@ body.navigation-open #site-navigation .push{height:calc(100% + 3.75em);width:100
 .wysiwyg ul,.wysiwyg ol{margin:0 0 .875rem 0}
 .wysiwyg ul li,.wysiwyg ol li{padding-left:2em}
 .wysiwyg ul li:before{position:absolute;line-height:inherit;top:0;left:0;font-size:inherit;font-family:FontAwesome;content:"\f068"}
+.wysiwyg ul.relsyn li{padding-left:.5em}
+.wysiwyg ul.relsyn li:before{content:" "}
 .wysiwyg ol{counter-reset:customCount}
 .wysiwyg ol>li{counter-increment:customCount}
 .wysiwyg ol li:before{position:absolute;content:counter(customCount) ". ";left:0;top:0;text-align:center;width:.9375em}

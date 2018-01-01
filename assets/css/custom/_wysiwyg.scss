@@ -45,6 +45,14 @@
         content: "\f068";
     }
 
+    ul.relsyn li {
+        padding-left: 0.5em;
+    }
+    
+    ul.relsyn li:before {
+        content: " ";
+    }
+    
     ol {
         counter-reset: customCount;
     }
