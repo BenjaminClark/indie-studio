@@ -2,9 +2,21 @@
     position: relative;
     width: 100%;
     
-    p, a {
+    p {
         font-size: 0.8em;
+    }
+
+    p, a {
         color: #c7c7c7;
+        text-decoration: none;
+    }
+    
+    .copyright {
+        float: left;
+    }
+
+    .designer {
+        float: right;
     }
     
 }
@@ -12,16 +24,5 @@
 /* Extra Small Devices, Phones */
 @media only screen and (min-width: 40em) {  /** 640px **/
 
-    #colophon {
-
-        .copyright {
-            float: left;
-        }
-        
-        .designer {
-            float: right;
-        }
-
-    }
     
 }
