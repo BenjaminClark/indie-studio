@@ -23,7 +23,7 @@
     
     #site-description {
         font-size: 1em;  
-        margin: 0;
+        margin: 0.5em 0 0 0;
         font-weight: 700;
         float: left;
         clear: left;
@@ -59,10 +59,10 @@
 
 #burger {
     
-    margin: 0.25em 0 0 0;
+    margin: 0 0.25em 0 0;
     display: block;
     float: left;
-    width: 1.5em;
+    width: 1.375em;
     height: 1.375em;
     position: relative;
     cursor: pointer;
@@ -143,13 +143,12 @@ body.navigation-open #burger {
     float: left;
     color: red;
     height: 1.75em;
-    margin: 0 0 0 0.8em;
+    margin: -0.125em 0 0 0.8em;
 
     button.search-submit,
     button.search-close {
-        padding:0;
+        padding: 0.05em;
         margin: 0;
-        height: 1.375em;
         position: relative;
         font-size: 1.25em;
         line-height: 1em;
@@ -178,16 +177,17 @@ body.navigation-open #burger {
         position: absolute;
         width: 0;
         top: -1em;
-        height: 4em;
+        height: 3.5em;
         right: 0;
         z-index: 5;
         background-color: #fff;
         overflow: hidden;
+        box-shadow: 0 1px 3px rgba(100,100,100,0.15);
     }
     
     .reveal input {
         width: 100%;
-        padding: 1.345em 3.5em 1.345em 1.125em;
+        padding: 1em 5em 1em 1em;
         float: right;
         outline: 0;
         border: 0;
@@ -411,6 +411,7 @@ body.navigation-open #site-navigation {
             input {
                 width: calc(100% - 1.25em);
                 margin: 0.5em 0 0 0;
+                padding: 1.35em 6em 1.35em 0.5em;
             }
 
         } 
