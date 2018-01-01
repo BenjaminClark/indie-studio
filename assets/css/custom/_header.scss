@@ -338,18 +338,6 @@ body.navigation-open #site-navigation {
             font-size: 1.25em;  
         }
 
-        .social-media-icons {
-            width: auto;
-            margin-top: 0.25em;
-
-            li {
-                font-size: 1.25em;
-                margin-left: 0.5em;
-                margin-right: 0;
-            }
-
-        }
-
     }
 
     /** Burger **/
@@ -377,36 +365,56 @@ body.navigation-open #site-navigation {
             display: inline-block;
         }
 
-        li li {
-            display: block;
-            padding: 1em;
-        }
+        #menu-main {
         
-        .menu-item-has-children  > .toggle {
-            display: none;
+            li li {
+                display: block;
+                padding: 1em;
+            }
+
+            .menu-item-has-children  > .toggle {
+                display: none;
+            }
+
+            li.menu-item-has-children > ul {
+                position: absolute;
+                min-width: 160px;
+                z-index: 1;
+                margin: 0.5em 0 0 0;
+                background-color: #f2f2f2;
+            }
+
+            ul li.menu-item-has-children > ul {
+                left: 100%;
+                top: 0;
+                margin: 0;
+            }
+
+            li.menu-item-has-children:hover > ul {
+                display: block;
+            }
+            
+            li:first-child {
+                margin: 0;
+            }
+
+            li a:first-child,
+            li a {
+                padding: 0;
+            }
+            
         }
 
-        li.menu-item-has-children > ul {
-            position: absolute;
-            min-width: 160px;
-            z-index: 1;
-            margin: 0.5em 0 0 0;
-            background-color: #f2f2f2;
-        }
+        ul.social-media-icons {
+            width: auto;
+            margin-top: 0.25em;
 
-        ul ul li.menu-item-has-children > ul {
-            left: 100%;
-            top: 0;
-            margin: 0;
-        }
+            li {
+                font-size: 1.25em;
+                margin-left: 0.5em;
+                margin-right: 0;
+            }
 
-        li.menu-item-has-children:hover > ul {
-            display: block;
-        }
-
-        ul li a:first-child,
-        ul li a {
-            padding: 0;
         }
         
     }
@@ -423,14 +431,14 @@ body.navigation-open #site-navigation {
     
     #searchform {
         
-        margin-top: 0.8em;
+        margin-top: 0.9em;
 
         button.search-submit {
             padding: 0.125em;
         }
 
         .reveal { 
-            height: 5.5em;
+            height: 5.6em;
 
             input {
                 width: calc(100% - 1.25em);
