@@ -104,6 +104,7 @@ jQuery(document).ready(function($) {
     
     function toggle_menu(){
         body.toggleClass('navigation-open');
+        $(window).scrollTop(0); //Fixes any page gaps
     }
     
     function deactivate_menu(){
