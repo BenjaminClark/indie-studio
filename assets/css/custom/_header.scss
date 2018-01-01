@@ -278,11 +278,6 @@ body.navigation-open #burger {
         display: block;
     }
     
-    .nav-wrap {
-        padding: 0;
-        height: 100%;
-        width: 100%;
-    }
     
 }
 
@@ -290,8 +285,9 @@ body.navigation-open #site-navigation {
     bottom: 0;
     padding-bottom: 3.75em;
     
-    .nav-wrap {
+    .push {
         height: calc( 100% + 3.75em );
+        width: 100%;
     }
     
 }
@@ -300,12 +296,19 @@ body.navigation-open #site-navigation {
     position: fixed;
     top: 0;
     bottom: 0;
+    marign-top: 3em;
     left: 0;
     right: 0;
     display: none;
     z-index:1000;
     opacity: 0.6;
     background-color: #000;
+    
+    .push {
+        width: 100%;
+        height: calc( 100% + 3.75em );
+    }
+    
 }
 
 

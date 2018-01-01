@@ -52,7 +52,7 @@
     <!-- Main Menu -->
     <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', indie_studio_text_domain() ); ?>">
         
-        <div class="nav-wrap">
+        <div class="push">
 
             <?php
             if ( has_nav_menu( 'primary' ) ) {
@@ -92,7 +92,7 @@
 </div>
 
 <!-- Adds an overlay to dim content -->
-<div id="overlay"></div>
+<div id="overlay"><div class="push"></div></div>
 
 <!-- Grab blog tagline -->
 <h2 id="site-description"<?php get_schema_semantics( 'site-description' ); ?>><?php bloginfo( 'description' ); ?></h2>

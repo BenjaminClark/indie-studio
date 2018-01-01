@@ -1003,7 +1003,7 @@ button.fancybox-close-small:hover{background-color:transparent}
 .load-more-posts-error.show{display:block}
 input[type="text"],input[type="email"],input[type="url"]{padding:.125em .25em}
 html,body{height:100%}
-.navigation-open{overflow-y:hidden}
+.search-active,.navigation-open{overflow-y:hidden}
 #footer-pusher{position:relative;min-height:100%}
 .thin-inner,#disqus_thread{margin:0 auto;max-width:62.5em;padding:1.25em;background-color:#fff}
 #disqus_thread{padding-top:0}
@@ -1054,10 +1054,10 @@ body.navigation-open #burger span:nth-child(4){top:calc(50% - 0.125em);width:0;l
 #site-navigation a{text-decoration:none}
 #site-navigation .toggle{display:none}
 #site-navigation .menu-item-has-children>.toggle{display:block}
-#site-navigation .nav-wrap{padding:0;height:100%;width:100%}
 body.navigation-open #site-navigation{bottom:0;padding-bottom:3.75em}
-body.navigation-open #site-navigation .nav-wrap{height:calc(100% + 3.75em)}
-#overlay{position:fixed;top:0;bottom:0;left:0;right:0;display:none;z-index:1000;opacity:.6;background-color:#000}
+body.navigation-open #site-navigation .push{height:calc(100% + 3.75em);width:100%}
+#overlay{position:fixed;top:0;bottom:0;marign-top:3em;left:0;right:0;display:none;z-index:1000;opacity:.6;background-color:#000}
+#overlay .push{width:100%;height:calc(100% + 3.75em)}
 .author .page-header,.archive .page-header,.category .page-header,.tag .page-header{margin-top:1em}
 .author .page-header img,.archive .page-header img,.category .page-header img,.tag .page-header img{width:4em;float:left;margin:0 1em 1em 0;border-radius:50%}
 .author .page-title,.archive .page-title,.category .page-title,.tag .page-title{font-size:1.5em}
