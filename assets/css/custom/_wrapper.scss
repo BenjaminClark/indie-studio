@@ -48,6 +48,11 @@ body {
     padding: 0 1.125em;
 }
 
+article.single,
+article.child {
+    background-color: #fff;
+}
+
 /* Extra Small Devices, Phones */
 @media only screen and (min-width: 30em) {  /** 480px **/
     
@@ -58,9 +63,6 @@ body {
 /* Small Devices, Tablets */
 @media only screen and (min-width: 47.875em) {  /** 766px **/
         
-    .logged-in #header {
-        top: 32px;
-    }
     
 }
 

@@ -44,7 +44,10 @@ body {
     background-color: <?php echo get_theme_mod('indie_studio_background_colour', '#f5f4f2');?>;
 }
 
-
+#comments,
+.article-share {
+    border-top: 0.5em solid <?php echo get_theme_mod('indie_studio_background_colour', '#f5f4f2');?>;
+}
 
 
 /** Essentials **/
