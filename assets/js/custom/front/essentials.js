@@ -154,7 +154,7 @@ function fade(options,callback){
     
 	var isIn = options.type === 'in',
 		opacity = isIn ? 0 : 1,
-		interval = 50,
+		interval = 0.5,
 		gap = interval / options.duration
 
 	if(isIn) {
