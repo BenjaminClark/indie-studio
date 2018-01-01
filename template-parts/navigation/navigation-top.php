@@ -51,19 +51,24 @@
 
     <!-- Main Menu -->
     <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', indie_studio_text_domain() ); ?>">
-        <?php
-        if ( has_nav_menu( 'primary' ) ) {
-            $args = array(
-                'menu_class'		=> 'toggle-list',
-                'theme_location'    => 'primary',
-                'link_after'        => '<a href="#" class="toggle"><i class="fa fa-angle-down" aria-hidden="true"></i></a>',
-            );
-            wp_nav_menu($args); 
-        }
-        ?>
         
-        <?php get_social_media_icons(); ?>
+        <div class="nav-wrap">
+
+            <?php
+            if ( has_nav_menu( 'primary' ) ) {
+                $args = array(
+                    'menu_class'		=> 'toggle-list',
+                    'theme_location'    => 'primary',
+                    'link_after'        => '<a href="#" class="toggle"><i class="fa fa-angle-down" aria-hidden="true"></i></a>',
+                );
+                wp_nav_menu($args); 
+            }
+            ?>
+
+            <?php get_social_media_icons(); ?>
         
+        </div>
+            
     </nav>
     
     <div id="burger">
