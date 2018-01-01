@@ -37,21 +37,6 @@
         float: left;
     }
     
-    .social-media-icons {
-        display: block;
-        float: left;
-        width: 100%;
-
-        li {
-            padding: 0.125em;
-            display: inline-block;
-            font-size: 1.5em;
-            float: left;
-            margin-right: 0.5em;
-        }
-
-    }
-    
 }
 
 
@@ -258,16 +243,17 @@ body.navigation-open #burger {
     padding: 0 1.125em;
     z-index: 2000;
     
-    ul li a {
-        padding: 0.5em 0;
+    ul li {
+        margin: 0.5em 0;
     }
 
-    ul li a:first-child {
-        padding: 1.125em 0 0 0;
+    ul li:first-child {
+        margin: 1em 0 0 0;
     }
-
+    
     a {
         text-decoration: none;
+        padding: 0.25em;
     }
 
     .toggle {
@@ -278,6 +264,19 @@ body.navigation-open #burger {
         display: block;
     }
     
+    ul.social-media-icons {
+        display: block;
+        float: left;
+        width: 100%;
+
+        li {
+            display: inline-block;
+            font-size: 1.5em;
+            float: left;
+            margin: 0 0.5em 0 0;
+        }
+
+    }
     
 }
 
