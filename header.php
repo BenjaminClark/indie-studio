@@ -41,7 +41,7 @@
 </head>
    
 <body <?php body_class(); ?><?php schema_semantics_tags( 'body' ); ?>>
-     
+    
     <div id="footer-pusher"><!-- Push footer to bottom -->
     
         <header id="header"> 

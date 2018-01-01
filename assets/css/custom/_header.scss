@@ -296,6 +296,17 @@ body.navigation-open #site-navigation {
     
 }
 
+#overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    z-index:1000;
+    opacity: 0.6;
+    background-color: #000;
+}
 
 
 /* Large Devices, Wide Screens */

@@ -91,6 +91,8 @@
 
 </div>
 
-<!-- Grab blog tagline -->
+<!-- Adds an overlay to dim content -->
+<div id="overlay"></div>
 
+<!-- Grab blog tagline -->
 <h2 id="site-description"<?php get_schema_semantics( 'site-description' ); ?>><?php bloginfo( 'description' ); ?></h2>

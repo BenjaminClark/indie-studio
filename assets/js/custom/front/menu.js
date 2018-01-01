@@ -21,7 +21,9 @@ jQuery(document).ready(function($) {
         mainSearchInput         = $( "#main-search-input" ), 
         
         mainNavigation          = $( "#site-navigation" ), 
-        burger                  = $( "#burger .trig" );
+        burger                  = $( "#burger .trig" ),
+        
+        overlay                 = $( "#overlay" );
     
     
     
@@ -74,12 +76,14 @@ jQuery(document).ready(function($) {
         });
         
         function openHeaderSearch(){
+            addOverlay();
             headerSearchForm.addClass('active');
             headerSearchInput.focus();
             mainNavigation.addClass('search');
         }
         
         function closeHeaderSearch(){
+            removeOverlay();
             headerSearchForm.removeClass('active');
             mainNavigation.removeClass('search');
         }
@@ -109,6 +113,18 @@ jQuery(document).ready(function($) {
     
     function deactivate_menu(){
         body.removeClass('navigation-open');
+    }
+    
+    function addOverlay(){
+        if( !body.hasClass('search-active') ){
+            body.addClass('search-active');
+            overlay.fadeIn();
+        }
+    }
+    
+    function removeOverlay(){
+        body.removeClass('search-active');
+        overlay.fadeOut();
     }
                     
 });
