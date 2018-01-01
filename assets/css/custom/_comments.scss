@@ -53,6 +53,7 @@ ol.commentlist {
             font-size: 1.25em;
             font-weight: 600;
             margin-bottom: 0.25em;
+            width: 100%;
             
             .p-name a {
                 text-decoration: none;
@@ -63,7 +64,6 @@ ol.commentlist {
                 
         img.avatar {
             border:0.125em solid #f5f4f2; 
-            float: left; 
             margin:0 0.625em 0.625em 0;
             width: 3em;
             height: 3em;
@@ -172,7 +172,15 @@ ol.commentlist {
      ol.commentlist {
 
         li.comment {
-         
+
+            .comment-author {
+                width: auto;
+            } // end .comment-author
+
+            img.avatar {
+                float: left; 
+            } // end .avatar
+            
             .comment-content {
                 margin-left: 4.5em;
             }
@@ -185,3 +193,5 @@ ol.commentlist {
     }
     
 }
+
+
