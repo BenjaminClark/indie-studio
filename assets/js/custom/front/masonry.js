@@ -21,7 +21,6 @@ if( masonryDom ){
     
 }
 
-
 function masonryAnimateIn( masonry ){
     var el = masonry.splice(Math.floor( Math.random() * masonry.length ), 1);
     if(el.length){
