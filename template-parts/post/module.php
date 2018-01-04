@@ -31,6 +31,9 @@ if ( $module_class ) {
     
         }
         
+        
+        indie_studio_interaction_bar();        
+        
         if( get_the_excerpt() ){ ?>
         
             <div class="entry-text sneak-in">
@@ -41,16 +44,8 @@ if ( $module_class ) {
                 <p><?php echo get_the_excerpt(); ?></p>
             </div>
 	
-        <?php }
-        
-        if ( !get_the_excerpt() ) {
-            indie_studio_module_footer(true);
-        } else {
-            indie_studio_module_footer();
-        }
-        
-        ?>
-        
+        <?php } ?>
+
 	</a>
 	
 </article>

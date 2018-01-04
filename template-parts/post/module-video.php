@@ -32,11 +32,7 @@ if ( $module_class ) {
 	
         <?php }
         
-        if ( !get_the_excerpt() ) {
-            indie_studio_module_footer(true);
-        } else {
-            indie_studio_module_footer();
-        }
+        indie_studio_interaction_bar();
         
         ?>
         

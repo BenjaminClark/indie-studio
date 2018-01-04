@@ -25,7 +25,7 @@ if ( $module_class ) {
         
         indie_studio_the_module_image();
     
-        indie_studio_module_footer( true );
+        indie_studio_interaction_bar();
         
         ?>
         

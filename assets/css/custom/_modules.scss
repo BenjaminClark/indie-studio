@@ -70,6 +70,7 @@
 
     a:hover .entry-text {
         border: 1px solid #dedede;
+        border-top: 1px solid #fff;
     }
 
     h1,
@@ -157,27 +158,41 @@
     }
 
     /** Likes and Comments **/
-    .user-interaction {
+    .user-interaction {  
+
         width: 100%;
-        padding: 1.25em;
-        font-size: 0.8em;
-        position: absolute;
-        bottom: -4em;
-        left: 0;
-        z-index: 7;
-        transition:all .5s ease-out 0.3s;
+        height: 2.8125em;
+        overflow: hidden;
+        position: relative;
+        margin-top: -2.8125em;
+        
+        .bar {
+            background-color: #fff;
+            width: 100%;
+            padding: 1.25em;
+            font-size: 0.8em;
+            position: absolute;
+            margin-top: 4em;
+            left: 0;
+            z-index: 7;
+            transition:all .5s ease-out 0.3s;
+            border: 1px solid #dedede;
+            border-bottom: 1px solid #fff;
+            opacity: 0.8;
+        }
+
     }
 
-    .user-interaction.back-panel {
-        background-color: #fff;
-    }
-
-    a:hover .lory-carousel .js_dots,
-    a:hover .user-interaction {
+    a:hover .lory-carousel .js_dots {
         bottom: 0;
         transition:all 0.3s ease-out 0.1s;
     }
 
+    a:hover .user-interaction .bar {
+        margin-top: 0;
+        transition:all 0.3s ease-out 0.1s;
+    }
+    
     .user-interaction .likes {
         float: left;
     }
