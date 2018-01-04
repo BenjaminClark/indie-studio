@@ -41,7 +41,8 @@ function indie_studio_social_media_array() {
 function get_social_media_icons() {
   
     $social_sites = indie_studio_social_media_array();
-  
+    $active_sites = array();
+    
     // any inputs that aren't empty are stored in $active_sites array
     foreach($social_sites as $social_site) {
         if( strlen( get_theme_mod( $social_site ) ) > 0 ) {
@@ -50,7 +51,7 @@ function get_social_media_icons() {
     }
   
     // for each active social site, add it as a list item
-    if($active_sites) {
+    if( $active_sites ) {
         echo "<ul class='social-media-icons'>";
         foreach ($active_sites as $active_site) {?>
 
