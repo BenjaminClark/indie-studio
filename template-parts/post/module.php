@@ -29,10 +29,7 @@ if ( $module_class ) {
         
             indie_studio_the_module_image();
     
-        }
-        
-        
-        indie_studio_interaction_bar();        
+        }       
         
         if( get_the_excerpt() ){ ?>
         
@@ -44,7 +41,11 @@ if ( $module_class ) {
                 <p><?php echo get_the_excerpt(); ?></p>
             </div>
 	
-        <?php } ?>
+        <?php }
+
+        indie_studio_interaction_bar(); 
+        
+        ?>
 
 	</a>
 	
