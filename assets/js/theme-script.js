@@ -1371,15 +1371,15 @@ if ( ajaxPostWrap && loadMorePosts ){
     
     //Hide standard buttons
     if( basicNavAbove ){
-        fade({el:basicNavAbove,type:'out',duration: 500});
+        fade({el:basicNavAbove,type:'out',duration: 10});
     }
     if( basicNavBelow ){
-        fade({el:basicNavBelow,type:'out',duration: 500});
+        fade({el:basicNavBelow,type:'out',duration: 10});
     }
     
     //Show Load More button
     if( loadType === 'button' ){
-        fade({el:loadMorePosts,type:'in',duration: 500});
+        fade({el:loadMorePosts,type:'in',duration: 10});
     }
     
     
