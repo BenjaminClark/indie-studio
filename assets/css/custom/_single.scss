@@ -23,33 +23,17 @@
 
                 position: relative;
 
+                address {
+                    display: inline-block;
+                }
+                
                 a {
                     text-decoration: none;
+                    font-weight: 600;
                     font-size: 1em;
                 }
 
-                .author {
-
-                    margin: 1em 0;
-                    float: left;
-                    position: relative;
-                    width: 100%;
-
-                    img {
-                        float: left;
-                        width: 3em;
-                        height: 3em;
-                        border-radius: 50%;
-                    }
-
-                    span {
-                        position: absolute;
-                        top: calc( 50% - 0.5em );
-                        margin-left: 0.5em;
-                        float: left;
-                    }
-
-                }
+                margin-bottom: 0.5em;
 
             }
 
@@ -78,18 +62,27 @@
 
         }
 
-        footer {
+        footer.entry-meta {
 
             margin-top: 2em;  
             margin-bottom: 0;
+            line-height: 1.25em;
 
-            .entry-meta {
-                
-                line-height: 1.25em;
-                
+            a {
+                display: inline;
+            }
+
+            .tag-links {
                 a {
-                    display: inline;
+                    font-size: 0.9em;
+                    color: #555;
+                    text-decoration: none;
+                    background-color: #dadada;
+                    border-radius: 0.125em;
+                    padding: 0.25em; 
+                    margin: 0 0.125em 0.125em 0;
                 }
+                
             }
 
         }
@@ -104,8 +97,17 @@
         article {
 
             .thin-inner {
-                margin-top: -5em;
                 position: relative;
+            }
+            
+            header {
+
+                .entry-meta {
+
+                    margin-bottom: 1em;
+                
+                }
+                
             }
 
         }
@@ -122,25 +124,17 @@
         article {
 
             .thin-inner {
-                margin-top: -6.5em;
                 position: relative;
             }
+            
+            header {
 
-        }
+                .entry-meta {
 
-    }
-
-}
-
-@media only screen and (min-width: 100em) {
-
-    .single {
-
-        article {
-
-            .thin-inner {
-                margin-top: -8em;
-                position: relative;
+                    margin-bottom: 1.5em;
+                
+                }
+                
             }
 
         }

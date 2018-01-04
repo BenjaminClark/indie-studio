@@ -41,13 +41,13 @@
                     $comments_number = get_comments_number();
                     if ( '1' === $comments_number ) {
                         /* translators: %s: post title */
-                        printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', indie_studio_text_domain() ), '<span>' . get_the_title() . '</span>' );
+                        printf( _x( 'One Interaction to &ldquo;%s&rdquo;', 'comments title', indie_studio_text_domain() ), '<span>' . get_the_title() . '</span>' );
                     } else {
                         printf(
                             /* translators: 1: number of comments, 2: post title */
                             _nx(
-                                '%1$s Reply to &ldquo;%2$s&rdquo;',
-                                '%1$s Replies to &ldquo;%2$s&rdquo;',
+                                '%1$s Interaction to &ldquo;%2$s&rdquo;',
+                                '%1$s Interactions to &ldquo;%2$s&rdquo;',
                                 $comments_number,
                                 'comments title',
                                 indie_studio_text_domain()

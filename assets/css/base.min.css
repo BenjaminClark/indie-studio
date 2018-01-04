@@ -1064,17 +1064,15 @@ body.navigation-open #site-navigation .push{height:calc(100% + 3.75em);width:100
 .author .page-title,.archive .page-title,.category .page-title,.tag .page-title{font-size:1.5em}
 .single article header .entry-title{margin-top:0}
 .single article header .entry-title a{text-decoration:none}
-.single article header .entry-meta{position:relative}
-.single article header .entry-meta a{text-decoration:none;font-size:1em}
-.single article header .entry-meta .author{margin:1em 0;float:left;position:relative;width:100%}
-.single article header .entry-meta .author img{float:left;width:3em;height:3em;border-radius:50%}
-.single article header .entry-meta .author span{position:absolute;top:calc(50% - 0.5em);margin-left:.5em;float:left}
+.single article header .entry-meta{position:relative;margin-bottom:.5em}
+.single article header .entry-meta address{display:inline-block}
+.single article header .entry-meta a{text-decoration:none;font-weight:600;font-size:1em}
 .single article .post-banner{width:100%;padding-bottom:40%;position:relative}
 .single article .post-banner .media-fit{position:absolute;top:0;bottom:0;left:0;right:0;overflow:hidden}
 .single article .post-banner .media-fit img{margin-top:-1.5em;height:calc(100% + 1.5em);width:100%}
-.single article footer{margin-top:2em;margin-bottom:0}
-.single article footer .entry-meta{line-height:1.25em}
-.single article footer .entry-meta a{display:inline}
+.single article footer.entry-meta{margin-top:2em;margin-bottom:0;line-height:1.25em}
+.single article footer.entry-meta a{display:inline}
+.single article footer.entry-meta .tag-links a{font-size:.9em;color:#555;text-decoration:none;background-color:#dadada;border-radius:.125em;padding:.25em;margin:0 .125em .125em 0}
 .wysiwyg{font-size:1rem}
 .wysiwyg a{display:inline}
 .wysiwyg .alignleft,.wysiwyg img.alignleft,.wysiwyg .alignright,.wysiwyg img.alignright,.wysiwyg .aligncenter,.wysiwyg img.aligncenter{margin-right:auto;margin-left:auto;display:block;clear:both}
@@ -1258,8 +1256,9 @@ ol.commentlist li.comment footer{float:none}
 }@media only screen and (min-width:50em){h1{font-size:2.25em}
 }@media only screen and (min-width:62em){#load-more-wrap{margin:2.25em auto}
 }@media only screen and (min-width:64em){h1{font-size:2.325em}
-.thin-inner,#disqus_thread{padding:3em}
-.single article .thin-inner{margin-top:-5em;position:relative}
+.thin-inner,#disqus_thread{padding:2em}
+.single article .thin-inner{position:relative}
+.single article header .entry-meta{margin-bottom:1em}
 }@media only screen and (min-width:65em){.grid-container.basic .col-4{margin-bottom:1em;width:calc(33% - (1em / 2))}
 .grid-container.basic .col-4:nth-child(odd),.grid-container.basic .col-4:nth-child(even){margin-right:1em}
 .grid-container.basic .col-4:nth-child(3n+3){margin-right:0}
@@ -1273,9 +1272,10 @@ ol.commentlist li.comment footer{float:none}
 .wysiwyg blockquote p{margin:0}
 .wysiwyg p,.wysiwyg ul{margin-bottom:1.25em}
 .article-inner-wrap,.page-inner-wrap{width:73em;padding:0 1.125em}
-.thin-inner,#disqus_thread{padding:5em}
+.thin-inner,#disqus_thread{padding:3em}
 #disqus_thread{padding-top:0}
-.single article .thin-inner{margin-top:-6.5em;position:relative}
+.single article .thin-inner{position:relative}
+.single article header .entry-meta{margin-bottom:1.5em}
 }@media only screen and (min-width:79.375em){.article-inner-wrap,.page-inner-wrap{width:76em}
 #header{margin:1em 0 1.25em 0}
 #header .logo{float:left;height:3em}
@@ -1313,7 +1313,6 @@ ol.commentlist li.comment footer{float:none}
 .grid-container.basic .col-4:nth-child(4n+4){margin-right:0}
 .masonry-column-sizer,.grid-container .col-4{width:calc(25% - 0.75em)}
 }@media only screen and (min-width:100em){.article-inner-wrap,.page-inner-wrap{width:calc(100% - 2.5em);margin:0 1.125em}
-.single article .thin-inner{margin-top:-8em;position:relative}
 .grid-container .col-4{margin-bottom:1.5em}
 .grid-container.basic .col-4{margin-bottom:1.5em;width:calc(25% - (4.5em / 4))}
 .grid-container.basic .col-4:nth-child(odd),.grid-container.basic .col-4:nth-child(even),.grid-container.basic .col-4:nth-child(3n+3){margin-right:1.5em}
