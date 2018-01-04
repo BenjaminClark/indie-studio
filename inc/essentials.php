@@ -114,7 +114,7 @@ function auto_copyright($year = 'auto'){
  */
 function indie_studio_excerpt_length( $length ) {
 
-  $excerpt = get_theme_mod('exc_lenght', '55');
+  $excerpt = get_theme_mod('exc_length', '40');
   return $excerpt;
 
 }
