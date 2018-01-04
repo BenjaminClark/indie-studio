@@ -6,6 +6,21 @@
     
         <div class="entry-meta group">
             <?php indie_studio_posted_details(); ?>
+            
+            <?php
+            /* translators: used between list items, there is a space after the comma */
+            $categories_list = get_the_category_list( __( ', ', indie_studio_text_domain() ) );
+            if ( $categories_list ) {
+            ?>
+
+            <span class="cat-links">
+                <?php printf( __( 'in %1$s', indie_studio_text_domain() ), $categories_list ); ?>
+            </span>
+
+            <?php } // End if categories ?>
+                                
+            <?php edit_post_link( __( 'Edit', indie_studio_text_domain() ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
+            
         </div>
     
     <?php } else { ?>
