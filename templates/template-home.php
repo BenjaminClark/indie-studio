@@ -25,7 +25,7 @@ get_header(); ?>
             
             $pad_ajax = '';
             
-            if ( have_posts() ) {
+            if ( have_posts() && empty_content ($post->post_content) ){
                
                 $pad_ajax = ' below-text';
                 
