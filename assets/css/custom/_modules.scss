@@ -158,7 +158,7 @@
 
     /** Likes and Comments **/
     .user-interaction {
-        width: calc(100% - 2px);
+        width: 100%;
         padding: 1.25em;
         font-size: 0.8em;
         position: absolute;
@@ -166,8 +166,10 @@
         left: 0;
         z-index: 7;
         transition:all .5s ease-out 0.3s;
+    }
+    
+    .user-interaction.back-panel {
         background-color: #fff;
-        margin: 0 1px;
     }
 
     a:hover .lory-carousel .js_dots,

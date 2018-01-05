@@ -41,10 +41,15 @@ if ( $module_class ) {
                 <p><?php echo get_the_excerpt(); ?></p>
             </div>
 	
-        <?php }
+        <?php
+                                
+            indie_studio_interaction_bar(); 
+       
+        } else {
 
-        indie_studio_interaction_bar(); 
+            indie_studio_interaction_bar( true ); 
         
+        }
         ?>
 
 	</a>

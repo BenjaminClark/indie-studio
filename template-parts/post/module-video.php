@@ -30,10 +30,15 @@ if ( $module_class ) {
                 <?php the_excerpt(); ?>
             </div>
 	
-        <?php }
+        <?php
+                                
+            indie_studio_interaction_bar(); 
+       
+        } else {
+
+            indie_studio_interaction_bar( true ); 
         
-        indie_studio_interaction_bar();
-        
+        }
         ?>
         
 	</a>

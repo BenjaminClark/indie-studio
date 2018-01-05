@@ -494,9 +494,14 @@ function indie_studio_the_module_gallery_images() {
  * Builds the footer for modules
  */
 
-function indie_studio_interaction_bar(){
-        
-    echo '<div class="user-interaction sneak-in">';
+function indie_studio_interaction_bar( $panel = null ){
+    
+    $back_panel = '';
+    if( $panel ){
+        $back_panel = ' back-panel';
+    }
+    
+    echo '<div class="user-interaction sneak-in' . $back_panel . '">';
         
     echo '<div class="likes"><span aria-label="' . get_post_like_count() . ' likes for this post"><i class="fa fa-heart" aria-hidden="true"></i>' . get_post_like_count() . '</span></div>';
     

@@ -1172,7 +1172,8 @@ ol.commentlist li.parent{border-left:5px solid #ddd}
 .module .lory-carousel .js_dots{position:absolute;z-index:8;bottom:-4em;-webkit-transition:all .5s ease-out .3s;transition:all .5s ease-out .3s;width:100%;margin:0}
 .module .lory-carousel .js_dots li{background-color:#5d5d5d}
 .module .lory-carousel .js_dots li.active{background-color:#fff}
-.module .user-interaction{width:calc(100% - 2px);padding:1.25em;font-size:.8em;position:absolute;bottom:-4em;left:0;z-index:7;-webkit-transition:all .5s ease-out .3s;transition:all .5s ease-out .3s;background-color:#fff;margin:0 1px}
+.module .user-interaction{width:100%;padding:1.25em;font-size:.8em;position:absolute;bottom:-4em;left:0;z-index:7;-webkit-transition:all .5s ease-out .3s;transition:all .5s ease-out .3s}
+.module .user-interaction.back-panel{background-color:#fff}
 .module a:hover .lory-carousel .js_dots,.module a:hover .user-interaction{bottom:0;-webkit-transition:all .3s ease-out .1s;transition:all .3s ease-out .1s}
 .module .user-interaction .likes{float:left}
 .module .user-interaction .likes i{color:#ef4545;margin-right:.125em}
