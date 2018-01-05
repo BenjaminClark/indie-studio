@@ -7,6 +7,10 @@
     float: left;
 }
 
+.grid-container.parent {
+    margin-top: 1em;
+}
+
 .masonry-column-sizer,
 .grid-container .col-1,
 .grid-container .col-2,
@@ -61,6 +65,7 @@
         display: block;
     }
     
+    .grid-container.parent,
     .grid-container .col-4 {
         margin-bottom: 2em;
     }
@@ -96,6 +101,11 @@
         margin-right: 0;
     }
     
+    .grid-container.parent,
+    .grid-container .col-4 {
+        margin-bottom: 1em;
+    }
+    
     .masonry-column-sizer,
     .grid-container .col-4 {
         width: calc( 33% - 0.5em );
@@ -108,10 +118,6 @@
 }
 
 @media only screen and (min-width: 90em) {
-    
-    .grid-container .col-4 {
-        margin-bottom: 1em;
-    }
     
     .grid-container.basic .col-4 {
         margin-bottom: 1em;
@@ -135,6 +141,7 @@
 
 @media only screen and (min-width: 100em) {
     
+    .grid-container.parent,
     .grid-container .col-4 {
         margin-bottom: 1.5em;
     }

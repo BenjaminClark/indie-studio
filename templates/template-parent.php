@@ -59,7 +59,7 @@ get_header(); ?>
             if ( have_posts()  ) { 
                 ?>
 
-                <div id="ajax-post-wrap" class="grid-container masonry basic">
+                <div id="ajax-post-wrap" class="grid-container parent masonry basic">
                     <div class="masonry-column-sizer"></div>
                     <div class="masonry-gutter-sizer"></div>
                     
