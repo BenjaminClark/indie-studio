@@ -1291,6 +1291,7 @@ ol.commentlist li.comment footer{float:none}
 #header #site-description{font-size:1.25em}
 #burger{display:none}
 #site-navigation{background-color:transparent;overflow:visible;position:relative;margin-top:.5em;top:auto;left:auto;right:auto;bottom:auto;padding:0;float:left}
+#site-navigation .menu-main-container{width:auto}
 #site-navigation li{display:inline-block}
 #site-navigation #menu-main li{width:auto}
 #site-navigation #menu-main li li{display:block;padding:1em}
@@ -1301,14 +1302,14 @@ ol.commentlist li.comment footer{float:none}
 #site-navigation #menu-main li.menu-item-has-children:hover>ul{display:block}
 #site-navigation #menu-main li:first-child{margin:0}
 #site-navigation #menu-main li a:first-child,#site-navigation #menu-main li a{padding:0}
-#site-navigation ul.social-media-icons{width:auto;margin-top:.25em}
-#site-navigation ul.social-media-icons li{font-size:1.25em;margin-left:.5em;margin-right:0}
+#site-navigation ul.social-media-icons{width:auto;margin-top:.65em}
+#site-navigation ul.social-media-icons li{font-size:1.25em;margin-left:.5em;margin-right:0;width:auto}
 #site-navigation>div>div>#menu-main>li:first-child,#site-navigation>div>div>#menu-main>li{padding:.5em;margin-bottom:-0.5em}
 #site-navigation>div>div>ul>li:last-child{margin-right:0}
-#searchform{margin-top:.9em}
+#searchform{margin-top:1.25em}
 #searchform button.search-submit{padding:.125em}
-#searchform .reveal{height:5.6em}
-#searchform .reveal input{width:calc(100% - 1.25em);margin:.5em 0 0 0;padding:1.35em 6em 1.35em .5em}
+#searchform .reveal{height:6.5em}
+#searchform .reveal input{width:calc(100% - 1.25em);margin:.5em 0 0 0;padding:1.55em 6em 1.55em .5em}
 #main-searchform label{width:calc(100% - 4em)}
 #main-searchform input{padding:1em}
 #main-searchform button{padding:1em}

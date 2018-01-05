@@ -360,7 +360,7 @@ body.navigation-open #site-navigation {
     }
     
     /** Menu **/
-    
+        
     #site-navigation {
         
         background-color: transparent;
@@ -373,6 +373,10 @@ body.navigation-open #site-navigation {
         bottom: auto;
         padding: 0;
         float: left;
+
+        .menu-main-container {
+            width: auto;
+        }
         
         li {
             display: inline-block;
@@ -429,12 +433,14 @@ body.navigation-open #site-navigation {
 
         ul.social-media-icons {
             width: auto;
-            margin-top: 0.25em;
+            margin-top: 0.65em;
 
             li {
                 font-size: 1.25em;
                 margin-left: 0.5em;
                 margin-right: 0;
+                
+                width: auto;
             }
 
         }
@@ -455,19 +461,19 @@ body.navigation-open #site-navigation {
     
     #searchform {
         
-        margin-top: 0.9em;
+        margin-top: 1.25em;
 
         button.search-submit {
             padding: 0.125em;
         }
 
         .reveal { 
-            height: 5.6em;
+            height: 6.5em;
 
             input {
                 width: calc(100% - 1.25em);
                 margin: 0.5em 0 0 0;
-                padding: 1.35em 6em 1.35em 0.5em;
+                padding: 1.55em 6em 1.55em 0.5em;
             }
 
         } 
