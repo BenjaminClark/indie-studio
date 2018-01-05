@@ -7,9 +7,15 @@
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('page'); ?><?php schema_semantics_tags( 'post' );?>>
-	<div class="entry-content e-content" itemprop="description text">
-	    <div class="wysiwyg">
-		    <?php the_content(); ?>
-		</div>
-	</div>
+
+    <div class="thin-inner">
+
+        <div class="entry-content e-content" itemprop="description text">
+            <div class="wysiwyg">
+                <?php the_content(); ?>
+            </div>
+        </div>
+        
+    </div>
+    
 </article>
