@@ -19,6 +19,7 @@ get_header(); ?>
        <div class="article-inner-wrap">
 
             <?php 
+           
             while ( have_posts() ) : the_post();
            
                 get_template_part( 'template-parts/post/content', get_post_format() );
@@ -38,6 +39,8 @@ get_header(); ?>
             ?>
 
         </div>
+        
+        <?php get_template_part( 'template-parts/extras/related' ); ?>
 
     </main><!-- #content -->
 </section><!-- #primary -->
