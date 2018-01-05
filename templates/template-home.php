@@ -23,8 +23,12 @@ get_header(); ?>
              * Here we show the home content first
              **/
             
+            $pad_ajax = '';
+            
             if ( have_posts() ) {
                
+                $pad_ajax = ' below-text';
+                
                 /* Start the Loop */
                 while ( have_posts() ) : the_post();
 
@@ -36,11 +40,7 @@ get_header(); ?>
                 
                 endwhile;
 
-            } else {
-
-                get_template_part( 'template-parts/post/content', 'none' );
-
-            } 
+            }
             
             /**
              * Now lets get the home loop
@@ -55,7 +55,7 @@ get_header(); ?>
             if ( have_posts()  ) { 
                 ?>
                
-                <div id="ajax-post-wrap" class="grid-container basic">
+                <div id="ajax-post-wrap" class="grid-container<?php echo $pad_ajax;?> basic">
                                                           
                     <!-- modules -->
                     <?php
