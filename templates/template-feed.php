@@ -23,12 +23,16 @@ get_header(); ?>
              * Here we show the home content first
              **/
             
-            if ( have_posts() && empty_content ($post->post_content) ){
+            if ( have_posts() ){
                
                 /* Start the Loop */
                 while ( have_posts() ) : the_post();
 
-                    get_template_part( 'template-parts/page/content', 'page-home' );
+                    if( !empty_content ($post->post_content) ){
+                
+                        get_template_part( 'template-parts/page/content', 'page-home' );
+                        
+                    }
                 
                 endwhile;
 
