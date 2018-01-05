@@ -7,7 +7,7 @@
     float: left;
 }
 
-.grid-container.parent {
+.grid-container.below-text {
     margin-top: 1em;
 }
 
@@ -65,7 +65,7 @@
         display: block;
     }
     
-    .grid-container.parent,
+    .grid-container.below-text,
     .grid-container .col-4 {
         margin-bottom: 2em;
     }
@@ -101,7 +101,10 @@
         margin-right: 0;
     }
     
-    .grid-container.parent,
+    .grid-container.below-text {
+        margin-top: 1em;    
+    }
+    
     .grid-container .col-4 {
         margin-bottom: 1em;
     }
@@ -141,7 +144,10 @@
 
 @media only screen and (min-width: 100em) {
     
-    .grid-container.parent,
+    .grid-container.below-text{
+        margin-top: 1.5em;
+    }
+    
     .grid-container .col-4 {
         margin-bottom: 1.5em;
     }
