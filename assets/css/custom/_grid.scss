@@ -65,7 +65,10 @@
         display: block;
     }
     
-    .grid-container.below-text,
+    .grid-container.below-text {
+        margin-top: 2em;    
+    }
+    
     .grid-container .col-4 {
         margin-bottom: 2em;
     }

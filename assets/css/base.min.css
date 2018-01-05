@@ -971,6 +971,7 @@ h4{font-size:1.3125328133203331em;font-weight:600}
 h5{font-size:1.25em;font-weight:600}
 h6{font-size:1.125em;font-weight:600;font-style:italic}
 p,li,.entry-meta{font-size:1.125em}
+li li{font-size:1em}
 strong,bold{font-weight:700}
 em,i{font-style:italic}
 li{position:relative}
@@ -1018,7 +1019,7 @@ article{background-color:#fff}
 #header .logo img{height:2em;max-width:100%}
 #header #site-description{font-size:1em;margin:.5em 0 0 0;font-weight:700;float:left;clear:left}
 #header .header-menu-wrap{float:right}
-#header .menu-main-container{float:left}
+#header .menu-main-container{float:left;width:100%}
 #burger{margin:0 .25em 0 0;display:block;float:left;width:1.375em;height:1.375em;position:relative;cursor:pointer}
 #burger .trig{position:absolute;width:100%;height:100%}
 #burger span{display:block;position:absolute;height:.125em;width:100%;background:#484848;opacity:1;left:0;-webkit-transform:rotate(0);-ms-transform:rotate(0);transform:rotate(0);-webkit-transition:.25s ease-in-out;transition:.25s ease-in-out}
@@ -1049,8 +1050,10 @@ body.navigation-open #burger span:nth-child(4){top:calc(50% - 0.125em);width:0;l
 #searchform.active .search-close{margin-left:.35em;opacity:1;width:1.8125em}
 #searchform.active .reveal{width:100%}
 #site-navigation{background-color:#fff;display:block;position:fixed;top:3.325em;left:0;right:0;bottom:100%;overflow-y:auto;-webkit-transition:bottom .5s;transition:bottom .5s;padding:0 1.125em;z-index:2000}
-#site-navigation ul li{margin:.5em 0}
+#site-navigation ul li{margin:.5em 0;width:calc(100% - 1em)}
+#site-navigation ul li li{width:100%}
 #site-navigation ul li:first-child{margin:1em 0 0 0}
+#site-navigation ul li li:first-child{margin:0}
 #site-navigation a{text-decoration:none;padding:.25em}
 #site-navigation .toggle{display:none}
 #site-navigation .menu-item-has-children>.toggle{display:block}
@@ -1251,7 +1254,8 @@ ol.commentlist li.comment img.avatar{float:left}
 ol.commentlist li.comment .comment-content{margin-left:4.5em}
 ol.commentlist li.comment footer{float:none}
 .grid-container.basic .mob-no-show{display:block}
-.grid-container.below-text,.grid-container .col-4{margin-bottom:2em}
+.grid-container.below-text{margin-top:2em}
+.grid-container .col-4{margin-bottom:2em}
 .grid-container.basic .col-4:nth-child(odd){margin-right:2em}
 .masonry-column-sizer,.grid-container .col-4{width:calc(50% - 1em)}
 .masonry-gutter-sizer{width:2em}
@@ -1286,18 +1290,20 @@ ol.commentlist li.comment footer{float:none}
 #header .logo img{height:3em}
 #header #site-description{font-size:1.25em}
 #burger{display:none}
-#site-navigation{background-color:transparent;overflow:visible;position:relative;margin-top:1.65em;top:auto;left:auto;right:auto;bottom:auto;padding:0;float:left}
+#site-navigation{background-color:transparent;overflow:visible;position:relative;margin-top:.5em;top:auto;left:auto;right:auto;bottom:auto;padding:0;float:left}
 #site-navigation li{display:inline-block}
+#site-navigation #menu-main li{width:auto}
 #site-navigation #menu-main li li{display:block;padding:1em}
 #site-navigation #menu-main .menu-item-has-children>.toggle{display:none}
-#site-navigation #menu-main li.menu-item-has-children>ul{position:absolute;min-width:160px;z-index:1;margin:.5em 0 0 0;background-color:#f2f2f2}
+#site-navigation #menu-main li.menu-item-has-children>ul{position:absolute;min-width:200px;z-index:1;margin:.5em 0 0 0;margin-left:-1em;background-color:#e0e0e0}
+#site-navigation #menu-main li.menu-item-has-children>ul ul{background-color:#cecece}
 #site-navigation #menu-main ul li.menu-item-has-children>ul{left:100%;top:0;margin:0}
 #site-navigation #menu-main li.menu-item-has-children:hover>ul{display:block}
 #site-navigation #menu-main li:first-child{margin:0}
 #site-navigation #menu-main li a:first-child,#site-navigation #menu-main li a{padding:0}
 #site-navigation ul.social-media-icons{width:auto;margin-top:.25em}
 #site-navigation ul.social-media-icons li{font-size:1.25em;margin-left:.5em;margin-right:0}
-#site-navigation>div>div>ul>li{padding:0;margin:0 1em}
+#site-navigation>div>div>#menu-main>li:first-child,#site-navigation>div>div>#menu-main>li{padding:.5em;margin-bottom:-0.5em}
 #site-navigation>div>div>ul>li:last-child{margin-right:0}
 #searchform{margin-top:.9em}
 #searchform button.search-submit{padding:.125em}

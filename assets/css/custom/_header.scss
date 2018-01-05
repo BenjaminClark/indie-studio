@@ -37,6 +37,7 @@
     
     .menu-main-container {
         float: left;
+        width: 100%;
     }
     
 }
@@ -247,10 +248,19 @@ body.navigation-open #burger {
     
     ul li {
         margin: 0.5em 0;
+        width: calc(100% - 1em);
     }
 
+    ul li li {
+        width: 100%;
+    }
+    
     ul li:first-child {
         margin: 1em 0 0 0;
+    }
+    
+    ul li li:first-child {
+        margin: 0;
     }
     
     a {
@@ -356,7 +366,7 @@ body.navigation-open #site-navigation {
         background-color: transparent;
         overflow: visible;
         position: relative;
-        margin-top: 1.65em;
+        margin-top: 0.5em;
         top: auto;
         left: auto;
         right: auto;
@@ -370,6 +380,10 @@ body.navigation-open #site-navigation {
 
         #menu-main {
         
+            li {
+                width: auto;
+            }
+            
             li li {
                 display: block;
                 padding: 1em;
@@ -381,11 +395,16 @@ body.navigation-open #site-navigation {
 
             li.menu-item-has-children > ul {
                 position: absolute;
-                min-width: 160px;
+                min-width: 200px;
                 z-index: 1;
                 margin: 0.5em 0 0 0;
-                background-color: #f2f2f2;
+                margin-left: -1em;
+                background-color: #e0e0e0;
             }
+            
+            li.menu-item-has-children > ul ul{
+                background-color: #cecece;
+            } 
 
             ul li.menu-item-has-children > ul {
                 left: 100%;
@@ -422,9 +441,10 @@ body.navigation-open #site-navigation {
         
     }
 
-    #site-navigation > div > div > ul > li {
-        padding: 0;
-        margin: 0 1em;
+    #site-navigation > div > div > #menu-main > li:first-child,
+    #site-navigation > div > div > #menu-main > li {
+        padding: 0.5em;
+        margin-bottom: -0.5em;
     }
     
     #site-navigation > div > div > ul > li:last-child {
