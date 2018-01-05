@@ -12,7 +12,7 @@ get_header(); ?>
     <main id="content" role="main">
 
         <div class="page-inner-wrap">
-
+       
         <?php if ( have_posts() ) { ?>
 
             <?php
@@ -26,18 +26,7 @@ get_header(); ?>
             ?>
 
             <header class="page-header author vcard h-card group" itemprop="author" itemscope itemtype="http://schema.org/Person">
-                <h1 class="page-title"><?php printf( __( 'Articles by %s', indie_studio_text_domain() ), '<a class="url u-url fn p-fn n p-name" href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me author" itemprop="url"><span itemprop="name">' . get_the_author() . '</span></a>' ); ?></h1>
-                
-                
-                
-                <?php echo get_avatar( get_the_author_meta( 'ID' ), 40 ); ?>
-            <?php if ( get_the_author_meta( 'description' ) ) { ?>
-                <div class="author-note note p-note wysiwyg" itemprop="description"><p><?php echo get_the_author_meta( 'description' ); ?></p></div>
-            <?php } ?>
-                
-                
-                
-            </header>
+                <h1 class="page-title"><?php printf( __( 'Articles by %s', indie_studio_text_domain() ), '<a class="url u-url fn p-fn n p-name" href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me author" itemprop="url"><span itemprop="name">' . get_the_author() . '</span></a>' ); ?></h1></header>
 
             <?php
                 /* Since we called the_post() above, we need to
