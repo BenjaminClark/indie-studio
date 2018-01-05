@@ -1006,10 +1006,11 @@ html,body{height:100%}
 .search-active,.navigation-open{overflow-y:hidden}
 #footer-pusher{position:relative;min-height:100%}
 .thin-inner,#disqus_thread{margin:0 auto;max-width:62.5em;padding:1.25em;background-color:#fff}
+.thin-inner *>:last-child{margin-bottom:0}
 #disqus_thread{padding-top:0}
 .page-inner-wrap,.article-inner-wrap{width:100%;margin:0 auto;position:relative}
 .page-inner-wrap{padding:0 1.125em}
-article.single,article.child{background-color:#fff}
+article{background-color:#fff}
 #header{margin:1em 0 1.125em 0}
 #header .logo{float:left}
 #header .logo a{text-decoration:none}
@@ -1274,7 +1275,6 @@ ol.commentlist li.comment footer{float:none}
 .article-inner-wrap,.page-inner-wrap{width:73em;padding:0 1.125em}
 .thin-inner,#disqus_thread{padding:3em}
 #disqus_thread{padding-top:0}
-.single article .thin-inner{position:relative}
 .single article header .entry-meta{margin-bottom:1.5em}
 }@media only screen and (min-width:79.375em){.article-inner-wrap,.page-inner-wrap{width:76em}
 #header{margin:1em 0 1.25em 0}
@@ -1283,7 +1283,7 @@ ol.commentlist li.comment footer{float:none}
 #header .logo img{height:3em}
 #header #site-description{font-size:1.25em}
 #burger{display:none}
-#site-navigation{background-color:transparent;overflow:visible;position:relative;margin-top:.5em;top:auto;left:auto;right:auto;bottom:auto;padding:0;float:left}
+#site-navigation{background-color:transparent;overflow:visible;position:relative;margin-top:1.65em;top:auto;left:auto;right:auto;bottom:auto;padding:0;float:left}
 #site-navigation li{display:inline-block}
 #site-navigation #menu-main li li{display:block;padding:1em}
 #site-navigation #menu-main .menu-item-has-children>.toggle{display:none}
@@ -1294,8 +1294,8 @@ ol.commentlist li.comment footer{float:none}
 #site-navigation #menu-main li a:first-child,#site-navigation #menu-main li a{padding:0}
 #site-navigation ul.social-media-icons{width:auto;margin-top:.25em}
 #site-navigation ul.social-media-icons li{font-size:1.25em;margin-left:.5em;margin-right:0}
-#site-navigation>div>div>ul>li{padding:.5em}
-#site-navigation>div>div>ul>li:last-child{margin:0}
+#site-navigation>div>div>ul>li{padding:0;margin:0 1em}
+#site-navigation>div>div>ul>li:last-child{margin-right:0}
 #searchform{margin-top:.9em}
 #searchform button.search-submit{padding:.125em}
 #searchform .reveal{height:5.6em}

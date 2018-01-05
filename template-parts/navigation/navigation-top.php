@@ -104,4 +104,6 @@
 <div id="overlay"><div class="push"></div></div>
 
 <!-- Grab blog tagline -->
-<h2 id="site-description"<?php get_schema_semantics( 'site-description' ); ?>><?php bloginfo( 'description' ); ?></h2>
+<?php if ( bloginfo( 'description' ) ){ ?>
+    <h2 id="site-description"<?php get_schema_semantics( 'site-description' ); ?>><?php bloginfo( 'description' ); ?></h2>
+<?php } ?>
