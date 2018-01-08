@@ -71,13 +71,16 @@ function getTagRelatedIDs(){
  * @return array Related post IDs
  */
 
-function getTopLevelRelatedIds( $not_in ){
+function getTopLevelRelatedIds( $passed_ids ){
     
     global $post;
     
     $term_ids = buildPostTermsArray( $post->ID );
     
-    $number = 4 - count( $not_in );
+    $number = 4 - count( $passed_ids );
+    
+    $not_in = $passed_ids;
+    $not_in[] = $post->ID;
     
     $args = array(
         'post_type'             => get_post_type($post->ID),
@@ -88,7 +91,7 @@ function getTopLevelRelatedIds( $not_in ){
         'fields'                => 'ids',
     );
     
-    return buildRelatedIds( $args, $not_in );
+    return buildRelatedIds( $args, $passed_ids );
     
 }
 
@@ -120,11 +123,14 @@ function buildPostTermsArray( $post_id ){
  * @return array Related post IDs
  */
 
-function getLastPostIDs( $not_in ){
+function getLastPostIDs( $passed_ids ){
     
     global $post;
     
-    $number = 4 - count( $not_in );
+    $number = 4 - count( $passed_ids );
+    
+    $not_in = $passed_ids;
+    $not_in[] = $post->ID;
     
     $args = array(
         'post_type'             => get_post_type($post->ID),
@@ -134,7 +140,7 @@ function getLastPostIDs( $not_in ){
         'fields'                => 'ids',
     );
 
-    return buildRelatedIds( $args, $not_in );
+    return buildRelatedIds( $args, $passed_ids );
     
 }
 
