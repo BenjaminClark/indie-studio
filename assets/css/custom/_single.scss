@@ -5,7 +5,7 @@
  */
 
 .single {
-
+    
     article {
 
         header {
@@ -87,6 +87,18 @@
 
         }
 
+    }
+    
+    article.format-image {
+        
+        .entry-media {
+            
+            img {
+                margin: 0 auto;
+            }
+            
+        }
+        
     }
     
     .related-posts {
