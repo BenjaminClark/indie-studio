@@ -41,6 +41,11 @@ if ( function_exists( 'add_theme_support' ) ) {
     add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'status', 'image', 'video', 'audio', 'quote' ) );
 
     
+    /** Remove default gallery styling **/
+    
+    add_filter( 'use_default_gallery_style', '__return_false' );
+    
+    
     /**
      * Support Microdata being added to WordPress
      * 

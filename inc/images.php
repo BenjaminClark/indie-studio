@@ -51,3 +51,24 @@ function isSvg( $filePath ){
         return false;
     }
 }
+
+
+/** 
+ * Add Custom Images for gallery
+ * 
+ * Adds gallery shortcode defaults of size="medium" and columns="3"
+ **/
+
+function indie_studio_gallery_atts( $out, $pairs, $atts ) {
+    $atts = shortcode_atts( array(
+      'columns' => '3',
+      'size' => 'medium',
+    ), $atts );
+ 
+    $out['columns'] = $atts['columns'];
+    $out['size'] = $atts['size'];
+ 
+    return $out;
+ 
+}
+add_filter( 'shortcode_atts_gallery', 'indie_studio_gallery_atts', 10, 3 );
