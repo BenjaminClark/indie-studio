@@ -15,6 +15,6 @@
 
     <?php } // End if $tags_list ?>
 	
-	<?php edit_post_link( __( 'Edit', indie_studio_text_domain() ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
+	<?php edit_post_link( __( 'Edit', indie_studio_text_domain() ), '<span class="edit-link">', '</span>' ); ?>
 	
 </footer><!-- #entry-meta -->
