@@ -40,9 +40,10 @@ get_header(); ?>
 
         </div>
         
-        <?php get_template_part( 'template-parts/extras/related' ); ?>
-
     </main><!-- #content -->
+    
+    <?php get_template_part( 'template-parts/extras/related' ); ?>
+    
 </section><!-- #primary -->
 
 <?php get_footer();
