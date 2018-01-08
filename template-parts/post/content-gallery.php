@@ -34,7 +34,7 @@
        
         <div class="entry-content e-content" itemprop="description articleBody">
            
-           <div class="wysiwyg">
+           <div class="wysiwyg group">
 
                 <?php
                 if ( ! is_single() ) {
