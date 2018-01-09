@@ -38,7 +38,9 @@ if ( $module_class ) {
                 
                 <?php indie_studio_posted_on(); ?>
                 
-                <p><?php echo get_the_excerpt(); ?></p>
+                <?php if( get_the_excerpt() ){ ?>
+                    <p><?php echo get_the_excerpt(); ?></p>
+                <?php } ?>
             </div>
 	
         <?php
