@@ -1182,7 +1182,7 @@ ol.commentlist li.parent{border-left:5px solid #ddd}
 .module .entry-media .play i{font-size:4em;color:#fff;position:relative;float:left;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}
 .module .lory-carousel .js_dots{position:absolute;z-index:8;bottom:-4em;-webkit-transition:all .5s ease-out .3s;transition:all .5s ease-out .3s;width:100%;margin:0}
 .module .lory-carousel .js_dots li{background-color:#5d5d5d}
-.module .lory-carousel .js_dots li.active{background-color:#fff}
+.module .lory-carousel .js_dots li.active{background-color:#ddd}
 .module .user-interaction{width:100%;padding:1.25em;font-size:.8em;position:absolute;bottom:-4em;left:0;z-index:7;-webkit-transition:all .5s ease-out .3s;transition:all .5s ease-out .3s}
 .module .user-interaction.back-panel{background-color:#fff}
 .module a:hover .lory-carousel .js_dots,.module a:hover .user-interaction{bottom:0;-webkit-transition:all .3s ease-out .1s;transition:all .3s ease-out .1s}
@@ -1192,16 +1192,16 @@ ol.commentlist li.parent{border-left:5px solid #ddd}
 .module .user-interaction .comments i{color:#777;margin-right:.125em}
 .module:not(.module-gallery) a:hover .entry-media .media-fit img{-ms-transform:scale(1.025,1.025);-webkit-transform:scale(1.025,1.025);transform:scale(1.025,1.025)}
 .gallery{margin:0 auto 18px}
-.gallery .gallery-item{float:left;margin-top:0;text-align:center;width:33%}
-.gallery-columns-2 .gallery-item{width:50%}
-.gallery-columns-4 .gallery-item{width:25%}
-.gallery img{box-shadow:0 0 4px #999;border:1px solid white;padding:8px;background:#f2f2f2}
-.gallery img:hover{background:white}
-.gallery-columns-2 .attachment-medium{max-width:92%;height:auto}
-.gallery-columns-4 .attachment-thumbnail{max-width:84%;height:auto}
-.gallery .gallery-caption{color:#888;font-size:12px;margin:0 0 12px}
+.gallery .gallery-item{float:left;margin-top:0;text-align:center;overflow:hidden;margin:2px;border:1px solid #e1e1e1}
+.gallery .gallery-item:hover{border:1px solid #fff}
+.gallery img{position:relative;-webkit-transition:all .5s;transition:all .5s;-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);z-index:10}
+.gallery img:hover{-webkit-transform:scale(1.05);-ms-transform:scale(1.05);transform:scale(1.05)}
+.gallery .gallery-caption{text-align:left;position:relative;color:#888;font-size:.8em;background-color:#fff;padding:.5em;z-index:20}
 .gallery dl,.gallery dt{margin:0}
 .gallery br+br{display:none}
+.gallery-columns-2 .gallery-item{width:calc(50% - 4px)}
+.gallery-columns-3 .gallery-item{width:calc(33.333% - 4px)}
+.gallery-columns-4 .gallery-item{width:calc(25% - 4px)}
 .lory-carousel{position:relative;height:100%;overflow:hidden}
 .lory-carousel .frame{width:100%;position:relative;font-size:0;line-height:0;overflow:hidden;white-space:nowrap}
 .lory-carousel .slides{display:inline-block}

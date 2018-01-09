@@ -68,23 +68,4 @@ jQuery(document).ready(function($) {
         });
     });    
     
-    $(".fancybox").fancybox({
-        fullScreen : false,
-        iframe : {
-            scrolling : 'yes'
-        },
-        modal : false,
-    });
-    
-    //Manage all login links
-    $('[data-fancybox]').fancybox({
-        beforeLoad: function(instance, current){
-            var linkClicked = current.opts.$orig;     
-            //Add redir URL to login if required
-            if( $(linkClicked).hasClass('user-login-redir') && $('#user-login-module').length > 0 ){                
-                $('#login-redir').val( $(linkClicked).data("redir") );
-            }
-        },
-    });
-    
 });

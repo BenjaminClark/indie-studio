@@ -1354,6 +1354,11 @@ function isset (){
   }
   return true;
 }
+jQuery(document).ready(function($) {
+    
+    $("[data-fancybox]").fancybox();
+    
+});
 var ajaxPostWrap       = document.getElementById("ajax-post-wrap"),
     loadMorePosts      = document.getElementById("load-more-posts"),
     footerDiv          = document.querySelector('footer');
@@ -1641,24 +1646,44 @@ function buildLoryCarousel(el){
 
 
 buildLoryCarousel( document.querySelector('.module') );
+/** Post Ajax Masonry **/
+
 var masonryLive = false;
 
-var masonryDom = document.querySelector('.masonry');
-if( masonryDom ){    
-    
-    var masonry = new Masonry( masonryDom, {
+var postsMasonryDom = document.querySelector('.masonry');
+
+if( postsMasonryDom ){   
+        
+    var masonry = new Masonry( postsMasonryDom, {
         columnWidth: '.masonry-column-sizer',
         gutter: '.masonry-gutter-sizer',
         itemSelector: '.module',
         percentPosition: true,
     });
      
-    imagesLoaded( masonryDom ).on( 'progress', function() {
+    imagesLoaded( postsMasonryDom ).on( 'progress', function() {
         masonry.layout();
     });
     
-    masonryDom.classList.remove('basic'); 
+    postsMasonryDom.classList.remove('basic'); 
     masonryLive = true;     
+    
+}
+
+
+/** Gallery Masonry **/
+
+var galleryMasonryDom = document.querySelector('.gallery');
+if( galleryMasonryDom ){    
+    
+    var galleryMasonry = new Masonry( galleryMasonryDom, {
+        itemSelector: '.gallery-item',
+        percentPosition: true,
+    });
+     
+    imagesLoaded( galleryMasonryDom ).on( 'progress', function() {
+        galleryMasonry.layout();
+    }); 
     
 }
 /** JS Code for the Header / Menu **/
@@ -1879,25 +1904,6 @@ jQuery(document).ready(function($) {
             }
         });
     });    
-    
-    $(".fancybox").fancybox({
-        fullScreen : false,
-        iframe : {
-            scrolling : 'yes'
-        },
-        modal : false,
-    });
-    
-    //Manage all login links
-    $('[data-fancybox]').fancybox({
-        beforeLoad: function(instance, current){
-            var linkClicked = current.opts.$orig;     
-            //Add redir URL to login if required
-            if( $(linkClicked).hasClass('user-login-redir') && $('#user-login-module').length > 0 ){                
-                $('#login-redir').val( $(linkClicked).data("redir") );
-            }
-        },
-    });
     
 });
 jQuery(document).ready(function($) {
