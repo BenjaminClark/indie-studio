@@ -22,9 +22,24 @@ function indie_studio_load_more_button( $button_text = '' ){
         
         $template = '';
         
-        if( is_search() || is_author() ){
-            $template = 'search';
+        /**
+         * Use this to set a custom template if it does not
+         * use the standard module style.
+         * 
+         * The Template part should be added as a content part.
+         * 
+         * i.e. If template-part is content-search, you set
+         * the template var below as "search".
+         * 
+         * Go on, I dare you to be fancy!
+         * 
+        
+        
+        if(  ){
+            $template = '';
         } 
+        
+        **/
         
         
         /**
