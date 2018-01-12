@@ -24,7 +24,14 @@ get_header(); ?>
            
                 get_template_part( 'template-parts/post/content', get_post_format() );
 
-                indie_studio_social_share( get_the_id() );
+           
+                // If we want to share article
+                if ( get_theme_mod('indie_studio_social_share', true) ) {
+           
+                    indie_studio_social_share( get_the_id() );
+                    
+                }
+           
            
                 // If comments are open or we have at least one comment, show the comment template
                 if ( comments_open() || get_comments_number() != 0 ){

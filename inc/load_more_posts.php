@@ -15,7 +15,6 @@ function indie_studio_load_more_button( $button_text = '' ){
        
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
-        
         /**
          * Decide is a custom template is required for AJAX
          */ 
