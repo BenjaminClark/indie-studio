@@ -1080,6 +1080,7 @@ body.navigation-open #site-navigation .push{height:calc(100% + 3.75em);width:100
 .single article.format-image .entry-media img{margin:0 auto}
 .single .wp-video{margin-bottom:1em}
 .single .related-posts{margin-top:1em}
+.single .related-posts h2{font-size:1.25em}
 .wysiwyg{font-size:1rem}
 .wysiwyg a{display:inline}
 .wysiwyg .alignleft,.wysiwyg img.alignleft,.wysiwyg .alignright,.wysiwyg img.alignright,.wysiwyg .aligncenter,.wysiwyg img.aligncenter{margin-right:auto;margin-left:auto;display:block;clear:both}
