@@ -6,6 +6,7 @@ A microformat/schema theme aimed at design professionals. The content comes firs
 ## Image Reveal Built In
 Images can be set to animate into view as the reader scrolls down the page. All that is required is for 2 classes to be set on the image.
 
+
 ```
 "sr top" - Animates the image from the top
 "sr right" - Animates the image from the right
@@ -14,6 +15,15 @@ Images can be set to animate into view as the reader scrolls down the page. All 
 ```
 
 Simples!
+
+## Post Formats
+To allow you to pick between a standard blog, or something more focused we have included post formats within the theme.
+
+### Image
+This returns a slightly different post page, without parralax. This is to make sure the reader can fully appriciate it!
+
+### Video
+The video post format uses a different module in the feed list. If the first (or only) video in the post is embedded from Youtube or Vimeo then the video thumbnail is used. If a different embed provider is used you must use a featured image.
 
 ## Developer Friendly
 Built with developers in mind. File organsation has been considered to make a more efficent workflow. Gulp has been used to process all of those boring tasks. That has allowed us to keep the JS and CSS in small, easy to understand files.
