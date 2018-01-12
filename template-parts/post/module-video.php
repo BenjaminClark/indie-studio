@@ -27,7 +27,11 @@ if ( $module_class ) {
         
             <div class="entry-text sneak-in">
                 <h2 class="entry-title p-name" itemprop="name headline"><?php the_title(); ?></h2>
-                <?php the_excerpt(); ?>
+                <?php indie_studio_posted_on(); ?>
+                
+                <?php if( get_the_excerpt() ){ ?>
+                    <p><?php echo get_the_excerpt(); ?></p>
+                <?php } ?>
             </div>
 	
         <?php
