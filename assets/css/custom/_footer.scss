@@ -11,18 +11,20 @@
         text-decoration: none;
     }
     
-    .copyright {
+    .copyright,
+    .custom {
+        clear: both;
         float: left;
     }
 
-    .designer {
-        float: right;
-    }
-    
 }
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width: 40em) {  /** 640px **/
 
+    .copyright,
+    .custom {
+        clear: none;
+    }
     
 }
