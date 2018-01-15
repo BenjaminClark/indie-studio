@@ -13,8 +13,12 @@
     
     .copyright,
     .custom {
-        clear: both;
         float: left;
+        clear: left;        
+    }
+    
+    .custom {
+        margin-top: 0;
     }
 
 }
@@ -22,9 +26,19 @@
 /* Extra Small Devices, Phones */
 @media only screen and (min-width: 40em) {  /** 640px **/
 
-    .copyright,
-    .custom {
-        clear: none;
+    #colophon {
+
+        .copyright,
+        .custom {
+            display: inline-block;
+            clear: none;
+        }
+        
+        .custom {
+            margin-top: 1em;
+            margin-left: 0.125em;
+        }
+        
     }
     
 }

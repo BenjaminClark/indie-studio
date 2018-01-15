@@ -26,7 +26,7 @@
                 
                 <a class="external" xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/BenjaminClark" property="cc:attributionName" rel="cc:attributionURL">Ben Clark</a> and <a class="external" href="http://www.justlikethis.co.uk">Robert Marshall</a> is licensed under <a class="external" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Inspired by <a class="external" xmlns:dct="http://purl.org/dc/terms/" href="https://indieweb.org/" rel="dct:source">IndieWeb</a>.</p>
             
-            <p class="custom"><?php echo get_theme_mod('indie_studio_footer'); ?>f</p>
+            <p class="custom"><?php echo get_theme_mod('indie_studio_footer'); ?></p>
 
         </div>
 
