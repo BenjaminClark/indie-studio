@@ -29,10 +29,7 @@ if ( function_exists( 'add_theme_support' ) ) {
     
     //Add HTML5 and all the good stuff
     add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'widgets' ) );
-    
-    // Remove "Also On" from the content, added by Syndication Link plugin
-    //remove_filter( 'the_content', array( 'Syn_Config', 'the_content' ) , 30 )
-    
+        
     /*
     * Enable support for Post Formats.
     * 

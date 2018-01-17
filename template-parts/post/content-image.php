@@ -41,12 +41,6 @@
                     'after' => '</div>' 
                 ) ); 
                 ?>
-                
-                <?php
-                if ( function_exists( 'get_syndication_links' ) ){
-                    echo get_syndication_links();
-                }
-                ?>
 
             </div>
 
