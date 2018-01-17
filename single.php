@@ -23,7 +23,6 @@ get_header(); ?>
             while ( have_posts() ) : the_post();
            
                 get_template_part( 'template-parts/post/content', get_post_format() );
-
            
                 // If we want to share article
                 if ( get_theme_mod('indie_studio_social_share', true) ) {

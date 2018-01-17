@@ -41,6 +41,8 @@
                     'after' => '</div>' 
                 ) ); 
                 ?>
+                
+                <?php echo get_syndication_links(); ?>
 
             </div>
 
