@@ -1239,6 +1239,7 @@ ol.commentlist li.parent{border-left:5px solid #ddd}
 #webmention-form label{display:block;margin-bottom:.5em}
 .mention-list li:before{content:" ";width:0}
 .comments_wrapper .reactions,.comments_wrapper .likes{margin:0 0 1.5em 0}
+.syn-text{margin-top:1em}
 @media only screen and (min-width:25.5em){.article-share a{margin:0 .425em}
 }@media only screen and (min-width:25em){.article-share h2{margin:0}
 .article-share .services{float:right}
