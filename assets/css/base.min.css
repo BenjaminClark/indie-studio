@@ -1255,7 +1255,7 @@ ul,ol{list-style-position:outside}
 .grid-container.basic .col-4:nth-child(even){margin-right:0}
 .masonry-column-sizer,.grid-container .col-4{width:calc(50% - 0.5em)}
 .masonry-gutter-sizer{width:1em}
-#colophon .copyright,#colophon .custom{display:inline-block;clear:none}
+#colophon .copyright,#colophon be .custom{display:inline-block;clear:none}
 #colophon .custom{margin-top:1em;margin-left:.125em}
 }@media only screen and (min-width:47.875em){.single .related-posts{margin-top:1em}
 #comments .comments_wrapper{font-size:1rem}
