@@ -29,8 +29,7 @@ if ( function_exists( 'add_theme_support' ) ) {
     
     //Add HTML5 and all the good stuff
     add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'widgets' ) );
-    
-    
+        
     /*
     * Enable support for Post Formats.
     * 

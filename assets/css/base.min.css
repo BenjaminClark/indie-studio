@@ -1078,7 +1078,9 @@ body.navigation-open #site-navigation .push{height:calc(100% + 3.75em);width:100
 .single article footer.entry-meta a{display:inline}
 .single article footer.entry-meta .tag-links a{font-size:.9em;color:#555;text-decoration:none;background-color:#dadada;border-radius:.125em;padding:.25em;margin:0 .125em .125em 0}
 .single article.format-image .entry-media img{margin:0 auto}
+.single .wp-video{margin-bottom:1em}
 .single .related-posts{margin-top:1em}
+.single .related-posts h2{font-size:1.25em}
 .wysiwyg{font-size:1rem}
 .wysiwyg a{display:inline}
 .wysiwyg .alignleft,.wysiwyg img.alignleft,.wysiwyg .alignright,.wysiwyg img.alignright,.wysiwyg .aligncenter,.wysiwyg img.aligncenter{margin-right:auto;margin-left:auto;display:block;clear:both}
@@ -1226,8 +1228,8 @@ ol.commentlist li.parent{border-left:5px solid #ddd}
 #colophon{position:relative;width:100%}
 #colophon p{font-size:.8em}
 #colophon p,#colophon a{color:#c7c7c7;text-decoration:none}
-#colophon .copyright{float:left}
-#colophon .designer{float:right}
+#colophon .copyright,#colophon .custom{float:left;clear:left}
+#colophon .custom{margin-top:0}
 #webmention-source{display:block;width:100%}
 #webmention-submit{padding:.35em .8em;background:#ccc;border:0 none;cursor:pointer;border-radius:.25em;opacity:1}
 #webmention-submit:hover{opacity:.7}
@@ -1237,6 +1239,7 @@ ol.commentlist li.parent{border-left:5px solid #ddd}
 #webmention-form label{display:block;margin-bottom:.5em}
 .mention-list li:before{content:" ";width:0}
 .comments_wrapper .reactions,.comments_wrapper .likes{margin:0 0 1.5em 0}
+.syn-text{margin-top:1em}
 @media only screen and (min-width:25.5em){.article-share a{margin:0 .425em}
 }@media only screen and (min-width:25em){.article-share h2{margin:0}
 .article-share .services{float:right}
@@ -1253,6 +1256,8 @@ ul,ol{list-style-position:outside}
 .grid-container.basic .col-4:nth-child(even){margin-right:0}
 .masonry-column-sizer,.grid-container .col-4{width:calc(50% - 0.5em)}
 .masonry-gutter-sizer{width:1em}
+#colophon .copyright,#colophon be .custom{display:inline-block;clear:none}
+#colophon .custom{margin-top:1em;margin-left:.125em}
 }@media only screen and (min-width:47.875em){.single .related-posts{margin-top:1em}
 #comments .comments_wrapper{font-size:1rem}
 ol.commentlist li.comment .comment-author{width:auto}

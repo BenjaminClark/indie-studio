@@ -47,6 +47,9 @@ function indie_studio_customize_register( $wp_customize ) {
     //Add any general settings
     include ( 'general.php' );
     
+    //Add footer settings
+    include ( 'footer.php' );
+    
     //Add font and theme colour options
     include ( 'fonts_colours.php' );
     

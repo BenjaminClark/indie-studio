@@ -1,6 +1,6 @@
 <?php 
 /** 
- * Template Name: Feed
+ * Template Name: Social
  * 
  * The template for displaying the feed page.
  * 
