@@ -20,7 +20,7 @@ Simples!
 To allow you to pick between a standard blog, or something more focused we have included post formats within the theme.
 
 ### Image
-This returns a slightly different post page, without parralax. This is to make sure the reader can fully appriciate it!
+This returns a slightly different post page, without parralax. This is to make sure the reader can fully appreciate the image!
 
 ### Video
 The video post format uses a different module in the feed list. If the first (or only) video in the post is embedded from Youtube or Vimeo then the video thumbnail is used. If a different embed provider is used you must use a featured image.
