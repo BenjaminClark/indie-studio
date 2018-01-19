@@ -14,11 +14,11 @@ function indie_studio_insert_category() {
 		)
 	);
 	wp_insert_term(
-		'Feed',
+		'Social',
 		'category',
 		array(
-		  'description'	=> 'All posts with this category are displayed on the feed page.',
-		  'slug' 		=> 'feed'
+		  'description'	=> 'All posts with this category are displayed on the social page.',
+		  'slug' 		=> 'social'
 		)
 	);
 }
