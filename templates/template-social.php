@@ -43,7 +43,7 @@ get_header(); ?>
              **/
                                     
             $args = array(
-                'category_name' => 'feed',
+                'category_name' => 'social',
             );
 
             query_posts( $args );
