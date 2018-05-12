@@ -28,6 +28,7 @@ function get_semantic_body_classes( $classes ) {
     //Sort single or not single classes first
     if ( ! is_singular() ) {
         
+        $classes[] = 'hfeed';
 		$classes[] = 'h-feed';
 		$classes[] = 'feed';
         
