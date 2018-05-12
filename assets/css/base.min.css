@@ -1088,7 +1088,7 @@ body.navigation-open #site-navigation .push{height:calc(100% + 3.75em);width:100
 .wysiwyg img{margin-bottom:1.125em}
 .wysiwyg ul,.wysiwyg ol{margin:0 0 .875rem 0}
 .wysiwyg ul li,.wysiwyg ol li{padding-left:2em}
-.wysiwyg ul li:before{position:absolute;line-height:inherit;top:0;left:0;font-size:inherit;font-family:FontAwesome;content:"\f068"}
+.wysiwyg ul li:before{font-size:.5em;position:absolute;line-height:inherit;top:0;left:.5em;font-family:FontAwesome;content:"\f111"}
 .wysiwyg ul.relsyn li{padding-left:.5em}
 .wysiwyg ul.relsyn li:before{content:" "}
 .wysiwyg ol{counter-reset:customCount}
