@@ -267,19 +267,8 @@ function indie_studio_enqueue_admin_js_scripts(){
         '1', 
         true
     );
-    wp_localize_script( 'indie_studio_media_libary_svg', 'theme_script_ajax', $localize_this );
-    
-    wp_enqueue_script(
-        'indie_studio_admin', 
-        $JS_theme_dir . 'admin.js', 
-        false, 
-        '1', 
-        true
-    );
-    wp_localize_script( 'indie_studio_admin', 'theme_script_ajax', $localize_this );
-    
+    wp_localize_script( 'indie_studio_media_libary_svg', 'theme_script_ajax', $localize_this );   
 
-    
 }
 add_action( 'admin_enqueue_scripts', 'indie_studio_enqueue_admin_js_scripts' );
 
