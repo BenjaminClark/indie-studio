@@ -20,7 +20,7 @@ $wp_customize->add_setting('indie_studio_header_search', array(
 
 $wp_customize->add_control('indie_studio_header_search', array(
     'settings' => 'indie_studio_header_search',
-    'label'    => __('Display Header Search'),
+    'label'    => __('Display Header Search', indie_studio_text_domain()),
     'section'  => 'indie_studio_general_section',
     'type'     => 'checkbox',
 ));
@@ -30,13 +30,18 @@ $wp_customize->add_control('indie_studio_header_search', array(
  * Click to load, or scroll to load
  */
 
-$wp_customize->add_setting('indie_studio_infinite_scroll', array(
+$wp_customize->add_setting('indie_studio_loading_type', array(
     'default'	 => true,
 ) );
 
-$wp_customize->add_control('indie_studio_infinite_scroll', array(
-    'settings' => 'indie_studio_infinite_scroll',
-    'label'    => __('Infinite Scroll'),
+$wp_customize->add_control('indie_studio_loading_type', array(
+    'settings' => 'indie_studio_loading_type',
+    'label'    => __('Blog Loading Type', indie_studio_text_domain()),
     'section'  => 'indie_studio_general_section',
-    'type'     => 'checkbox',
+    'type'     => 'select',
+    'choices' => array(
+        'paging'    => __( 'Paging', indie_studio_text_domain() ),
+        'button'    => __( 'Button', indie_studio_text_domain() ),
+        'infinite'  => __( 'Infinite Scroll', indie_studio_text_domain() ),
+    ),
 ));

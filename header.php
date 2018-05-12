@@ -40,7 +40,10 @@
     
 </head>
    
-<body <?php body_class(); ?><?php schema_semantics_tags( 'body' ); ?>>
+<body <?php body_class('no-js'); ?><?php schema_semantics_tags( 'body' ); ?>>
+    
+    <!-- Remove no-js tag immediately -->
+    <script>document.querySelector('body').classList.remove('no-js');</script>
     
     <div id="footer-pusher"><!-- Push footer to bottom -->
     
