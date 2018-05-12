@@ -42,8 +42,6 @@ vendors/composer/
 wpcs/
 composer.lock
 
-gulpfile.js
-
 # Bower #
 ##########
 assets/bower_components/*
