@@ -1263,8 +1263,6 @@ function getNewPostsAjax(data){
 function postsLoadFunction(response){
     
     if( response ){
-                
-        console.log( response );
         
         //Update paged
         if( response.paged ){
@@ -1274,7 +1272,7 @@ function postsLoadFunction(response){
         if ( !response.load_more ){
             loadMore = false;
         }
-
+        
         //Check there is result
         if( response.html.length > 0 ){
             
@@ -1282,35 +1280,43 @@ function postsLoadFunction(response){
             (function delayModuleLoad(i) {
                 setTimeout(function () {
 
-                    //Create a fake div to hold html
-                    var el = document.createElement( 'div' );
-                    el.innerHTML = response.html[i];
+                    if( response.html[i] ){
 
-                    if( masonryLive ){
+                        //Create a fake div to hold html
+                        var fakeEl = document.createElement( 'div' );
+                        fakeEl.innerHTML = response.html[i];
 
-                        //Append posts using Masonry
-                        ajaxPostWrap.appendChild( el );
-                        
-                        imagesLoaded( ajaxPostWrap, function(){
-                            masonry.appended( el );
+                        el = fakeEl.firstChild;
+
+                        if( masonryLive ){
+
+                            //Append posts using Masonry
+                            ajaxPostWrap.appendChild( el );
+
+                            imagesLoaded( ajaxPostWrap, function(){
+                                masonry.appended( el );
+                                buildLoryCarousel( el );
+                            });
+
+                        } else {
+
+                            //Add posts not in Bricklayer
+                            el.style.display = 'none';
+                            ajaxPostWrap.appendChild(el);
+                            fade({el:el,type:'in',duration: 1000});
                             buildLoryCarousel( el );
-                        });
-                            
-                    } else {
 
-                        //Add posts not in Bricklayer
-                        el.style.display = 'none';
-                        ajaxPostWrap.appendChild(el);
-                        fade({el:el,type:'in',duration: 1000});
-                        buildLoryCarousel( el );
+                        } 
 
-                    } 
+                        fakeEl.remove();
 
-
+                    }
+                    
                     if (--i) {          
                         delayModuleLoad(i);       
                     }
                 }, 100);
+                
             })( response.html.length );
             
         } else {
@@ -1322,11 +1328,6 @@ function postsLoadFunction(response){
             //Show the load more button if we have posts to see
             fade({el:loadMorePosts,type:'in',duration: 500});   
             
-        }
-        
-        //Update paged
-        if( response.paged ){
-            paged = response.paged;
         }
         
     } else {
@@ -1414,64 +1415,60 @@ function p_c(message, type){
 p_c('------ Debugging Enabled ------');
 p_c('-- Custom scripts start here --');
 function buildLoryCarousel(el){
-    
-    //Check there is an element to use
-    if ( el ) {
-    
-        var simple_dots       = el.querySelector('.lory-carousel');
 
-        //Do we have a carousel to build?
-        if ( simple_dots ) {
+    var simple_dots       = el.querySelector('.lory-carousel');
 
-            var dot_count         = simple_dots.querySelectorAll('.js_slide').length;
-            var dot_container     = simple_dots.querySelector('.js_dots');
-            var dot_list_item     = document.createElement('li');
-            dot_list_item.className = 'smooth';
+    //Do we have a carousel to build?
+    if ( simple_dots ) {
 
-            function handleDotEvent(e) {
-                if (e.type === 'before.lory.init') {
-                  for (var i = 0, len = dot_count; i < len; i++) {
-                    var clone = dot_list_item.cloneNode();
-                    dot_container.appendChild(clone);
-                  }
-                  dot_container.childNodes[0].classList.add('active');
-                }
-                if (e.type === 'after.lory.init') {
-                  for (var i = 0, len = dot_count; i < len; i++) {
-                    dot_container.childNodes[i].addEventListener('click', function(e) {
-                      dot_navigation_slider.slideTo(Array.prototype.indexOf.call(dot_container.childNodes, e.target));
-                    });
-                  }
-                }
-                if (e.type === 'after.lory.slide') {
-                  for (var i = 0, len = dot_container.childNodes.length; i < len; i++) {
-                    dot_container.childNodes[i].classList.remove('active');
-                  }
-                  dot_container.childNodes[e.detail.currentSlide - 1].classList.add('active');
-                }
-                if (e.type === 'on.lory.resize') {
-                    for (var i = 0, len = dot_container.childNodes.length; i < len; i++) {
-                        dot_container.childNodes[i].classList.remove('active');
-                    }
-                    dot_container.childNodes[0].classList.add('active');
-                }
+        var dot_count         = simple_dots.querySelectorAll('.js_slide').length;
+        var dot_container     = simple_dots.querySelector('.js_dots');
+        var dot_list_item     = document.createElement('li');
+        dot_list_item.className = 'smooth';
+
+        function handleDotEvent(e) {
+            if (e.type === 'before.lory.init') {
+              for (var i = 0, len = dot_count; i < len; i++) {
+                var clone = dot_list_item.cloneNode();
+                dot_container.appendChild(clone);
+              }
+              dot_container.childNodes[0].classList.add('active');
             }
-            simple_dots.addEventListener('before.lory.init', handleDotEvent);
-            simple_dots.addEventListener('after.lory.init', handleDotEvent);
-            simple_dots.addEventListener('after.lory.slide', handleDotEvent);
-            simple_dots.addEventListener('on.lory.resize', handleDotEvent);
-
-            var dot_navigation_slider = lory(simple_dots, {
-                infinite: 1,
-                enableMouseEvents: true
-            });
-
-            //Once a slide is added, reset to clean up image displacement
-            setTimeout(function() { 
-                dot_navigation_slider.reset();
-            }, 1);
-  
+            if (e.type === 'after.lory.init') {
+              for (var i = 0, len = dot_count; i < len; i++) {
+                dot_container.childNodes[i].addEventListener('click', function(e) {
+                  dot_navigation_slider.slideTo(Array.prototype.indexOf.call(dot_container.childNodes, e.target));
+                });
+              }
+            }
+            if (e.type === 'after.lory.slide') {
+              for (var i = 0, len = dot_container.childNodes.length; i < len; i++) {
+                dot_container.childNodes[i].classList.remove('active');
+              }
+              dot_container.childNodes[e.detail.currentSlide - 1].classList.add('active');
+            }
+            if (e.type === 'on.lory.resize') {
+                for (var i = 0, len = dot_container.childNodes.length; i < len; i++) {
+                    dot_container.childNodes[i].classList.remove('active');
+                }
+                dot_container.childNodes[0].classList.add('active');
+            }
         }
+        simple_dots.addEventListener('before.lory.init', handleDotEvent);
+        simple_dots.addEventListener('after.lory.init', handleDotEvent);
+        simple_dots.addEventListener('after.lory.slide', handleDotEvent);
+        simple_dots.addEventListener('on.lory.resize', handleDotEvent);
+
+        var dot_navigation_slider = lory(simple_dots, {
+            infinite: 1,
+            enableMouseEvents: true
+        });
+
+        //Once a slide is added, reset to clean up image displacement
+        setTimeout(function() { 
+            dot_navigation_slider.reset();
+        }, 1);
+
     }
 }
 

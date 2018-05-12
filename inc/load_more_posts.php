@@ -49,43 +49,35 @@ function indie_studio_load_more_button( $button_text = '' ){
         if ( get_theme_mod('indie_studio_loading_type') ) {
             $load_type = get_theme_mod('indie_studio_loading_type');
         }
-        
-        // If we are using paging, don't load button
-        if ( $load_type === 'paging' ){
-            
+
         ?>
 
-            <div class="pagination">
-               
-                <?php 
-                echo paginate_links( array(
-                    'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
-                    'total'        => $cards->max_num_pages,
-                    'current'      => max( 1, get_query_var( 'paged' ) ),
-                    'format'       => '?paged=%#%',
-                    'show_all'     => false,
-                    'type'         => 'plain',
-                    'end_size'     => 2,
-                    'mid_size'     => 1,
-                    'prev_next'    => true,
-                    'prev_text'    => '<i><i class="fa fa-chevron-left" aria-hidden="true"></i></i>',
-                    'next_text'    => '<i><i class="fa fa-chevron-right" aria-hidden="true"></i></i>',
-                    'add_args'     => false,
-                    'add_fragment' => '',
-                ) );
-                ?>
-                
-            </div>
-        
-        <?php 
-        } else {
-        ?>
+        <div class="pagination">
 
-            <div id="load-more-posts-error" class="load-more-posts-error error smooth"><p><?php echo esc_html__( 'Something has gone wrong. Please try again.', indie_studio_text_domain() );?></p></div>
-            <button id="load-more-posts" class="load-more-posts-button" data-paged="<?php echo esc_attr__( $paged, indie_studio_text_domain() );?>" data-query='<?php echo json_encode ( $wp_query->query ) ;?>' data-custom-template="<?php echo $template;?>" data-loadtype="<?php echo $load_type;?>" style="display: none; opacity:0;"><?php echo esc_html__( $button_text, indie_studio_text_domain() );?></button>
+            <?php 
+            echo paginate_links( array(
+                'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+                'total'        => $wp_query->max_num_pages,
+                'current'      => max( 1, get_query_var( 'paged' ) ),
+                'format'       => '?paged=%#%',
+                'show_all'     => false,
+                'type'         => 'plain',
+                'end_size'     => 2,
+                'mid_size'     => 1,
+                'prev_next'    => true,
+                'prev_text'    => '<i><i class="fa fa-chevron-left" aria-hidden="true"></i></i>',
+                'next_text'    => '<i><i class="fa fa-chevron-right" aria-hidden="true"></i></i>',
+                'add_args'     => false,
+                'add_fragment' => '',
+            ) );
+            ?>
+
+        </div>
+
+        <div id="load-more-posts-error" class="load-more-posts-error error smooth"><p><?php echo esc_html__( 'Something has gone wrong. Please try again.', indie_studio_text_domain() );?></p></div>
+        <button id="load-more-posts" class="load-more-posts-button" data-paged="<?php echo esc_attr__( $paged, indie_studio_text_domain() );?>" data-query='<?php echo json_encode ( $wp_query->query ) ;?>' data-custom-template="<?php echo $template;?>" data-loadtype="<?php echo $load_type;?>" style="display: none; opacity:0;"><?php echo esc_html__( $button_text, indie_studio_text_domain() );?></button>
             
     <?php
-        }
     }
 }
 
