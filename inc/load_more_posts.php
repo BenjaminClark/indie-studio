@@ -95,12 +95,14 @@ function indie_studio_load_more_posts() {
         //This is needed to force "drafts" not to show when logged in
         $args['post_status'] = 'publish';
         
+        $args['posts_per_page'] = get_option( 'posts_per_page' );
+        
         $query = new WP_Query( $args );        
                 
         $posts = $query->get_posts();
         
         //Are there more posts to load?
-        $total_posts_per_page =  get_option( 'posts_per_page' );
+        $total_posts_per_page = $args['posts_per_page'];
         $num_of_posts = $query->found_posts;
         $num_of_pages = round( $num_of_posts / $total_posts_per_page );
 
