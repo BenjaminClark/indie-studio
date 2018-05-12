@@ -13,7 +13,7 @@ get_header(); ?>
 
         <div class="page-inner-wrap">
 
-            <article id="post-0" class="post error404 not-found">
+            <article class="post error404 not-found">
                 <header class="entry-header">
                     <h1 class="entry-title p-entry-title"><?php _e( 'It looks like we got you lost. Sorry!', indie_studio_text_domain() ); ?></h1>
                 </header>

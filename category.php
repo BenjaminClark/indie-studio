@@ -12,7 +12,15 @@ get_header(); ?>
     <main id="content" role="main">
         <div class="page-inner-wrap">
 
-            <?php get_template_part( 'loop' );?>       
+            <?php if ( have_posts() ) { ?>
+           
+                <?php get_template_part( 'loop' );?>
+            
+            <?php } else { ?>
+
+                <?php get_template_part( 'no-posts' );?>
+
+            <?php } ?>      
             
         </div>
     </main><!-- #main -->

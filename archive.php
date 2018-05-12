@@ -30,7 +30,11 @@ get_header(); ?>
 
                 <?php get_template_part( 'loop' );?>
                 
-            <?php } ?>
+            <?php } else { ?>
+            
+                <?php get_template_part( 'no-posts' );?>
+                
+            ?>
 
         </div>
     </main><!-- #main -->
