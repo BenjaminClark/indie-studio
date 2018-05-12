@@ -11,7 +11,8 @@ if ( ajaxPostWrap && loadMorePosts ){
         paged           = loadMorePosts.getAttribute('data-paged'),
         template        = loadMorePosts.getAttribute('data-custom-template'),
         loadType        = loadMorePosts.getAttribute('data-loadtype'),
-        loading         = false;
+        loading         = false,
+        loadMore        = true;
     
     //Hide standard buttons
     if( basicNavAbove ){
@@ -42,7 +43,7 @@ if ( ajaxPostWrap && loadMorePosts ){
     //Run on scroll to bottom of page
     if( loadType == 'infinite' ){
         window.onscroll = function(ev) {
-            if ( almostAtBottom() && !loading ) {
+            if ( almostAtBottom() && !loading && loadMore ) {
                 getNewPostsAjax(data);
             }
         };
@@ -83,6 +84,17 @@ function postsLoadFunction(response){
     
     if( response ){
                 
+        console.log( response );
+        
+        //Update paged
+        if( response.paged ){
+            paged = response.paged;
+        }        
+        
+        if ( !response.load_more ){
+            loadMore = false;
+        }
+
         //Check there is result
         if( response.html.length > 0 ){
             
