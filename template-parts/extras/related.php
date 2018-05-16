@@ -1,33 +1,43 @@
-<div class="related-posts">
+<?php
 
-    <div class="page-inner-wrap group">
-   
-        <h2><?php _e( 'Related Articles', indie_studio_text_domain() ); ?></h2>
+$args = array(
+    'post_type'     => get_post_type($post->ID),
+    'orderby'       => 'ASC',
+    'post__in'      => get_related_posts(),
+);
 
-        <div class="grid-container basic">
+$related_loop = new WP_Query( $args );
 
-            <?php
+// If we have related posts to show
+if ( $related_loop->found_posts > 0 ){
+    
+?>
 
-            $args = array(
-                'post_type'     => get_post_type($post->ID),
-                'orderby'       => 'ASC',
-                'post__in'      => get_related_posts(),
-            );
+    <div class="related-posts">
 
-            $related_loop = new WP_Query( $args );
+        <div class="page-inner-wrap group">
 
-            while ($related_loop->have_posts()) : $related_loop->the_post(); 
+            <h2><?php _e( 'Related Articles', indie_studio_text_domain() ); ?></h2>
 
-                get_template_part( 'template-parts/post/module', 'child' );
+            <div class="grid-container basic">
 
-            endwhile;
+                <?php
 
-            wp_reset_postdata();
+                while ($related_loop->have_posts()) : $related_loop->the_post(); 
 
-            ?>
-            
+                    get_template_part( 'template-parts/post/module', 'child' );
+
+                endwhile;
+
+                wp_reset_postdata();
+
+                ?>
+
+            </div>
+
         </div>
 
     </div>
-
-</div>
+    
+<?php
+}
