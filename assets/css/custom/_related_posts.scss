@@ -1,0 +1,15 @@
+.related-posts {
+    margin-top: 1em;
+
+    h2 {
+        font-size: 1.25em;
+    }
+}
+
+@media only screen and (min-width: 100em) {
+    
+    .related-posts {
+        margin-top: 1.5em;
+    }
+        
+}
