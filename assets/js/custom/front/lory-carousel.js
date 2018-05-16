@@ -7,13 +7,21 @@ function buildLoryCarousel(el){
 
         //Do we have a carousel to build?
         if ( simple_dots ) {
-
+            
+            // Stop click if target is lory carousel
+            el.addEventListener('click', function(e){
+                if ( e.target.nodeName == 'LI' ){
+                    event.preventDefault();
+                }
+            });
+            
             var dot_count         = simple_dots.querySelectorAll('.js_slide').length;
             var dot_container     = simple_dots.querySelector('.js_dots');
             var dot_list_item     = document.createElement('li');
             dot_list_item.className = 'smooth';
 
             function handleDotEvent(e) {
+                
                 if (e.type === 'before.lory.init') {
                   for (var i = 0, len = dot_count; i < len; i++) {
                     var clone = dot_list_item.cloneNode();
