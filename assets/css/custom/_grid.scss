@@ -12,11 +12,13 @@
 }
 
 .masonry-column-sizer,
-.grid-container .col-1,
-.grid-container .col-2,
-.grid-container .col-3,
-.grid-container .col-4 {
-    width: 100%;
+.grid-container {
+    .col-1,
+    .col-2,
+    .col-3,
+    .col-4 {
+        width: 100%;
+    }
 }
 
 .grid-container .col-4 {

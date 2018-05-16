@@ -4,7 +4,7 @@
 
 html, 
 body {
-    height: 100%;    
+    height: 100%; 
 }
 
 .search-active,
@@ -17,10 +17,7 @@ body {
 #footer-pusher {
     position: relative;
     min-height: 100%;
-}
-
-#page-wrapper {
-
+    height: 100%;
 }
 
 .thin-inner,

@@ -108,28 +108,9 @@
     .wp-video {
         margin-bottom: 1em;
     }
-    
-    .related-posts {
-        margin-top: 1em;
         
-        h2 {
-            font-size: 1.25em;
-        }
-    }
-    
 }
 
-@media only screen and (min-width: 47.875em) {  /** 766px **/
-    
-    .single {
-
-        .related-posts {
-            margin-top: 1em;
-        }
-        
-    }
-    
-}
     
 @media only screen and (min-width: 64em) {
 
@@ -158,19 +139,6 @@
 }
 
 
-@media only screen and (min-width: 65em) {
-    
-    .single {
-
-        .related-posts {
-            margin-top: 1em;
-        }
-        
-    }
-    
-}
-
-
 @media only screen and (min-width: 75em) {
 
     .single {
@@ -191,16 +159,4 @@
 
     }
 
-}
-
-@media only screen and (min-width: 100em) {
-    
-    .single {
-
-        .related-posts {
-            margin-top: 1.5em;
-        }
-        
-    }
-    
 }

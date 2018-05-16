@@ -14,20 +14,26 @@ get_header(); ?>
         <div class="page-inner-wrap">
 
             <article id="post-0" class="post error404 not-found">
-                <header class="entry-header">
-                    <h1 class="entry-title p-entry-title"><?php _e( 'It looks like we got you lost. Sorry!', indie_studio_text_domain() ); ?></h1>
-                </header>
+               
+                <div class="thin-inner">
+               
+                    <header class="entry-header">
+                        <h1 class="entry-title p-entry-title"><?php _e( 'It looks like we got you lost. Sorry!', indie_studio_text_domain() ); ?></h1>
+                    </header>
 
-                <div class="entry-content e-entry-content">
+                    <div class="entry-content e-entry-content">
 
-                    <p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help. If not, try the menu above.', indie_studio_text_domain() ); ?></p>
+                        <p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help. If not, try the menu above.', indie_studio_text_domain() ); ?></p>
 
-                    <?php main_search_form(); ?>
+                        <?php main_search_form(); ?>
 
-                    <?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
-
+                    </div>
+                
                 </div>
+                
             </article>
+            
+            <?php the_widget( 'Indie_Studio_Widget_Recent_Posts' ); ?>
 
         </div>
 

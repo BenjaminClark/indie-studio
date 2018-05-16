@@ -59,4 +59,7 @@ include ( 'inc/version.php' );
 include ( 'inc/load_more_posts.php' );
 
 //Alter admin/dashboard based layout
-include ( 'inc/admin.php' );                        
+include ( 'inc/admin.php' );  
+
+// Include all custom widgets
+include ( 'inc/widgets/recent_posts.php' );  

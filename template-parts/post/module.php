@@ -31,16 +31,22 @@ if ( $module_class ) {
     
         }       
         
-        if( get_the_excerpt() ){ ?>
+        if( get_the_excerpt() ){ 
+        
+            $post_title = get_the_title();
+            $title      = ( ! empty( $post_title ) ) ? $post_title : __( '(no title)' );
+            
+        ?>
         
             <div class="entry-text sneak-in">
-                <h2 class="entry-title p-name" itemprop="name headline"><?php the_title(); ?></h2>
+                <h2 class="entry-title p-name" itemprop="name headline"><?php echo $title; ?></h2>
                 
                 <?php indie_studio_posted_on(); ?>
                 
                 <?php if( get_the_excerpt() ){ ?>
                     <p><?php echo get_the_excerpt(); ?></p>
                 <?php } ?>
+                
             </div>
 	
         <?php
