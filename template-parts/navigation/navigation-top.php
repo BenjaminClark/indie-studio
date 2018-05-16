@@ -9,7 +9,7 @@
 ?>
 
 <div class="logo">
-    <a class="smooth" href="<?php echo site_url();?>">
+    <a href="<?php echo site_url();?>">
 
         <?php
         
