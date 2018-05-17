@@ -102,7 +102,7 @@
         margin-right: 1em;
     }    
     
-    .grid-container.basic .col-4:nth-child(3n+3) {
+    .grid-container.basic .col-4:nth-child(3n+1) {
         margin-right: 0;
     }
     
@@ -132,11 +132,11 @@
         width: calc( 25% - (3em / 4) );
     }
     
-    .grid-container.basic .col-4:nth-child(3n+3) {
+    .grid-container.basic .col-4:nth-child(3n+1) {
         margin-right: 1em;
     }
     
-    .grid-container.basic .col-4:nth-child(4n+4) {
+    .grid-container.basic .col-4:nth-child(4n+2) {
         margin-right: 0;
     }
     
@@ -164,11 +164,11 @@
     
     .grid-container.basic .col-4:nth-child(odd),
     .grid-container.basic .col-4:nth-child(even),
-    .grid-container.basic .col-4:nth-child(3n+3) {
+    .grid-container.basic .col-4:nth-child(3n+1) {
         margin-right: 1.5em;
     }
     
-    .grid-container.basic .col-4:nth-child(4n+4) {
+    .grid-container.basic .col-4:nth-child(4n+2) {
         margin-right: 0;
     }
     
