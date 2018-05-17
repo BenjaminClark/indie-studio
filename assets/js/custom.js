@@ -249,12 +249,12 @@ function ajaxLoadingAnimation(location, type){
 
             if(type == 'prepend'){
                 location.insertBefore(div, location.firstChild);
-                fade({el:div,type:'in',duration: 500});
+                fade({el:div,type:'in',duration: 100});
             } 
 
             if(type == 'append'){
                 insertAfter(div, location);
-                fade({el:div,type:'in',duration: 500});
+                fade({el:div,type:'in',duration: 100});
             } 
         }
         
