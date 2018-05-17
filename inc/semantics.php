@@ -283,19 +283,21 @@ if ( ! function_exists( 'indie_studio_posted_details' ) ) {
 if ( ! function_exists( 'indie_studio_content_nav' ) ) {
     
 	/**
-	 * Display navigation to next/previous pages when applicable
+	 * Display navigation when applicable
 	 *
-	 * @since IndieStudio 1.0.0
+	 * @since IndieStudio 0.0.54
 	 */
     
-	function indie_studio_content_nav( $nav_id, $load_more = null ) {
+	function indie_studio_content_nav( $nav_id, $button_text = null ) {
+        
 		global $wp_query;
 
         if ( $wp_query->max_num_pages > 1 ){
         
 		?>
             <nav id="<?php echo esc_attr( $nav_id ); ?>">
-                <h1 class="assistive-text section-heading"><?php _e( 'Post navigation', indie_studio_text_domain() ); ?></h1>
+               
+                <h1 class="assistive-text section-heading screen-reader-text"><?php _e( 'Post navigation', indie_studio_text_domain() ); ?></h1>
 
                 <?php if ( is_single() ) { // navigation links for single posts
 
@@ -306,18 +308,89 @@ if ( ! function_exists( 'indie_studio_content_nav' ) ) {
                     ) );
 
                 } elseif ( ( is_home() || is_archive() || is_search() ) ) { // navigation links for home, archive, and search pages
+            
+                    ?>
 
-                    if ( get_previous_posts_link() ) { ?>
+                    <div id="load-more-wrap">
+                        
+                        <?php
 
-                        <div class="nav-previous"><?php previous_posts_link( __( '<span class="meta-nav"><i class="fa fa-angle-left" aria-hidden="true"></i></span> Older posts', indie_studio_text_domain() ) ); ?></div>
+                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
-                    <?php } ?>
+                        /**
+                         * Decide is a custom template is required for AJAX
+                         */ 
 
-                    <?php if ( get_next_posts_link() ) { ?>
+                        $template = '';
 
-                        <div class="nav-next"><?php next_posts_link( __( 'Newer posts <span class="meta-nav"><i class="fa fa-angle-right" aria-hidden="true"></i></span>', indie_studio_text_domain() ) ); ?></div>
+                        /**
+                         * Use this to set a custom template if it does not
+                         * use the standard module style.
+                         * 
+                         * The Template part should be added as a content part.
+                         * 
+                         * i.e. If template-part is content-search, you set
+                         * the template var below as "search".
+                         * 
+                         * Go on, I dare you to be fancy!
+                         * 
 
-                    <?php } ?>
+                        if(  ){
+                            $template = '';
+                        } 
+
+                        **/
+
+                        /**
+                         * Set loading option
+                         */
+
+                        $load_type = 'paging';
+                        if ( get_theme_mod('indie_studio_loading_type') ) {
+                            $load_type = get_theme_mod('indie_studio_loading_type');
+                        }
+
+                        $paging_class = '';
+                        if( $load_type == 'paging' ){
+                            $paging_class = ' active';
+                        }
+            
+                        if( !$button_text ){
+                            $button_text = __( 'Load More', indie_studio_text_domain() );
+                        }
+
+                        ?>
+
+                        <div class="pagination<?php echo $paging_class;?>">
+
+                            <?php 
+                            echo paginate_links( array(
+                                'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+                                'total'        => $wp_query->max_num_pages,
+                                'current'      => max( 1, get_query_var( 'paged' ) ),
+                                'format'       => '?paged=%#%',
+                                'show_all'     => false,
+                                'type'         => 'plain',
+                                'end_size'     => 2,
+                                'mid_size'     => 1,
+                                'prev_next'    => true,
+                                'prev_text'    => '<i><i class="fa fa-chevron-left" aria-hidden="true"></i></i>',
+                                'next_text'    => '<i><i class="fa fa-chevron-right" aria-hidden="true"></i></i>',
+                                'add_args'     => false,
+                                'add_fragment' => '',
+                            ) );
+                            ?>
+
+                        </div>
+
+                        <?php if ( $load_type != 'paging' ) { ?>
+
+                            <div id="load-more-posts-error" class="load-more-posts-error error smooth"><p><?php echo esc_html__( 'Something has gone wrong. Please try again.', indie_studio_text_domain() );?></p></div>
+                            <button id="load-more-posts" class="load-more-posts-button" data-paged="<?php echo esc_attr__( $paged, indie_studio_text_domain() );?>" data-query='<?php echo json_encode ( $wp_query->query ) ;?>' data-custom-template="<?php echo $template;?>" data-loadtype="<?php echo $load_type;?>" style="display: none;"><?php echo $button_text;?></button>
+
+                        <?php } ?>
+
+                    </div>
 
                 <?php } ?>
 
@@ -325,25 +398,7 @@ if ( ! function_exists( 'indie_studio_content_nav' ) ) {
 		
 		<?php
             
-        }
-            
-	    /** 
-         * If the load more button is required
-         * 
-         * Only include the button holder, the button will be added with
-         * JS and the above navigation removed. This allows elegant fallback
-         * if a user does not have javascript enabled
-         **/
-        
-        if ( $load_more && $wp_query->max_num_pages > 1 && get_next_posts_link() ) { ?>
-            
-            <div id="load-more-wrap">
-               
-                <?php indie_studio_load_more_button( $button_text = 'Load More' );?>
-                
-            </div>
-            
-        <?php }
+        }        
         
     } // indie_studio_content_nav
     
