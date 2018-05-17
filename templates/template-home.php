@@ -59,8 +59,10 @@ get_header(); ?>
             if ( have_posts()  ) { 
                 ?>
                
-                <div id="ajax-post-wrap" class="grid-container<?php echo $pad_ajax;?> basic">
-                                                          
+                <div class="grid-container<?php echo $pad_ajax;?> basic">
+                             
+                    <div></div><div></div>
+                                                                                          
                     <!-- modules -->
                     <?php
                     while ( have_posts() ) : the_post();
