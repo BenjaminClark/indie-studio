@@ -31,7 +31,7 @@ $wp_customize->add_control('indie_studio_header_search', array(
  */
 
 $wp_customize->add_setting('indie_studio_loading_type', array(
-    'default'	 => true,
+    'default'	 => 'paging',
 ) );
 
 $wp_customize->add_control('indie_studio_loading_type', array(
