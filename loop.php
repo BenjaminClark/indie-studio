@@ -22,6 +22,6 @@ if ( have_posts() ) { ?>
 
     <?php
 
-    indie_studio_content_nav( 'nav-below', 'load-more' );
+    indie_studio_content_nav( 'nav-below', __( 'Load More', indie_studio_text_domain() ) );
 
 }
