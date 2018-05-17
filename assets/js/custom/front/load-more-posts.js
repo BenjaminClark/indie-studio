@@ -4,9 +4,7 @@ var ajaxPostWrap       = document.getElementById("ajax-post-wrap"),
     
 if ( ajaxPostWrap && loadMorePosts ){
     
-    var basicNavAbove   = document.getElementById("nav-above"), 
-        basicNavBelow   = document.getElementById("nav-below"), 
-        buttonWrap      = document.getElementById("load-more-wrap"),
+    var buttonWrap      = document.getElementById("load-more-wrap"),
         query           = loadMorePosts.getAttribute('data-query'),
         paged           = loadMorePosts.getAttribute('data-paged'),
         template        = loadMorePosts.getAttribute('data-custom-template'),
@@ -14,17 +12,10 @@ if ( ajaxPostWrap && loadMorePosts ){
         loading         = false,
         loadMore        = true;
     
-    //Hide standard buttons
-    if( basicNavAbove ){
-        fade({el:basicNavAbove,type:'out',duration: 10});
-    }
-    if( basicNavBelow ){
-        fade({el:basicNavBelow,type:'out',duration: 10});
-    }
     
     //Show Load More button
     if( loadType === 'button' ){
-        fade({el:loadMorePosts,type:'in',duration: 10});
+        (function($){ $( loadMorePosts ).fadeIn( 10 ); })(jQuery);
     }
     
     
@@ -68,9 +59,9 @@ function getNewPostsAjax(data){
 
     if ( loadType === 'button' ){
         //Fade out load more button  -  Then add loading spinner
-        fade({el:loadMorePosts,type:'out',duration: 10,},function(){
+        (function($){ $( loadMorePosts ).fadeOut( 100, function(){
             ajaxLoadingAnimation( document.getElementById("load-more-wrap"), 'prepend' );
-        });
+        } ); })(jQuery);
     } else {
         ajaxLoadingAnimation( document.getElementById("load-more-wrap"), 'prepend' );
     }
@@ -81,7 +72,7 @@ function getNewPostsAjax(data){
 
 
 function postsLoadFunction(response){
-    
+        
     if( response ){
         
         //Update paged
@@ -123,7 +114,7 @@ function postsLoadFunction(response){
                             //Add posts not in Bricklayer
                             el.style.display = 'none';
                             ajaxPostWrap.appendChild(el);
-                            fade({el:el,type:'in',duration: 1000});
+                            (function($){ $( el ).fadeIn( 1000 ); })(jQuery);
                             buildLoryCarousel( el );
 
                         } 
@@ -132,8 +123,24 @@ function postsLoadFunction(response){
 
                     }
                     
-                    if (--i) {          
-                        delayModuleLoad(i);       
+                    if (--i) {    
+                        
+                        // Load function again to show next post
+                        delayModuleLoad(i);    
+                        
+                    } else {
+                        
+                        // We have shown all, show the button
+                        if( response.load_more && loadType === 'button' ){
+
+                            masonry.on( 'layoutComplete', function(){
+
+                                (function($){ $( loadMorePosts ).delay( 1000 ).fadeIn( 1000 ); })(jQuery);
+
+                           } );
+
+                        }  
+
                     }
                 }, 100);
                 
@@ -142,14 +149,7 @@ function postsLoadFunction(response){
         } else {
             load_more_error('in');
         }
-        
-        if( response.load_more && loadType === 'button' ){
-                        
-            //Show the load more button if we have posts to see
-            fade({el:loadMorePosts,type:'in',duration: 500});   
-            
-        }
-        
+                
     } else {
         load_more_error('in');
     }
