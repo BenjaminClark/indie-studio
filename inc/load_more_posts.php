@@ -45,15 +45,38 @@ function indie_studio_load_more_button( $button_text = '' ){
          * Set loading option
          */
         
-        $load_type = 'button';
-        if( get_theme_mod('indie_studio_infinite_scroll') ){
-            $load_type = 'infinite';
+        $load_type = 'paging';
+        if ( get_theme_mod('indie_studio_loading_type') ) {
+            $load_type = get_theme_mod('indie_studio_loading_type');
         }
-        
-        
+
         ?>
+
+        <div class="pagination">
+
+            <?php 
+            echo paginate_links( array(
+                'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+                'total'        => $wp_query->max_num_pages,
+                'current'      => max( 1, get_query_var( 'paged' ) ),
+                'format'       => '?paged=%#%',
+                'show_all'     => false,
+                'type'         => 'plain',
+                'end_size'     => 2,
+                'mid_size'     => 1,
+                'prev_next'    => true,
+                'prev_text'    => '<i><i class="fa fa-chevron-left" aria-hidden="true"></i></i>',
+                'next_text'    => '<i><i class="fa fa-chevron-right" aria-hidden="true"></i></i>',
+                'add_args'     => false,
+                'add_fragment' => '',
+            ) );
+            ?>
+
+        </div>
+
         <div id="load-more-posts-error" class="load-more-posts-error error smooth"><p><?php echo esc_html__( 'Something has gone wrong. Please try again.', indie_studio_text_domain() );?></p></div>
         <button id="load-more-posts" class="load-more-posts-button" data-paged="<?php echo esc_attr__( $paged, indie_studio_text_domain() );?>" data-query='<?php echo json_encode ( $wp_query->query ) ;?>' data-custom-template="<?php echo $template;?>" data-loadtype="<?php echo $load_type;?>" style="display: none; opacity:0;"><?php echo esc_html__( $button_text, indie_studio_text_domain() );?></button>
+            
     <?php
     }
 }
@@ -95,12 +118,14 @@ function indie_studio_load_more_posts() {
         //This is needed to force "drafts" not to show when logged in
         $args['post_status'] = 'publish';
         
+        $args['posts_per_page'] = get_option( 'posts_per_page' );
+        
         $query = new WP_Query( $args );        
                 
         $posts = $query->get_posts();
         
         //Are there more posts to load?
-        $total_posts_per_page =  get_option( 'posts_per_page' );
+        $total_posts_per_page = $args['posts_per_page'];
         $num_of_posts = $query->found_posts;
         $num_of_pages = round( $num_of_posts / $total_posts_per_page );
 

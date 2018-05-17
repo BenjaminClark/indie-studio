@@ -54,5 +54,5 @@ if ( function_exists( 'add_theme_support' ) ) {
     add_theme_support( 'microformats2' );
     add_theme_support( 'microformats' );
     add_theme_support( 'microdata' );
-    
+
 }

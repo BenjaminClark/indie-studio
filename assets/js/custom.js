@@ -680,6 +680,8 @@ function postsLoadFunction(response){
             (function delayModuleLoad(i) {
                 setTimeout(function () {
 
+
+                    
                     //Create a fake div to hold html
                     var el = document.createElement( 'div' );
                     el.innerHTML = response.html[i];
@@ -702,6 +704,8 @@ function postsLoadFunction(response){
                     } 
 
 
+                    }
+                        
                     if (--i) {          
                         delayModuleLoad(i);       
                     }
@@ -808,11 +812,12 @@ function p_c(message, type){
 
 p_c('------ Debugging Enabled ------');
 p_c('-- Custom scripts start here --');
+
 function buildLoryCarousel(el){
     
     //Check there is an element to use
     if ( el ) {
-    
+        
         var simple_dots       = el.querySelector('.lory-carousel');
 
         //Do we have a carousel to build?

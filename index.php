@@ -17,38 +17,19 @@ get_header(); ?>
 
 <section id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-
         <div class="page-inner-wrap">
-
+           
             <?php if ( have_posts() ) { ?>
+           
+                <?php get_template_part( 'loop' );?>
+            
+            <?php } else { ?>
 
-                <div id="ajax-post-wrap" class="grid-container masonry basic">
-                    <div class="masonry-column-sizer"></div>
-                    <div class="masonry-gutter-sizer"></div>
-                    
-                    <?php 
-                    while ( have_posts() ) : the_post();
+                <?php get_template_part( 'no-posts' );?>
 
-                        get_template_part( 'template-parts/post/module', get_post_format() );
-
-                    endwhile; // end of the loop. 
-                    ?>
-
-                </div>
-
-                <?php
-
-                indie_studio_content_nav( 'nav-below', 'load-more' );
-
-            } else {
-
-                get_template_part( 'template-parts/post/content', get_post_format() );
-
-            }
-            ?>
+            <?php } ?>
 
         </div>
-
     </main><!-- #content -->
 </section><!-- #primary -->
 

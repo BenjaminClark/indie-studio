@@ -12,11 +12,13 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('single'); ?><?php schema_semantics_tags( 'post' );?> itemref="site-publisher">
 
-    <div class="entry-media">
+    <figure class="entry-media">
     
         <?php indie_studio_the_post_thumbnail(); ?>
         
-    </div>
+        <figcaption><?php echo get_post( get_post_thumbnail_id() )->post_excerpt; ?></figcaption>
+        
+    </figure>
     
     <div class="thin-inner">
 
@@ -28,29 +30,27 @@
                 <?php the_excerpt(); ?>
             </div>
 
-        <?php } ?>
+        <?php } else { ?>
 
-        <div class="entry-content e-content" itemprop="description articleBody">
+            <div class="entry-content e-content" itemprop="description articleBody">
 
-           <div class="wysiwyg group">
+               <div class="wysiwyg group">
 
-                <?php 
-                the_content( __( 'Continue reading', indie_studio_text_domain() ) );
-                wp_link_pages( array( 
-                    'before' => '<div class="page-link">' . __( 'Pages:', indie_studio_text_domain() ), 
-                    'after' => '</div>' 
-                ) ); 
-                ?>
+                    <?php 
+                    the_content( __( 'Continue reading', indie_studio_text_domain() ) );
+                    wp_link_pages( array( 
+                        'before' => '<div class="page-link">' . __( 'Pages:', indie_studio_text_domain() ), 
+                        'after' => '</div>' 
+                    ) ); 
+                    ?>
+
+                </div>
 
             </div>
-
-        </div>
-
-        <?php
-        if ( is_single() ) {            
-            get_template_part( 'template-parts/entry/entry', 'footer' );
-        }
-        ?>
+            
+        <?php } ?>
+        
+        <?php get_template_part( 'template-parts/entry/entry', 'footer' );?>
 	
 	</div>
 	

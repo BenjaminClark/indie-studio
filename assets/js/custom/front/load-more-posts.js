@@ -11,7 +11,8 @@ if ( ajaxPostWrap && loadMorePosts ){
         paged           = loadMorePosts.getAttribute('data-paged'),
         template        = loadMorePosts.getAttribute('data-custom-template'),
         loadType        = loadMorePosts.getAttribute('data-loadtype'),
-        loading         = false;
+        loading         = false,
+        loadMore        = true;
     
     //Hide standard buttons
     if( basicNavAbove ){
@@ -42,7 +43,7 @@ if ( ajaxPostWrap && loadMorePosts ){
     //Run on scroll to bottom of page
     if( loadType == 'infinite' ){
         window.onscroll = function(ev) {
-            if ( almostAtBottom() && !loading ) {
+            if ( almostAtBottom() && !loading && loadMore ) {
                 getNewPostsAjax(data);
             }
         };
@@ -82,7 +83,16 @@ function getNewPostsAjax(data){
 function postsLoadFunction(response){
     
     if( response ){
-                
+        
+        //Update paged
+        if( response.paged ){
+            paged = response.paged;
+        }        
+        
+        if ( !response.load_more ){
+            loadMore = false;
+        }
+        
         //Check there is result
         if( response.html.length > 0 ){
             
@@ -90,35 +100,43 @@ function postsLoadFunction(response){
             (function delayModuleLoad(i) {
                 setTimeout(function () {
 
-                    //Create a fake div to hold html
-                    var el = document.createElement( 'div' );
-                    el.innerHTML = response.html[i];
+                    if( response.html[i] ){
 
-                    if( masonryLive ){
+                        //Create a fake div to hold html
+                        var fakeEl = document.createElement( 'div' );
+                        fakeEl.innerHTML = response.html[i];
 
-                        //Append posts using Masonry
-                        ajaxPostWrap.appendChild( el );
-                        
-                        imagesLoaded( ajaxPostWrap, function(){
-                            masonry.appended( el );
+                        el = fakeEl.firstChild;
+
+                        if( masonryLive ){
+
+                            //Append posts using Masonry
+                            ajaxPostWrap.appendChild( el );
+
+                            imagesLoaded( ajaxPostWrap, function(){
+                                masonry.appended( el );
+                                buildLoryCarousel( el );
+                            });
+
+                        } else {
+
+                            //Add posts not in Bricklayer
+                            el.style.display = 'none';
+                            ajaxPostWrap.appendChild(el);
+                            fade({el:el,type:'in',duration: 1000});
                             buildLoryCarousel( el );
-                        });
-                            
-                    } else {
 
-                        //Add posts not in Bricklayer
-                        el.style.display = 'none';
-                        ajaxPostWrap.appendChild(el);
-                        fade({el:el,type:'in',duration: 1000});
-                        buildLoryCarousel( el );
+                        } 
 
-                    } 
+                        fakeEl.remove();
 
-
+                    }
+                    
                     if (--i) {          
                         delayModuleLoad(i);       
                     }
                 }, 100);
+                
             })( response.html.length );
             
         } else {
@@ -130,11 +148,6 @@ function postsLoadFunction(response){
             //Show the load more button if we have posts to see
             fade({el:loadMorePosts,type:'in',duration: 500});   
             
-        }
-        
-        //Update paged
-        if( response.paged ){
-            paged = response.paged;
         }
         
     } else {

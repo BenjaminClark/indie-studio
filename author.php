@@ -12,57 +12,37 @@ get_header(); ?>
     <main id="content" role="main">
 
         <div class="page-inner-wrap">
-       
-        <?php if ( have_posts() ) { ?>
 
-            <?php
-                /* Queue the first post, that way we know
-                 * what author we're dealing with (if that is the case).
-                 *
-                 * We reset this later so we can run the loop
-                 * properly with a call to rewind_posts().
-                 */
-                the_post();
-            ?>
+            <?php if ( have_posts() ) { ?>
 
-            <header class="page-header author vcard h-card group" itemprop="author" itemscope itemtype="http://schema.org/Person">
-                <h1 class="page-title"><?php printf( __( 'Articles by %s', indie_studio_text_domain() ), '<a class="url u-url fn p-fn n p-name" href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me author" itemprop="url"><span itemprop="name">' . get_the_author() . '</span></a>' ); ?></h1></header>
+                <?php
+                    /* Queue the first post, that way we know
+                     * what author we're dealing with (if that is the case).
+                     *
+                     * We reset this later so we can run the loop
+                     * properly with a call to rewind_posts().
+                     */
+                    the_post();
+                ?>
 
-            <?php
-                /* Since we called the_post() above, we need to
-                 * rewind the loop back to the beginning that way
-                 * we can run the loop properly, in full.
-                 */
-                rewind_posts();
-            ?>
+                <header class="page-header author vcard h-card group" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    <h1 class="page-title"><?php printf( __( 'Articles by %s', indie_studio_text_domain() ), '<a class="url u-url fn p-fn n p-name" href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me author" itemprop="url"><span itemprop="name">' . get_the_author() . '</span></a>' ); ?></h1></header>
 
-                <div id="ajax-post-wrap" class="grid-container masonry basic">
-                    <div class="masonry-column-sizer"></div>
-                    <div class="masonry-gutter-sizer"></div>
-                    
-                    <?php /* Start the Loop */ ?>
-                    <?php while ( have_posts() ) : the_post(); ?>
+                <?php
+                    /* Since we called the_post() above, we need to
+                     * rewind the loop back to the beginning that way
+                     * we can run the loop properly, in full.
+                     */
+                    rewind_posts();
+                ?>
 
-                        <?php
-                            /* Include the Post-Format-specific template for the content.
-                             * If you want to overload this in a child theme then include a file
-                             * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                             */
-                            get_template_part( 'template-parts/post/module', get_post_format() );
-                        ?>
+                <?php get_template_part( 'loop' );?>
 
-                    <?php endwhile; ?>
+            <?php } else { ?>
 
-                </div>
+                <?php get_template_part( 'no-posts' );?>
 
-                <?php 
-                indie_studio_content_nav( 'nav-below', 'load-more' );
-
-            } else {
-
-                get_template_part( 'template-parts/post/content', 'none' );
-
-            } ?>
+            <?php } ?>
         
         </div>
 
