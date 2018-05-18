@@ -1198,6 +1198,7 @@ ol.commentlist li.parent{border-left:5px solid #ddd}
 .module .user-interaction .likes i{color:#ef4545;margin-right:.125em}
 .module .user-interaction .comments{float:right}
 .module .user-interaction .comments i{color:#777;margin-right:.125em}
+.touch .module a:hover .lory-carousel .js_dots,.touch .module a:hover .user-interaction{bottom:-4em;-webkit-transform:none;-ms-transform:none;transform:none}
 .module:not(.module-gallery) a:hover .entry-media .media-fit img{-ms-transform:scale(1.025,1.025);-webkit-transform:scale(1.025,1.025);transform:scale(1.025,1.025)}
 .gallery{margin:0 auto 1.125em}
 .gallery .gallery-item{float:left;margin-top:0;text-align:center;overflow:hidden;margin:.125em .125em .375em .125em}

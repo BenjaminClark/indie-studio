@@ -179,9 +179,9 @@
     a:hover .lory-carousel .js_dots,
     a:hover .user-interaction {
         bottom: 0;
-        transition:all 0.3s ease-out 0.1s;
+        transition: all 0.3s ease-out 0.1s;
     }
-    
+        
     .user-interaction .likes {
         float: left;
     }
@@ -200,6 +200,13 @@
         margin-right: 0.125em;
     }
 
+}
+
+// If touch
+.touch .module a:hover .lory-carousel .js_dots,
+.touch .module a:hover .user-interaction {
+    bottom: -4em;
+    transform: none;
 }
 
 .module:not(.module-gallery) a:hover .entry-media .media-fit img {
