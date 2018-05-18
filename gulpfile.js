@@ -329,8 +329,8 @@ gulp.task('bump', function () {
         
     return gulp
         .src(['./package.json'])
-        .pipe(bump(options))
+        .pipe( bump(options) )
         .pipe( notify( { message: 'Version Updated: ' + options.version, onLast: true } ) )
-        .pipe(gulp.dest(productURL));
+        .pipe( gulp.dest(productURL) );
         
 });
