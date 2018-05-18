@@ -20,12 +20,13 @@
         
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     
-    <link rel="profile" href="http://microformats.org/profile/specs" />
-    <link rel="profile" href="http://microformats.org/profile/hatom" />    
+    <link rel="profile" href="http://microformats.org/profile/specs"/>
+    <link rel="profile" href="http://microformats.org/profile/hatom"/>    
     <?php if( get_option( 'page_for_posts' ) ){ ?>
-    <link rel="feed" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">
-    <?php }
-   
+    <link rel="feed" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>"/>
+    <?php } ?>
+    <link href="<?php echo site_url();?>" rel="me"/>
+    <?php
     
 	wp_head(); 
         
