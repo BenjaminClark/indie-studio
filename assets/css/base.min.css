@@ -1090,7 +1090,7 @@ body.navigation-open #site-navigation .push{height:calc(100% + 3.75em);width:100
 .wysiwyg{font-size:1rem}
 .wysiwyg a{display:inline}
 .wysiwyg .alignleft,.wysiwyg img.alignleft,.wysiwyg .alignright,.wysiwyg img.alignright,.wysiwyg .aligncenter,.wysiwyg img.aligncenter{margin-right:auto;margin-left:auto;display:block;clear:both}
-.wysiwyg img{margin-bottom:1.125em}
+.wysiwyg img{margin:1.125em 0}
 .wysiwyg ul,.wysiwyg ol{margin:0 0 .875rem 0}
 .wysiwyg ul li,.wysiwyg ol li{padding-left:2em}
 .wysiwyg ul li:before{font-size:.5em;position:absolute;line-height:inherit;top:0;left:.5em;font-family:FontAwesome;content:"\f111"}
