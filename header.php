@@ -40,7 +40,7 @@
     
 </head>
    
-<body <?php body_class('no-js'); ?><?php schema_semantics_tags( 'body' ); ?>>
+<body <?php body_class('no-js'); ?><?php get_schema_semantics( 'body' ); ?>>
     
     <!-- Remove no-js tag immediately -->
     <script>document.querySelector('body').classList.remove('no-js');</script>
