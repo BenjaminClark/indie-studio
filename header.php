@@ -17,16 +17,15 @@
     
     <meta charset="<?php bloginfo( 'charset' ); ?>" />   
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <!-- Hide due to conflict with WC3 recommendations -->
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
-    
-    <meta name="viewport" content="width=device-width">
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     
     <link rel="profile" href="http://microformats.org/profile/specs" />
     <link rel="profile" href="http://microformats.org/profile/hatom" />    
-
-    <?php
+    <?php if( get_option( 'page_for_posts' ) ){ ?>
+    <link rel="feed" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">
+    <?php }
+   
     
 	wp_head(); 
         
