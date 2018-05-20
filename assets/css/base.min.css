@@ -1007,7 +1007,7 @@ html,body{min-height:100%}
 .search-active,.navigation-open{overflow-y:hidden}
 #footer-pusher{position:relative;min-height:100%;height:100%}
 .thin-inner,#disqus_thread{margin:0 auto;max-width:62.5em;padding:1.25em;background-color:#fff}
-.thin-inner *>:last-child{margin-bottom:0}
+.thin-inner>:last-child{margin-bottom:0}
 #disqus_thread{padding-top:0}
 .page-inner-wrap,.article-inner-wrap{width:100%;margin:0 auto;position:relative}
 .page-inner-wrap{padding:0 1.125em}
