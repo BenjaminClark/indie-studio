@@ -126,6 +126,8 @@ var reload       = browserSync.reload; // For manual browser reload.
 var wpPot        = require('gulp-wp-pot'); // For generating the .pot file.
 var sort         = require('gulp-sort'); // Recommended to prevent unnecessary changes in pot-file.
 
+var fs           = require('fs');
+
 /**
  * Task: `browser-sync`.
  *
@@ -318,8 +320,7 @@ gulp.task( 'browser-sync', function() {
  * Increment Stylesheet code 
  */
 
-gulp.task('bump', function () {
-
+gulp.task('incrementProject', function () {
     var type = args.type;
     var version = args.version;
     var options = {};
@@ -330,7 +331,50 @@ gulp.task('bump', function () {
     return gulp
         .src(['./package.json'])
         .pipe( bump(options) )
-        .pipe( notify( { message: 'Version Updated: ' + options.version, onLast: true } ) )
-        .pipe( gulp.dest(productURL) );
+        .pipe( gulp.dest( './' ) );
+});
+
+
+gulp.task('bump', ['incrementProject'], function (){ 
+    gulp.start('wp:buildStyle');
+});
+
+
+
+var getPackageJSON = function() {
+    return JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+};
+
+
+// Build project stylesheet 
+gulp.task( 'wp:buildStyle', function () {
+
+    var pkg = getPackageJSON();
         
+    var repository = pkg.repository.url;
+        
+    //Check if we are using github, or bitbucket
+    if ( repository ) {
+        repository = ( repository.includes('github') ? 'Github Theme URI: ' + repository : 'Bitbucket Theme URI: ' + repository );            
+    }
+    
+    var themeDetails = ['/*',
+        'Theme Name: ' + pkg.name,
+        'Theme URI: '+ pkg.homepage,
+        'Description: '+ pkg.description,
+        'Author: '+ pkg.author,
+        'Author URI: '+ pkg.authorUri,
+        'Version: '+ pkg.version,
+        'Tags: '+ pkg.keywords,
+        'License: '+ pkg.license,
+        'License URI: '+ pkg.licenseUri,
+        repository,
+        '*/',
+        ''].join('\n');
+
+    //Create file
+    fs.writeFile( './style.css', themeDetails, 'utf-8', function (err) {
+        (err) ? console.log('Error: stylesheet not created!') : console.log('Stylesheet created!');
+    });         
+    
 });
