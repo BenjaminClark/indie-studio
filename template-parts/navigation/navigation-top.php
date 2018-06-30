@@ -11,6 +11,8 @@
 <div class="logo">
     <a href="<?php echo site_url();?>">
 
+        <span class="screen-reader-text"><?php esc_attr_e( 'Link to home page', fox_agency_text_domain() ); ?></span>
+       
         <?php
         
         //Get logo filepath
@@ -21,7 +23,7 @@
             if ( isSvg( $custom_logo ) ){ ?>
 
                 <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-                    <img itemprop="url" src="<?php echo $custom_logo; ?>" />
+                    <img itemprop="url" src="<?php echo $custom_logo; ?>" alt="<?php _e( get_bloginfo( 'name' ) . 'logo' );?>"/>
                 </div>
                 
             <?php } else { 
@@ -31,7 +33,7 @@
                 ?>
                 
                 <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-                    <img itemprop="url" src="<?php echo $custom_logo; ?>" alt="<?php get_bloginfo( 'name' );?> logo"/>
+                    <img itemprop="url" src="<?php echo $custom_logo; ?>" alt="<?php _e( get_bloginfo( 'name' ) . 'logo' );?>"/>
                     <meta itemprop="width" content="<?php echo $logo_dimensions[0]; ?>" />
                     <meta itemprop="height" content="<?php echo $logo_dimensions[1]; ?>" />
                 </div>
@@ -68,7 +70,7 @@
                 $args = array(
                     'menu_class'		=> 'toggle-list',
                     'theme_location'    => 'primary',
-                    'link_after'        => '<a href="#" class="toggle"><i class="fa fa-angle-down" aria-hidden="true"></i></a>',
+                    'link_after'        => '<a href="#" class="toggle"><span class="screen-reader-text">' . __( 'Open sub menu', indie_studio_text_domain() ) . '</span><i class="fa fa-angle-down" aria-hidden="true"></i></a>',
                 );
                 wp_nav_menu($args); 
             }
