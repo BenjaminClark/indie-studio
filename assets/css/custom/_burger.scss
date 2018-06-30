@@ -1,0 +1,64 @@
+// https://codepen.io/vajkri/pen/dVWoGj
+
+$buttonWidth: 1.5em;
+$buttonHeight: 1.25em;
+$lineThickness: 0.25em;
+$transitionSpeed: .25s;
+$transitionEasing: ease-in-out;
+
+// Demo
+#burger {
+    font-size: 1em;
+    margin: 1.325em;
+    padding: 0;
+    position: relative;
+    display: block;
+    width: $buttonWidth;
+    height: $buttonHeight;
+
+    background: transparent;
+    border-top: $lineThickness solid;
+    border-bottom: $lineThickness solid;
+
+    color: #000;
+
+    transition: all $transitionSpeed $transitionEasing;
+
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: $lineThickness;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        background: currentColor;
+
+        transform: translate(-50%, -50%);
+        transition: transform $transitionSpeed $transitionEasing;
+    }
+}
+
+.navigation-open #burger {
+    border-color: transparent;
+
+    &:before {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &:after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+}
+
+
+@media only screen and (min-width: 79.375em) {  /** 1270px **/
+
+    #burger {
+        display: none;
+    }
+
+}

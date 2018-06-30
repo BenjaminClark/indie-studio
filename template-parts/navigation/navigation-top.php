@@ -11,7 +11,7 @@
 <div class="logo">
     <a href="<?php echo site_url();?>">
 
-        <span class="screen-reader-text"><?php esc_attr_e( 'Link to home page', fox_agency_text_domain() ); ?></span>
+        <span class="screen-reader-text"><?php esc_attr_e( 'Link to home page', indie_studio_text_domain() ); ?></span>
        
         <?php
         
@@ -82,13 +82,7 @@
             
     </nav>
     
-    <div id="burger">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <div class="trig"></div>
-    </div>
+    <button type="button" id="burger" aria-label="<?php esc_attr_e( 'Open Menu', indie_studio_text_domain() ); ?>">
     
     <?php
 
