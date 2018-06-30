@@ -1228,7 +1228,7 @@ ol.commentlist li.parent{border-left:5px solid #ddd}
 #search h2{position:relative}
 #colophon{position:relative;width:100%}
 #colophon p{font-size:.8em}
-#colophon p,#colophon a{color:#c7c7c7;text-decoration:none}
+#colophon p,#colophon a{text-decoration:none}
 #colophon .copyright,#colophon .custom{display:inline-block}
 #colophon .custom{margin:0 1em 0 0}
 #webmention-source{display:block;width:100%}
