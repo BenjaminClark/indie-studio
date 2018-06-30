@@ -1020,16 +1020,6 @@ article{background-color:#fff}
 #header #site-description{font-size:1em;margin:.5em 0 0 0;font-weight:700;float:left;clear:left}
 #header .header-menu-wrap{float:right}
 #header .menu-main-container{float:left;width:100%}
-#burger{margin:0 .25em 0 0;display:block;float:left;width:1.375em;height:1.375em;position:relative;cursor:pointer}
-#burger .trig{position:absolute;width:100%;height:100%}
-#burger span{display:block;position:absolute;height:.125em;width:100%;background:#484848;opacity:1;left:0;-webkit-transform:rotate(0);-ms-transform:rotate(0);transform:rotate(0);-webkit-transition:.25s ease-in-out;transition:.25s ease-in-out}
-#burger span:nth-child(1){top:0}
-#burger span:nth-child(2),#burger span:nth-child(3){top:calc(50% - 0.0625em)}
-#burger span:nth-child(4){top:calc(100% - 0.125em)}
-body.navigation-open #burger span:nth-child(1){top:calc(50% - 0.125em);width:0;left:50%}
-body.navigation-open #burger span:nth-child(2){-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}
-body.navigation-open #burger span:nth-child(3){-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg)}
-body.navigation-open #burger span:nth-child(4){top:calc(50% - 0.125em);width:0;left:50%}
 #searchform{float:left;color:red;height:1.75em;margin:-0.125em 0 0 .8em}
 #searchform button.search-submit,#searchform button.search-close{padding:.05em;margin:0;position:relative;font-size:1.25em;line-height:1em;text-align:center;cursor:pointer;z-index:500;background-color:transparent;float:left;z-index:3000}
 #searchform button.search-submit:after{content:none}
@@ -1063,6 +1053,11 @@ body.navigation-open #site-navigation{bottom:0;padding-bottom:3.75em}
 body.navigation-open #site-navigation .push{height:calc(100% + 3.75em);width:100%}
 #overlay{position:fixed;top:0;bottom:0;marign-top:3em;left:0;right:0;display:none;z-index:1000;opacity:.6;background-color:#000}
 #overlay .push{width:100%;height:calc(100% + 3.75em)}
+#burger{font-size:1em;margin:0;padding:0;position:relative;display:block;float:left;width:1.25em;height:1.25em;background:transparent;border-top:.125em solid;border-bottom:.125em solid;color:#000;-webkit-transition:all .25s ease-in-out;transition:all .25s ease-in-out}
+#burger:before,#burger:after{content:'';display:block;width:100%;height:.125em;position:absolute;top:50%;left:50%;background:currentColor;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transition:-webkit-transform .25s ease-in-out;transition:-webkit-transform .25s ease-in-out;transition:transform .25s ease-in-out;transition:transform .25s ease-in-out,-webkit-transform .25s ease-in-out}
+.navigation-open #burger{border-color:transparent}
+.navigation-open #burger:before{-webkit-transform:translate(-50%,-50%) rotate(45deg);-ms-transform:translate(-50%,-50%) rotate(45deg);transform:translate(-50%,-50%) rotate(45deg)}
+.navigation-open #burger:after{-webkit-transform:translate(-50%,-50%) rotate(-45deg);-ms-transform:translate(-50%,-50%) rotate(-45deg);transform:translate(-50%,-50%) rotate(-45deg)}
 .author .page-header,.archive .page-header,.category .page-header,.tag .page-header{margin-top:1em}
 .author .page-header img,.archive .page-header img,.category .page-header img,.tag .page-header img{width:4em;float:left;margin:0 1em 1em 0;border-radius:50%}
 .author .page-title,.archive .page-title,.category .page-title,.tag .page-title{font-size:1.5em}
@@ -1303,7 +1298,6 @@ ol.commentlist li.comment footer{float:none}
 #header .logo h1,#header .logo p{font-size:2.5em}
 #header .logo img{height:3em}
 #header #site-description{font-size:1.25em}
-#burger{display:none}
 #site-navigation{background-color:transparent;overflow:visible;position:relative;margin-top:.5em;top:auto;left:auto;right:auto;bottom:auto;padding:0;float:left}
 #site-navigation .menu-main-container{width:auto}
 #site-navigation li{display:inline-block}
@@ -1324,6 +1318,7 @@ ol.commentlist li.comment footer{float:none}
 #searchform button.search-submit{padding:.125em}
 #searchform .reveal{height:6.5em}
 #searchform .reveal input{width:calc(100% - 1.25em);margin:.5em 0 0 0;padding:1.55em 6em 1.55em .5em}
+#burger{display:none}
 #main-searchform label{width:calc(100% - 4em)}
 #main-searchform input{padding:1em}
 #main-searchform button{padding:1em}

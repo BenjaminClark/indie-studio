@@ -1,18 +1,19 @@
 // https://codepen.io/vajkri/pen/dVWoGj
 
-$buttonWidth: 1.5em;
+$buttonWidth: 1.25em;
 $buttonHeight: 1.25em;
-$lineThickness: 0.25em;
+$lineThickness: 0.125em;
 $transitionSpeed: .25s;
 $transitionEasing: ease-in-out;
 
 // Demo
 #burger {
     font-size: 1em;
-    margin: 1.325em;
+    margin: 0;
     padding: 0;
     position: relative;
     display: block;
+    float: left;
     width: $buttonWidth;
     height: $buttonHeight;
 

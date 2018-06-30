@@ -21,7 +21,7 @@ jQuery(document).ready(function($) {
         mainSearchInput         = $( "#main-search-input" ), 
         
         mainNavigation          = $( "#site-navigation" ), 
-        burger                  = $( "#burger .trig" ),
+        burger                  = $( "#burger" ),
         
         overlay                 = $( "#overlay" );
     

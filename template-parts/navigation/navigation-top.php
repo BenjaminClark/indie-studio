@@ -82,7 +82,7 @@
             
     </nav>
     
-    <button type="button" id="burger" aria-label="<?php esc_attr_e( 'Open Menu', indie_studio_text_domain() ); ?>">
+    <button type="button" id="burger" aria-label="<?php esc_attr_e( 'Open Menu', indie_studio_text_domain() ); ?>"></button>
     
     <?php
 
