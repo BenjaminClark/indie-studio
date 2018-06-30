@@ -2,9 +2,10 @@
 /* Here we set the page contraints and grid framework to fit all the elements inside */
 /* This includes header, footer, page-wrapper ect */
 
-html, 
+html,
 body {
-    min-height: 100%; 
+    height: 100%; 
+    margin: 0;
 }
 
 .search-active,
@@ -17,7 +18,6 @@ body {
 #footer-pusher {
     position: relative;
     min-height: 100%;
-    height: 100%;
 }
 
 .thin-inner,
