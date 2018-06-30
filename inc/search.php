@@ -29,9 +29,9 @@ function customized_search_form( $form ) {
 
         $form .= '</label>';
     
-        $form .= '<button class="search-submit hover smooth"><i class="fa fa-search" aria-hidden="true"></i></button>';
+        $form .= '<button class="search-submit hover smooth" aria-label="' . __( 'Search', indie_studio_text_domain() ) . '"><i class="fa fa-search" aria-hidden="true"></i></button>';
     
-        $form .= '<button class="search-close" class="hover smooth"><i class="fa fa-times" aria-hidden="true"></i></button>';
+        $form .= '<button class="search-close" class="hover smooth" aria-label="' . __( 'Close search', indie_studio_text_domain() ) . '"><i class="fa fa-times" aria-hidden="true"></i></button>';
         
         $form .= '<meta itemprop="target" content="' . site_url( '/?s={search} ' ) . '"/>';
     
@@ -52,11 +52,11 @@ function main_search_form() {
     
         $form .= '<span class="screen-reader-text">' . _x( 'Search for:', 'label' ) . '</span>';
 
-            $form .= '<input id="main-search-input" type="text" id="s" name="s" value="' . esc_attr( get_search_query() ) . '" placeholder="' .  esc_attr_x( 'Search …', 'placeholder' ) . '" title="' . esc_attr_x( 'Search for:', 'label' ) . '" itemprop="query-input" autocomplete="off">';
+            $form .= '<input id="main-search-input" type="text" id="s" name="s" value="' . __( get_search_query() ) . '" placeholder="' .  esc_attr_x( 'Search …', 'placeholder' ) . '" title="' . esc_attr_x( 'Search for:', 'label' ) . '" itemprop="query-input" autocomplete="off">';
 
         $form .= '</label>';
     
-        $form .= '<button class="search-submit hover smooth"><i class="fa fa-search" aria-hidden="true"></i></button>';
+        $form .= '<button class="search-submit hover smooth" aria-label="' . __( 'Search', indie_studio_text_domain() ) . '"><i class="fa fa-search" aria-hidden="true"></i></button>';
         
         $form .= '<meta itemprop="target" content="' . site_url( '/?s={search} ' ) . '"/>';
     
