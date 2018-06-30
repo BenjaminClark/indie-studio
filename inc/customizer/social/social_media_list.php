@@ -56,7 +56,7 @@ function get_social_media_icons() {
         foreach ($active_sites as $active_site) {?>
 
             <li>
-                <a class="external social smooth <?php echo $active_site; ?>" href="<?php echo get_theme_mod( $active_site ); ?>" onclick="creatGaEvent('Link', 'Social', <?php echo $active_site; ?>')">
+                <a class="external social smooth <?php echo $active_site; ?>" href="<?php echo get_theme_mod( $active_site ); ?>" onclick="creatGaEvent('Link', 'Social', <?php echo $active_site; ?>')" aria-label="<?php echo $active_site;?>">
                 <?php if( $active_site == "vimeo") { ?>
                         <i class="fa fa-<?php echo $active_site; ?>-square"></i> <?php
                     } else { ?>
