@@ -302,8 +302,8 @@ if ( ! function_exists( 'indie_studio_content_nav' ) ) {
                 <?php if ( is_single() ) { // navigation links for single posts
 
                     the_posts_pagination( array(
-                        'prev_text' => '<span class="screen-reader-text"><i class="fa fa-angle-left" aria-hidden="true"></i> ' . __( 'Previous post', indie_studio_text_domain() ) . '</span>',
-                        'next_text' => '<span class="screen-reader-text">' . __( 'Next post', indie_studio_text_domain() ) . '</span> <i class="fa fa-angle-right" aria-hidden="true"></i>',
+                        'prev_text' => '<span class="screen-reader-text">' . __( 'Previous post', indie_studio_text_domain() ) . '</span><i class="fa fa-angle-left" aria-hidden="true"></i> ',
+                        'next_text' => '<span class="screen-reader-text">' . __( 'Next post', indie_studio_text_domain() ) . '</span><i class="fa fa-angle-right" aria-hidden="true"></i>',
                         'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Post', indie_studio_text_domain() ) . ' </span>',
                     ) );
 
@@ -374,8 +374,8 @@ if ( ! function_exists( 'indie_studio_content_nav' ) ) {
                                 'end_size'     => 2,
                                 'mid_size'     => 1,
                                 'prev_next'    => true,
-                                'prev_text'    => '<i><i class="fa fa-chevron-left" aria-hidden="true"></i></i>',
-                                'next_text'    => '<i><i class="fa fa-chevron-right" aria-hidden="true"></i></i>',
+                                'prev_text'    => '<span class="screen-reader-text">' . __( 'Previous post', indie_studio_text_domain() ) . '</span><i class="fa fa-angle-left" aria-hidden="true">',
+                                'next_text'    => '<span class="screen-reader-text">' . __( 'Next post', indie_studio_text_domain() ) . '</span><i class="fa fa-angle-right" aria-hidden="true"></i>',
                                 'add_args'     => false,
                                 'add_fragment' => '',
                             ) );
