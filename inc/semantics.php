@@ -589,15 +589,15 @@ function indie_studio_social_share( $post_id ){
 
                 <a class="social linkedin smooth external" href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo $current_url;?>&title=<?php echo $title;?>&source=<?php get_home_url(); ?>"><span class="screen-reader-text"><?php esc_attr_e( 'Share on LinkedIn', indie_studio_text_domain() ); ?></span><i class="fa fa-linkedin"></i></a>
 
-                <a class="social google smooth external" href="https://plus.google.com/share?url=<?php echo $current_url;?>"><i class="fa fa-google-plus"></i></a>
+                <a class="social google smooth external" href="https://plus.google.com/share?url=<?php echo $current_url;?>"><span class="screen-reader-text"><?php esc_attr_e( 'Share on Google+', indie_studio_text_domain() ); ?></span><i class="fa fa-google-plus"></i></a>
 
-                <a class="social facebook smooth external" href="http://www.facebook.com/sharer/sharer.php?u=<?php echo $current_url;?>&title=<?php echo $title;?>"><?php esc_attr_e( 'Share on Facebook', indie_studio_text_domain() ); ?></span><i class="fa fa-facebook-f"></i></a>
+                <a class="social facebook smooth external" href="http://www.facebook.com/sharer/sharer.php?u=<?php echo $current_url;?>&title=<?php echo $title;?>"><span class="screen-reader-text"><?php esc_attr_e( 'Share on Facebook', indie_studio_text_domain() ); ?></span><i class="fa fa-facebook-f"></i></a>
 
-                <a class="social twitter smooth external" href="http://twitter.com/intent/tweet?status=<?php echo $title;?>+<?php echo $current_url;?>"><?php esc_attr_e( 'Share on Twitter', indie_studio_text_domain() ); ?></span><i class="fa fa-twitter"></i></a>
+                <a class="social twitter smooth external" href="http://twitter.com/intent/tweet?status=<?php echo $title;?>+<?php echo $current_url;?>"><span class="screen-reader-text"><?php esc_attr_e( 'Share on Twitter', indie_studio_text_domain() ); ?></span><i class="fa fa-twitter"></i></a>
 
-                <a class="print smooth" href="javascript:window.print()"><?php esc_attr_e( 'Print', indie_studio_text_domain() ); ?></span><i class="fa fa-print"></i></a> 
+                <a class="print smooth" href="javascript:window.print()"><span class="screen-reader-text"><?php esc_attr_e( 'Print', indie_studio_text_domain() ); ?></span><i class="fa fa-print"></i></a> 
 
-                <a class="social email smooth" href="mailto:?subject=Check out this article: <?php echo $title; ?>body=<?php echo $current_url;?>"><?php esc_attr_e( 'Email this article', indie_studio_text_domain() ); ?></span><i class="fa fa-envelope"></i></a> 
+                <a class="social email smooth" href="mailto:?subject=Check out this article: <?php echo $title; ?>body=<?php echo $current_url;?>"><span class="screen-reader-text"><?php esc_attr_e( 'Email this article', indie_studio_text_domain() ); ?></span><i class="fa fa-envelope"></i></a> 
 
             </div>
                 
