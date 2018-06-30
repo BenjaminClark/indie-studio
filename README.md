@@ -3,6 +3,8 @@
 ## Introduction
 A microformat/schema theme aimed at design professionals. The content comes first with simple image grids. A simple and elegant way to push your content to the world with 'POSSE' (see https://indieweb.org/POSSE) and backfeed. 
 
+Now updated so that it is 100% accessible according to Google's Lighthouse. All you need to do ensure all images are given alt tags, and your font colours are right!
+
 ## Image Reveal Built In
 Images can be set to animate into view as the reader scrolls down the page. All that is required is for 2 classes to be set on the image.
 
