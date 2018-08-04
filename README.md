@@ -27,7 +27,7 @@ This returns a slightly different post page, without parralax. This is to make s
 ### Video
 The video post format uses a different module in the feed list. If the first (or only) video in the post is embedded from Youtube or Vimeo then the video thumbnail is used. If a different embed provider is used you must use a featured image.
 
-##Accessibility
+## Accessibility
 We believe that websites should be fully inclusive. That is why we have tried our hardest to make IndieStudio WCAG 2.0 compliant!
 
 ## Developer Friendly
