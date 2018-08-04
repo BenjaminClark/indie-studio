@@ -9,7 +9,7 @@ if ( ! function_exists( 'indie_studio_comment' ) ) {
 	 *
      * @link https://codex.wordpress.org/Function_Reference/wp_list_comments
      * @link https://codex.wordpress.org/Function_Reference/comment_class
-     
+     * 
 	 * @since IndieStudio 1.0.0
 	 */
 
