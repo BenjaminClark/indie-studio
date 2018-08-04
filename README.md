@@ -1,7 +1,7 @@
 # Indie Studio
 
 ## Introduction
-A microformat/schema theme aimed at design professionals. The content comes first with simple image grids. A simple and elegant way to push your content to the world with 'POSSE' (see https://indieweb.org/POSSE) and backfeed. 
+A microformat/schema theme aimed at design professionals. The content comes first with simple image grids. A simple and elegant way to push your content to the world with 'POSSE' (see https://indieweb.org/POSSE) and backfeed.
 
 Now updated so that it is 100% accessible according to Google's Lighthouse. All you need to do ensure all images are given alt tags, and your font colours are right!
 
@@ -26,6 +26,9 @@ This returns a slightly different post page, without parralax. This is to make s
 
 ### Video
 The video post format uses a different module in the feed list. If the first (or only) video in the post is embedded from Youtube or Vimeo then the video thumbnail is used. If a different embed provider is used you must use a featured image.
+
+##Accessibility
+We believe that websites should be fully inclusive. That is why we have tried our hardest to make IndieStudio WCAG 2.0 compliant!
 
 ## Developer Friendly
 Built with developers in mind. File organsation has been considered to make a more efficent workflow. Gulp has been used to process all of those boring tasks. That has allowed us to keep the JS and CSS in small, easy to understand files.
