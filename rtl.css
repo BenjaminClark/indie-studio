@@ -10,3 +10,8 @@ http://codex.wordpress.org/Right_to_Left_Language_Support
 @TODO
 
 */
+
+body {
+  direction: rtl;
+  unicode-bidi: embed;
+}
